@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 21-30</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+ // QUIZ 7: Questions 61-70
+const questionsData = [
+  {
+    id: 61,
+    question: "A 55-year-old male with a history of diabetes mellitus, hypertension, and stage 3 chronic kidney disease presents for management of recurrent gout. He has had multiple attacks this year despite dietary changes. His uric acid level is 8.6 mg/dL (N 4.5–8.0) and he would like to start gout prophylaxis. Which one of the following would be most appropriate to initiate at this time?",
+    options: [
+      "A) Allopurinol (Zyloprim)",
+      "B) Colchicine (Colcrys)",
+      "C) Febuxostat (Uloric)",
+      "D) Pegloticase (Krystexxa)",
+      "E) Allopurinol plus colchicine"
+    ],
+    correctAnswer: 4,
+    rationale: "Gout is a common crystalline arthropathy. Long-term treatment with urate-lowering medications is effective in preventing recurrent attacks and is generally well tolerated. Allopurinol is typically used as first-line treatment for gout in all patients, even in those with kidney disease. The American College of Rheumatology (ACR) strongly recommends that an anti-inflammatory medication, such as colchicine, be given when allopurinol is initiated to prevent an acute flare. The allopurinol dosage should be adjusted to target a uric acid level <6 mg/dL. Colchicine alone is useful in the setting of an acute flare, as are NSAIDs or corticosteroids. Febuxostat is a urate-lowering medication that works by inhibiting xanthine oxidase, but it is not a first-line choice. The ACR strongly recommends against pegloticase as a first-line therapy due to cost, lack of evidence regarding safety, and other options with more favorable benefit to harm ratios."
+  },
+  {
+    id: 62,
+    question: "In a patient with aortic stenosis, which one of the following is an indication for referral for possible valve replacement?",
+    options: [
+      "A) Calcification of the valve on an echocardiogram",
+      "B) Development of mitral insufficiency on an echocardiogram",
+      "C) Left ventricular hypertrophy noted on a chest x-ray",
+      "D) A systolic ejection murmur that has increased from grade 1/6 to grade 2/6",
+      "E) New-onset angina"
+    ],
+    correctAnswer: 4,
+    rationale: "Once symptoms occur in patients with aortic stenosis, the clinical outcome is extremely poor, with 2-year survival rates below 50%. It is well established that this prognosis can be reversed by valve replacement, which has acceptable levels of operative morbidity and mortality, and postoperative survival rates similar to those of age-matched normal adults. Angina could be an indication of the seriousness of aortic valve stenosis. Patients should also be evaluated for coronary artery disease."
+  },
+  {
+    id: 63,
+    question: "A 23-year-old male presents on a spring day with a 2–3-day history of mild nasal congestion, sneezing, and slight watery discharge. He does not have a fever or other significant concerns. Which one of the following would be the most appropriate treatment?",
+    options: [
+      "A) Intranasal antihistamines",
+      "B) Intranasal corticosteroids",
+      "C) Intranasal cromolyn",
+      "D) Oral antibiotics",
+      "E) Oral corticosteroids"
+    ],
+    correctAnswer: 1,
+    rationale: "This patient has mild allergic rhinitis. Intranasal corticosteroids are considered first-line therapy. Intranasal or oral antihistamines may be considered given the patient's mild symptoms, but they are less effective. Intranasal cromolyn is less effective and requires multiple dosing. Since there is no apparent infection, oral antibiotics are not indicated. Oral corticosteroids are also not indicated at this time. Some experts recommend nasal saline irrigation to remove allergens from the nares, but this approach has limited evidence and would augment, not replace, pharmacotherapy."
+  },
+  {
+    id: 64,
+    question: "A 30-year-old female presents for follow-up of infertility. She and her husband have been trying to conceive for the past 12 months. She reports a history of irregular menstrual bleeding over the past several years. A physical examination is unremarkable except for a BMI of 29 kg/m2. You suspect polycystic ovary syndrome (PCOS) and recommend diagnostic testing with fasting laboratory studies scheduled for 8:00 a.m. An elevation in which one of the following hormones would most strongly support a diagnosis of PCOS in this patient?",
+    options: [
+      "A) 17-Hydroxyprogesterone",
+      "B) Cortisol",
+      "C) Glucose",
+      "D) Insulin",
+      "E) Testosterone"
+    ],
+    correctAnswer: 4,
+    rationale: "While there is no single test to diagnose polycystic ovary syndrome (PCOS), the diagnosis can be made based on the presence of at least 2 of the 3 Rotterdam criteria: oligoanovulation, hyperandrogenism, and polycystic ovaries on ultrasonography. Other conditions that may mimic PCOS must be excluded. Hyperandrogenism may be diagnosed clinically with evidence of hirsutism, androgenic alopecia, acne, or seborrhea, or biochemically with elevated androgen levels such as an elevated free testosterone level. An elevated 17-hydroxyprogesterone level would suggest congenital adrenal hyperplasia rather than PCOS. An elevated cortisol level would suggest Cushing syndrome or adrenal tumor, which may share overlapping clinical features with PCOS. Although insulin resistance is often part of the complex pathophysiology of PCOS, neither elevated insulin nor glucose levels are part of the Rotterdam criteria for PCOS."
+  },
+  {
+    id: 65,
+    question: "A generally healthy 36-year-old male presents to your clinic with a 36-hour history of dizziness and nausea. He says he feels as though the world is spinning and he tends to fall to the left when he tries to walk. The episodes of dizziness occur spontaneously and can last from minutes to hours. He does not have any recent illness, hearing loss, or tinnitus, and he does not take any medications. An HEENT examination is normal. On neurologic testing, he exhibits horizontal nystagmus with left lateral gaze. Head-impulse testing reveals a rapid movement of both eyes. Which one of the following would be the most appropriate next step?",
+    options: [
+      "A) Home Epley maneuvers",
+      "B) Reassurance and antiemetics",
+      "C) Prednisone, 40 mg daily for 5 days",
+      "D) Valacyclovir (Valtrex), 1000 mg twice daily for 7 days",
+      "E) MRI of the brain"
+    ],
+    correctAnswer: 1,
+    rationale: "This patient's vertigo is caused by vestibular neuritis, as evidenced by its spontaneity, rotatory vertigo, nausea, and listing to the affected side with walking. Head-impulse testing shows saccade, and the HINTS examination is significant for horizontal nystagmus to the affected side. Vestibular neuritis is most often found in patients 30–50 years of age and is thought to have a viral etiology. It involves prolonged, continuous vertigo, while benign paroxysmal positional vertigo (BPPV) is characterized by brief, episodic vertigo associated with head movements. Vestibular neuritis usually resolves on its own within a few days. The treatment is reassurance. Antiemetics can be used for up to 3 days. Home Epley maneuvers are appropriate for BPPV but neither indicated nor effective for vestibular neuritis (SOR A). Corticosteroids and antiviral medications have not been shown to be effective in treating vestibular neuritis. MRI of the brain is indicated for patients who exhibit signs of central vertigo or those with hearing loss (SOR C)."
+  },
+  {
+    id: 66,
+    question: "A 24-year-old gravida 2 para 2 presents to your office with melasma that has not resolved since she gave birth 6 months ago. She is eager to be treated. Which one of the following topical treatments would be the most effective for this patient's melasma?",
+    options: [
+      "A) Azelaic acid",
+      "B) Hydroquinone",
+      "C) Imiquimod (Aldara, Zyclara)",
+      "D) Benzoyl peroxide plus a corticosteroid",
+      "E) A combination of fluocinolone, hydroquinone, and tretinoin"
+    ],
+    correctAnswer: 4,
+    rationale: "Melasma is a common condition in pregnancy that occurs in up to 75% of patients. It is caused by increased levels of progesterone, estrogen, and melanocyte-stimulating hormone. While it resolves in 90% of cases during the postpartum period, it can persist and may recur in subsequent pregnancies or with the use of oral contraception. Topical tretinoin, hydroquinone, and a corticosteroid such as fluocinolone can all be used in the treatment of melasma, and a combination of the 3 is the most effective. These may be prescribed as a single formulation, which may be cost prohibitive, or as individual components. Azelaic acid and benzoyl peroxide are used to treat acne and are not effective for treating melasma. Imiquimod is an immunomodulator that is helpful in the treatment of condyloma acuminata but has no role in the treatment of melasma."
+  },
+  {
+    id: 67,
+    question: "You see a newborn for a routine wellness check. The parents tell you that there is a family history of allergies to eggs and peanuts, and they ask how to reduce their child's risk of developing these food allergies. Evidence supports exposing the patient to these potentially allergenic foods starting at which one of the following ages?",
+    options: [
+      "A) 4–6 months",
+      "B) 9–12 months",
+      "C) 1–2 years",
+      "D) 3–5 years",
+      "E) >5 years"
+    ],
+    correctAnswer: 0,
+    rationale: "The lowest risk of developing future allergies to many foods, including peanuts and eggs, occurs with early exposure at 4–6 months of age. Peanut butter can be thinned with water, breast milk, cow's milk, or formula. Peanuts should not be given in their original hard form because it is a choking hazard. Eggs should be cooked well prior to eating."
+  },
+  {
+    id: 68,
+    question: "A 23-year-old female presents after a sexual assault that occurred the prior evening. She reports nonconsensual penetrative vaginal intercourse. The assailant was an acquaintance with unknown medical history. The patient takes no medications and is up to date on vaccinations, including tetanus, HPV, and hepatitis B, although her hepatitis B serology status is unknown. She elects to undergo a medical forensic examination, which is completed with the help of a certified Sexual Assault Nurse Examiner. A urine pregnancy test is negative, and sexually transmitted infection testing is performed. Which one of the following would be most appropriate to offer at this time?",
+    options: [
+      "A) Emtricitabine/tenofovir alafenamide (Descovy)",
+      "B) Norgestimate/ethinyl estradiol (Sprintec)",
+      "C) Sofosbuvir/velpatasvir (Epclusa)",
+      "D) Azithromycin (Zithromax), ceftriaxone, and metronidazole (Flagyl)",
+      "E) The etonogestrel implant (Nexplanon)"
+    ],
+    correctAnswer: 3,
+    rationale: "In addition to trauma-informed evaluation and counseling, women who experience sexual assault should be offered forensic examination, emergency contraception, and screening and prevention for sexually transmitted infections. Empiric treatment for Neisseria gonorrhoeae, Chlamydia trachomatis, and Trichomonas vaginalis is appropriate and should include ceftriaxone, azithromycin, and either metronidazole or tinidazole. Postexposure prophylaxis for HIV should be made available with triple therapy for 28 days, rather than the double therapy regimens used in pre-exposure prophylaxis. Sofosbuvir/velpatasvir is used to treat hepatitis C infection, but routine postexposure prophylaxis is not recommended. Long-term contraception may be offered, but patients should first be provided with effective emergency contraception, such as ulipristal, levonorgestrel, or the copper IUD."
+  },
+  {
+    id: 69,
+    question: "A 29-year-old female presents with a long-standing history of episodes of depressed mood, headaches, and irritability that occur in the 1–2 weeks preceding her menses. She has a history of anxiety that is well controlled on fluoxetine (Prozac), 60 mg daily. She has a copper IUD (Paragard) for contraception. She has tried combined oral contraceptives to control the premenstrual symptoms, but found that they worsened her irritability. Which one of the following treatments would be most effective for this patient's symptoms?",
+    options: [
+      "A) Extended-release bupropion, 150 mg daily",
+      "B) Calcium carbonate, 600 mg twice daily",
+      "C) Dutasteride (Avodart), 0.5 mg daily",
+      "D) Vitamin D3 (cholecalciferol), 1000 IU daily",
+      "E) Acupuncture"
+    ],
+    correctAnswer: 1,
+    rationale: "Symptoms of premenstrual syndrome (PMS) with mood instability can be reduced with 1000–1200 mg of calcium carbonate daily (SOR B). Patients with PMS have been found to have cyclic changes in calcium levels that may account for the symptoms, but the mechanism of action is still unknown. All SSRIs are first-line treatments for symptoms of PMS and premenstrual dysphoric disorder (PMDD), but bupropion has not been shown to be effective. Continuous combined oral contraceptives are also first-line treatment (SOR A). High-dose dutasteride (2.5 mg daily) has been shown to alleviate PMDD symptoms, but it can have a deleterious effect on mood and is teratogenic; low-dose dutasteride has not demonstrated beneficial effect on PMDD symptoms. Patients with PMS have not been found to have low levels of vitamin D, and supplementing with vitamin D has not been clearly demonstrated to alleviate PMS symptoms. There is insufficient evidence to prove the benefit of acupuncture in reducing PMS symptoms."
+  },
+  {
+    id: 70,
+    question: "A 72-year-old female with osteoporosis (T-score –2.8) is seen in your office for the first time. She was prescribed alendronate (Fosamax), 70 mg weekly, by her previous physician. The patient took the medication but discontinued it after 4 weeks because of gastrointestinal symptoms. Which one of the following would be the most appropriate action at this time?",
+    options: [
+      "A) Discontinuing the medication only",
+      "B) Instructing the patient to take the medication before bed",
+      "C) Instructing the patient to take the medication with food",
+      "D) Discontinuing the medication and starting raloxifene (Evista)",
+      "E) Discontinuing the medication and arranging for intravenous bisphosphonates"
+    ],
+    correctAnswer: 4,
+    rationale: "Women ≥65 years of age should be tested for osteoporosis. A bone mineral density score ≤–2.5 indicates the need for treatment, as seen in this patient. Oral bisphosphonates, such as alendronate, are considered first-line treatment. To minimize gastrointestinal irritation, oral bisphosphonates should be taken on an empty stomach with 8 oz of water, and the patient should remain upright and avoid food and beverages other than plain water for at least 30 minutes afterward. If oral bisphosphonates are not tolerated despite correct administration, intravenous bisphosphonates should be considered. In this case, the patient should discontinue alendronate and transition to intravenous bisphosphonate therapy. Raloxifene is not the preferred initial treatment."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>
