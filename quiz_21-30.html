@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 21-30</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+       
+// QUIZ 3: Questions 21-30
+const questionsData = [
+  {
+    id: 21,
+    question: "A 72-year-old male presents with a 45-minute history of persistent bleeding from his left nostril. He has a medical history of aortic stenosis with a mechanical aortic valve replacement, coronary artery disease, hypertension, and type 2 diabetes. His medications include hydrochlorothiazide, lisinopril (Zestril), metformin, and warfarin. A physical examination reveals a blood pressure of 170/100 mm Hg without orthostatic change and a heart rate of 90 beats/min. Which one of the following would be the most appropriate first step in the treatment of this patient's nosebleed?",
+    options: [
+      "A) Digital compression of the lower nares for 20 minutes",
+      "B) Topical vasoconstrictors",
+      "C) Anterior nasal packing",
+      "D) Electrical cauterization",
+      "E) Reversal of anticoagulation"
+    ],
+    correctAnswer: 0,
+    rationale: "The initial treatment of a hemodynamically stable patient with epistaxis is to pinch the lower third of the nose for 15–20 minutes. If digital compression is not successful in stopping the bleeding and an anterior bleeding site is visualized on anterior rhinoscopy, then the next step would be to either apply topical vasoconstrictors or use chemical/electrical cautery. If bleeding continues after local measures fail, then anterior nasal packing would be indicated. Acute reversal of anticoagulation should be considered in a patient with ongoing bleeding who is hemodynamically unstable."
+  },
+  {
+    id: 22,
+    question: "An 80-year-old male presents to your office for follow-up of stable angina. He has a medical history of coronary artery disease with placement of a single drug-eluting stent, and stage 4 chronic kidney disease secondary to hypertension. His most recent echocardiogram demonstrated a normal ejection fraction. He does not want additional cardiovascular intervention and prefers you to handle all of his care in the future. The patient's current medications include: Aspirin 81 mg daily, Carvedilol (Coreg) 12.5 mg twice daily, Empagliflozin (Jardiance) 10 mg daily, Losartan (Cozaar) 50 mg daily. On examination he has a blood pressure of 140/85 mm Hg, a heart rate of 52 beats/min, and an oxygen saturation of 98% on room air. A cardiopulmonary examination is within normal limits and an EKG is unchanged from past EKGs. Which one of the following changes to this patient's medication regimen would be most appropriate to decrease his anginal symptoms?",
+    options: [
+      "A) Increasing carvedilol",
+      "B) Increasing empagliflozin",
+      "C) Adding clopidogrel (Plavix)",
+      "D) Adding isosorbide mononitrate",
+      "E) Adding ivabradine (Corlanor)"
+    ],
+    correctAnswer: 3,
+    rationale: "β-Blockers, calcium channel blockers, and long-acting nitrates are first-line medications to decrease symptoms in patients with angina. If symptoms persist despite the use of a maximally tolerated dose of a single first-line medication, an additional drug from a different class should be introduced. Adding isosorbide mononitrate is the most appropriate option for this patient; however, it may decrease his blood pressure and will require close attention on follow-up. Ranolazine is another potential recommendation but is often more costly than alternatives. It is recommended in patients who are already taking medications from 2 other classes. Increasing the patient's carvedilol is not recommended due to his relative bradycardia. Neither increasing empagliflozin nor adding clopidogrel helps to decrease anginal symptoms. Ivabradine is contraindicated in patients with chronic coronary disease and normal ejection fraction and is potentially harmful."
+  },
+  {
+    id: 23,
+    question: "A 35-year-old female presents because of a 4-week history of difficulty sleeping following the death of her partner of 2 years. She has difficulty initiating and maintaining sleep and reports daytime sleepiness. Her symptoms have not improved despite attending grief counseling sessions. She requests nonpharmacologic treatment for her insomnia. Which one of the following is a component of sleep hygiene education for cognitive behavioral therapy for insomnia?",
+    options: [
+      "A) Decreasing time spent in bed",
+      "B) Increasing daytime napping",
+      "C) Waking up at the same time every day",
+      "D) Placing a digital clock next to the bed"
+    ],
+    correctAnswer: 2,
+    rationale: "Acute insomnia is a sleep continuity disturbance, defined as difficulty initiating and/or maintaining sleep, that occurs ≥3 days per week with a duration of 1 week to 3 months. It is often associated with a precipitating factor such as life events or psychological distress. The first step in the management of acute insomnia is identifying and treating the underlying cause. Cognitive behavioral therapy for insomnia (CBT-I) is an effective treatment for insomnia and may be offered as first-line therapy, especially in patients who wish to avoid pharmacotherapy. CBT-I has 3 categories: sleep hygiene education, sleep restriction, and stimulus control. Waking up at the same time every day and not napping during the day are among the 8 components of sleep hygiene education. Stimulus control strategies include going to bed only when sleepy and reserving the bedroom for sleep and sex. Sleep restriction techniques involve reducing time spent in bed followed by gradually increasing it by 15 minutes each week once sleep efficiency reaches 90%."
+  },
+  {
+    id: 24,
+    question: "A 32-year-old female presents with classic symptoms of mild hypothyroidism including cold intolerance, mild fatigue, and constipation. Her TSH level is 6.0 μU/mL (N 0.4–4.2) and her free T4 level is within normal limits. A pregnancy test is negative. Which one of the following factors, if present, would be an indication for prescribing levothyroxine (Synthroid)?",
+    options: [
+      "A) A repeat TSH level in 4–6 weeks remains at 6.0 μU/mL",
+      "B) A repeat TSH level in 4–6 weeks increases to 8.0 μU/mL",
+      "C) An elevated free T3 level",
+      "D) An elevated thyroid peroxidase antibody level",
+      "E) Treatment-resistant constipation"
+    ],
+    correctAnswer: 3,
+    rationale: "Hypothyroidism affects approximately 1 in 300 individuals in the United States, with a higher prevalence among women and older adults. Symptoms can range from mild to life-threatening. Because the signs and symptoms of hypothyroidism can be nonspecific, diagnosis is based on blood levels of TSH and free T4. Subclinical hypothyroidism is defined by a TSH level that is abnormal but <10 μU/mL while the free T4 level remains within the normal range. Nonpregnant patients with subclinical hypothyroidism should not be treated with thyroid hormone replacement therapy unless the thyroid peroxidase antibody level is elevated or the TSH level is >10 μU/mL (SOR A). Evaluating the total or free T3 level is not routinely indicated. Treatment-resistant depression is an indication for treating subclinical hypothyroidism; however, this is not the case for treatment-resistant constipation."
+  },
+  {
+    id: 25,
+    question: "A 44-year-old female presents to the emergency department for evaluation of heavy vaginal bleeding. She reports soaking a pad every hour for the past 6 hours and is feeling mildly short of breath and lightheaded. The patient has a past medical history of hypertension, migraines, and breast cancer for which she underwent lumpectomy 6 months ago. The patient's only medication is hydrochlorothiazide, 25 mg. The patient's vital signs include a blood pressure of 110/60 mm Hg, a heart rate of 80 beats/min, a respiratory rate of 16/min, and an oxygen saturation of 100% on room air. A prothrombin time, partial thromboplastin time, and platelet count are all normal, and a urine pregnancy test is negative, but a hemoglobin level is 8.0 g/dL (N 12.0–16.0). Which one of the following would be the most appropriate next step?",
+    options: [
+      "A) A high-dose combined oral contraceptive",
+      "B) Intravenous conjugated estrogens (Premarin)",
+      "C) Intravenous tranexamic acid",
+      "D) Depot medroxyprogesterone acetate (Depo-Provera CI)",
+      "E) A levonorgestrel IUD (Mirena)"
+    ],
+    correctAnswer: 2,
+    rationale: "Abnormal uterine bleeding is a common clinical entity with a broad differential diagnosis and can be grouped into structural and nonstructural causes. Clinicians should determine if the bleeding is severe or life-threatening and appropriately ensure stability with resuscitative measures. While this patient's bleeding is severe and she has symptoms of acute blood loss anemia, her vital signs indicate hemodynamic stability. The most appropriate next step is to administer intravenous tranexamic acid. Given this patient's recent cancer history, it is advisable to avoid therapies with estrogen or progesterone such as a high-dose combined oral contraceptive or depot medroxyprogesterone acetate if clinically appropriate. Intravenous estrogen should be reserved for patients who are hemodynamically unstable given the risk for clotting. While the levonorgestrel IUD is an effective long-term management for abnormal uterine bleeding, insertion in the emergency department is impractical, and it would not be anticipated to improve bleeding for 3–6 months."
+  },
+  {
+    id: 26,
+    question: "A 45-year-old female presents with a 1-year history of central facial erythema, telangiectasias, and inflammatory pustules and papules. The symptoms are worsened by alcohol and excessive sun exposure. You diagnose rosacea. She has not had any previous success with moisturizers, aggressive sun protection, or mild facial soap. Which one of the following would be the most appropriate first step in the management of this condition?",
+    options: [
+      "A) Topical brimonidine (Mirvaso)",
+      "B) Topical cyclosporine",
+      "C) Topical metronidazole",
+      "D) Oral doxycycline",
+      "E) Laser or light-based therapy"
+    ],
+    correctAnswer: 2,
+    rationale: "Topical metronidazole is a first-line treatment for rosacea. The cost and side-effect profile of topical metronidazole make it most appropriate. Topical azelaic acid is also a first-line treatment for rosacea. Oral doxycycline is a reasonable next step if topical metronidazole is not successful in managing symptoms. The side-effect profile of doxycycline makes it less desirable than topical metronidazole. Additionally, increased sun sensitivity is a common side effect of doxycycline that is problematic for management because rosacea is generally clinically worse in the warmer months. Laser and light-based therapies are second-line treatments for rosacea. They are reasonable options for patients who have not had success with topical metronidazole or azelaic acid. Brimonidine is an α-2 agonist that is another reasonable option in a patient who has not had success with topical metronidazole or topical azelaic acid. However, due to its cost and tendency to exacerbate skin irritation, it is considered a second-line treatment option. Topical cyclosporine is another second-line treatment that has been recalcitrant to first-line options."
+  },
+  {
+    id: 27,
+    question: "A 67-year-old female presents for a wellness examination. She has not been seen for medical care for several years and reports that her last Papanicolaou test was 15 years ago. She does not recall any medical problems and has no known history of abnormal cervical cytology in the past. According to the U.S. Preventive Services Task Force, which one of the following should you recommend regarding further cervical cancer screening?",
+    options: [
+      "A) No further screening due to the patient's age",
+      "B) Cervical cytology alone now, with no further screening if the result is normal",
+      "C) Cervical cytology alone now, then repeated in 3 years with no further screening if the results are normal",
+      "D) Cervical cytology with HPV co-testing now, with no further screening if the results are normal",
+      "E) Cervical cytology with HPV co-testing now, then repeated in 5 years with no further screening if the results are normal"
+    ],
+    correctAnswer: 4,
+    rationale: "The U.S. Preventive Services Task Force recommends against cervical cancer screening in women older than 65 years only if they have had adequate prior screening. Adequate screening is defined as 3 consecutive negative cytology results or 2 consecutive negative co-testing results within 10 years before stopping screening, with the most recent test occurring within 5 years. Because this patient has not had adequate prior screening, she requires either 2 consecutive negative co-testing results that are 5 years apart or 3 consecutive negative cytology results that are 3 years apart before stopping screening."
+  },
+  {
+    id: 28,
+    question: "A 46-year-old male comes in for an acute visit for low back pain. During triage, a Patient Health Questionnaire–2 (PHQ-2) screen is positive. You then administer the PHQ-9. You ask, 'Over the last 2 weeks, how often have you been bothered by thoughts that you would be better off dead, or of hurting yourself?' He responds, 'Nearly every day.' His total PHQ-9 score is 19. Which one of the following would be the most appropriate next step?",
+    options: [
+      "A) Suicidal ideation assessment and evaluation of risk factors for suicide completion",
+      "B) Escitalopram (Lexapro), and cognitive behavioral therapy",
+      "C) Escitalopram plus lithium, and cognitive behavioral therapy",
+      "D) Intravenous ketamine",
+      "E) Transportation to the emergency department"
+    ],
+    correctAnswer: 0,
+    rationale: "Suicidal ideation is much more common than suicide attempts or suicide completions and should be carefully addressed; up to half of patients characterized as low risk ultimately complete suicide. Current recommendations for evaluating suicidal ideation suggest focusing on individual assessment and understanding certain risk factors that may exacerbate suicidal ideation for a given patient. This includes asking questions, such as whether the patient has a plan and means to complete the plan, as well as assessing for underlying mental illness, substance use, and life stressors. SSRIs and cognitive behavioral therapy are first-line treatments for the majority of people with depression and suicidality, but this patient requires further evaluation for suicide risk before initiating pharmacologic therapy. Lithium has been shown to decrease suicide attempts and all-cause mortality among patients with major depression and bipolar disorder, and SSRIs are often used in conjunction with lithium; however, an underlying diagnosis has not yet been established for this patient, so this treatment is not yet warranted. The use of ketamine for rapid improvement in depression has shown promise, with patients experiencing significant improvement in depression symptoms and suicidality within 24 hours, but the evidence quality is considered low, and effects dissipated after 2 weeks. Ketamine treatment is recommended only if depression is resistant to other medications. If the patient endorses suicide plans or any other factors that are consistent with high risk for suicide completion, transfer to an inpatient treatment facility may be indicated. Although, stabilization in a standard emergency department is often necessary while awaiting an inpatient bed due to facility limitations."
+  },
+  {
+    id: 29,
+    question: "A healthy 58-year-old patient presents for an annual health maintenance examination. They had an initial screening colonoscopy 3 years ago in which 2 polyps were removed. The polyps were found to be 6-mm and 8-mm tubular adenomas. The patient does not have a family history of colon cancer. Which one of the following is the most appropriate ongoing colon cancer screening for this patient?",
+    options: [
+      "A) No further follow-up",
+      "B) Fecal immunochemical testing (FIT) now",
+      "C) Stool DNA testing (Cologuard) now",
+      "D) Repeat colonoscopy within the next 2 years",
+      "E) Repeat colonoscopy 7–10 years after the initial colonoscopy"
+    ],
+    correctAnswer: 4,
+    rationale: "For average-risk patients with 1–2 tubular adenomas <10 mm in size found on screening colonoscopy, repeat colonoscopy in 7–10 years is recommended. The risk of small adenomas progressing to malignancy is quite low and the rate of progression is slow, likely >10 years. Using GRADE (Grading of Recommendations Assessment, Development, and Evaluation) criteria in its consensus guidelines from 2020, the U.S. Multi-Society Task Force on Colorectal Cancer recommends follow-up in 7–10 years for 1–2 tubular adenomas <10 mm in size (moderate-quality evidence), 3–5 years for 3–4 tubular adenomas <10 mm in size (very low-quality evidence), 3 years for 5–10 tubular adenomas <10 mm in size (moderate-quality evidence), and yearly for >10 adenomas (very low-quality evidence). In the United States, only colonoscopy is recommended for follow-up of findings of colonic polyps. International guidelines allow for stool-based testing. This patient is healthy, and colon cancer screening should continue until at least age 75 (SOR A)."
+  },
+  {
+    id: 30,
+    question: "A 27-year-old gravida 1 para 0 at 38 weeks' estimated gestation based on a first-trimester ultrasound presents for routine prenatal care. Her pregnancy has been uncomplicated. You discuss the potential risks and benefits of inducing labor at 39 weeks compared to expectant management. In this discussion, you should tell the patient that inducing labor at 39 weeks reduces",
+    options: [
+      "A) the risk of low birth weight",
+      "B) length of stay in the labor and delivery unit",
+      "C) risk for neonatal ICU admission",
+      "D) the rate of cesarean delivery",
+      "E) the risk of postpartum hemorrhage"
+    ],
+    correctAnswer: 3,
+    rationale: "The 2018 ARRIVE (A Randomized Trial of Induction Versus Expectant Management) trial was a randomized, controlled trial that included more than 6000 low-risk nulliparous patients at 41 sites across the United States who were assigned to either induction of labor (IOL) between 39 weeks 0/7 days and 39 weeks 4/7 days or expectant management. The results showed no significant differences in a neonatal composite outcome, including perinatal mortality and severe perinatal morbidity between the intervention and control groups (4.3% compared to 5.4%, relative risk [RR] 0.80, 95% CI 0.64 to 1.00). A significantly lower rate of cesarean delivery was found in the intervention group than the control group (18.6% compared to 22.2%, RR 0.84, 95% CI 0.76 to 0.93). Other findings included: lower rates of gestational hypertension and preeclampsia (9.1% compared to 14.1%, RR 0.64, 95% CI 0.56 to 0.74), increased length of stay in the labor and delivery unit (a median duration of 20 hours with an interquartile range [IQR] of 13 to 28 compared to a median duration of 14 hours with an IQR of 9 to 20), and reduced need for neonatal respiratory support within the first 72 hours of life (3.0% compared to 4.2%, RR 0.71, 95% CI 0.55 to 0.93). The intervention group had significantly lower median birth weights than the control group (3300 g compared to 3380 g; P value <0.001); it did not reduce the risk of low infant birth weight. There were no significant differences in neonatal ICU admission and maternal risk of postpartum hemorrhage."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>
