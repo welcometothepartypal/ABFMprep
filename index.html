@@ -6,775 +6,172 @@
   <title>ABFM Study Resource Hub</title>
   <style>
     :root {
-      --bg1:#0b1020;
-      --bg2:#101a36;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --text:#0f172a;
-      --brand1:#4f46e5;
-      --brand2:#7c3aed;
-      --ring: rgba(79,70,229,.25);
-      --shadow: 0 14px 40px rgba(0,0,0,.18);
-      --radius: 16px;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --primary: #2563eb;
+      --success: #10b981;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #f1f5f9;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(1200px 800px at 10% 10%, rgba(124,58,237,.25), transparent 55%),
-        radial-gradient(900px 700px at 90% 20%, rgba(79,70,229,.25), transparent 50%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      min-height: 100vh;
-      padding: 28px 18px 40px;
-      color: white;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; }
+    .container { max-width: 1000px; margin: 0 auto; }
 
-    header {
-      text-align: center;
-      padding: 34px 18px 18px;
-      margin-bottom: 18px;
-    }
-
-    header h1 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      opacity: .9;
-      font-size: 1.05rem;
-      max-width: 720px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
-    .stats-bar {
-      background: rgba(255,255,255,.96);
-      color: var(--text);
+    header { text-align: center; margin-bottom: 40px; }
+    header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.025em; }
+    
+    /* Collapsible Sections */
+    details {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 16px 18px;
-      margin: 18px 0 26px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(8px);
-    }
-
-    .stat-item { text-align: center; padding: 10px 8px; }
-    .stat-number { font-size: 1.85rem; font-weight: 800; color: var(--brand1); }
-    .stat-label { color: var(--muted); font-size: .92rem; margin-top: 4px; }
-
-    .section {
-      background: rgba(255,255,255,.96);
-      color: var(--text);
-      border-radius: var(--radius);
-      padding: 24px 22px;
-      margin-bottom: 22px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.18);
-    }
-
-    .section h2 {
-      font-size: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 12px;
       margin-bottom: 16px;
-      border-bottom: 2px solid rgba(79,70,229,.15);
+      overflow: hidden;
     }
 
-    .icon { font-size: 1.25rem; }
-
-    .year-block { margin-top: 18px; }
-    .year-head {
+    summary {
+      padding: 20px 24px;
+      list-style: none;
+      cursor: pointer;
+      font-weight: 600;
       display: flex;
-      align-items: baseline;
       justify-content: space-between;
-      gap: 12px;
-      margin: 8px 0 10px;
-    }
-    .year-head h3 {
-      font-size: 1.05rem;
-      letter-spacing: -0.01em;
-    }
-    .year-meta {
-      color: var(--muted);
-      font-size: .9rem;
+      align-items: center;
     }
 
+    summary:hover { background-color: var(--accent); }
+    summary::after { content: '＋'; color: var(--primary); }
+    details[open] summary::after { content: '－'; }
+
+    .content-wrapper { padding: 0 24px 24px; border-top: 1px solid var(--border); }
+
+    /* Quiz Grid & Progress Styles */
     .quiz-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
     }
 
     .quiz-card {
-      background: linear-gradient(135deg, var(--brand1), var(--brand2));
-      color: white;
-      padding: 16px 16px 14px;
-      border-radius: 14px;
-      text-decoration: none;
-      transition: transform .18s ease, box-shadow .18s ease, outline-color .18s ease;
-      display: block;
-      outline: 3px solid transparent;
-    }
-
-    .quiz-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(79,70,229,.28);
-      outline-color: var(--ring);
-    }
-
-    .quiz-card-top {
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .quiz-card h3 {
-      font-size: 1.02rem;
-      margin: 0;
-      font-weight: 750;
-      letter-spacing: -0.01em;
-    }
-
-    .quiz-badge {
-      font-size: .78rem;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.18);
-      border: 1px solid rgba(255,255,255,.24);
-      letter-spacing: .02em;
-      flex: 0 0 auto;
-    }
-
-    .quiz-sub {
-      opacity: .92;
-      font-size: .92rem;
-      margin: 0;
-      line-height: 1.35;
-    }
-
-    /* Podcasts section inherits .section styling; keep its inner HTML unchanged */
-    .resource-list { display: grid; gap: 14px; }
-    .resource-item {
-      background: rgba(15,23,42,.04);
-      border: 1px solid rgba(15,23,42,.08);
-      border-left: 4px solid rgba(79,70,229,.55);
+      background: var(--accent);
+      border: 1px solid var(--border);
       padding: 16px;
-      border-radius: 14px;
-    }
-    .resource-item h3 { margin-bottom: 10px; font-size: 1rem; }
-    .resource-link {
-      display: inline-block;
-      color: var(--brand1);
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 650;
-      margin-right: 14px;
-      margin-top: 10px;
-    }
-    .resource-link:hover { text-decoration: underline; }
-    audio { width: 100%; margin: 10px 0 4px; }
-
-    footer {
+      color: var(--text-main);
       text-align: center;
-      color: rgba(255,255,255,.92);
-      padding: 18px 8px;
-      margin-top: 18px;
+      transition: all 0.2s ease;
+      position: relative;
     }
-    footer p { line-height: 1.5; }
 
-    @media (max-width: 720px) {
-      .stats-bar { grid-template-columns: 1fr; }
+    .quiz-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+    /* Completed State */
+    .quiz-card.completed {
+      background: #ecfdf5;
+      border-color: var(--success);
     }
+    
+    .quiz-card.completed h3::after {
+      content: ' ✓';
+      color: var(--success);
+      font-weight: bold;
+    }
+
+    .quiz-card h3 { font-size: 0.95rem; margin-bottom: 4px; }
+    .quiz-card p { font-size: 0.75rem; opacity: 0.8; }
+
+    .btn-reset {
+      margin-top: 20px;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .btn-reset:hover { background: #fee2e2; color: #dc2626; }
+
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); }
   </style>
 </head>
 <body>
+
   <div class="container">
     <header>
-      <h1>ABFM Study Resource Hub</h1>
-      <p>Interactive ABFM ITE question sets (2025–2023) plus audio walkthroughs. Hosted as static HTML for easy GitHub Pages access.</p>
+      <h1>ABFM Study Hub</h1>
+      <p>Progress is saved automatically as you study.</p>
     </header>
 
-    <div class="stats-bar" aria-label="Quick stats">
-      <div class="stat-item">
-        <div class="stat-number">600</div>
-        <div class="stat-label">Total Questions (2025–2023)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">60</div>
-        <div class="stat-label">Quiz Sets (10 questions each)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3</div>
-        <div class="stat-label">ITE Years Included</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2><span class="icon">✏️</span> Interactive Quiz Sets</h2>
-
-      <div class="year-block" id="ite-2025">
-        <div class="year-head">
-          <h3>ITE 2025</h3>
-          <div class="year-meta">Quizzes 1–20 • Questions 1–200</div>
-        </div>
+    <details open>
+      <summary>ITE 2025 Quizzes</summary>
+      <div class="content-wrapper">
         <div class="quiz-grid">
-                <a href="quiz-01-10.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 1 (Questions 1-10)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 1</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 1–10</p>
-                </a>
-                <a href="quiz-11-20.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 2 (Questions 11-20)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 2</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 11–20</p>
-                </a>
-                <a href="quiz-21-30.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 3 (Questions 21-30)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 3</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 21–30</p>
-                </a>
-                <a href="quiz-31-40.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 4 (Questions 31-40)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 4</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 31–40</p>
-                </a>
-                <a href="quiz-41-50.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 5 (Questions 41-50)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 5</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 41–50</p>
-                </a>
-                <a href="quiz-51-60.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 6 (Questions 51-60)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 6</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 51–60</p>
-                </a>
-                <a href="quiz-61-70.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 7 (Questions 61-70)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 7</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 61–70</p>
-                </a>
-                <a href="quiz-71-80.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 8 (Questions 71-80)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 8</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 71–80</p>
-                </a>
-                <a href="quiz-81-90.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 9 (Questions 81-90)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 9</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 81–90</p>
-                </a>
-                <a href="quiz-91-100.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 10 (Questions 91-100)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 10</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 91–100</p>
-                </a>
-                <a href="quiz-101-110.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 11 (Questions 101-110)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 11</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 101–110</p>
-                </a>
-                <a href="quiz-111-120.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 12 (Questions 111-120)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 12</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 111–120</p>
-                </a>
-                <a href="quiz-121-130.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 13 (Questions 121-130)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 13</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 121–130</p>
-                </a>
-                <a href="quiz-131-140.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 14 (Questions 131-140)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 14</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 131–140</p>
-                </a>
-                <a href="quiz-141-150.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 15 (Questions 141-150)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 15</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 141–150</p>
-                </a>
-                <a href="quiz-151-160.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 16 (Questions 151-160)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 16</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 151–160</p>
-                </a>
-                <a href="quiz-161-170.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 17 (Questions 161-170)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 17</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 161–170</p>
-                </a>
-                <a href="quiz-171-180.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 18 (Questions 171-180)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 18</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 171–180</p>
-                </a>
-                <a href="quiz-181-190.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 19 (Questions 181-190)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 19</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 181–190</p>
-                </a>
-                <a href="quiz-191-200.html" class="quiz-card" aria-label="Open ITE 2025 Quiz 20 (Questions 191-200)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2025</div>
-                        <h3>Quiz 20</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 191–200</p>
-                </a>
-        </div>
+          <a href="quiz-01-10.html" class="quiz-card" data-quiz-id="2025-q1"><h3>Quiz 1</h3><p>Q 1–10</p></a>
+          <a href="quiz-11-20.html" class="quiz-card" data-quiz-id="2025-q2"><h3>Quiz 2</h3><p>Q 11–20</p></a>
+          </div>
       </div>
+    </details>
 
-      <div class="year-block" id="ite-2024">
-        <div class="year-head">
-          <h3>ITE 2024</h3>
-          <div class="year-meta">Quizzes 1–20 • Questions 1–200</div>
-        </div>
+    <details>
+      <summary>ITE 2024 Quizzes</summary>
+      <div class="content-wrapper">
         <div class="quiz-grid">
-                <a href="ite2024-quiz-001-010.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 1 (Questions 1-10)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 1</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 1–10</p>
-                </a>
-                <a href="ite2024-quiz-011-020.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 2 (Questions 11-20)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 2</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 11–20</p>
-                </a>
-                <a href="ite2024-quiz-021-030.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 3 (Questions 21-30)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 3</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 21–30</p>
-                </a>
-                <a href="ite2024-quiz-031-040.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 4 (Questions 31-40)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 4</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 31–40</p>
-                </a>
-                <a href="ite2024-quiz-041-050.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 5 (Questions 41-50)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 5</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 41–50</p>
-                </a>
-                <a href="ite2024-quiz-051-060.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 6 (Questions 51-60)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 6</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 51–60</p>
-                </a>
-                <a href="ite2024-quiz-061-070.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 7 (Questions 61-70)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 7</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 61–70</p>
-                </a>
-                <a href="ite2024-quiz-071-080.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 8 (Questions 71-80)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 8</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 71–80</p>
-                </a>
-                <a href="ite2024-quiz-081-090.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 9 (Questions 81-90)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 9</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 81–90</p>
-                </a>
-                <a href="ite2024-quiz-091-100.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 10 (Questions 91-100)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 10</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 91–100</p>
-                </a>
-                <a href="ite2024-quiz-101-110.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 11 (Questions 101-110)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 11</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 101–110</p>
-                </a>
-                <a href="ite2024-quiz-111-120.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 12 (Questions 111-120)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 12</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 111–120</p>
-                </a>
-                <a href="ite2024-quiz-121-130.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 13 (Questions 121-130)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 13</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 121–130</p>
-                </a>
-                <a href="ite2024-quiz-131-140.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 14 (Questions 131-140)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 14</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 131–140</p>
-                </a>
-                <a href="ite2024-quiz-141-150.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 15 (Questions 141-150)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 15</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 141–150</p>
-                </a>
-                <a href="ite2024-quiz-151-160.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 16 (Questions 151-160)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 16</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 151–160</p>
-                </a>
-                <a href="ite2024-quiz-161-170.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 17 (Questions 161-170)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 17</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 161–170</p>
-                </a>
-                <a href="ite2024-quiz-171-180.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 18 (Questions 171-180)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 18</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 171–180</p>
-                </a>
-                <a href="ite2024-quiz-181-190.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 19 (Questions 181-190)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 19</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 181–190</p>
-                </a>
-                <a href="ite2024-quiz-191-200.html" class="quiz-card" aria-label="Open ITE 2024 Quiz 20 (Questions 191-200)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2024</div>
-                        <h3>Quiz 20</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 191–200</p>
-                </a>
+          <a href="ite2024-quiz-001-010.html" class="quiz-card" data-quiz-id="2024-q1"><h3>Quiz 1</h3><p>Q 1–10</p></a>
         </div>
       </div>
-
-      <div class="year-block" id="ite-2023">
-        <div class="year-head">
-          <h3>ITE 2023</h3>
-          <div class="year-meta">Quizzes 1–20 • Questions 1–200</div>
-        </div>
-        <div class="quiz-grid">
-                <a href="ite2023-quiz-001-010.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 1 (Questions 1-10)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 1</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 1–10</p>
-                </a>
-                <a href="ite2023-quiz-011-020.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 2 (Questions 11-20)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 2</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 11–20</p>
-                </a>
-                <a href="ite2023-quiz-021-030.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 3 (Questions 21-30)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 3</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 21–30</p>
-                </a>
-                <a href="ite2023-quiz-031-040.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 4 (Questions 31-40)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 4</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 31–40</p>
-                </a>
-                <a href="ite2023-quiz-041-050.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 5 (Questions 41-50)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 5</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 41–50</p>
-                </a>
-                <a href="ite2023-quiz-051-060.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 6 (Questions 51-60)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 6</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 51–60</p>
-                </a>
-                <a href="ite2023-quiz-061-070.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 7 (Questions 61-70)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 7</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 61–70</p>
-                </a>
-                <a href="ite2023-quiz-071-080.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 8 (Questions 71-80)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 8</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 71–80</p>
-                </a>
-                <a href="ite2023-quiz-081-090.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 9 (Questions 81-90)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 9</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 81–90</p>
-                </a>
-                <a href="ite2023-quiz-091-100.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 10 (Questions 91-100)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 10</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 91–100</p>
-                </a>
-                <a href="ite2023-quiz-101-110.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 11 (Questions 101-110)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 11</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 101–110</p>
-                </a>
-                <a href="ite2023-quiz-111-120.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 12 (Questions 111-120)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 12</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 111–120</p>
-                </a>
-                <a href="ite2023-quiz-121-130.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 13 (Questions 121-130)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 13</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 121–130</p>
-                </a>
-                <a href="ite2023-quiz-131-140.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 14 (Questions 131-140)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 14</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 131–140</p>
-                </a>
-                <a href="ite2023-quiz-141-150.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 15 (Questions 141-150)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 15</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 141–150</p>
-                </a>
-                <a href="ite2023-quiz-151-160.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 16 (Questions 151-160)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 16</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 151–160</p>
-                </a>
-                <a href="ite2023-quiz-161-170.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 17 (Questions 161-170)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 17</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 161–170</p>
-                </a>
-                <a href="ite2023-quiz-171-180.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 18 (Questions 171-180)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 18</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 171–180</p>
-                </a>
-                <a href="ite2023-quiz-181-190.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 19 (Questions 181-190)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 19</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 181–190</p>
-                </a>
-                <a href="ite2023-quiz-191-200.html" class="quiz-card" aria-label="Open ITE 2023 Quiz 20 (Questions 191-200)">
-                    <div class="quiz-card-top">
-                        <div class="quiz-badge">2023</div>
-                        <h3>Quiz 20</h3>
-                    </div>
-                    <p class="quiz-sub">Questions 191–200</p>
-                </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-            <h2><span class="icon">🎧</span> ITE 2024 Podcasts</h2>
-            <p style="color: #666; margin-bottom: 20px;">Logic walkthroughs with preload disabled (press play to stream).</p>
-            
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>📻 ITE 2024: Questions 1-10</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>🎵 ITE 2024: Questions 11-20</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>⚡ ITE 2024: Questions 21-30</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>🧠 ITE 2024: Questions 31-40</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>🧂 ITE 2024: Questions 41-50</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>🧬 ITE 2024: Questions 51-60</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>🔬 ITE 2024: Questions 61-70</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>💎 ITE 2024: Questions 71-80</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>💓 ITE 2024: Questions 81-90</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-
-                <div class="resource-item">
-                    <h3>📋 ITE 2024: Questions 91-100</h3>
-                    <audio controls preload="none">
-                        <source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" type="audio/mp4">
-                    </audio>
-                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" class="resource-link" target="_blank">Archive Page</a>
-                    <a href="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" class="resource-link" download>Download M4A</a>
-                </div>
-            </div>
-        </div>
+    </details>
 
     <footer>
-      <p>💡 <strong>Study Tip:</strong> Use 2025 first for the newest guideline shifts, then reinforce with 2024 & 2023 for pattern recognition.</p>
-      <p style="margin-top: 8px; font-size: 0.9em; opacity: .9;">Built for FM residents • Static-site friendly (GitHub Pages)</p>
+      <button class="btn-reset" onclick="resetProgress()">Clear All Progress</button>
+      <p style="margin-top:20px;">Built for FM Residents</p>
     </footer>
   </div>
+
+  <script>
+    // Load progress on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const completed = JSON.parse(localStorage.getItem('ite_progress') || '[]');
+      completed.forEach(id => {
+        const card = document.querySelector(`[data-quiz-id="${id}"]`);
+        if (card) card.classList.add('completed');
+      });
+
+      // Track clicks
+      document.querySelectorAll('.quiz-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const id = this.getAttribute('data-quiz-id');
+          let progress = JSON.parse(localStorage.getItem('ite_progress') || '[]');
+          
+          if (!progress.includes(id)) {
+            progress.push(id);
+            localStorage.setItem('ite_progress', JSON.stringify(progress));
+            this.classList.add('completed');
+          }
+        });
+      });
+    });
+
+    function resetProgress() {
+      if (confirm('Clear all your study progress?')) {
+        localStorage.removeItem('ite_progress');
+        location.reload();
+      }
+    }
+  </script>
 </body>
 </html>
