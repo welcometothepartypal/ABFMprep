@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 161-170</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 161,
+    "question": "A 45-year-old male with a new diagnosis of type 2 diabetes is anxious about managing his condition and uncertain about his ability to meet the demands of treatment and self-care. Which one of the following would be the most appropriate strategy to help him understand his diagnosis and follow through on lifestyle and/or medication changes?",
+    "options": [
+      "A) Emphasizing the seriousness of the condition by showing pictures of patients with complications",
+      "B) Explaining the diagnosis and treatment plan with medical language to ensure professional communication",
+      "C) Supplying only detailed written instructions about his condition immediately after the appointment",
+      "D) Using motivational interviewing to identify what is most important to the patient and create impetus for change"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Motivational interviewing is the communication strategy with the best evidence of leading to a change in behavior. Scare tactics have not been shown to be effective. Physicians should speak in language that the patient can understand rather than use jargon. Supplying too much detail may overwhelm the patient, especially if it is not tailored to the individual's goals."
+  },
+  {
+    "id": 162,
+    "question": "A generally healthy 15-year-old female presents to your office with a history of frequent, generalized abdominal pain and loose stools daily for the last few months. She has not noted any relationship to food or a specific frequency. She has not had any previous surgeries and is up to date on routine vaccinations. At her 14-year-old well child visit, her height was at the 50th percentile and her weight was at the 60th percentile. Today, her height is at the 35th percentile and her weight at the 20th percentile. She has had a weight loss of 1 kg (2 lb). Her vital signs are normal. Which one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Reassurance and dietary monitoring to evaluate for a relationship to symptoms",
+      "B) Fecal fat testing",
+      "C) An IgA tissue transglutaminase level",
+      "D) Carbohydrate breath testing",
+      "E) A referral for esophagogastroduodenoscopy"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Patients with classic symptoms of diarrhea, abdominal pain, weight loss, bloating, malabsorption, and failure to thrive should undergo evaluation for celiac disease. Serologic testing for IgA tissue transglutaminase (tTG) is the preferred initial screening in all age groups due to its high sensitivity (95%) and specificity (95%). When celiac disease is strongly suspected, total IgA levels should also be obtained because 2%–3% of these patients will have IgA deficiency. If IgA tTG serology is positive, most patients will require esophagogastroduodenoscopy with small-bowel biopsy for confirmation, but it is not used as an initial test and some organizations state that a no-biopsy technique is safe for children with very high IgA tTG levels. This patient has classic signs of malabsorption and unexplained weight loss, indicating need for further evaluation. Reassurance would be inappropriate at this time. Fecal fat testing may be useful in the workup of suspected malabsorption symptoms, but the initial test is usually a qualitative assessment of fat in a single specimen because it is less expensive and easier to perform than 72-hour testing. If high suspicion remains after negative initial testing, a 72-hour fecal fat test should be performed. Carbohydrate breath testing can be used to evaluate for suspected small intestinal bacterial overgrowth (SIBO). SIBO generally occurs in individuals with abnormal anatomy or other risk factors for abnormal intestinal mobility, including diabetes mellitus or scleroderma. The majority of patients with SIBO present with bloating and flatulence."
+  },
+  {
+    "id": 163,
+    "question": "A 60-year-old male asks you about testosterone supplementation during a routine office visit. He reports that he has had decreased energy, decreased libido, and loss of upper and lower body strength over the last year. He would like to have his testosterone level checked today. Which one of the following symptoms, if present in this patient, would be most concerning for testosterone deficiency?",
+    "options": [
+      "A) Difficulties with memory",
+      "B) Fatigue or diminished physical stamina",
+      "C) Loss of axillary and pubic hair",
+      "D) Thinning of hair at the temples",
+      "E) Thinning or loss of eyebrows"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Loss of axillary and pubic hair is one of the more specific symptoms of male hypogonadism. Memory issues have myriad etiologies; they may be secondary to attention disorders, mood disorders, sleep apnea, or other neurologic disorders. Fatigue or diminished stamina may be a symptom of male hypogonadism but also can be indicative of other endocrine, musculoskeletal, or rheumatologic disorders. Thinning hair at the temples may occur with aging and with androgenic alopecia. Thinning of the eyebrows may be related to thyroid disorders."
+  },
+  {
+    "id": 164,
+    "question": "A 3-year-old female is brought to your office by her parents for a preschool examination. She had a normal birth and is up to date on her vaccinations. On examination she appears to be healthy, and her development is appropriate for her age. She is in the 50th percentile for height and weight. You note a grade 1–2/6 continuous murmur best heard in the infraclavicular region when she is upright. The murmur changes slightly in intensity with head movement and is absent when she is supine. Which one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Reassuring the parents that this is a benign venous hum that needs no follow-up",
+      "B) Scheduling a follow-up appointment in 1 month to recheck the murmur",
+      "C) Recommending that the patient undergo echocardiography when she reaches adulthood",
+      "D) Sending the patient for evaluation for repair of a patent ductus arteriosus",
+      "E) Referral to a pediatric cardiologist"
+    ],
+    "correctAnswer": 0,
+    "rationale": "A venous hum is an innocent heart murmur that is caused by vein vibration. It is commonly heard in children and may appear between 3 and 6 years of age. It is typically audible only when the child is upright, and changes with head movement. In a child with a venous hum, reassurance of the parents is appropriate, and no follow-up is necessary."
+  },
+  {
+    "id": 165,
+    "question": "A 40-year-old female presents to your office after an episode of anaphylaxis. She has a known tree nut allergy and developed oral swelling, dyspnea, and chest pain after eating a muffin from a coffee shop. Her symptoms initially improved after she used her epinephrine auto-injector but began to worsen 10 minutes later. She used a second dose of her auto-injector 10 minutes prior to presentation and is feeling much better. Which one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Starting famotidine (Pepcid), 20 mg daily, and follow-up in 1 week",
+      "B) Starting prednisone, 40 mg for 5 days, and follow-up in 5 days",
+      "C) Starting fexofenadine (Allegra), 180 mg daily, and immediate follow-up with an allergist",
+      "D) Transfer to the emergency department (ED) with observation for 1–2 hours prior to discharge",
+      "E) Transfer to the ED with observation for 6–12 hours prior to discharge"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient experienced anaphylaxis due to her tree nut allergy. Her anaphylaxis was refractory and required 2 doses of epinephrine for treatment. Although she is feeling better, patients with refractory anaphylaxis should be transferred to a higher level of care, such as an emergency department, for further evaluation and management. Patients who have had severe or refractory anaphylaxis are at risk for a biphasic reaction and should be observed for 6–12 hours before discharge. Although medications such as H - and H -blockers and corticosteroids can be helpful in 1 2 the postanaphylaxis care of patients, they are not the mainstay of therapy for patients who have had severe anaphylaxis."
+  },
+  {
+    "id": 166,
+    "question": "A 42-year-old male has been admitted to the hospital for hypotension and electrolyte disturbances due to chronic diarrhea. He was stabilized in the ICU and transferred to the inpatient floor. His gastroenterologist is asking for a colonoscopy with biopsies. His medical history is significant for congenital heart disease with a mechanical aortic valve replacement, an embolic stroke resulting in right hemiparesis, a deep vein thrombosis, and a solitary kidney. He is currently anticoagulated with warfarin and has an INR of 2.6. He has a creatinine level of 2.8 mg/dL (N 0.7–1.3) and a glomerular filtration rate of 28 mL/min/1.73 m2. In addition to holding warfarin for the planned colonoscopy, how should you manage this patient’s anticoagulation while he is hospitalized?",
+    "options": [
+      "A) Resuming warfarin post procedure with a goal INR of 2.0–3.0",
+      "B) Vitamin K for reversal, and resuming warfarin post procedure with a goal INR of 2.5–3.5",
+      "C) Enoxaparin (Lovenox), 1.5 mg/kg daily",
+      "D) Heparin, 5000 units subcutaneously 3 times daily",
+      "E) A heparin drip titrated to achieve therapeutic aPTT or anti-factor Xa levels"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient requires a procedure with a high likelihood of bleeding and should not be anticoagulated at the time of the procedure. He also has a high likelihood of thromboembolic disease and should receive bridging with a heparin drip until his INR has normalized for the planned procedure. With his mechanical heart valve, the correct INR goal is 2.5–3.5. Reversal with vitamin K is not necessary because he is stable and not actively bleeding. He is not a candidate for enoxaparin due to his glomerular filtration rate. Heparin, 5000 units subcutaneously, is a prophylactic dose, not a treatment dose."
+  },
+  {
+    "id": 167,
+    "question": "A 4-year-old male is brought to the emergency department by his parents after tripping and falling on his hand in an outstretched position. An x-ray reveals a buckle (torus) fracture of the distal radial metaphysis. Which one of the following management strategies would be most appropriate?",
+    "options": [
+      "A) A short arm splint for 3 weeks with follow-up radiography",
+      "B) A short arm splint for 3 weeks with follow-up radiography only if pain or tenderness persists",
+      "C) A short arm cast for 6 weeks with follow-up radiography",
+      "D) A short arm cast for 6 weeks with follow-up radiography only if pain or tenderness persists"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Buckle (torus) fractures are incomplete compression fractures that cause cortical bulging of the bone without cortical disruption. They are common in children because of the elasticity of their bones. Distal radius buckle fractures should be treated with short arm immobilization using a short arm splint, soft cast, or wrap for 3 weeks. Complete immobilization with a cast is unnecessary. According to the Choosing Wisely campaign, follow-up radiography is unnecessary unless the patient continues to experience pain or tenderness."
+  },
+  {
+    "id": 168,
+    "question": "A 19-year-old female presents for a wellness visit while home on college break. According to the U.S. Preventive Services Task Force, which one of the following screenings is indicated?",
+    "options": [
+      "A) Cavities or periodontal disease",
+      "B) Dyslipidemia",
+      "C) Skin cancer",
+      "D) Suicide risk",
+      "E) Unhealthy drug use"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for unhealthy drug use in adults ≥18 years of age (B recommendation). Unhealthy drug use is defined as using psychoactive medications for purposes other than as prescribed or illegally obtaining drugs for personal use. For this patient's age group, the USPSTF has determined the evidence to be insufficient to recommend for or against screening for cavities or periodontal disease, dyslipidemia, skin cancer, or suicide risk (I recommendation)."
+  },
+  {
+    "id": 169,
+    "question": "A 33-year-old oyster fisherman presents because of a 3-day history of diarrhea. He describes frequent, large-volume, watery stool that is milky white. His vital signs are normal and he appears nontoxic. Infection with which one of the following pathogens is most likely?",
+    "options": [
+      "A) Clostridioides difficile",
+      "B) Enteropathogenic Escherichia coli",
+      "C) Enterotoxigenic E coli",
+      "D) Vibrio species",
+      "E) Yersinia enterocolitica"
+    ],
+    "correctAnswer": 3,
+    "rationale": "In patients presenting with large-volume rice-water or milky-white stools, the most likely pathogen is Vibrio species. Patients with this presentation should be tested for infection regardless of exposure to undercooked shellfish or brackish waters. Guidelines from the Infectious Diseases Society of America recommend testing for infection with Clostridioides difficile, enteropathogenic Escherichia coli, enterotoxigenic E coli, and Yersinia enterocolitica in patients with diarrhea and fever, bloody or mucoid stools, signs of sepsis, or severe abdominal cramping or tenderness."
+  },
+  {
+    "id": 170,
+    "question": "A 35-year-old female with Down syndrome presents for a health maintenance examination. She does not have any new symptoms or concerns today. Her only medication is an etonogestrel implant (Nexplanon) that was placed 2 years ago. She is monogamous with a male sex partner. On examination you note normal vital signs with a BMI of 28 kg/m2. At her most recent laboratory evaluation 2 years ago, she had an LDL-cholesterol level of 104 mg/dL, a fasting glucose level of 89 mg/dL, and a TSH level of 2.67 μU/mL (N 0.4–4.2). Which one of the following screening evaluations should you order today?",
+    "options": [
+      "A) The National Task Group–Early Detection Screen for Dementia tool",
+      "B) A fasting lipid panel",
+      "C) TSH testing",
+      "D) A DXA scan",
+      "E) Cervical spine radiography"
+    ],
+    "correctAnswer": 2,
+    "rationale": "In 2017, the U.S. nonprofit group Global Down Syndrome Foundation convened a workgroup to create an evidence-based guideline for clinicians and adults with Down syndrome and their supporters. This guideline was published in 2020 and includes responses to 10 questions that were created using the Population/Intervention/Comparator/Outcome (PICO) format. They address screening for conditions known to be of higher prevalence in individuals with Down syndrome. In the United States, hypothyroidism is common in individuals with Down syndrome, with an estimated prevalence of approximately 50% in adults >30 years of age. Screening is therefore recommended with TSH testing every 1–2 years starting at age 21. This patient's TSH level was last checked 2 years ago and is due today. Dementia occurs on average at younger ages in those with Down syndrome than those without Down syndrome; however, it is rare before the age of 40. If any concerning symptoms arise in this age group, a thorough investigation for alternative causes is recommended. Routine screening for dementia is recommended beginning at age 40 for individuals with Down syndrome. A validated tool such as the National Task Group–Early Detection Screen for Dementia should be used. Cardiovascular disease prevention is recommended for individuals with Down syndrome per U.S. Preventive Services Task Force guidelines. This patient's LDL-cholesterol level was last checked 2 years ago and is not due for recheck today. The prevalence of osteoporosis in individuals with Down syndrome has been estimated with a wide degree of variation (1.4%–45.1%). There is no evidence that DXA screening at ages younger than recommended for adults without Down syndrome (age 65) is of benefit. Although atlantoaxial instability (AAI) is known to have a higher prevalence in those with Down syndrome than those without Down syndrome, no studies have assessed the use of cervical spine radiography for diagnosing AAI. Screening radiography is therefore not recommended; instead, it is recommended that clinicians remain alert for signs and symptoms of cervical myelopathy, such as incontinence, altered gait, brisk reflexes, and clonus."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

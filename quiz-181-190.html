@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 181-190</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 181,
+    "question": "The U.S. Preventive Services Task Force recommends which one of the following regarding screening asymptomatic adolescents and adults for herpes simplex virus?",
+    "options": [
+      "A) No testing",
+      "B) HSV-1 antibody testing",
+      "C) HSV-2 antibody testing",
+      "D) HSV-1 and HSV-2 antibody testing",
+      "E) HSV-1 and HSV-2 antigen testing"
+    ],
+    "correctAnswer": 0,
+    "rationale": "The U.S. Preventive Services Task Force concluded with moderate certainty that the harms outweighed the benefits for routine, population-based serologic screening for infection with herpes simplex virus (HSV) in asymptomatic adolescents and adults, including pregnant patients (D recommendation). High false-positive rates are common in asymptomatic patients who undergo serologic testing for infection with HSV. In addition, treatment is not recommended in asymptomatic patients with a positive test."
+  },
+  {
+    "id": 182,
+    "question": "A 2-year-old child is brought to the urgent care clinic by their parents with a 2-day history of abdominal pain and vomiting. The child has been irritable over the past 2 days with intermittent abdominal pain and several episodes of associated emesis, and just had a bloody stool that the parents describe as resembling jelly. The child appears uncomfortable but is alert and afebrile, with normal blood pressure. Which one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Intussusception",
+      "B) Necrotizing enterocolitis",
+      "C) Pyloric stenosis",
+      "D) Volvulus"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Intussusception is a condition in which a part of the intestine slides or \"telescopes\" into an adjacent section. It presents with a classic triad of intermittent abdominal pain, emesis, and blood-tinged mucous stools that are sometimes called \"red currant jelly\" stools. It most commonly occurs at the ileocolic junction and typically affects infants and toddlers. The initial evaluation begins with ultrasonography. An enema with air or contrast can both confirm the diagnosis and reverse the intussusception. If this procedure does not relieve the condition, surgical correction is necessary. Necrotizing enterocolitis is a severe intestinal infection that typically presents with severe abdominal pain, lethargy, and unstable vital signs. Pyloric stenosis is notable for projectile vomiting, but not bloody stools. Volvulus typically involves a sudden onset of vomiting and abdominal pain and even distension, but without bloody stools."
+  },
+  {
+    "id": 183,
+    "question": "A generally healthy 54-year-old male with a 20-pack-year smoking history presents to discuss smoking cessation. His first grandchild was just born and he is eager for help in quitting cigarette smoking. He quit smoking 2 years ago using nicotine gum (Nicorette Gum), but resumed smoking 5 months later. He has also explored telephone helplines and support groups, but did not find them beneficial. He currently smokes 1 pack of cigarettes per day. Which one of the following would be most likely to help this patient quit smoking?",
+    "options": [
+      "A) Nicotine gum only",
+      "B) Extended-release bupropion (Wellbutrin SR) only",
+      "C) Varenicline only",
+      "D) Nicotine gum plus extended-release bupropion",
+      "E) Nicotine gum plus varenicline"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Seven pharmacotherapies are approved by the FDA for smoking cessation, including bupropion, varenicline, and 5 forms of nicotine replacement therapy (NRT). All of these have been shown to be beneficial in smoking cessation compared to placebo. Compared to NRT and bupropion, varenicline appears to be the most effective monotherapy with a number needed to treat of 7. Recent meta-analyses suggest that a combination of pharmacotherapies is more effective than monotherapy. Varenicline plus NRT is more likely to result in sustained smoking cessation compared to bupropion plus NRT."
+  },
+  {
+    "id": 184,
+    "question": "A 60-year-old female returns to discuss management of her recurrent nephrolithiasis. She has a history of calcium stones and just recently passed her fourth stone this year despite appropriate lifestyle changes, including a fluid intake of 3 L per day and a diet high in fiber and low in animal protein. She would like a medication to help prevent the development of more kidney stones. She has a past medical history of asthma for which she takes a budesonide/formoterol inhaler (Symbicort) as needed. Today, her vital signs and a physical examination are normal. A recent basic metabolic panel was normal. Which one of the following would be the most appropriate prevention strategy?",
+    "options": [
+      "A) Lifestyle modifications only",
+      "B) Furosemide (Lasix), 20 mg daily",
+      "C) Hydrochlorothiazide, 50 mg daily",
+      "D) Magnesium oxide, 400 mg twice daily",
+      "E) Tamsulosin (Flomax), 0.4 mg daily"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Lifestyle changes such as appropriate fluid intake (2.5–3.0 L of liquid per day), a diet high in fiber and low in animal protein, lower sodium intake (<4–5 g per day), and moderate calcium intake (1200 mg per day) can help reduce recurrence of calcium stones. However, if patients continue to develop recurrent calcium stones, it is reasonable to initiate pharmacologic therapy. Appropriate medications include high-dose thiazide diuretics, allopurinol, and potassium citrate. Furosemide would not be appropriate as it has been associated with kidney stone formation. Magnesium oxide has not been shown to decrease the risk of stone development. Tamsulosin can be used to help with stone expulsion, but it does not help to prevent stones."
+  },
+  {
+    "id": 185,
+    "question": "A 72-year-old female is brought to the emergency department after her neighbor found her on the floor in her home. She is drowsy and confused, and unable to provide any history. An initial laboratory evaluation reveals the following: Glucose 95 mg/dL BUN 9 mg/dL (N 6–20) Creatinine 0.9 mg/dL (N 0.5–1.1) Estimated glomerular filtration rate 63 mL/min/1.73 m2 Sodium 118 mEq/L (N 135–145) Potassium 3.0 mEq/L (N 3.3 –5.0) Chloride 88 mEq/L (N 101–115) Bicarbonate 22 mEq/L (N 16–30) Anion gap 8 mEq/L (N 5–14) Calcium 8.8 mg/dL (N 8.4–10.5) Which one of the following would be the most appropriate intervention at this time?",
+    "options": [
+      "A) Free water restriction",
+      "B) Normal saline infusion",
+      "C) 3% hypertonic saline bolus",
+      "D) Intravenous desmopressin (DDAVP)"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient presents with symptomatic severe hyponatremia (sodium level <125 mEq/L). The most appropriate intervention at this time is a 100-mL bolus of 3% hypertonic saline (SOR B), which may be repeated up to 2 times at 10-minute intervals with the goal of increasing the sodium level by 4–6 mEq/L. Serum sodium levels should be monitored after every bolus and every 6 hours during the first 24 hours of treatment (SOR C). Avoiding rapid correction of severe hyponatremia is important to prevent osmotic demyelination syndrome. Depending on risk factors, sodium correction should be limited to 8–12 mEq/L over 24 hours or 18 mEq/L over 48 hours (SOR C). The use of normal saline is appropriate treatment for nonsevere hypovolemic hyponatremia (a sodium level ≥125 mEq/L but <135 mEq/L). Intravenous desmopressin (DDAVP) is indicated for treatment of diabetes insipidus, which usually presents with high- normal sodium levels or hypernatremia. Desmopressin may also be given with 5% dextrose in water if overcorrection of severe hyponatremia has occurred."
+  },
+  {
+    "id": 186,
+    "question": "A 35-year-old construction worker presents to your office with an acute onset of lower back pain that began 3 days ago. The patient describes the pain as a burning sensation that radiates down his left leg. He has no bowel or bladder dysfunction and has been in good health. A straight leg–raising test is positive at 45° on the left without motor deficit. Which one of the following does evidence support as the first step in treatment of this patient's condition?",
+    "options": [
+      "A) Bed rest for 3 days",
+      "B) Mobilization and manipulation",
+      "C) A short-term corticosteroid",
+      "D) Cyclobenzaprine",
+      "E) MRI"
+    ],
+    "correctAnswer": 1,
+    "rationale": "In the absence of red flags (fracture, malignancy, epidural abscess, or cauda equina syndrome), the approach to acute lumbar radiculopathy should be conservative. Most patients improve over the first 2 weeks, and there is level B evidence that mobilization and manipulation is of benefit. Bed rest was previously recommended, but current data supports allowing the patient to be as active as the pain allows. While corticosteroids, NSAIDs, and muscle relaxants are often used, evidence to do so is lacking. In the subacute stage, neurodynamic mobilization and strength training could be added. If there is no improvement over 6 weeks, then MRI should be ordered."
+  },
+  {
+    "id": 187,
+    "question": "A 46-year-old male with chronic hypertension presents to your clinic for routine follow-up. Due to issues with insurance coverage, he has not been taking his antihypertensive medications for the last 2 months. Today, he is asymptomatic and an examination is normal, except for a blood pressure of 162/100 mm Hg, which is confirmed on repeat testing. In addition to addressing insurance and social determinants of health, which one of the following would be most appropriate for this patient?",
+    "options": [
+      "A) Monotherapy with a calcium channel blocker (CCB)",
+      "B) Monotherapy with a thiazide-like diuretic",
+      "C) Combination therapy with a CCB and an ACE inhibitor",
+      "D) Combination therapy with a diuretic and a β-blocker",
+      "E) Combination therapy with a diuretic and an aldosterone antagonist"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The vast majority of patients treated for essential hypertension will require 2 or more agents to achieve adequate blood pressure control. Combination therapy with a calcium channel blocker and an ACE inhibitor or angiotensin receptor blocker (ARB) would be most appropriate for this patient with stage 2 hypertension. Stage 2 hypertension is defined as a systolic blood pressure ≥160 mm Hg or a diastolic blood pressure ≥100 mm Hg (or a systolic blood pressure >20 mm Hg above goal or a diastolic blood pressure >10 mm Hg above goal). Race-based prescribing, which advises preferential use of thiazide or calcium channel blockers for Black patients, has demonstrated insufficient blood pressure control and is thus falling out of favor. β-Blockers are not used as first-line treatment for hypertension, but they may be indicated in patients with specific comorbidities, such as coronary artery disease or heart failure. Aldosterone antagonists are also not typically used as first-line treatment for hypertension, but they may be used if multiple other drug classes cannot achieve adequate blood pressure control. Monotherapy is unlikely to produce adequate blood pressure control in this patient."
+  },
+  {
+    "id": 188,
+    "question": "A 14-year-old female presents to your office with her mother who is concerned about her daughter's recent 15-lb weight loss and severe fatigue. After ruling out other etiologies, you diagnose anorexia nervosa. Which one of the following findings, if present in this patient, would indicate the need for inpatient care?",
+    "options": [
+      "A) Hair loss",
+      "B) Muscle atrophy",
+      "C) Parotid gland enlargement",
+      "D) A potassium level of 2.6 mEq/L (N 3.5–4.9)",
+      "E) A sodium level of 146 mEq/L (N 134–145)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "A potassium level of 2.6 mEq/L would indicate the need for inpatient care of this patient's anorexia nervosa. Eating disorders can often be treated in the outpatient setting with a multidisciplinary care team including physicians, therapists, and dietitians. However, certain findings, including severe hypokalemia, require higher levels of care. While hair loss, muscle atrophy, parotid gland enlargement, and elevated sodium can all be found in patients with eating disorders, severe electrolyte abnormalities can lead to life-threatening cardiac complications and require immediate treatment."
+  },
+  {
+    "id": 189,
+    "question": "A 30-year-old female presents to your office for an annual wellness visit. She reports a family history of Lynch syndrome and recently tested positive herself. Which one of the following should you recommend regarding colon cancer screening in this patient?",
+    "options": [
+      "A) Fecal occult blood testing annually",
+      "B) Stool DNA testing (Cologuard) every 3 years",
+      "C) Colonoscopy starting this year",
+      "D) Colonoscopy starting at age 45",
+      "E) Sigmoidoscopy"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Hereditary nonpolyposis colorectal cancer (HNPCC), formerly called Lynch syndrome, is a hereditary cancer syndrome that increases the risk for several types of cancer, especially colon cancer. Guidelines recommend that patients with HNPCC should start colon cancer screening with colonoscopy between 20 and 25 years of age and repeat every 1–2 years. Patients at average risk for colon cancer should begin colon cancer screening at age 45. Fecal occult blood testing, stool DNA testing, and sigmoidoscopy are not adequate screening tests in this high-risk population. Lynch syndrome is associated with increased risk for several other cancers including endometrial, ovarian, stomach, small-bowel, and pancreatic."
+  },
+  {
+    "id": 190,
+    "question": "A 53-year-old male without a significant past medical history presents to the emergency department for evaluation of abdominal pain, nausea, and vomiting. Pertinent findings on presentation include notable tenderness in the epigastrium and a lipase level >3 times the upper limit of normal. He is admitted for acute pancreatitis. Intravenous lactated Ringer solution, antiemetics, and pain control are initiated. At the time of your evaluation he has normal vital signs and reports improved symptoms, although you still note abdominal tenderness. When entering admission orders for this patient, which one of the following diets would be most appropriate?",
+    "options": [
+      "A) Full liquids",
+      "B) Low-carbohydrate",
+      "C) Low-fat",
+      "D) NPO"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Pancreatitis is associated with an intense inflammatory response that increases caloric needs, and nutrition management is a key component of care. Acute pancreatitis is also associated with reduced perfusion of the intestinal mucosa, leading to tissue damage and increased intestinal permeability. Enteral feeding provides calories and increases splanchnic blood flow, leading to improved integrity of the bowel wall and improved gut motility. Patients with acute pancreatitis benefit from early enteral feeding within 24 hours of admission. A Cochrane review found that enteral nutrition has been associated with lower mortality, less multiple organ failure, and less systemic infection compared with parenteral nutrition. In severe acute pancreatitis, the benefits of enteral nutrition appear to be even more notable with a relative risk of death of 0.18 (95% CI 0.06 to 0.58). Liquid and soft diets have no evidence of benefit over a low-fat solid diet, and some studies found a shorter length of stay in patients started on solid diets rather than liquid diets. If patients cannot tolerate an oral diet within 72 hours, enteral nutrition should be provided via nasogastric or nasojejunal tube. Parenteral nutrition should be administered in patients who cannot tolerate tube feeding. Low-carbohydrate diets are not recommended because they are often high in fat and may worsen pancreatic inflammation."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>
