@@ -424,6 +424,124 @@
             color: #fca5a5;
         }
 
+        .tab-btn {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 7px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.82em;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+        .tab-btn:hover { background: var(--border); color: var(--text); }
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+            color: white;
+            border-color: transparent;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+            gap: 9px;
+        }
+
+        .score-card {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 13px 12px;
+            text-align: center;
+            transition: border-color 0.15s;
+        }
+        .score-card:hover { border-color: var(--purple-1); }
+
+        .score-card-label {
+            font-size: 0.78em;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .score-card-range {
+            font-size: 0.7em;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .score-input-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .score-input {
+            width: 46px;
+            height: 34px;
+            border: 1.5px solid var(--border);
+            border-radius: 7px;
+            text-align: center;
+            font-family: inherit;
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--purple-1);
+            background: white;
+            outline: none;
+            transition: border-color 0.15s;
+            -moz-appearance: textfield;
+        }
+        .score-input::-webkit-outer-spin-button,
+        .score-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+        .score-input:focus { border-color: var(--purple-1); }
+
+        .score-denom {
+            font-size: 0.78em;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .score-big {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--purple-1);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .score-not-taken {
+            font-size: 0.75em;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 8px 0 4px;
+        }
+
+        .missed-list {
+            font-size: 0.67em;
+            color: #dc2626;
+            margin-top: 6px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .score-pct-pill {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 100px;
+            background: var(--border);
+            color: var(--muted);
+            transition: background 0.2s, color 0.2s;
+        }
+        .score-pct-pill.good  { background: #d1fae5; color: #065f46; }
+        .score-pct-pill.ok    { background: #fef3c7; color: #92400e; }
+        .score-pct-pill.low   { background: #fee2e2; color: #991b1b; }
+
         /* ── Responsive ── */
         @media (max-width: 768px) {
             header h1 { font-size: 2.1em; }
@@ -476,6 +594,82 @@
         </div>
         <div class="progress-pct" id="prog-pct">0%</div>
     </div>
+
+    <!-- Score Calculator -->
+    <details>
+        <summary>
+            <div class="summary-left">
+                <div class="summary-icon">🧮</div>
+                <div class="summary-text">
+                    <h2>Total Score Calculator</h2>
+                    <p>Track your scores across all quizzes</p>
+                </div>
+            </div>
+            <div class="summary-right">
+                <span class="year-badge" id="calc-badge">0%</span>
+                <div class="chevron">▾</div>
+            </div>
+        </summary>
+        <div class="section-content">
+            <p class="section-desc">Scores are recorded automatically when you finish a quiz. Each completed quiz shows your result and which questions you missed &mdash; no manual entry needed.</p>
+
+            <div id="score-summary" style="background:linear-gradient(135deg,var(--purple-1),var(--purple-2));border-radius:var(--radius-md);padding:20px 24px;color:white;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+                <div>
+                    <div style="font-size:0.78em;opacity:0.8;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Total Correct</div>
+                    <div style="display:flex;align-items:baseline;gap:6px;">
+                        <span id="total-correct" style="font-size:2.4em;font-weight:700;line-height:1;">0</span>
+                        <span style="opacity:0.7;font-size:1em;">/ <span id="total-possible">0</span> answered</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-size:0.78em;opacity:0.8;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Missed</div>
+                    <div style="font-size:2.4em;font-weight:700;line-height:1;"><span id="total-missed">0</span></div>
+                </div>
+                <div style="text-align:right;">
+                    <div style="font-size:0.78em;opacity:0.8;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Overall Score</div>
+                    <div id="total-pct-display" style="font-size:2.4em;font-weight:700;line-height:1;">—</div>
+                </div>
+                <div style="width:100%;">
+                    <div style="background:rgba(255,255,255,0.2);border-radius:100px;height:8px;overflow:hidden;">
+                        <div id="score-bar" style="height:100%;background:white;border-radius:100px;width:0%;transition:width 0.5s ease;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <details style="background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius-md);margin-bottom:16px;overflow:hidden;">
+                <summary style="padding:12px 16px;cursor:pointer;font-size:0.82em;font-weight:600;color:var(--muted);list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                    <span>&#128295; Quiz page integration &mdash; how scores are saved automatically</span>
+                    <span>&#9660;</span>
+                </summary>
+                <div style="padding:0 16px 16px;">
+                    <p style="font-size:0.8em;color:var(--muted);margin:12px 0 10px;line-height:1.6;">Add this to each quiz page when results are displayed. Replace YEAR and QUIZ_NUM with the actual values (e.g. 2025, 3).</p>
+                    <pre style="background:#1a1d2e;color:#a5b4fc;padding:14px;border-radius:8px;font-size:0.76em;overflow-x:auto;line-height:1.7;">function saveQuizResult(year, quizNum, correctCount, totalCount, missedArr) {
+  localStorage.setItem(
+    'ite_quiz_result_' + year + '_' + quizNum,
+    JSON.stringify({ correct: correctCount, total: totalCount, missed: missedArr })
+  );
+}
+// Example call after scoring:
+saveQuizResult(2025, 3, 7, 10, [2, 5, 9]);</pre>
+                </div>
+            </details>
+
+            <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+                <button class="tab-btn active" onclick="showScoreTab(2025,this)">ITE 2025</button>
+                <button class="tab-btn" onclick="showScoreTab(2024,this)">ITE 2024</button>
+                <button class="tab-btn" onclick="showScoreTab(2023,this)">ITE 2023</button>
+            </div>
+
+            <div id="score-grid-2025" class="score-tab score-grid"></div>
+            <div id="score-grid-2024" class="score-tab score-grid" style="display:none;"></div>
+            <div id="score-grid-2023" class="score-tab score-grid" style="display:none;"></div>
+
+            <div style="margin-top:16px;text-align:right;">
+                <button onclick="clearScores()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:7px;cursor:pointer;font-family:inherit;font-size:0.78em;font-weight:500;" onmouseover="this.style.background='#fee2e2';this.style.color='#dc2626'" onmouseout="this.style.background='none';this.style.color='var(--muted)'">Clear All Scores</button>
+            </div>
+        </div>
+    </details>
+
 
     <!-- ITE 2025 -->
     <details open>
@@ -657,24 +851,22 @@
 </div>
 <script>
     const TOTAL = 60;
+    const YEARS = [2025, 2024, 2023];
 
     function generateLinks(containerId, year) {
-        const container = document.getElementById(containerId);
+        var container = document.getElementById(containerId);
         if (!container) return;
-        for (let i = 1; i <= 20; i++) {
-            const start = (i - 1) * 10 + 1;
-            const end   = i * 10;
-            let fileName;
-            if (year === 2025) {
-                fileName = `quiz-${String(start).padStart(2,'0')}-${end}.html`;
-            } else {
-                fileName = `ite${year}-quiz-${String(start).padStart(3,'0')}-${String(end).padStart(3,'0')}.html`;
-            }
-            const card = document.createElement('a');
+        for (var i = 1; i <= 20; i++) {
+            var start = (i - 1) * 10 + 1;
+            var end   = i * 10;
+            var fileName = year === 2025
+                ? 'quiz-' + String(start).padStart(2,'0') + '-' + end + '.html'
+                : 'ite' + year + '-quiz-' + String(start).padStart(3,'0') + '-' + String(end).padStart(3,'0') + '.html';
+            var card = document.createElement('a');
             card.href = fileName;
             card.className = 'quiz-card';
-            card.setAttribute('data-id', `${year}-q${i}`);
-            card.innerHTML = `<h3>Quiz ${i}</h3><p>Q ${start}–${end}</p><span class="check-badge">✓</span>`;
+            card.setAttribute('data-id', year + '-q' + i);
+            card.innerHTML = '<h3>Quiz ' + i + '</h3><p>Q ' + start + '–' + end + '</p><span class="check-badge">✓</span>';
             container.appendChild(card);
         }
     }
@@ -685,33 +877,34 @@
 
     function updateProgressUI() {
         try {
-            const done = JSON.parse(localStorage.getItem('ite_done') || '[]');
-            const count = done.length;
-            const pct = Math.round((count / TOTAL) * 100);
-            document.getElementById('prog-count').textContent = `${count} / ${TOTAL}`;
-            document.getElementById('prog-fill').style.width = pct + '%';
-            document.getElementById('prog-pct').textContent = pct + '%';
+            var done  = JSON.parse(localStorage.getItem('ite_done') || '[]');
+            var count = done.length;
+            var pct   = Math.round((count / TOTAL) * 100);
+            document.getElementById('prog-count').textContent = count + ' / ' + TOTAL;
+            document.getElementById('prog-fill').style.width  = pct + '%';
+            document.getElementById('prog-pct').textContent   = pct + '%';
         } catch(e) {}
     }
 
     function loadProgress() {
         try {
-            const done = JSON.parse(localStorage.getItem('ite_done') || '[]');
-            done.forEach(id => {
-                const el = document.querySelector(`.quiz-card[data-id="${id}"]`);
+            var done = JSON.parse(localStorage.getItem('ite_done') || '[]');
+            done.forEach(function(id) {
+                var el = document.querySelector('.quiz-card[data-id="' + id + '"]');
                 if (el) el.classList.add('completed');
             });
         } catch(e) {}
         updateProgressUI();
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
         loadProgress();
-        document.querySelectorAll('.quiz-card').forEach(card => {
+        buildScoreGrids();
+        document.querySelectorAll('.quiz-card').forEach(function(card) {
             card.addEventListener('click', function() {
-                const id = this.getAttribute('data-id');
+                var id = this.getAttribute('data-id');
                 try {
-                    let done = JSON.parse(localStorage.getItem('ite_done') || '[]');
+                    var done = JSON.parse(localStorage.getItem('ite_done') || '[]');
                     if (!done.includes(id)) {
                         done.push(id);
                         localStorage.setItem('ite_done', JSON.stringify(done));
@@ -726,9 +919,99 @@
     function resetProgress() {
         if (confirm('Clear all quiz progress? This cannot be undone.')) {
             try { localStorage.removeItem('ite_done'); } catch(e) {}
-            document.querySelectorAll('.quiz-card.completed').forEach(el => el.classList.remove('completed'));
+            document.querySelectorAll('.quiz-card.completed').forEach(function(el) { el.classList.remove('completed'); });
             updateProgressUI();
         }
+    }
+
+    /* ── Score Calculator ──────────────────────────────────────────
+       Quiz pages save results with:
+         localStorage.setItem('ite_quiz_result_YEAR_NUM',
+           JSON.stringify({ correct: 7, total: 10, missed: [2,5,9] }));
+    ───────────────────────────────────────────────────────────── */
+
+    function getQuizResult(year, i) {
+        try {
+            var raw = localStorage.getItem('ite_quiz_result_' + year + '_' + i);
+            if (!raw) return null;
+            var d = JSON.parse(raw);
+            return (typeof d.correct === 'number' && typeof d.total === 'number') ? d : null;
+        } catch(e) { return null; }
+    }
+
+    function buildScoreGrids() {
+        YEARS.forEach(function(year) {
+            var container = document.getElementById('score-grid-' + year);
+            if (!container) return;
+            container.innerHTML = '';
+            for (var i = 1; i <= 20; i++) {
+                var start  = (i - 1) * 10 + 1;
+                var end    = i * 10;
+                var result = getQuizResult(year, i);
+                var card   = document.createElement('div');
+                card.className = 'score-card';
+                if (result) {
+                    var pct       = Math.round((result.correct / result.total) * 100);
+                    var pillClass = pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'low';
+                    var missed    = Array.isArray(result.missed) ? result.missed : [];
+                    var missedHTML = missed.length
+                        ? '<div class="missed-list">Missed: Q' + missed.join(', Q') + '</div>'
+                        : '<div class="missed-list" style="color:var(--green);font-weight:600;">Perfect ⭐</div>';
+                    card.innerHTML =
+                        '<div class="score-card-label">Quiz ' + i + '</div>' +
+                        '<div class="score-card-range">Q ' + start + '–' + end + '</div>' +
+                        '<div class="score-big">' + result.correct + '<span class="score-denom">/' + result.total + '</span></div>' +
+                        '<div class="score-pct-pill ' + pillClass + '">' + pct + '%</div>' +
+                        missedHTML;
+                } else {
+                    card.style.opacity = '0.5';
+                    card.innerHTML =
+                        '<div class="score-card-label">Quiz ' + i + '</div>' +
+                        '<div class="score-card-range">Q ' + start + '–' + end + '</div>' +
+                        '<div class="score-not-taken">Not yet<br>taken</div>';
+                }
+                container.appendChild(card);
+            }
+        });
+        recalcTotal();
+    }
+
+    function recalcTotal() {
+        var correct = 0, possible = 0, missed = 0;
+        YEARS.forEach(function(year) {
+            for (var i = 1; i <= 20; i++) {
+                var r = getQuizResult(year, i);
+                if (r) {
+                    correct  += r.correct;
+                    possible += r.total;
+                    missed   += Array.isArray(r.missed) ? r.missed.length : (r.total - r.correct);
+                }
+            }
+        });
+        var pct = possible > 0 ? Math.round((correct / possible) * 100) : null;
+        document.getElementById('total-correct').textContent  = correct;
+        document.getElementById('total-possible').textContent = possible;
+        document.getElementById('total-missed').textContent   = missed;
+        document.getElementById('total-pct-display').textContent = pct !== null ? pct + '%' : '—';
+        document.getElementById('score-bar').style.width      = (pct || 0) + '%';
+        document.getElementById('calc-badge').textContent     = pct !== null ? pct + '%' : '—';
+    }
+
+    function showScoreTab(year, btn) {
+        document.querySelectorAll('.score-tab').forEach(function(t) { t.style.display = 'none'; });
+        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.getElementById('score-grid-' + year).style.display = 'grid';
+        btn.classList.add('active');
+    }
+
+    function clearScores() {
+        if (!confirm('Clear all saved scores? This cannot be undone.')) return;
+        YEARS.forEach(function(year) {
+            for (var i = 1; i <= 20; i++) {
+                try { localStorage.removeItem('ite_quiz_result_' + year + '_' + i); } catch(e) {}
+            }
+        });
+        buildScoreGrids();
     }
 </script>
 </body>
