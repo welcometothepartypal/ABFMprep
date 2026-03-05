@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 15</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 141,
+    "question": "A healthy 15-year-old female is brought to your office for a well adolescent visit. She does not have
+any health concerns or preexisting medical conditions.
+Based on the guidelines from the U.S. Preventive Services Task Force, which one of the following
+would be most appropriate for this patient?",
+    "choices": [
+      "A vision examination",
+      "Depression screening",
+      "A CBC",
+      "A lipid panel",
+      "HPV testing"
+    ],
+    "answer": "B",
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends depression screening
+for adolescents beginning at age 12 (B recommendation). The American Academy of
+Pediatrics (AAP) recommends routine vision screening from 12 months to 5 years of age
+and only risk-based vision screening in adolescents as vision conditions are less likely to
+begin in older children. The USPSTF recommends vision screening at least once in all
+children ages 3–5 (B recommendation). Iron deficiency screening is not recommended
+in adolescents; however, the AAP recommends universal hemoglobin or hematocrit
+screening at 12 months of age while the USPSTF states that there is insufficient
+evidence (I recommendation). While the AAP recommends dyslipidemia screening in
+children ages 9–11, the USPSTF currently states there is insufficient evidence for
+screening for ≤20 years of age (I recommendation). The USPSTF recommends against
+cervical cancer screening before age 21 (D recommendation). Furthermore, cytology is
+recommended for those age 21 and older while high-risk HPV testing is not
+recommended until age 30.",
+    "image": null
+  },
+  {
+    "id": 142,
+    "question": "A 62-year-old male presents to your office with chest pain that began after he ate his usual breakfast
+of bacon and eggs this morning. He describes the pain as a substernal tightness that worsens with
+activity and radiates to his left arm. He reports dyspnea and nausea but no emesis.
+On examination the patient is diaphoretic and appears to be in slight distress. He has a temperature of
+37.0 °C (98.6 °F), a pulse rate of 106 beats/min, a respiratory rate of 22/min and nonlabored, a blood
+pressure of 110/70 mm Hg, and an oxygen saturation of 92% on room air. The lungs are clear, and
+the heart is regular without any murmurs. Examination of the abdomen is notable for tenderness to
+palpation in the right upper quadrant, normal bowel sounds, no rebound or guarding, and a negative
+Murphy sign. Examination of the extremities reveals no edema and 1+ pedal pulses. A neurologic
+examination shows no focal deficits and a normal gait. An EKG shows a left bundle branch block
+that was not present on an EKG 1 year ago. His pain improves with the administration of chewable
+aspirin, 162 mg, and sublingual nitroglycerin.
+Which one of the following would be the most appropriate next step in the management of this
+patient’s chest pain?",
+    "choices": [
+      "A high-sensitivity cardiac troponin level in your office",
+      "Coronary CT angiography",
+      "Referral to a cardiologist for treadmill stress testing",
+      "Transportation to a hospital capable of urgent coronary intervention"
+    ],
+    "answer": "D",
+    "rationale": "This patient has new-onset chest pain with symptoms typical of coronary artery disease
+and needs urgent evaluation with coronary angiography and possible percutaneous
+coronary intervention (PCI). He has a new left bundle branch block indicative of acute
+coronary syndrome and should be emergently transported to a facility that can perform
+urgent coronary angiography and further intervention as needed, including PCI. Once
+the patient has been identified as having acute coronary syndrome, transfer should not
+be delayed while waiting for further cardiac testing. Outpatient laboratory testing,
+coronary CT angiography, and cardiac stress testing would not be appropriate in this
+situation.",
+    "image": null
+  },
+  {
+    "id": 143,
+    "question": "A 29-year-old female was recently treated for an uncomplicated urinary tract infection. She presents
+to your office with recurrence of an itchy rash on her elbow and lower back (shown below).
+Which one of the following is the most likely diagnosis?",
+    "choices": [
+      "Drug eruption",
+      "Pityriasis rosea",
+      "Psoriasis",
+      "Seborrheic dermatitis",
+      "Tinea corporis"
+    ],
+    "answer": "C",
+    "rationale": "This patient has a rash with a distribution and appearance that is highly consistent with
+psoriasis, with thick, well-circumscribed plaques with silvery scale on the lower back
+and extensor elbows. Drug eruptions can have variable presentations, but this rash is
+much more consistent with psoriasis. Pityriasis rosea presents with more diffuse
+macules and patches with a fine scale. Both psoriasis and seborrheic dermatitis can
+cause itchy red rashes on the scalp, but seborrhea is less frequent on the back and
+elbows. Tinea corporis is more common in intertriginous areas.",
+    "image": "quiz_images_2024/2024_mc_page_059.png"
+  },
+  {
+    "id": 144,
+    "question": "A 64-year-old male with stage 3b chronic kidney disease (CKD) sees you for recommended follow-
+up screenings. Which one of the following is most likely to be found in a patient with chronic kidney
+disease–mineral and bone disorder (CKD-MBD)?",
+    "choices": [
+      "An elevated 25-hydroxyvitamin D level",
+      "An elevated calcium level",
+      "An elevated phosphate level",
+      "A low parathyroid hormone level
+
+Item #143
+Item #143"
+    ],
+    "answer": "C",
+    "rationale": "Screening for signs of chronic kidney disease–mineral and bone disorder (CKD-MBD)
+through the monitoring of calcium, phosphate, parathyroid hormone (PTH), and alkaline
+phosphatase, and possibly 25-hydroxyvitamin D levels is recommended beginning in
+stage 3 CKD. Early changes include the kidneys’ decreased ability to excrete phosphate.
+This can lead to elevated serum phosphate and PTH levels (secondary
+hyperparathyroidism). Decreased renal vitamin D production can lead to a lower
+calcium level, which also increases the PTH level. These changes can then lead to the
+abnormalities of bone strength and mineralization seen in CKD-MBD.",
+    "image": null
+  },
+  {
+    "id": 145,
+    "question": "A 62-year-old male who currently receives chemotherapy for colon cancer presents to the emergency
+department with a 1-week history of worsening nausea and vomiting. He has been vomiting all oral
+intake for the past day, and he has not had a bowel movement in the past week. He reports severe,
+diffuse, crampy, intermittent abdominal pain that improves after vomiting. He has not had any fevers
+or chills. The physical examination is significant for abdominal distention, minimal bowel sounds,
+and diffuse tenderness.
+Which one of the following studies would be the most appropriate next step in evaluation?",
+    "choices": [
+      "Ultrasonography of the right upper quadrant",
+      "CT of the abdomen and pelvis with contrast",
+      "A PET/CT scan",
+      "A HIDA scan",
+      "Magnetic resonance cholangiopancreatography (MRCP) of the abdomen"
+    ],
+    "answer": "B",
+    "rationale": "This patient’s presentation is consistent with a malignant bowel obstruction, and CT of
+the abdomen and pelvis with contrast is useful for determining if any surgical
+interventions are warranted. Ultrasonography typically does not yield useful information
+due to the amount of bowel gas present during an obstruction. A PET/CT scan would
+not be indicated to evaluate for the etiology of a bowel obstruction in an acute
+situation. A HIDA scan or magnetic resonance cholangiopancreatography (MRCP) would
+be useful if biliary obstruction or gallbladder disease were suspected, but these are not
+helpful in the evaluation of a malignant bowel obstruction.",
+    "image": null
+  },
+  {
+    "id": 146,
+    "question": "Which one of the following medication classes reduces heart failure–related hospitalizations in
+patients without diabetes mellitus?",
+    "choices": [
+      "Calcium channel blockers",
+      "DPP-4 inhibitors",
+      "Insulin",
+      "SGLT2 inhibitors",
+      "Statins"
+    ],
+    "answer": "D",
+    "rationale": "Adding an SGLT2 inhibitor to the medication regimen of patients with heart failure and
+without diabetes mellitus has been shown to reduce heart failure– related
+hospitalizations. Calcium channel blockers may have no effect or worsen heart failure.
+DPP-4 inhibitors can worsen the effects of heart failure. Insulin provides improved
+glucose control for patients with diabetes mellitus; however, it has not been
+independently shown to reduce heart failure–related hospitalizations. Statins are
+effective at reducing cholesterol levels but have not been shown to reduce heart
+failure–related hospitalizations.",
+    "image": null
+  },
+  {
+    "id": 147,
+    "question": "A 46-year-old female with a BMI of 36 kg/m2 and a history of bilateral tubal ligation presents with
+intermenstrual bleeding. An endometrial biopsy reveals endometrial hyperplasia with atypia.
+Which one of the following should you recommend at this time?",
+    "choices": [
+      "Oral progesterone",
+      "Combined oral contraceptives",
+      "A levonorgestrel IUD (Mirena)",
+      "Uterine MRI",
+      "Hysterectomy"
+    ],
+    "answer": "E",
+    "rationale": "This patient’s age and elevated BMI put her at risk for endometrial cancer. Appropriate
+evaluation includes an endometrial biopsy. Patients who have endometrial hyperplasia
+with atypia should be referred for hysterectomy, as it is the treatment of choice. Oral
+progesterone may be offered to a patient who desires a future pregnancy. Endometrial
+hyperplasia without atypia may be treated with a levonorgestrel IUD or oral
+progesterone. Uterine MRI would not offer any additional information for diagnosis and
+would not change the need for hysterectomy.",
+    "image": null
+  },
+  {
+    "id": 148,
+    "question": "A 3-year-old male with a peanut allergy is brought to your office by his parents for a well child visit.
+His parents ask if there is anything they can do to prevent a peanut allergy if they have more children
+in the future.
+Which one of the following would be the most appropriate recommendation to decrease the risk for
+food allergies in children?",
+    "choices": [
+      "Early sequential exposure to allergenic food between 4 and 6 months of life",
+      "Exclusive breastfeeding for the first 3–4 months of life",
+      "Regular antibiotics in the first 2 years of life",
+      "Restricted cow's milk supplementation during the first 3 months of life",
+      "A restricted maternal diet during pregnancy and breastfeeding"
+    ],
+    "answer": "A",
+    "rationale": "Food allergies affect 8% of children and about 40% of these food allergies are reported
+as severe, causing anxiety for parents and caregivers. Peanuts, shellfish, cow's milk,
+tree nuts, and eggs are the most common allergenic foods, and peanuts are the most
+common food that causes life-threatening anaphylaxis. Risk factors include atopic
+dermatitis; allergic rhinitis; asthma; and allergies to latex, medications, and insect
+venoms. A family history of atopy as well as vitamin D insufficiency and antibiotic use in
+the first 2 years of life also increase the risk for developing food allergies.
+The primary treatment of food allergies is eliminating the offending foods. Preventive
+measures shown to decrease the risk for developing food allergies include sequential
+exposure to allergenic foods starting between 4 and 6 months of life and restricting
+exposure to cow's milk in the first 3 days of life. Exclusive breastfeeding for 3–4 months
+reduces the likelihood of developing asthma and eczema, but it does not reduce the risk
+for food allergies. There is no supporting evidence that restricting the mother's diet
+during pregnancy and lactation reduces the risk for food allergies in children.",
+    "image": null
+  },
+  {
+    "id": 149,
+    "question": "A 30-year-old female comes to your office to establish care. She reports symptoms consistent with
+possible mild chronic malabsorption. A review of past records reveals that she was previously tested
+for celiac disease with an IgA tissue transglutaminase (tTG) level, which was negative. The review of
+systems is positive for chronic recurrent sinus infections. Examination of the head and neck, lungs,
+and abdomen is unremarkable.
+Which one of the following is the most appropriate next step to evaluate for a potential cause of this
+patient’s chronic abdominal and upper respiratory symptoms?",
+    "choices": [
+      "A repeat IgA tTG level",
+      "A total IgA level",
+      "Vitamin D and B levels
+12",
+      "A 24-hour fecal fat collection study",
+      "CT of the abdomen and pelvis"
+    ],
+    "answer": "B",
+    "rationale": "IgA deficiency is more common in patients with celiac disease than in the general
+population. Patients with IgA deficiency often experience chronic upper respiratory tract
+infections, such as recurrent sinus infections. It is important to include a total IgA level
+when obtaining celiac disease panels to avoid a false-negative result. Serologic testing
+along with a careful history is sufficiently sensitive to rule out celiac disease, but the
+gold standard for diagnosis still includes duodenal biopsy. Every patient with signs or
+symptoms of chronic malabsorption (diarrhea, steatorrhea, weight loss, fat-soluble
+vitamin deficiencies, bloating, abdominal pain) should be tested for celiac disease.
+This initial laboratory testing can be performed by primary care clinicians, and specialty
+care should be sought if the workup fails to rule out celiac disease. Diagnostic imaging
+is not sensitive or specific for celiac disease. While fecal fat, vitamin D, and vitamin B
+12
+levels may all be part of the overall workup in this patient, they are not the most helpful
+tests in diagnosing celiac disease at this time.",
+    "image": null
+  },
+  {
+    "id": 150,
+    "question": "A 54-year-old postmenopausal female with a past medical history of hypertension, nicotine
+dependence, and obesity sees you to establish care. Her medications include hydrochlorothiazide,
+losartan (Cozaar), and metformin. She smokes 1 pack of cigarettes per day and drinks 1 glass of wine
+each night. She returns 1 week later to discuss the results of laboratory studies.
+The laboratory studies demonstrate a positive hepatitis C antibody. Reflex testing reveals hepatitis C
+virus genotype and a hepatitis C viral load of 253,351 IU/mL. The AST level, ALT level, creatinine
+level, and INR are within normal limits. Tests for HIV, hepatitis A, and hepatitis B are negative. You
+calculate a Fibrosis-4 (FIB-4) score of 0.93, indicating a lack of advanced fibrosis. You initiate
+vaccination for hepatitis A and B.
+Which one of the following would be the most appropriate timing to initiate treatment with
+glecaprevir/pibrentasvir (Mavyret)?",
+    "choices": [
+      "At this visit",
+      "After she has abstained from alcohol for 3 months",
+      "If a repeat hepatitis C viral load is increased in 3 months",
+      "After completing the hepatitis A and B vaccination series",
+      "If a Doppler ultrasound of the liver is negative for a hepatic vein thrombosis"
+    ],
+    "answer": "A",
+    "rationale": "The Infectious Diseases Society of America recommends glecaprevir/pibrentasvir for
+patients with chronic hepatitis C virus (HCV) infection who have never received
+treatment and do not have cirrhosis or have compensated cirrhosis. Limiting alcohol use
+is important to decrease the risk for cirrhosis, but cessation is not necessary in those
+undergoing treatment for HCV infection. Further hepatitis C viral load testing in 3
+months is not the most appropriate next step for this patient. While vaccinations are
+important, the hepatitis A and B series do not need to be completed prior to initiating
+treatment. Further imaging is not indicated for this patient given her low Fibrosis-4
+(FIB-4) score, which indicates a very low likelihood of cirrhosis.",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 15</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

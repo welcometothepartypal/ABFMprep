@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 7</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 61,
+    "question": "In patients with posttraumatic stress disorder, which one of the following medications is most
+effective for the treatment of midsleep awakening due to hyperarousal or nightmares?",
+    "choices": [
+      "Amitriptyline",
+      "Clonazepam (Klonopin)",
+      "Fluoxetine (Prozac)",
+      "Prazosin (Minipress)",
+      "Extended-release venlafaxine (Effexor XR)"
+    ],
+    "answer": "D",
+    "rationale": "The α-blocker prazosin can be effective in the treatment of midsleep awakening due to
+hyperarousal or nightmares by decreasing sympathetic nervous tone. Due to their
+toxicity profiles, tricyclic antidepressants such as amitriptyline are usually not initiated in
+patients with posttraumatic stress disorder (PTSD) until multiple first-line treatments
+have failed. Benzodiazepines such as clonazepam are generally avoided in patients with
+PTSD due to potential misuse and chronic long-term effects. SSRIs such as fluoxetine
+and SNRIs such as venlafaxine are the most effective pharmacologic treatments for
+overall reduction of PTSD symptoms. However, they are not used specifically for
+nighttime trauma-related nightmares.",
+    "image": null
+  },
+  {
+    "id": 62,
+    "question": "A 2-year-old male is brought to the emergency department after a generalized seizure that lasted for 3
+minutes and was witnessed by his parent. An examination is significant for a temporal temperature of
+38.8 °C (101.8 °F), runny nose, and cough. He does not have any previous history of seizure. A
+neurologic examination is benign.
+Which one of the following would be the most appropriate management regarding this patient’s
+seizure?",
+    "choices": [
+      "Reassurance and return precautions",
+      "A CBC and comprehensive metabolic panel",
+      "Oral levetiracetam (Keppra)",
+      "Rectal diazepam (Diastat)",
+      "Electroencephalography"
+    ],
+    "answer": "A",
+    "rationale": "This patient had a simple febrile seizure that has ended, and antiseizure medication is
+not recommended. Routine laboratory examinations, imaging, and
+electroencephalography are not recommended in simple febrile seizures.
+Benzodiazepines can be used in patients who are actively seizing for longer than 5
+minutes, but this patient’s seizure has ended.",
+    "image": null
+  },
+  {
+    "id": 63,
+    "question": "A 35-year-old male with a medical history of hypertension and a family history of
+hypercholesterolemia and coronary artery disease sees you for routine follow-up of hypertension. His
+blood pressure is controlled on hydrochlorothiazide, 25 mg daily, and losartan (Cozaar), 50 mg daily.
+He has a BMI of 30 kg/m2 and quit smoking tobacco 2 years ago.
+According to the U.S. Preventive Services Task Force, which one of the following is recommended
+for the primary prevention of cardiovascular disease in this patient?",
+    "choices": [
+      "Aspirin, 81 mg daily",
+      "Low- to moderate-intensity statin therapy",
+      "Moderate-intensity exercise for 120 minutes per week",
+      "Referral to behavioral counseling interventions to promote a healthy diet and physical activity"
+    ],
+    "answer": "D",
+    "rationale": "This patient is at increased risk for cardiovascular disease (CVD) due to his
+hypertension, family history, elevated BMI, and smoking history. According to the U.S.
+Preventive Services Task Force (USPSTF) recommendations for the primary prevention
+of CVD, adults with CVD risk factors should be referred to behavioral counseling
+interventions to promote a healthy diet and physical activity. The USPSTF recommends
+shared decision-making for low-dose aspirin for the primary prevention of CVD in
+patients 40–59 years of age who have a 10% or greater 10-year risk of CVD. The
+USPSTF recommends statin therapy for the primary prevention of CVD in patients 40–
+75 years of age who do not have a history of CVD but do have ≥1 CVD risk factors plus
+a 10-year CVD risk of 7.5%–10%. The USPSTF does not make a recommendation for a
+specific exercise program.",
+    "image": null
+  },
+  {
+    "id": 64,
+    "question": "A 68-year-old male presents with dependent edema and an ulcer over the medial malleolus secondary
+to venous insufficiency. The dorsalis pedis pulse is intact.
+Which one of the following would be the most appropriate management of this patient’s edema and
+ulcer?",
+    "choices": [
+      "A nongraduated compression stocking with 10–20 mm Hg pressure at the ankle",
+      "A graduated compression stocking with 30–40 mm Hg pressure at the ankle",
+      "A graduated compression stocking with 50–60 mm Hg pressure at the ankle",
+      "An Unna boot"
+    ],
+    "answer": "B",
+    "rationale": "Graduated compression stockings are the mainstay of treatment for chronic venous
+insufficiency. The compression is generally highest at the ankle with decreasing
+pressures at the calf. While compression stockings with <20 mm Hg tension may be
+helpful for comfort, they are not considered adequate for venous insufficiency.
+Insufficiency significant enough to cause venous ulcers should be treated with 30–40
+mm Hg pressure stockings, which have been shown to be effective for >90% of ulcers
+if a patient is 70%–80% compliant with usage. Varicosities with swelling and discomfort
+may be helped by 20–30 mm Hg pressure compression stockings. Compression
+stockings with >50 mm Hg of pressure are not as well tolerated and are generally used
+in patients with lymphedema. Unna boots have significant variability of pressures and
+are not generally recommended for this condition.",
+    "image": null
+  },
+  {
+    "id": 65,
+    "question": "Hypocalcemia can cause which one of the following?",
+    "choices": [
+      "Constipation",
+      "Hypertension",
+      "Paresthesias",
+      "Respiratory suppression",
+      "Tachycardia"
+    ],
+    "answer": "C",
+    "rationale": "Hypocalcemia causes generalized neuromuscular irritability, leading to peripheral
+symmetric paresthesias and muscle spasms that can cause tetany, extrapyramidal
+symptoms, and seizures. Hypocalcemia can cause QTc prolongation, heart block, and
+bronchospasm. It can also lead to complications of hypercalciuria such as
+nephrolithiasis and can trigger psychiatric conditions including anxiety and mania.
+Hypocalcemia does not cause hypertension, respiratory suppression, or tachycardia.
+Constipation is more associated with hypercalcemia.",
+    "image": null
+  },
+  {
+    "id": 66,
+    "question": "A 60-year-old male who had an ST-elevation myocardial infarction 9 months ago presents for routine
+follow-up. He has been receiving medical therapy and had been attending cardiac rehabilitation at his
+community hospital until recently. He reports gradually increasing dyspnea on exertion but is still
+able to work as a computer programmer and has no problems performing activities of daily living. He
+has developed mild edema. On cardiac examination you note a heart murmur that was not present 3
+months ago. The murmur is holosystolic, grade 3/6, loudest at the cardiac apex, and radiates to the
+axilla.
+Which one of the following is the most likely etiology of this murmur?",
+    "choices": [
+      "Aortic stenosis",
+      "Mitral regurgitation",
+      "Mitral stenosis",
+      "Pericardial effusion",
+      "Tricuspid regurgitation"
+    ],
+    "answer": "B",
+    "rationale": "In patients who have had a myocardial infarction, chronic mitral regurgitation can
+develop as a consequence of left ventricular remodeling related to myocardial ischemia.
+Chronic mitral regurgitation develops gradually and symptoms that are initially mild can
+progress. In the case of acute chordae tendineae rupture, mitral regurgitation occurs
+suddenly, and the patient develops acute pulmonary edema and is often
+hemodynamically unstable.
+A chronic mitral regurgitation murmur is typically grade 3–4/6 and holosystolic. It
+usually obscures S1 and radiates to the axilla, and it is loudest when the patient is
+supine.
+An aortic stenosis murmur is a decrescendo murmur, usually grade 2–3/6, loudest at
+the aortic area or right upper sternal border, and radiates to the clavicle or neck. A
+mitral stenosis murmur is a subtle diastolic “rumble” in the left fifth intercostal space,
+lateral to the nipple, and best heard in the left lateral decubitus position. In a patient
+with pericardial effusion, heart sounds are generally muffled without a distinct murmur.
+Isolated tricuspid regurgitation is uncommon and exhibits a high-pitched softer
+holosystolic murmur that is best heard at the left lower sternal border and radiates to
+the right sternal border.",
+    "image": null
+  },
+  {
+    "id": 67,
+    "question": "A 32-year-old male is hospitalized with a 1-week history of an acute illness. His signs and symptoms
+include a fever of 38.9 °C (102.0 °F), axillary and inguinal lymphadenopathy, sore throat, arthralgias,
+myalgias, headache, and a skin rash. He has a history of intravenous drug use, but says his last use
+was 2 weeks ago. He does not have a history of travel outside the United States, tick bites, or
+occupational exposure.
+On examination you note pharyngeal edema and erythema without tonsillar enlargement. Shallow,
+sharply demarcated ulcers are noted on the oral mucosa. He has a generalized rash that began 3 days
+after the onset of fever and has the appearance of pityriasis rosea. Nontender nodes are noted in the
+axillae and groin.
+Laboratory studies reveal mild anemia, thrombocytopenia, and a slight elevation of liver enzymes.
+His WBC count is 3000/mm3 (N 4300–10,800). A rapid plasma reagin test, office testing for
+mononucleosis, rapid antibody HIV testing, blood cultures, and hepatitis studies are all negative.
+Which one of the following would be most appropriate at this time?",
+    "choices": [
+      "Herpes simplex virus IgM testing",
+      "An HIV viral load",
+      "A Western blot for HIV",
+      "Prednisone",
+      "A skin lesion biopsy"
+    ],
+    "answer": "B",
+    "rationale": "Diagnosing acute HIV infection has substantial implications for both the individual and
+for public health, as the infection will be easy to spread during this time. In a person
+who has a sudden onset of an ill-defined mononucleosis-like syndrome and/or aseptic
+meningitis, acute HIV infection should be in the differential diagnosis along with
+mononucleosis, cytomegalovirus, toxoplasmosis, rubella, viral hepatitis, disseminated
+gonococcal infection, and other viral illnesses.
+Mucocutaneous ulcer is unusual in most of these conditions and should arouse
+suspicion. Skin rash is uncommon in mononucleosis, visceral larva migrans, and
+toxoplasmosis, and tends to spare the palms and soles in rubella. The abrupt onset of
+symptoms, pharyngeal edema without tonsillar enlargement or exudates, and diarrhea
+all help to distinguish acute HIV from mononucleosis. A positive heterophile antibody
+test can occur in acute HIV infection, and atypical lymphocytes can be seen in both.
+Negative results of the rapid enzyme-linked immunosorbent assay (ELISA) or Western
+blot test early in the course of illness can be misleading, as the antibody response is not
+detected until 3–7 weeks after infection. Newer fourth-generation tests further reduce
+this period of false-negative serologic tests to 2−4 weeks. However, individuals such as
+this with acute HIV infection have a markedly elevated viral load easily detected by
+regular viral tests.
+The utility of serologic testing such as IgM for infection with herpes simplex virus is
+limited due to low specificity and high false-positive rates. It would be inappropriate or
+harmful to initiate prednisone in the setting of an undiagnosed infection, with rare
+exceptions such as stress-dose corticosteroids for critical illness. While a skin biopsy
+may provide information to the clinician to prompt consideration of acute HIV in the
+differential diagnosis, it would be more expedient to establish the diagnosis and initiate
+treatment without subjecting this individual to a biopsy.",
+    "image": null
+  },
+  {
+    "id": 68,
+    "question": "An asymptomatic 20-year-old female who is sexually active with a new male partner requests testing
+for sexually transmitted infections. She has had 2 sex partners and uses the subdermal etonogestrel
+implant (Nexplanon) for contraception.
+Based on U.S. Preventive Services Task Force guidelines, she should be screened for which one of
+the following?",
+    "choices": [
+      "Bacterial vaginosis",
+      "Infection with Chlamydia trachomatis and Neisseria gonorrhoeae",
+      "Infection with genital herpes simplex virus",
+      "Infection with HPV",
+      "Infection with Mycoplasma genitalium"
+    ],
+    "answer": "B",
+    "rationale": "According to recommendations from the U.S. Preventive Services Task Force (USPSTF),
+females ≤24 years of age who are sexually active should be screened for Chlamydia
+trachomatis and Neisseria gonorrhoeae infections. A urine nucleic acid amplification test
+(NAAT) is recommended for screening. The USPSTF does not recommend asymptomatic
+screening for bacterial vaginosis or infection with Mycoplasma genitalium. The USPSTF
+recommends against routine serologic screening for infection with genital herpes
+simplex virus in asymptomatic adolescents and adults. HPV testing screens for cervical
+cancer but is not recommended for patients under 21 years of age.",
+    "image": null
+  },
+  {
+    "id": 69,
+    "question": "A 42-year-old female presents with a 4-month history of diffuse pain, fatigue, and sleep disturbances.
+She says that the pain is the most bothersome symptom. After an extensive history and physical
+examination, you determine that fibromyalgia is the most likely underlying cause. In addition to
+encouraging exercise and cognitive behavioral therapy, you opt to initiate pharmacotherapy.
+Which one of the following pharmacologic agents is most likely to improve her pain?",
+    "choices": [
+      "Acetaminophen",
+      "Gabapentin (Neurontin)",
+      "Naproxen",
+      "Pregabalin (Lyrica)",
+      "Tramadol"
+    ],
+    "answer": "D",
+    "rationale": "Fibromyalgia is a chronic pain syndrome associated with the disordered processing of
+pain. It affects approximately 2% of people in the United States, and women are
+diagnosed 2–14 times more frequently than men. While patient education, exercise,
+and cognitive behavioral therapy can improve pain and functioning (SOR A),
+nonpharmacologic measures often do not provide sufficient symptom relief.
+Pharmacologic agents with proven benefit to treat fibromyalgia pain include pregabalin,
+amitriptyline, duloxetine, and milnacipran (SOR A). Pregabalin reduces pain by up to
+50% with a number needed to treat of 10. There is insufficient evidence to recommend
+acetaminophen and gabapentin. NSAIDs and opioids do not have demonstrated
+benefits. An adequate trial consists of a single medication that is started at a low
+dosage, slowly increased until a therapeutic dosage is achieved, and maintained for at
+least 3 months. Satisfactory treatment should be continued for at least 12 months.",
+    "image": null
+  },
+  {
+    "id": 70,
+    "question": "A hemoglobin level ≤8 g/dL would be an appropriate RBC transfusion threshold for which one of the
+following hospitalized patients?",
+    "choices": [
+      "A 19-year-old with symptomatic sickle cell pain crisis",
+      "A 63-year-old who is hemodynamically stable after a major trauma",
+      "A 79-year-old with inoperable femur and hip fractures",
+      "An 81-year-old who underwent cardiac bypass surgery 3 days ago",
+      "An 85-year-old with diverticulosis and chronic anemia"
+    ],
+    "answer": "D",
+    "rationale": "The transfusion of blood products, specifically RBCs, is a common medical procedure.
+The transfusion threshold of RBCs for most adults is a hemoglobin level ≤7–8 g/dL
+(SOR A). However, a slightly less restrictive transfusion threshold of a hemoglobin level
+≤8 g/dL should be used for patients who have preexisting cardiovascular disease or are
+undergoing orthopedic or cardiac surgery, such as a patient who underwent cardiac
+bypass surgery 3 days ago (SOR C).
+Patients with sickle cell disease should not receive transfusions for chronic anemia or
+uncomplicated pain crisis without an appropriate clinical indication, and not to a higher
+threshold than regular adults (SOR C). A restrictive transfusion threshold of a
+hemoglobin level ≤7 g/dL should be used for hospitalized adult patients who are
+hemodynamically stable, including those who are critically ill (SOR C).",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 7</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

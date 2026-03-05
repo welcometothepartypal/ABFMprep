@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 1</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 1,
+    "question": "A 34-year-old female with intellectual disability, hypothyroidism, and bipolar disorder presents for
+routine follow-up. Her case worker notes that she has been excessively thirsty and urinating more
+than usual over the past several months despite limiting her fluids. She also wakes at night to urinate.
+Laboratory studies prior to her visit reveal a therapeutic lithium level, as well as normal creatinine,
+electrolyte, and blood glucose levels.
+Which one of the following is most likely present in this patient’s case?",
+    "choices": [
+      "Diabetes insipidus",
+      "Interstitial cystitis",
+      "Overactive bladder",
+      "Psychogenic polydipsia",
+      "Syndrome of inappropriate antidiuretic hormone secretion"
+    ],
+    "answer": "A",
+    "rationale": "This patient is at risk for both psychogenic polydipsia due to intellectual disability and
+nephrogenic diabetes insipidus due to lithium therapy. The combination of ongoing
+polydipsia, polyuria despite fluid restriction, and nocturia suggests diabetes insipidus
+rather than psychogenic polydipsia. Diabetes insipidus is a loss of free water in the
+urine due to a lack of antidiuretic hormone (central) or insensitivity to antidiuretic
+hormone in the kidney (nephrogenic). Interstitial cystitis and overactive bladder can
+cause urinary frequency but not polydipsia. Syndrome of inappropriate antidiuretic
+hormone secretion (SIADH) is associated with a low sodium level and does not cause
+polyuria.",
+    "image": null
+  },
+  {
+    "id": 2,
+    "question": "A 70-year-old female sees you at the request of her surgeon to discuss anticoagulation management
+prior to a scheduled cholecystectomy. She has a past medical history of atrial fibrillation, stage 3a
+chronic kidney disease, hypertension, depression, and cerebrovascular disease. She had an ischemic
+stroke 1 year ago. Her current medications include the following:
+Amlodipine (Norvasc)
+Losartan (Cozaar)
+Metoprolol succinate (Toprol-XL)
+Sertraline (Zoloft)
+Warfarin
+Her vital signs include a blood pressure of 140/82 mm Hg, a heart rate of 90 beats/min, and an
+oxygen saturation of 96% on room air. A cardiovascular examination reveals an irregularly irregular
+rhythm. The remainder of the examination findings are unremarkable. An INR today is 2.2.
+Which one of the following would be the most appropriate perioperative anticoagulation therapy for
+this patient?",
+    "choices": [
+      "Continuing warfarin with a goal INR of 1.4–1.6",
+      "Discontinuing warfarin 5 days prior to surgery and bridging with aspirin",
+      "Discontinuing warfarin 5 days prior to surgery and bridging with clopidogrel (Plavix)",
+      "Discontinuing warfarin 5 days prior to surgery and bridging with low-molecular-weight heparin",
+      "Discontinuing warfarin 5 days prior to surgery without bridging therapy"
+    ],
+    "answer": "E",
+    "rationale": "Continuing warfarin is not recommended prior to elective procedures or surgeries in
+patients who are taking warfarin for stroke prevention secondary to atrial fibrillation.
+The BRIDGE trial excluded patients who had an ischemic stroke within the previous 12
+weeks but included those with more distant strokes. For such patients, cessation of
+warfarin without bridging with low-molecular-weight heparin or antiplatelet agents is
+the appropriate management strategy. There is no evidence that using a lower target
+INR is appropriate.",
+    "image": null
+  },
+  {
+    "id": 3,
+    "question": "A 30-year-old female with obesity and tobacco use disorder presents for evaluation of a persistent
+painful lump in her axilla. After an appropriate evaluation you diagnose mild hidradenitis
+suppurativa.
+In addition to weight loss and smoking cessation counseling, which one of the following treatment
+options would be most appropriate?",
+    "choices": [
+      "Topical clindamycin gel (Cleocin T)",
+      "Topical diclofenac gel",
+      "Topical triamcinolone cream",
+      "Oral azithromycin (Zithromax)",
+      "Oral meloxicam"
+    ],
+    "answer": "A",
+    "rationale": "For patients with mild hidradenitis suppurativa, topical clindamycin is recommended as
+first-line treatment and often works well as monotherapy (SOR B). Patients with
+hidradenitis suppurativa who have overweight and smoke should be advised that weight
+loss and smoking cessation have been shown to decrease severity of disease and
+improve treatment response (SOR A). For patients with moderate disease, oral
+tetracyclines in addition to topical clindamycin are recommended as first-line therapy.
+Although intralesional triamcinolone may be considered for procedural management of
+mild hidradenitis suppurativa, topical triamcinolone is not recommended. Other oral
+antibiotics that have shown benefit include clindamycin and rifampin, although
+azithromycin is not a recommended treatment option. While NSAIDs such as topical
+diclofenac and oral meloxicam may help to alleviate discomfort associated with active
+lesions, they are not part of the routine management of hidradenitis suppurativa.",
+    "image": null
+  },
+  {
+    "id": 4,
+    "question": "A 48-year-old female with a history of ductal carcinoma in situ diagnosed in her early 40s presents to
+the urgent care clinic because of heavy vaginal bleeding. The bleeding started 8 days ago as a regular
+menstrual period, but it has worsened and today she started passing clots. She does not take any
+medications.
+You estimate her blood loss to be >100 mL today. On examination she has a blood pressure of
+114/65 mm Hg and a pulse rate of 84 beats/min. The uterus is slightly enlarged with red blood in the
+os, but the examination findings are otherwise normal. A CBC is significant for a hemoglobin level
+of 8.2 g/dL (N 12.0–16.0) and a normal platelet count. An hCG test is negative.
+Which one of the following would be the most appropriate therapy at this time?",
+    "choices": [
+      "Oral high-dose progestins",
+      "Depot medroxyprogesterone acetate (Depo-Provera CI)",
+      "Intravenous conjugated estrogen",
+      "Intravenous ketorolac",
+      "Intravenous tranexamic acid"
+    ],
+    "answer": "E",
+    "rationale": "Intravenous tranexamic acid is an appropriate therapeutic option to manage acute
+bleeding in this hemodynamically stable patient with acute severe uterine bleeding.
+Intravenous conjugated estrogen is recommended in patients who are hemodynamically
+unstable. Depot medroxyprogesterone acetate and NSAID therapies are recommended
+for chronic management. A history of ductal carcinoma in situ is a contraindication for
+both progestin and estrogen therapy. Estrogens or tranexamic acid should be avoided
+in patients with a high thrombosis risk.",
+    "image": null
+  },
+  {
+    "id": 5,
+    "question": "A 30-year-old female with a medical history of anxiety and seasonal allergies presents for evaluation
+of palpitations and a racing heartbeat that has worsened over the last 3–4 days. Recently, her
+escitalopram (Lexapro) dosage was increased to 20 mg daily and she started using fluticasone
+propionate nasal spray (Flonase) and oral cetirizine (Zyrtec), 10 mg daily. A CBC, comprehensive
+metabolic panel, and TSH level are normal. A urine pregnancy test is negative. An EKG today shows
+a heart rate of 85 beats/min and a QTc interval of 500 milliseconds.
+Which one of the following would be the most appropriate next step?",
+    "choices": [
+      "Reassurance only",
+      "Discontinuing cetirizine",
+      "Discontinuing escitalopram",
+      "Discontinuing fluticasone",
+      "Echocardiography"
+    ],
+    "answer": "C",
+    "rationale": "This patient’s EKG shows a prolonged QTc interval (>460 milliseconds for women). QT
+prolongation can indicate polymorphic ventricular tachycardia characterized by
+palpitations. QT prolongation can be congenital or acquired. Escitalopram and other
+antidepressants are associated with QT prolongation. Any QT-prolonging medications
+should be discontinued, and a subsequent EKG should be obtained once the drug levels
+are expected to be minimal.
+Reassurance only would not be the most appropriate next step as QT prolongation can
+lead to torsades de pointes, a potentially fatal arrhythmia (SOR C). Cetirizine and
+fluticasone are not known to prolong the QT interval. Echocardiography would not be
+the next step in management.",
+    "image": null
+  },
+  {
+    "id": 6,
+    "question": "Which one of the following medications has been shown to increase the resolution of metabolic
+dysfunction–associated steatotic liver disease (MASLD), formerly known as nonalcoholic fatty liver
+disease?",
+    "choices": [
+      "Glyburide",
+      "Metformin",
+      "Pioglitazone (Actos)",
+      "Repaglinide",
+      "Vitamin D (cholecalciferol)"
+    ],
+    "answer": "C",
+    "rationale": "Although lifestyle modification remains the first-line treatment of metabolic dysfunction–
+associated steatotic liver disease (formerly known as nonalcoholic fatty liver disease),
+pioglitazone increases the resolution of nonalcoholic steatohepatitis, especially in
+patients with advanced fibrosis. Pioglitazone may cause weight gain and should be
+avoided in patients with heart failure, and it carries a small risk for bladder cancer.
+Glyburide, metformin, repaglinide, and vitamin D (cholecalciferol) do not improve
+steatohepatitis or fibrosis.",
+    "image": null
+  },
+  {
+    "id": 7,
+    "question": "A 45-year-old male presents for a health maintenance examination. He has a history of hypertension
+that is well controlled on lisinopril (Zestril).
+Based on guidelines from the U.S. Preventive Services Task Force, this patient should be screened
+for which one of the following?",
+    "choices": [
+      "Cardiovascular disease with EKG",
+      "Carotid artery disease with carotid ultrasonography",
+      "Colon cancer with colonoscopy",
+      "Prostate cancer with a prostate-specific antigen level",
+      "Vitamin D deficiency with a vitamin D level"
+    ],
+    "answer": "C",
+    "rationale": "The U.S. Preventive Services Task Force recommends screening for colon cancer in
+adults ages 45–49 (B recommendation) and ages 50–75 (A recommendation). Neither
+screening for cardiovascular disease with an EKG nor screening for carotid artery
+disease with carotid ultrasonography in individuals without symptoms is recommended.
+Prostate cancer screening with a prostate-specific antigen level can be considered in
+men ages 55–69 after discussion of potential benefits and possible harms (C
+recommendation) with shared decision-making. There is insufficient evidence to
+recommend screening for vitamin D deficiency (I recommendation).",
+    "image": null
+  },
+  {
+    "id": 8,
+    "question": "Laser-assisted in-situ keratomileusis (LASIK) surgery is performed to treat",
+    "choices": [
+      "cataracts",
+      "closed-angle glaucoma",
+      "myopia",
+      "presbyopia",
+      "retinal detachment"
+    ],
+    "answer": "C",
+    "rationale": "Laser-assisted in-situ keratomileusis (LASIK) surgery involves the surgical removal of an
+anterior corneal flap, stromal ablation, and replacement of the flap. LASIK and
+photorefractive keratectomy (PRK) are considered the standard surgical procedures for
+the correction of myopia and other refractive errors, such as hyperopia and
+astigmatism. Ninety-eight percent of patients achieve a visual acuity of 20/40 or better.
+Common complications include glare symptoms, dry eye, undercorrection, and
+overcorrection. Significant serious complications include keratitis, epithelial ingrowth, or
+flap dissection. Refractive surgery does not correct age-related farsightedness
+(presbyopia), which is due to loss of lens elasticity, rather than a corneal problem.
+LASIK is not used to treat cataracts, closed-angle glaucoma, or retinal detachment.",
+    "image": null
+  },
+  {
+    "id": 9,
+    "question": "A 65-year-old female is found to have a T-score of –3.3 on a DEXA scan that is performed as part of
+her Welcome to Medicare evaluation. She has a 30-pack-year smoking history but quit smoking 5
+years ago. An examination reveals a thin female but is otherwise unremarkable. A CBC, a
+comprehensive metabolic panel, and thyroid studies are unremarkable. X-rays reveal evidence of an
+old compression fracture of the thoracic spine.
+Which one of the following would be the most appropriate initial treatment?",
+    "choices": [
+      "Oral alendronate (Fosamax)",
+      "Oral raloxifene (Evista)",
+      "Subcutaneous denosumab (Prolia)",
+      "Subcutaneous teriparatide (Forteo)",
+      "Intravenous zoledronic acid (Reclast)"
+    ],
+    "answer": "D",
+    "rationale": "The diagnosis of osteoporosis can be made with a prior fracture of the hip or spine, or a
+T-score ≤–2.5. A FRAX score ≥3% for hip fracture or ≥20% for major osteoporotic
+fracture is also diagnostic. The usual first-line treatment is an oral bisphosphonate such
+as alendronate or intravenous zoledronic acid. Denosumab would be preferred if the
+creatinine clearance were less than 30–35 mL/min/1.73 m².
+Patients such as this one would be considered at very high fracture risk. Diagnostic
+criteria for this risk category include a T-score <–3.0, a FRAX score ≥4.5% for hip
+fracture or ≥30% for major osteoporotic fracture, multiple fractures, fracture within 12
+months, or fracture during treatment for osteoporosis. The initial treatment
+recommendation would be a parathyroid hormone analogue such as teriparatide daily
+for 2 years.
+Raloxifene is indicated for the prevention of vertebral fractures only. It is useful in
+patients with a history of breast cancer to help decrease the risk for recurrence.",
+    "image": null
+  },
+  {
+    "id": 10,
+    "question": "A 48-year-old female presents to the urgent care clinic approximately 1 hour after spilling hot water
+on her left forearm while draining pasta. She has a past medical history of type 2 diabetes,
+hypertension, and major depression. She is not allergic to any antibiotics and is up to date on tetanus
+vaccination.
+On examination her vital signs are normal. You determine that she has a partial-thickness (second-
+degree) burn involving approximately a 4 × 5-cm area on the posterior and lateral aspects of the left
+forearm.
+In addition to oral medications for pain management and topical antiseptics, you should prescribe
+which one of the following?",
+    "choices": [
+      "No additional medications",
+      "Amoxicillin/clavulanate (Augmentin)",
+      "Clindamycin (Cleocin)",
+      "Levofloxacin",
+      "Sulfamethoxazole/trimethoprim (Bactrim)"
+    ],
+    "answer": "A",
+    "rationale": "First-degree (superficial) and second-degree (partial-thickness) burns in adults can
+usually be managed in the outpatient setting. Management options include analgesia
+with anti-inflammatories or opioids if necessary, and topical agents to keep the burn
+area moist. Multiple agents can be used as a topical antiseptic, including silver
+sulfadiazine, honey, and aloe vera. Oral antibiotics are not indicated in the initial
+management unless there are obvious signs of infection.",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 1</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

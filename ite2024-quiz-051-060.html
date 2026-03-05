@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 6</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 51,
+    "question": "A generally healthy 5-month-old female is brought to your office by her parent for follow-up of a
+worsening, painless, red lesion on her right earlobe that has been present since birth. The parent is
+concerned because the lesion has rapidly increased in size over the last few months. A physical
+examination reveals a nontender, bluish-red, exophytic plaque on the right earlobe (shown below).
+Which one of the following would be an appropriate treatment for this condition?",
+    "choices": [
+      "Topical hydrocortisone 0.5%, twice daily",
+      "Oral propranolol hydrochloride, 2–3 mg/kg daily",
+      "Embolization",
+      "Excisional surgery"
+    ],
+    "answer": "B",
+    "rationale": "Infantile hemangiomas are the most common benign tumors in childhood, and are
+mostly small and self-resolving. However, patients with large lesions, lesions >2 mm
+above the skin, or lesions near the eyes, ears, and nose are considered to be at high
+risk for disfigurement.
+First-line treatment includes oral propranolol hydrochloride, 2–3 mg/kg daily. Alternative
+treatments include topical timolol 0.5% gel-forming solution, twice daily, and high-
+potency corticosteroids such as clobetasol propionate 0.05%, but not hydrocortisone
+0.5%. Embolization and excisional surgery are reserved for select cases in which
+medical treatment has failed.",
+    "image": "quiz_images_2024/2024_mc_page_022.png"
+  },
+  {
+    "id": 52,
+    "question": "A 24-year-old female sees you for treatment of significant depression and associated hypomanic
+symptoms. She has been experiencing racing thoughts, agitation, and a decreased need for sleep.
+Which one of the following is CONTRAINDICATED in this patient?",
+    "choices": [
+      "Cariprazine (Vraylar) monotherapy",
+      "Quetiapine (Seroquel) monotherapy",
+      "Sertraline (Zoloft) monotherapy",
+      "Lurasidone (Latuda) plus valproic acid",
+      "Quetiapine plus lithium"
+    ],
+    "answer": "C",
+    "rationale": "Antidepressant monotherapy is contraindicated in patients with depression who have
+mixed features of associated hypomania or mania because it may precipitate or worsen
+mania. First-line treatment is mood stabilizers such as lithium, anticonvulsants, and
+antipsychotics.",
+    "image": null
+  },
+  {
+    "id": 53,
+    "question": "A 59-year-old male presents to your office accompanied by his wife for evaluation of a 6-month
+history of worsening weakness. He reports having difficulty lifting light items to the top shelf at
+work. His wife adds that he has recently been clumsier around the house.
+The patient’s vital signs are normal today. On physical examination you note mild dysarthria during
+conversation, proximal weakness of the upper extremities that is more pronounced on the left,
+hyperreflexia of the biceps tendon reflex bilaterally, atrophy of the quadriceps that is more
+pronounced on the right, and absent reflexes of the patellar tendon.
+Which one of the following is the most likely diagnosis?",
+    "choices": [
+      "Amyotrophic lateral sclerosis",
+      "Guillain-Barré syndrome",
+      "Hypothyroidism",
+      "Multiple sclerosis",
+      "Myasthenia gravis
+
+Item #51"
+    ],
+    "answer": "A",
+    "rationale": "Weakness is a chief concern that is frequently encountered in medical settings, and a
+careful history and thorough physical examination are critical to developing an
+appropriate diagnosis. This patient displays features of asymmetric weakness and
+findings of both upper and lower motor neuron disease, which should lead to a clinical
+suspicion of amyotrophic lateral sclerosis (ALS), also known as Lou Gehrig disease. ALS
+is an insidious paralytic disorder that is currently incurable. Upper motor signs include
+hyperreflexia, dysarthria, clonus, and a positive Babinski sign. Lower motor signs
+include muscle atrophy and hyporeflexia or areflexia.
+Guillain-Barré syndrome is an acute neuromuscular disorder characterized by ascending
+muscle weakness and lower motor neuron signs that may progress to include the
+respiratory muscles. While hypothyroidism may lead to hyporeflexia, it is unlikely to lead
+to the other physical examination findings in this case. Multiple sclerosis can have a
+variable presentation and may display signs of unilateral weakness and upper motor
+neuron signs depending on the location of the lesion. Myasthenia gravis is characterized
+by proximal weakness that progresses throughout the day, often includes ocular
+muscles, and displays lower motor neuron signs.",
+    "image": null
+  },
+  {
+    "id": 54,
+    "question": "A 49-year-old female presents to your office with severe left ear pain. The patient describes the pain
+as sharp and deep inside her ear and reports that it has been occurring occasionally for several years.
+The pain has become more constant over the last 2 months, and she currently rates it as 8 out of 10 on
+a pain scale. She has not previously sought an evaluation.
+On physical examination you find a normal ear canal and tympanic membrane. The patient is only
+able to open her mouth 2 finger widths, has clicking over the left temporomandibular joint with
+opening, and has pain with palpation of the submandibular musculature.
+Which one of the following is the most appropriate next step in the management of this disorder?",
+    "choices": [
+      "Reassurance that her ear is normal, and follow-up in 4 weeks if symptoms have not improved",
+      "A trial of naproxen and cyclobenzaprine",
+      "Noncontrast CT of the facial bones",
+      "Referral to an otolaryngologist for further evaluation",
+      "Referral to a maxillofacial surgeon for consideration of jaw realignment surgery"
+    ],
+    "answer": "B",
+    "rationale": "There is no need for imaging or further workup to determine the cause of pain in this
+patient with uncomplicated temporomandibular joint dysfunction with muscle spasms.
+The initial treatment is naproxen for inflammation and pain, as well as cyclobenzaprine
+for muscle spasms. Scheduling a follow-up visit without treatment is not appropriate in
+a patient with a clear diagnosis and available medications that can safely provide relief.
+A referral to either an otolaryngologist or a maxillofacial surgeon should be deferred
+until a trial of medication is completed.",
+    "image": null
+  },
+  {
+    "id": 55,
+    "question": "A 6-month-old male is brought to your office by his parents for a well baby examination. This is the
+patient’s first visit to your office as his family recently immigrated to the United States. The infant
+appears to be developing normally, but the parents are concerned because they have not observed a
+right testicle.
+On examination you are able to palpate the left testicle in the normal location. The right testicle is not
+located in the scrotum but is palpable along the inguinal canal. It can be moved into the upper
+scrotum but requires constant tension to remain in this position and immediately retracts after release.
+Which one of the following would be the most appropriate next step in management?",
+    "choices": [
+      "Reassurance that the condition will resolve spontaneously",
+      "Follow-up in 2 months",
+      "An ultrasound of the scrotum and pelvis",
+      "Referral to an endocrinologist",
+      "Referral to a urologist"
+    ],
+    "answer": "E",
+    "rationale": "Cryptorchidism is the most common genitourinary malformation in male children, and
+primary care physicians play a key role in the early identification of this condition. The
+next step in management would be referral to a urologist (SOR C). Reassuring the
+parents that the patient’s condition will spontaneously resolve is not sufficient. If the
+testicle were located in the upper scrotum or lower inguinal canal, then an annual
+examination to ensure spontaneous resolution would be acceptable. If the patient had
+bilateral undescended testicles that were nonpalpable, then referral to an
+endocrinologist would be the most appropriate next step. Imaging is not recommended
+before consultation with a surgical specialist (SOR C). After surgery, patients need
+lifelong surveillance and counseling regarding fertility implications and increased risk for
+testicular conditions.",
+    "image": null
+  },
+  {
+    "id": 56,
+    "question": "A 23-year-old kindergarten teacher presents with a 2-day history of fever up to 102 °F, a sore throat,
+headache, and swollen glands. She has not had a runny nose or cough. Her throat is hyperemic and
+has tonsillar exudates. The anterior cervical nodes are enlarged and tender, but there is no other
+lymphadenopathy. She requests an antibiotic to prevent complications and to reduce the likelihood of
+spreading the infection to her students. A throat swab for group A Streptococcus is positive.
+Which one of the following is true regarding the use of antibiotics in this patient?",
+    "choices": [
+      "Her current symptoms will not be reduced",
+      "Her risk for developing poststreptococcal glomerulonephritis will not change",
+      "Her risk for developing rheumatic fever will not change",
+      "She will remain contagious for 7–10 days even with treatment"
+    ],
+    "answer": "B",
+    "rationale": "Up to 90% of cases of pharyngitis in adults are viral in etiology. The patient in this
+clinical scenario, however, has a high clinical likelihood of group A β-hemolytic
+streptococcal (GABS) pharyngitis, as she meets 4 of the 5 Modified Centor Criteria
+(fever, hyperemic/exudative tonsillitis, cervical adenopathy, and absence of cough).
+Antibiotic treatment is recommended to reduce communicability, relieve symptoms, and
+help prevent rheumatic fever (SOR C). Antibiotic treatment for GABS pharyngitis does
+not lower the risk for acute poststreptococcal glomerulonephritis. The use of the
+Modified Centor Criteria for acute pharyngitis is endorsed by both the American
+Academy of Family Physicians and the American College of Physicians.",
+    "image": null
+  },
+  {
+    "id": 57,
+    "question": "A 23-year-old female presents to your office for evaluation of amenorrhea. A pregnancy test is
+positive, and you determine that she is at 6 weeks’ gestation based on her last menstrual period. She
+has a history of acne, allergic rhinitis, gastroesophageal reflux, and anxiety. The patient’s current
+medications include the following:
+Adapalene 0.1% gel (Differin Gel) daily
+Famotidine (Pepcid), 20 mg as needed
+Fluticasone propionate (Flonase), 50 μg daily
+Hydroxyzine (Vistaril), 25 mg as needed
+Polyethylene glycol (MiraLAX), 17 g as needed
+Which one of the patient’s current medications should be discontinued at this time?",
+    "choices": [
+      "Adapalene",
+      "Famotidine",
+      "Fluticasone propionate",
+      "Hydroxyzine",
+      "Polyethylene glycol"
+    ],
+    "answer": "A",
+    "rationale": "Family physicians should be familiar with medications contraindicated in pregnancy that
+are commonly used by women of reproductive age. Topical adapalene, along with other
+retinoids, is contraindicated in pregnancy due to lack of safety data and known harm
+from oral formulations. Famotidine, fluticasone propionate, hydroxyzine, and
+polyethylene glycol are generally considered safe in all trimesters of pregnancy.",
+    "image": null
+  },
+  {
+    "id": 58,
+    "question": "A 17-year-old male sustains an injury while playing in a high school football game. As the sideline
+physician, you determine that he needs to be transported to the emergency department with neck
+stabilization. He is awake, talking, and in no acute distress. There is no concern for airway
+compromise.
+Depending on the nature of his other injuries, which one of the following pieces of protective
+equipment should you remove before transporting the patient?",
+    "choices": [
+      "Only the helmet if required",
+      "Only the shoulder pads if required",
+      "Both the helmet and the shoulder pads",
+      "Neither the helmet nor the shoulder pads"
+    ],
+    "answer": "D",
+    "rationale": "In general, helmets and pads should remain in place during transportation after a
+football injury requiring neck stabilization. The facemask may be removed with a special
+tool if there are airway issues or loss of consciousness. If the athlete’s injuries require
+either the helmet or pads to be removed, both should be removed by a trained team.
+Removal of only one can cause hyperflexion or hyperextension of the neck.",
+    "image": null
+  },
+  {
+    "id": 59,
+    "question": "A 16-year-old female presents for a routine checkup. During the visit, she discloses that she is sexually
+active and wants to discuss contraceptive options. However, she is hesitant to inform her parents, fearing
+their disapproval.
+Which one of the following is the most ethical course of action?",
+    "choices": [
+      "Providing the patient with contraception without informing her parents, and respecting her
+confidentiality by not noting this discussion in her medical record",
+      "Offering confidential counseling and contraceptive options while encouraging open
+communication with her parents",
+      "Insisting on parental involvement in the decision-making process, emphasizing the importance of
+open communication",
+      "Referring the patient to a mental health professional to address her concerns about parental
+disapproval before discussing contraception",
+      "Refusing to discuss contraception without parental consent, citing the patient’s age"
+    ],
+    "answer": "B",
+    "rationale": "While respecting the patient’s autonomy and confidentiality is important, ethical
+obligations also extend to ensuring her well-being and safety, and accurately
+maintaining the medical record. Encouraging open communication with parents can
+foster trust and support, but forcing it might create a harmful environment. Offering
+counseling and contraceptive options while advocating for open communication allows
+the physician to foster patient autonomy as well as uphold responsible guidance. This
+approach aligns with ethical guidelines from the American Academy of Pediatrics that
+emphasize respect for minors’ confidentiality while considering parental involvement in
+sensitive situations.",
+    "image": null
+  },
+  {
+    "id": 60,
+    "question": "A previously healthy 72-year-old female presents to your office 7 days after hospitalization for an
+acute ischemic stroke diagnosed by MRI. The inpatient evaluation confirmed that she experienced a
+minor noncardioembolic ischemic stroke. She was not a candidate for reperfusion therapy and did not
+receive rtPA. Her family reports that her speech impairment and confusion have completely resolved
+and that she is now back to her baseline.
+Which one of the following would be the most appropriate pharmacotherapy at this time?",
+    "choices": [
+      "A direct oral anticoagulant",
+      "Low-molecular-weight heparin",
+      "A vitamin K antagonist",
+      "Single antiplatelet therapy",
+      "Dual antiplatelet therapy"
+    ],
+    "answer": "E",
+    "rationale": "This patient has been diagnosed with a minor noncardioembolic ischemic stroke and
+should be treated with dual antiplatelet therapy with aspirin and clopidogrel for 21–90
+days post stroke (SOR A). The benefit of reducing recurrent stroke risk outweighs the
+risk for major bleeding. Using aspirin and clopidogrel longer than 90 days offers no
+additional benefit but results in significantly increased bleeding risk compared to using
+single antiplatelet therapy. Following 21–90 days post stroke, either aspirin
+monotherapy or aspirin in combination with dipyridamole may be used indefinitely. If a
+cardioembolic source is later diagnosed, appropriate anticoagulation therapy with a
+direct oral anticoagulant or vitamin K antagonist, such as warfarin, can be initiated.
+Low-molecular-weight heparin does not play a role in secondary stroke prevention.",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 6</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

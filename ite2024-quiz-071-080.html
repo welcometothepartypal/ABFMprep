@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 8</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 71,
+    "question": "You see a 45-year-old male with a history of opioid use disorder for a health maintenance
+examination. The patient has successfully remained in a treatment program using methadone, and an
+examination is normal. He has not had a recent EKG.
+You order an EKG because which one of the following is a very rare but serious complication of
+methadone treatment?",
+    "choices": [
+      "Paroxysmal atrial fibrillation",
+      "QTc prolongation",
+      "First-degree heart block",
+      "Second-degree Mobitz type II heart block",
+      "Complete heart block"
+    ],
+    "answer": "B",
+    "rationale": "QTc prolongation is a very rare but serious complication of methadone treatment.
+Expert organizations recommend obtaining a baseline EKG in patients with other risk
+factors. Although the optimal strategy for patients with a QTc interval ≥500 milliseconds
+is debated, physicians should review risks and discuss alternatives to other QTc
+prolongation medications. If the risk of continuing methadone outweighs the high-risk
+potential for opioid overdose with methadone discontinuation, alternatives to
+methadone can be pursued.",
+    "image": null
+  },
+  {
+    "id": 72,
+    "question": "Lymphadenopathy in which one of the following sites in a 55-year-old male would suggest
+malignancy?",
+    "choices": [
+      "Anterior cervical",
+      "Posterior cervical",
+      "Axillary",
+      "Inguinal",
+      "Supraclavicular"
+    ],
+    "answer": "E",
+    "rationale": "While lymphadenopathy is generally self-limited with a benign etiology,
+lymphadenopathy at the supraclavicular, popliteal, and iliac locations is abnormal.
+Epitrochlear nodes >5 mm in diameter are also abnormal. Because it is associated with
+a high risk for intra-abdominal malignancy, supraclavicular lymphadenopathy should be
+evaluated immediately. This applies to both adults and children although patients >40
+years of age are at highest risk. Studies indicate that 34%–50% of these patients with
+supraclavicular lymphadenopathy have malignancy.
+Infection is a common cause of anterior cervical, posterior cervical, submental, and
+submandibular lymphadenopathy. Axillary lymphadenopathy is commonly caused by
+infections or injuries of the upper extremities. Many healthy adults have inguinal
+lymphadenopathy.",
+    "image": null
+  },
+  {
+    "id": 73,
+    "question": "A 15-year-old patient who was recently hospitalized for anorexia nervosa sees you for a follow-up
+visit in your clinic to discuss the next steps in treatment. Which one of the following therapies is the
+recommended next step in treatment for this patient?",
+    "choices": [
+      "Self-guided treatment",
+      "Cognitive behavioral therapy",
+      "Focal psychodynamic psychotherapy",
+      "Interpersonal psychotherapy",
+      "Family-based therapy"
+    ],
+    "answer": "E",
+    "rationale": "Family-based therapy is recommended as first-line therapy for anorexia nervosa in
+adolescents and some young adults. Studies have shown that family-based therapy
+results in higher remission rates and weight gain than individual therapy such as self-
+guided treatment, cognitive behavioral therapy, focal psychodynamic psychotherapy,
+and interpersonal psychotherapy. Family-based therapy avoids assigning blame and
+instead focuses on uniting the family against the disorder. Initially, parents take the
+lead in promoting healthy eating behaviors as the patient slowly gains greater
+autonomy in feeding. The therapy improves family communication and leads to patient
+independence.",
+    "image": null
+  },
+  {
+    "id": 74,
+    "question": "A 67-year-old female presents for an annual health maintenance examination. She has a history of
+GERD, asthma, and hypothyroidism. Her last colonoscopy revealed tubular adenomas. She has
+smoked 1 pack of cigarettes per day since age 20. She does not have any current medical concerns.
+Which one of the following would be most appropriate for this patient?",
+    "choices": [
+      "Urinalysis screening for bladder cancer",
+      "Stool DNA testing (Cologuard) for colon cancer",
+      "Cytology and HPV co-testing for cervical cancer",
+      "Annual EKG screening for coronary artery disease",
+      "Annual low-dose CT screening for lung cancer"
+    ],
+    "answer": "E",
+    "rationale": "The U.S. Preventive Services Task Force recommends annual screening for lung cancer
+with low-dose CT for patients between the ages of 50 and 80 who have more than a
+20-pack-year smoking history and either currently smoke or quit smoking within the
+past 15 years. This patient has a 47-pack-year smoking history, so screening is
+appropriate. Neither screening urinalysis nor screening EKG is recommended in this
+asymptomatic patient. This patient has a history of tubular adenomas so additional
+colon cancer screening should be with a colonoscopy, not stool DNA testing. Cervical
+cancer screening occurs until age 65.",
+    "image": null
+  },
+  {
+    "id": 75,
+    "question": "Which one of the following is the best agent for controlling edema related to chronic kidney disease?",
+    "choices": [
+      "Chlorthalidone",
+      "Furosemide (Lasix)",
+      "Hydrochlorothiazide",
+      "Mannitol (Osmitrol)",
+      "Spironolactone (Aldactone)"
+    ],
+    "answer": "B",
+    "rationale": "Furosemide is the loop diuretic of choice for removing excess extracellular fluid volume
+in chronic kidney disease. It has a wide margin of safety and will achieve some degree
+of natriuresis in even the most severe renal failure. Other diuretics have relatively little
+effect.",
+    "image": null
+  },
+  {
+    "id": 76,
+    "question": "A 32-year-old female presents with a 1-week history of constant right upper quadrant pain. She
+underwent a nonemergent outpatient laparoscopic cholecystectomy 3 months ago with an
+unremarkable recovery and has followed her regular diet for more than 2 months. Her medical history
+includes seasonal allergies, migraine without aura, and 2 uncomplicated deliveries of healthy infants.
+Her medications include a monophasic oral contraceptive, as-needed sumatriptan (Imitrex), and as-
+needed loratadine (Claritin). A review of systems is positive for mild nausea and itching without a
+rash. She has just completed her withdrawal bleed for this contraceptive cycle. Her vital signs are
+normal.
+A physical examination reveals mild tenderness to palpation in the right upper quadrant, and scleral
+icterus. The patient had not noticed this tenderness prior to examination. Her skin appears faintly
+icteric. Laboratory studies reveal the following:
+CBC normal
+Urine hCG negative
+Urine dipstick 2+ urobilinogen
+Bilirubin 6.5 mg/dL (N 0.2–1.2)
+Lipase normal
+AST 50 U/L (N 0–35)
+ALT 66 U/L (N 0–45)
+Alkaline phosphatase 1382 U/L (N 30–120)
+Gamma-glutamyl transferase 120 U/L (N 0–30)
+Which one of the following is the most likely cause of this patient’s symptoms?",
+    "choices": [
+      "Ascending cholangitis",
+      "Choledocholithiasis of the common bile duct",
+      "Metabolic dysfunction–associated steatohepatitis (nonalcoholic steatohepatitis)",
+      "Oral contraceptives",
+      "Stricture following her surgery"
+    ],
+    "answer": "B",
+    "rationale": "This patient has choledocholithiasis with either a retained stone or, more likely, a
+recurrent stone following cholecystectomy. She has jaundice and her hepatic function
+tests demonstrate a cholestatic pattern: an AST to ALT ratio <1.5, suggesting an
+extrahepatic blockage; an elevated alkaline phosphatase level greater than the ALT and
+AST levels; and an elevated gamma-glutamyl transferase level. Cholangitis would cause
+a similar elevation but would be accompanied by an increased WBC count. Metabolic
+dysfunction–associated steatohepatitis (formerly known as nonalcoholic steatohepatitis)
+and oral contraceptives would be unlikely to cause pain. Stricture is far less likely than a
+stone.",
+    "image": null
+  },
+  {
+    "id": 77,
+    "question": "A 24-month-old male is brought to your office by his parent. During the examination you notice that
+he seems to speak fewer words than expected and is very hard to understand. He does not use 2-word
+phrases, cannot point to any body parts, and has difficulty pointing to items in a book. On further
+questioning the parent confirms that the toddler speaks fewer than 50 words. Both English and
+German are spoken in his home.
+Which one of the following factors puts this patient at risk for the likely diagnosis?",
+    "choices": [
+      "Being the first born",
+      "Being the last born",
+      "A birth weight ≥5000 g (11 lb)",
+      "Growing up in a multilingual household",
+      "Male sex"
+    ],
+    "answer": "E",
+    "rationale": "This toddler’s delay in speech and language development is a common impairment that
+affects 1 in 8 children in the United States. School-aged children with speech and
+language delays are at greater risk for difficulty learning to read, putting them at risk
+for less skilled jobs in adulthood. The development of speech and language occurs in
+the first 6 months of life and is marked by distinct milestones according to age. Because
+exposure to language in early childhood influences a child’s language mastery, parents
+and caregivers play an important role in the development of speech and language.
+
+When patients present with concerning signs for delays in speech and language
+development, early referrals for additional evaluation and treatment can mitigate the
+adverse effects on academic and social development. A large study found that the most
+important risk factor for speech and language impairment was male sex. Other risk
+factors included ongoing hearing problems and birth weight ≤2500 g (5.5 lb). Birth
+order does not have an adverse association with speech and language development.
+Children growing up in bilingual households should reach language milestones at the
+same rate as those in monolingual households.",
+    "image": null
+  },
+  {
+    "id": 78,
+    "question": "A 73-year-old female presents with chronic diarrhea. You suspect microscopic colitis and order
+colonoscopy.
+Based on the suspected diagnosis, you should expect which one of the following colonoscopy
+findings?",
+    "choices": [
+      "Granulomas",
+      "Normal mucosa",
+      "Patchy ulcerations",
+      "Pseudomembranes"
+    ],
+    "answer": "B",
+    "rationale": "In a patient with microscopic colitis, the most common finding on colonoscopy is normal
+mucosa. Because the mucosa appears normal, microscopic colitis needs to be
+diagnosed with biopsy. Granulomas may be found in patients with Crohn disease.
+Ulcerations are found in ulcerative colitis. Pseudomembranes are found in Clostridioides
+difficile infection. Granulomatous changes and pseudomembranes may also require
+biopsy for diagnosis.",
+    "image": null
+  },
+  {
+    "id": 79,
+    "question": "A 24-year-old male presents to your clinic to request suture repair of a 3-cm laceration on his arm
+caused by an accidental cut with a clean knife the night before. The wound is not actively bleeding
+and there are not any signs of infection.
+It would be acceptable to proceed with primary closure up to how many hours after the injury
+occurred?",
+    "choices": [
+      "2",
+      "10",
+      "18",
+      "24",
+      "36"
+    ],
+    "answer": "C",
+    "rationale": "Noninfected wounds caused by clean objects can undergo primary closure up to 18
+hours after injury (evidence rating B) without a significant increase in infection rates.
+Noninfected head wounds can be repaired up to 24 hours after injury. These time
+parameters should not be used if there are signs of contamination, the laceration length
+is >5 cm, the laceration is located on the lower extremities, or the patient has diabetes
+mellitus.",
+    "image": null
+  },
+  {
+    "id": 80,
+    "question": "Which one of the following causes of bloody diarrhea should prompt further evaluation for hemolytic
+uremic syndrome?",
+    "choices": [
+      "Campylobacter bacteria",
+      "Entamoeba histolytica",
+      "Salmonella bacteria",
+      "Shiga toxin–producing Escherichia coli",
+      "Shigella bacteria"
+    ],
+    "answer": "D",
+    "rationale": "Hemolytic uremic syndrome (HUS) is a potential serious complication of Shiga toxin–
+producing Escherichia coli. Frequent monitoring of hemoglobin and platelet counts,
+electrolytes, and BUN and creatinine levels is recommended to detect early
+manifestations of HUS. The other listed causes of bloody diarrhea (Campylobacter
+bacteria, Entamoeba histolytica, Salmonella bacteria, and Shigella bacteria) are not
+associated with HUS.",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 8</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

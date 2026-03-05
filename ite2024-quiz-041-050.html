@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 5</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 41,
+    "question": "An 80-year-old male who is taking furosemide (Lasix), 80 mg, for heart failure presents to the
+emergency department (ED) with a gradual onset of somnolence. He is found to be hyponatremic
+with a serum sodium level of 104 mEq/L (N 135–145).
+You should order the administration of which one of the following?",
+    "choices": [
+      "100 mL of 3% sodium chloride over 10 minutes",
+      "150 mL of 5% sodium chloride over 30 minutes",
+      "500 mL of 3% sodium chloride over 30 minutes",
+      "1 L of 0.9% sodium chloride over 1 hour",
+      "1 L of 3% sodium chloride over 1 hour"
+    ],
+    "answer": "A",
+    "rationale": "Current guidelines recommend correction of the serum sodium level by 4–6 mEq/L
+within 1–2 hours, which can reverse hyponatremic encephalopathy. This may be
+accomplished with either a 100-mL or 150-mL bolus of 3% sodium chloride
+administered over 10–20 minutes and repeated 2–3 times until the desired sodium level
+is achieved.",
+    "image": null
+  },
+  {
+    "id": 42,
+    "question": "A 45-year-old female presents for evaluation of a 3-month history of left knee pain. She commutes
+by bicycle and is now finding it painful to cycle or even walk. On examination she does not have any
+deformity, and there is normal range of motion of the hips and knees. She has bilateral knee crepitus,
+pain on flexion of the left knee, and point tenderness that is noted 2 cm proximal to the left lateral
+joint line while flexing the knee.
+Which one of the following is the most likely diagnosis?",
+    "choices": [
+      "Iliotibial band syndrome",
+      "Lateral compartment osteoarthritis",
+      "Patellar tendinitis",
+      "Patellofemoral syndrome",
+      "Pes anserine bursitis"
+    ],
+    "answer": "A",
+    "rationale": "This patient has iliotibial band syndrome, a common overuse injury in cyclists and
+runners. Pain occurs due to impingement of the iliotibial band over the lateral femoral
+epicondyle. The Noble compression test is diagnostic for iliotibial band syndrome and is
+considered positive if it evokes pain in the area of impingement, as in this patient.
+Crepitus occurs with osteoarthritis but is not specific, and this patient’s history and the
+examination are more suggestive of iliotibial band syndrome. Patellar tendinitis is more
+central, usually at the inferior pole of the patella. Patellofemoral syndrome causes
+diffuse pain without point tenderness. The pes anserine bursa is distal to the medial
+knee.",
+    "image": null
+  },
+  {
+    "id": 43,
+    "question": "You see an expectant mother for a prenatal visit. She has heard of sudden infant death syndrome and
+asks for advice on sleeping arrangements.
+You tell her that infants should sleep",
+    "choices": [
+      "in a crib and on their backs in the parents’ room",
+      "in a crib and on their stomachs in the parents’ room",
+      "in a crib and on their backs in their own room",
+      "in the parents’ bed and on their backs",
+      "in the parents’ bed and on their stomachs"
+    ],
+    "answer": "A",
+    "rationale": "The infant mortality rate from accidental suffocation and strangling in bed has increased
+in recent decades and some of this increase may be due to sudden infant death
+syndrome. Physicians should counsel expectant parents that it is safest for infants to
+sleep on their backs in their own cribs on a mattress with a fitted sheet. An infant
+should sleep in the caregiver’s room until 6–12 months of age. Infant suffocation is
+more common with soft linen when sleeping in the caregiver’s bed.",
+    "image": null
+  },
+  {
+    "id": 44,
+    "question": "A 55-year-old female presents to your office because of a several-month history of progressively
+worsening fatigue, weakness, and unexplained weight loss. Physical examination findings are
+remarkable for hyperpigmentation of the skin and buccal mucosa. Initial laboratory studies reveal a
+low morning cortisol level.
+Which one of the following is the most likely diagnosis?",
+    "choices": [
+      "Addison disease",
+      "Cushing disease",
+      "Pheochromocytoma",
+      "Primary hyperaldosteronism",
+      "Syndrome of inappropriate antidiuretic hormone secretion"
+    ],
+    "answer": "A",
+    "rationale": "Addison disease is usually marked by fatigue, weakness, unexplained weight loss, and
+hyperpigmentation along with low cortisol levels. Hyperpigmentation is the result of
+elevated levels of melanocyte-stimulating hormone, a cleavage product of corticotropin
+(ACTH). Cushing disease is the result of excessive cortisol production due to a
+corticotropin-secreting pituitary adenoma and is marked by weight gain, central obesity,
+moon facies, buffalo hump, and muscle weakness. Pheochromocytoma is a
+catecholamine-secreting tumor of the adrenal medulla. It usually presents with episodic
+symptoms, including hypertension, headache, palpitations, and diaphoresis. Primary
+hyperaldosteronism is due to excessive aldosterone production leading to sodium
+retention, potassium loss, and hypertension. Clinical features of primary
+hyperaldosteronism include hypertension, hypokalemia, and metabolic alkalosis.
+Syndrome of inappropriate antidiuretic hormone secretion (SIADH) is caused by the
+inappropriate release of vasopressin despite normal or increased plasma volume and
+may be triggered by stroke, infection, trauma, medications, pulmonary disease, or HIV.
+Clinical symptoms of SIADH include confusion, muscle weakness, tremor, muscle
+cramps, hallucinations, seizures, and death.",
+    "image": null
+  },
+  {
+    "id": 45,
+    "question": "A 65-year-old male presents to your office for a Welcome to Medicare visit. The whisper test is
+abnormal with both ears.
+In addition to difficulty hearing and participating in day-to-day conversation, the patient is at
+increased risk for which one of the following health problems due to his hearing loss?",
+    "choices": [
+      "Benign paroxysmal positional vertigo",
+      "Dementia",
+      "Ear infection",
+      "Heart failure",
+      "Temporomandibular joint dysfunction"
+    ],
+    "answer": "B",
+    "rationale": "Hearing loss is associated with dementia, decreased quality of life, depression, debility,
+delirium, falls, and mortality. It does not increase the risk for benign paroxysmal
+positional vertigo, ear infection, heart failure, or temporomandibular joint dysfunction.",
+    "image": null
+  },
+  {
+    "id": 46,
+    "question": "A 32-year-old female presents with concerns regarding infertility. She has been married for 3 years
+and has been attempting to conceive for the past 18 months. She reports early menarche at age 10 and
+a long-standing history of dysmenorrhea and heavy bleeding. These symptoms improved when she
+was using oral contraceptive therapy in her 20s. Transvaginal ultrasound results are inconclusive.
+Which one of the following would be the most appropriate next step in management?",
+    "choices": [
+      "A 6-month trial of oral contraceptive therapy",
+      "A trial of aromatase inhibitor therapy such as letrozole (Femara)",
+      "Placement of a levonorgestrel-releasing IUD (Mirena)",
+      "Diagnostic laparoscopic surgery to confirm the diagnosis"
+    ],
+    "answer": "D",
+    "rationale": "There is a high suspicion for endometriosis in this patient who desires pregnancy. She
+has classic symptoms, including painful menses and early menarche, and she is now
+experiencing infertility. Her symptoms improved with oral contraceptive treatment in the
+past. Laparoscopic surgery can assist with both diagnosis and treatment. Given that the
+patient desires pregnancy, a trial of oral contraceptive therapy and placement of a
+levonorgestrel-releasing IUD are not appropriate. While aromatase inhibitor therapy
+such as letrozole may be considered in the future, a complete infertility workup,
+including evaluation for male factor infertility, should be completed first.",
+    "image": null
+  },
+  {
+    "id": 47,
+    "question": "A 70-year-old male presents to the emergency department with a sudden onset of severe abdominal
+pain that radiates to his back. The patient has a history of stroke, hypertension, and type 2 diabetes.
+He has a 40-pack-year smoking history. A physical examination reveals a pulsatile mass just above
+the umbilicus. CT of the abdomen confirms the diagnosis.
+Which one of the following is the greatest risk factor for developing this condition?",
+    "choices": [
+      "Cigarette smoking",
+      "Hypertension",
+      "Male sex",
+      "Stroke",
+      "Type 2 diabetes"
+    ],
+    "answer": "A",
+    "rationale": "This patient has an abdominal aortic aneurysm (AAA) that may have ruptured. Tobacco
+use (in the form of cigarette smoking) is the greatest risk factor for developing AAA.
+Current U.S. Preventive Services Task Force guidelines recommend one-time abdominal
+screening ultrasonography for all men ages 65–75 who have ever smoked. Additional
+risk factors include hypertension, male sex, stroke, a family history of AAA, obesity,
+coronary artery disease, peripheral artery disease, and age >65.",
+    "image": null
+  },
+  {
+    "id": 48,
+    "question": "Of the following, which one is the most effective abortive treatment for cluster headache?",
+    "choices": [
+      "Hydromorphone (Dilaudid)",
+      "Ketorolac",
+      "Ondansetron",
+      "Propranolol",
+      "Sumatriptan (Imitrex)"
+    ],
+    "answer": "E",
+    "rationale": "Cluster headache is a type of primary headache in the category of trigeminal autonomic
+cephalgia, and abortive therapy consists of 100% high-flow oxygen and triptans. Its
+typical onset is age 30 and it is 2–3 times more common in males than females. The
+pain is severe and unilateral in the orbital, supraorbital, or temporal locations. It is
+associated with at least one of the following symptoms on the ipsilateral side:
+conjunctival injection or lacrimation, nasal congestion or rhinorrhea, miosis or ptosis,
+eyelid swelling, and sweating of the forehead and face. The pain can last from 30
+minutes to almost 3 hours. Hydromorphone and ketorolac can be used to mask other
+types of pain but are ineffective in stopping cluster headache. Ondansetron stops
+vomiting, but its side effects include headache. Propranolol can be used to prevent
+migraine.",
+    "image": null
+  },
+  {
+    "id": 49,
+    "question": "A 4-month-old female is brought to your office for a well child check. She is here with her mother and
+2 older brothers, who are also your patients. The family looks forward to swimming at the local outdoor
+community pool, going to the beach, and gardening this summer.
+Which one of the following should you recommend to reduce this family's risk for skin cancer related
+to sun exposure?",
+    "choices": [
+      "Applying sunscreen with an SPF ≥15 to the infant before taking her outside",
+      "Avoiding going to the pool during the middle of the day, and encouraging them to take breaks in
+the shade",
+      "Going to the beach only on cloudy days when ultraviolet rays are absent",
+      "Wearing a baseball cap for sun protection when gardening"
+    ],
+    "answer": "B",
+    "rationale": "Exposure to UV light is known to increase the risk for skin cancer. UV rays are strongest
+from 10:00 a.m. to 4:00 p.m., so going to the pool in the early morning will reduce
+exposure. The FDA does not recommend the use of sunscreen in infants under 6
+months of age. Children under 6 months of age should be kept out of direct sunlight.
+UV rays still damage skin on cloudy days. Hats should shade the ears and the back of
+the neck as well as the face, so a baseball cap is not a good choice.",
+    "image": null
+  },
+  {
+    "id": 50,
+    "question": "A 36-year-old female presents with a medical history of hypertension, hyperlipidemia, obesity, and 3
+miscarriages. She is not currently pregnant. She was recently discharged from the hospital with her
+second deep vein thrombosis (DVT) in the past several years. A workup for the underlying cause of
+her thrombophilia is positive for antiphospholipid antibodies.
+Which one of the following medications would be most appropriate for the long-term treatment of
+this patient’s DVT?",
+    "choices": [
+      "Apixaban (Eliquis)",
+      "Aspirin",
+      "Clopidogrel (Plavix)",
+      "Enoxaparin (Lovenox)",
+      "Warfarin"
+    ],
+    "answer": "E",
+    "rationale": "The correct treatment of a deep vein thrombosis (DVT) in a patient with
+antiphospholipid syndrome is warfarin. Most DVTs can be treated with a direct oral
+anticoagulant (DOAC). DOACs may be acceptable in low-risk patients with a single
+previous DVT, but they are not preferred for patients with antiphospholipid antibody
+syndrome due to the risk for increased arterial thrombotic events. Aspirin is clearly not
+appropriate in a patient with recurrent DVTs. Clopidogrel would never be indicated for
+the treatment of a DVT. If this patient were pregnant, enoxaparin would be preferred.
+Thrombophilia evaluation should not be considered in patients with a provoked venous
+thromboembolism (VTE). However, in select patients with recurrent VTE, evaluation
+should be considered, specifically when the results of the testing would influence the
+treatment plan (SOR A). Thrombophilia testing may be considered in patients who are
+interested in stopping anticoagulation because of concerns such as bleeding risk,
+intolerance, or cost. These patients include those with an initial VTE before age 50, a
+history of recurrent pregnancy loss, a first-degree relative who had an initial VTE before
+50 years of age, recurrent VTEs, arterial and venous thrombi, or VTE in an unusual site.",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 5</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

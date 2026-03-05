@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE 2024: Quiz 20</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 191,
+    "question": "A 48-year-old female presents to your office because of an erythematous rash on her left posterior
+calf and right posterior thigh (shown below). Five days ago she was stung by wasps in those
+locations. The stings were initially associated with intense pain and small areas of erythema that have
+since expanded to approximately 10-cm erythematous patches surrounding the original sting sites.
+On examination there are erythematous patches on her left posterior calf and right posterior thigh
+with warmth, induration, and tenderness to palpation. She does not have any fevers or chills. The
+examination findings are otherwise within normal limits.
+Which one of the following would be the most appropriate treatment at this time?",
+    "choices": [
+      "Topical neomycin/polymyxin B/pramoxine (Neosporin)",
+      "Oral cephalexin",
+      "Oral diphenhydramine",
+      "Oral prednisone",
+      "Oral sulfamethoxazole/trimethoprim (Bactrim)"
+    ],
+    "answer": "D",
+    "rationale": "This patient is experiencing a large local reaction to an insect sting, occurring between
+a few days to 1 week after the initial sting. This occurs in about 19% of reactions and
+carries a 5%–10% risk for a systemic reaction in subsequent exposures. The treatment
+is prednisone, 40–60 mg daily for 3–5 days. This is not an infection but rather a
+reaction to the Hymenoptera sting, so oral or topical antibiotics are not indicated.
+Antihistamines such as diphenhydramine are useful for pruritus but are not a treatment
+for the reaction.",
+    "image": "quiz_images_2024/2024_mc_page_078.png"
+  },
+  {
+    "id": 192,
+    "question": "A 39-year-old female presents with a sudden onset of palpitations. Her vital signs include a blood
+pressure of 114/68 mm Hg and a pulse rate of 166 beats/min. She is cooperative and alert. An EKG
+shows regular narrow complex tachycardia with normal intervals. She has tried vagal maneuvers with
+no improvement.
+Which one of the following would be the most appropriate treatment at this time?",
+    "choices": [
+      "Adenosine",
+      "Atropine",
+      "Diltiazem (Cardizem)",
+      "Metoprolol",
+      "Synchronized cardioversion
+
+Item #191
+Item #191"
+    ],
+    "answer": "A",
+    "rationale": "If vagal maneuvers are not effective in the management of stable supraventricular
+tachycardia (SVT), the most appropriate next step is treatment with intravenous
+adenosine at an initial dose of 6 mg. Atropine is a treatment option for bradycardia,
+particularly in the setting of heart block. Diltiazem or metoprolol may be used acutely in
+atrial fibrillation or in the prevention of SVT. Synchronized cardioversion is indicated in
+patients with SVT who become hypotensive or unresponsive.",
+    "image": null
+  },
+  {
+    "id": 193,
+    "question": "A 29-year-old female presents with low back pain that began after giving birth 3 months ago. She
+reports pain on her right side when climbing and descending stairs and when lying on her right side.
+On examination she has mild lumbar paraspinal muscle tightness on the left and moderate tenderness
+inferomedial to the posterior superior iliac spine on the right. Muscle strength testing and lower
+extremity reflexes are normal.
+Which one of the following conditions is the most likely cause of this patient’s pain?",
+    "choices": [
+      "Lumbar strain",
+      "Piriformis syndrome",
+      "Pudendal nerve entrapment",
+      "Sacroiliac joint dysfunction",
+      "Spondyloarthropathy"
+    ],
+    "answer": "D",
+    "rationale": "Sacroiliac joint dysfunction is commonly seen in primary care and is an important
+consideration in the evaluation of low back pain. It often occurs during pregnancy and
+post partum. Other inciting incidents include a motor vehicle accident or a mechanical
+fall onto the buttocks. It can be associated with ankylosing spondylitis and other
+spondyloarthropathies; however, the etiology in this case is more likely to be childbirth.
+Symptoms often include pain at the sacroiliac joint that worsens with climbing stairs,
+lying on the affected side, prolonged standing and sitting, and weight-bearing on the
+leg of the affected side. Examination findings include tenderness that is inferomedial to
+the posterior superior iliac spine. A number of provocation tests for sacroiliac joint
+dysfunction can help to confirm the diagnosis. NSAIDs, physical therapy, and joint
+manipulation are first-line treatments. Pelvic belts, corticosteroid injections, and
+sacroiliac joint fusion are used for refractory cases.
+Lumbar strain is in the differential diagnosis, but sacroiliac joint dysfunction is more
+likely given this patient’s history and the duration and location of tenderness. Piriformis
+syndrome is usually unilateral and causes sciatic-like symptoms. Pudendal nerve
+entrapment would cause perineal pain or labial numbness. Spondyloarthropathies are
+associated with sacroiliac joint inflammation but are not as likely in this postpartum
+patient.",
+    "image": null
+  },
+  {
+    "id": 194,
+    "question": "Most elder abuse is perpetrated by",
+    "choices": [
+      "family members",
+      "friends",
+      "nurses",
+      "paid caregivers",
+      "physicians"
+    ],
+    "answer": "A",
+    "rationale": "Most elder abuse occurs in the home and is perpetrated by family members (90% of all
+cases). A small proportion of older adults live in nursing homes, with only 4% of abuse
+perpetrated by paid caregivers.
+Risk factors for elder abuse include shared living arrangements, increased age,
+decreased physical health, cognitive impairment, disruptive behaviors, alcohol misuse,
+and social isolation. Caregiver characteristics associated with abuse include mental
+illness, substance abuse, and dependence on the victim (often financially).
+There are validated screening instruments available, notably the Elder Abuse Suspicion
+Index, but the U.S. Preventive Services Task Force has found insufficient evidence for
+screening older adults for abuse and neglect when there are no recognized signs and
+symptoms of abuse. Identification of elder abuse is a professional responsibility of
+family physicians. However, physicians report a very small number of elder abuse cases
+(1.4%). Family members, social service workers, friends, and law enforcement most
+commonly report abuse. Most states mandate reporting of elder abuse but there is a
+dearth of training for physicians in recognizing elder abuse. Signs are often subtle and
+physical findings are not always evident.",
+    "image": null
+  },
+  {
+    "id": 195,
+    "question": "A 52-year-old male presents to the emergency department with a sudden onset of what he describes
+as the worst headache of his life. You are concerned about the possibility of an intracranial
+hemorrhage.
+After performing an examination to rule out neurologic deficits, which one of the following would be
+the most appropriate next step in evaluation?",
+    "choices": [
+      "CT of the head without contrast",
+      "CT of the head with contrast",
+      "MRI of the head with and without contrast",
+      "A lumbar puncture"
+    ],
+    "answer": "A",
+    "rationale": "A patient describing a headache as the worst headache of their life can be a red-flag
+symptom of an intracranial hemorrhage, and CT of the head without contrast is the
+recommended next step in evaluation. Contrast should not be used because it can
+obscure the signs of bleeding. If a subarachnoid hemorrhage is suspected, CT of the
+head should be completed before performing a lumbar puncture to ensure there is no
+evidence of intracranial hemorrhage or midline shift.",
+    "image": null
+  },
+  {
+    "id": 196,
+    "question": "A 45-year-old male with a history of hypertension and poorly controlled anxiety and depression
+presents to your office to establish care. He requests refills of his current medications, which include
+the following:
+Alprazolam (Xanax), 0.5 mg nightly
+Buspirone, 10 mg 3 times daily
+Gabapentin (Neurontin), 600 mg 3 times daily
+Lorazepam (Ativan), 1 mg twice daily
+Losartan (Cozaar), 50 mg daily
+Sertraline (Zoloft), 200 mg daily
+You tell the patient that you will provide refills for buspirone, gabapentin, losartan, and sertraline
+without dosage adjustments; however, he will need to taper and ultimately discontinue the alprazolam
+and lorazepam. You both agree hospitalization is not necessary. After discussion, the patient agrees
+with your approach.
+In addition to cognitive behavioral therapy, which one of the following strategies would be most
+appropriate for this patient?",
+    "choices": [
+      "Discontinuing both benzodiazepines and initiating buprenorphine maintenance therapy",
+      "Discontinuing both benzodiazepines and initiating flumazenil maintenance therapy",
+      "Discontinuing lorazepam now and gradually decreasing alprazolam over 6 months",
+      "Tapering the alprazolam and lorazepam dosages simultaneously over 6 months",
+      "Switching both alprazolam and lorazepam to diazepam (Valium), and then decreasing the
+diazepam dosage over 6 months"
+    ],
+    "answer": "E",
+    "rationale": "Benzodiazepine prescriptions and overdoses have increased over the last 15 years and
+long-term benzodiazepine use is rarely recommended. Current recommendations
+include the following: substitution of multiple benzodiazepines for a single longer-acting
+benzodiazepine such as diazepam, tapering of medication over weeks to months, and
+use of cognitive behavioral therapy. Buprenorphine is indicated for patients with opioid
+use disorder and can be helpful for patients who are taking both opioids and
+benzodiazepines. Flumazenil is an intravenous injection that is used for benzodiazepine
+overdoses and reversing benzodiazepine sedation. It is not used in maintenance
+therapy for benzodiazepine cessation.",
+    "image": null
+  },
+  {
+    "id": 197,
+    "question": "A 15-year-old female is brought to your office in May with a 3-week history of nasal congestion,
+sneezing, and itchy eyes. She reports that these episodes occur every spring and last about 6 weeks.
+She has been taking oral cetirizine (Zyrtec) with no improvement. You initiate an intranasal
+corticosteroid.
+The patient returns for follow-up 4 weeks later and says that she has seen some improvement but is
+dissatisfied with her progress. The patient and her parent ask about further steps in diagnosis.
+Which one of the following would be the most appropriate next step in diagnosis?",
+    "choices": [
+      "A CBC",
+      "Skin allergen testing",
+      "Serum allergy testing",
+      "Chest radiography",
+      "Sinus CT"
+    ],
+    "answer": "B",
+    "rationale": "This patient most likely has seasonal allergic rhinitis that has not responded to empiric
+treatment. The most appropriate next step in diagnosis is skin allergen testing. Serum
+allergy testing is more expensive and less specific than skin allergen testing. It also
+does not provide the immediate results of skin allergen testing.
+A CBC will likely show eosinophilia, given the patient’s likely diagnosis of allergic rhinitis.
+However, this is a nonspecific finding. This patient likely does not have a true
+respiratory illness such as pneumonia, so a chest x-ray would not be appropriate. Sinus
+CT likely will not lead to actionable management. It is also expensive and carries the
+risk for radiation exposure, which needs to be weighed carefully in a pediatric patient.",
+    "image": null
+  },
+  {
+    "id": 198,
+    "question": "Which one of the following conditions is most likely to impair swallowing of both solids and liquids?",
+    "choices": [
+      "Achalasia",
+      "Eosinophilic esophagitis",
+      "Esophageal cancer",
+      "Esophageal stricture",
+      "Schatzki ring"
+    ],
+    "answer": "A",
+    "rationale": "Achalasia is a smooth muscle motility disorder that impairs swallowing of both solids
+and liquids. In contrast, anatomic causes of dysphagia that impede the lumen of the
+esophagus through mass effect or inflammation, such as eosinophilic esophagitis,
+esophageal cancer, esophageal stricture, and Schatzki rings, typically impair swallowing
+of solids but not liquids.",
+    "image": null
+  },
+  {
+    "id": 199,
+    "question": "A 55-year-old male with a medical history of GERD and osteoarthritis presents to the emergency
+department 2 hours after a sudden onset of intense epigastric pain. He takes naproxen almost daily for
+joint pain.
+On examination the patient is noticeably pale. His vital signs include a blood pressure of 90/60 mm
+Hg and a pulse rate of 125 beats/min. He is exquisitely tender to palpation in his abdomen,
+particularly at the epigastrium. There is no fluid wave or hepatomegaly. You do not note any obvious
+stigmata of chronic liver disease.
+Which one of the following tests should be performed to assist in the diagnosis?",
+    "choices": [
+      "Aortic ultrasonography",
+      "Abdominal radiography",
+      "Abdominal and pelvic CT",
+      "Abdominal paracentesis",
+      "Exploratory laparotomy"
+    ],
+    "answer": "C",
+    "rationale": "This patient most likely has a perforated peptic ulcer and the recommended test is CT
+of the abdomen and pelvis. Aortic ultrasonography is not productive in this case, as the
+patient’s symptoms are unlikely to be caused by an abdominal aortic aneurysm.
+Abdominal radiography lacks the definition to visualize a perforated peptic ulcer. This
+patient's abdomen is not distended, and it is unlikely that abdominal paracentesis will
+yield the diagnosis or be therapeutic. Exploratory laparotomy is excessive and
+premature, as CT is diagnostic and less invasive.",
+    "image": null
+  },
+  {
+    "id": 200,
+    "question": "A 55-year-old male presents for evaluation of recent-onset tinnitus that has adversely affected his
+sleep and concentration. A physical examination including otoscopy is unremarkable.
+Which one of the following additional findings, if present, would be an indication for head imaging?",
+    "choices": [
+      "Associated development of major depressive disorder",
+      "Bilateral hearing loss on audiometry",
+      "Lack of improvement with a trial of a tricyclic antidepressant",
+      "A pulsatile quality of the tinnitus",
+      "Symptom duration >6 months"
+    ],
+    "answer": "D",
+    "rationale": "Tinnitus is a common problem that is experienced by up to 25% of adults, although
+<10% of affected individuals report bothersome symptoms that impair sleep, focus,
+emotions, or general quality of life. Audiometry should be performed for patients with
+severe or persistent symptoms, as hearing loss is a common comorbid finding.
+Evaluation for potential structural causes with MRI or CT of the temporal bone is
+indicated for any of the following: a pulsatile quality of the tinnitus, unilateral tinnitus,
+asymmetric hearing loss, or focal neurologic findings. Of the options given in this clinical
+scenario, only pulsatile tinnitus would provide an indication for head imaging.
+While patients with tinnitus may be more susceptible to mood disturbances due to the
+adverse impact on quality of life and functioning that their symptoms may cause, an
+associated onset of major depression would not provide a reason to order diagnostic
+head imaging. Bilateral hearing loss on audiometry is often noted in the setting of
+tinnitus and does not suggest the presence of a structural lesion. No medication
+strategies have proven effective to treat tinnitus; thus, prescribing a tricyclic
+antidepressant would not be expected to provide benefit. Symptoms often persist for
+months to years; the duration of symptoms alone does not provide a reason to order
+head imaging.",
+    "image": null
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1>ITE 2024: Quiz 20</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 1-10)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>
