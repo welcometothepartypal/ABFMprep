@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 11-20</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 11,
+    "question": "Which one of the following medications is most likely to interfere with the results of screening for \nprimary hyperaldosteronism?",
+    "options": [
+      "A) Amlodipine (Norvasc)",
+      "B) Hydrochlorothiazide",
+      "C) Lisinopril (Zestril)",
+      "D) Metoprolol",
+      "E) Spironolactone (Aldactone)"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Primary aldosteronism is a common cause of resistant hypertension, although it is \nlargely underrecognized. Initial screening is accomplished through simultaneous \nmeasurement of plasma aldosterone and renin levels. An elevated plasma aldosterone \nto renin ratio identifies patients with probable aldosteronism who may then undergo \nconfirmatory testing if clinically indicated; in some cases, additional testing is not \nneeded to reach a diagnosis. Medications that most significantly impact the renin-\nangiotensin-aldosterone system, particularly mineralocorticoid receptor antagonists such \nas spironolactone, ideally should be withheld for a minimum of 4 weeks prior to testing \nfor primary aldosteronism. Other antihypertensive medication classes, including ACE \ninhibitors, angiotensin receptor blockers, diuretics, β-blockers, and dihydropyridine \ncalcium channel blockers, also may interfere with test results, although less significantly \nthan mineralocorticoid receptor antagonists."
+  },
+  {
+    "id": 12,
+    "question": "An 80-year-old female presents for follow-up of urge urinary incontinence after having completed a \ncourse of pelvic floor physical therapy with minimal improvement. Her medical history includes \nhyperlipidemia controlled with atorvastatin (Lipitor) and chronic insomnia treated with doxepin \n(Silenor). A physical examination, basic metabolic panel, and urinalysis are all normal. She requests \na trial of a medication for her overactive bladder. \n \nWhich one of the following would be most likely to improve her symptoms, while minimizing the \nrisk for adverse side effects?",
+    "options": [
+      "A) Conjugated estrogens (Premarin)",
+      "B) Duloxetine (Cymbalta)",
+      "C) Mirabegron (Myrbetriq)",
+      "D) Oxybutynin",
+      "E) Tolterodine (Detrol)"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Pharmacologic options for the treatment of urge incontinence, or overactive bladder \n(OAB), include antimuscarinic medications such as tolterodine and oxybutynin, and β-\nadrenergic agonists such as mirabegron and vibegron. Antimuscarinic medications \nshould be used with caution in older patients due to high risk for anticholinergic side \neffects such as tachycardia, confusion, constipation, dry mouth, and blurry vision. \nSelective antimuscarinics such as darifenacin and solifenacin are preferred to their \nnonselective counterparts such as oxybutynin and tolterodine due to a lower risk for \ncognitive adverse effects. The risk for anticholinergic side effects also increases for \npatients who are already taking medications with anticholinergic potential such as \ndoxepin, a tricyclic antidepressant that is also used in the treatment of insomnia. β-\nAgonist–related side effects may include gastrointestinal upset, dizziness, and \nheadache; mirabegron but not vibegron has also been associated with elevated blood \npressure. In general, however, β-agonists introduce a lower risk for adverse effects \nthan antimuscarinic medications and are preferred for older patients who are at \nincreased risk for anticholinergic side effects.  \n \nIntravaginal estrogen may improve OAB symptoms, but it is not FDA approved for this \nindication. Oral estrogen worsens incontinence and introduces a risk for adverse effects \nrelated to systemic hormone therapy. Duloxetine, an SNRI, has low-level evidence of \nbenefit for stress incontinence but not for urge incontinence."
+  },
+  {
+    "id": 13,
+    "question": "A 63-year-old female with a medical history of hypertension, depression, fibromyalgia, and giant cell \narteritis presents with a 3-week history of progressive cough and shortness of breath. She has been \ntaking prednisone for the last 3 months and is tapering the dosage. Her current dosage is 25 mg daily. \n \nThe patient’s vital signs include a temperature of 38.1 °C (100.6 °F), an oxygen saturation of 88% on \nroom air, and a respiratory rate of 28/min. On examination, her lungs are clear, and a chest \nradiograph shows bilateral perihilar interstitial pulmonary infiltrates. You recommend hospital \nadmission and intravenous antibiotics. Cultures are pending. \n \nWhich one of the following antibiotic combinations would be the most appropriate initial treatment?",
+    "options": [
+      "A) Azithromycin (Zithromax) and ceftriaxone",
+      "B) Levofloxacin and metronidazole",
+      "C) Piperacillin/tazobactam (Zosyn) and vancomycin",
+      "D) Azithromycin, cefepime, and vancomycin",
+      "E) Ceftriaxone, doxycycline, and sulfamethoxazole/trimethoprim"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Pneumocystis jirovecii pneumonia (PJP), previously known as Pneumocystis carinii \npneumonia, is a fungus that causes severe pneumonia in immunosuppressed \nindividuals. It is a classic AIDS-defining illness but can also affect those on prolonged \ncourses of corticosteroids or other forms of immunosuppression. This patient’s \npresentation of notable dyspnea, hypoxia, no focal lung sounds, and bilateral interstitial \ninfiltrates on radiography is consistent with PJP.  \n \nThis patient may also have community-acquired bacterial pneumonia. Antibiotic \ntreatment with sulfamethoxazole/trimethoprim for PJP along with standard antibiotics \nfor bacterial pneumonia should be initiated while additional tests are pending. An \nelevated serum lactate dehydrogenase level has a correlation with PJP, although it has \npoor specificity, especially in those without HIV. Serum β-glucan is indicative of a fungal \ninfection and can be supportive of a diagnosis of PJP."
+  },
+  {
+    "id": 14,
+    "question": "A 32-year-old female comes to your office with her husband after a recent weeklong episode of \nelevated mood and energy that meets the diagnostic criteria for a manic episode. They both say that \nshe has never had any episodes of depression, low mood, or anhedonia. \n \nThis patient’s presentation is most consistent with which one of the following disorders?",
+    "options": [
+      "A) Bipolar I",
+      "B) Bipolar II",
+      "C) Borderline personality",
+      "D) Cyclothymic",
+      "E) Disruptive mood dysregulation"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Bipolar I disorder does not require a history of a major depressive episode and may be \ndiagnosed and treated based on just 1 manic episode. The diagnosis of bipolar II \ndisorder requires at least 1 hypomanic and 1 major depressive episode. Borderline \npersonality disorder may coexist with bipolar I disorder but the diagnosis is based on \nthe presence of unstable personal relationships and severe impulsivity. Cyclothymic \ndisorder presents with a history of both hypomanic and depressive symptoms that do \nnot meet the full criteria for hypomanic or major depressive episodes. Disruptive mood \ndysregulation disorder is a condition diagnosed between the ages of 6 and 18, \ncharacterized by severe recurrent outbursts of temper."
+  },
+  {
+    "id": 15,
+    "question": "A 35-year-old female presents for evaluation of bilateral breast pain that varies in intensity with her \nmenstrual cycle. She drinks 2 cups of caffeinated coffee per day and does not take any regular \nmedications. Her past medical history is unremarkable and she does not have any family history of \nbreast cancer. A physical examination, including a clinical breast examination, is normal. A urine \nhCG test is negative. \n \nWhich one of the following would be the most appropriate next step?",
+    "options": [
+      "A) A trial of dietary caffeine elimination",
+      "B) A trial of topical diclofenac",
+      "C) Prolactin and TSH levels",
+      "D) Ultrasonography",
+      "E) Diagnostic mammography"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Evidence supports the use of topical NSAIDs such as diclofenac for first-line \npharmacologic treatment of both cyclic and noncyclic mastalgia (SOR B). Topical \nNSAIDs are preferred over oral NSAIDs due to lower risk for adverse effects. Although \ncaffeine is commonly cited as a contributing cause of breast pain, randomized, \ncontrolled trials have not demonstrated clear evidence that caffeine avoidance reduces \npain. Patients with galactorrhea should undergo hormone evaluation with measurement \nof prolactin and TSH levels, although hormone evaluation is not indicated for patients \nwith breast pain who present without associated nipple discharge. Patients without a \npalpable mass who present with cyclic breast pain, such as the patient in this scenario, \nare at low risk for breast cancer and do not require imaging."
+  },
+  {
+    "id": 16,
+    "question": "Which one of the following is a possible adverse effect of short-term systemic corticosteroids?",
+    "options": [
+      "A) Hair loss",
+      "B) Hyperkalemia",
+      "C) Hypoglycemia",
+      "D) Hypotension",
+      "E) Mood disturbance"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Even short courses of systemic corticosteroids are associated with many possible \nadverse effects, including mood and sleep disturbance, hyperglycemia, elevated blood \npressure, sepsis, fracture, and venous thromboembolism. Hair loss, hyperkalemia, \nhypoglycemia, and hypotension are not among the side effects of short-term \ncorticosteroid use."
+  },
+  {
+    "id": 17,
+    "question": "A 32-year-old male comes to your office because of a gradual onset of right ankle pain. He works in \na warehouse and walks extensively during his 12-hour shifts. The pain is located on the medial side \nof the ankle and worsens throughout his shift. His medical history is notable for well-controlled \nhypertension and a BMI of 39 kg/m2. \n \nOn examination the patient has difficulty performing the single-limb heel raise test. You note a \npositive “too many toes” sign, as well as pes planus. You diagnose posterior tibial tendinopathy. \n \nIn addition to arch supports, which one of the following should you recommend next?",
+    "options": [
+      "A) A stretching program",
+      "B) Eccentric exercises",
+      "C) Oral corticosteroids",
+      "D) Corticosteroid injection",
+      "E) Percutaneous needle tenotomy"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Eccentric exercise is recommended over concentric exercise to treat posterior tibial \ntendinopathy. Because tendinopathy is not an inflammatory process, oral corticosteroids \nare not indicated. Corticosteroids injected into the tendon can provide some short-term \nrelief of pain but have the potential to cause tendon rupture. Needle tenotomy is not a \nrecommended treatment for posterior tibial tendinopathy. If the pain persists 3–6 \nmonths after appropriate conservative management, surgical debridement of the \ntendon may be considered."
+  },
+  {
+    "id": 18,
+    "question": "A 35-year-old female presents to your clinic with a 5-day history of sinus congestion, postnasal \ndrainage, and a productive cough with clear sputum. She has a history of depression, for which she \ntakes sertraline (Zoloft), and no previous history of respiratory symptoms or diagnoses. She smokes \nsocially. Her vital signs include a blood pressure of 120/70 mm Hg, a heart rate of 87 beats/min, a \nrespiratory rate of 16/min, and an oxygen saturation of 99% on room air. \n \nOn examination the patient has clear rhinorrhea, posterior pharynx erythema, frontal sinus tenderness \nto palpation, and clear lung fields. She has recurrent coughing episodes but does not show any signs \nof respiratory distress. \n \nWhich one of the following would be the most appropriate treatment?",
+    "options": [
+      "A) Honey",
+      "B) Amoxicillin/clavulanate (Augmentin)",
+      "C) Dextromethorphan",
+      "D) Hydrocodone/homatropine (Hycodan)",
+      "E) Prednisone"
+    ],
+    "correctAnswer": 0,
+    "rationale": "An acute cough is a cough of <3 weeks’ duration in people without asthma and no red-\nflag symptoms of dyspnea or hemoptysis, or systemic symptoms such as fever, weight \nloss, or peripheral edema. Although there is significant use of prescribed and over-the-\ncounter medications by patients, there is limited evidence to support pharmacotherapy \nfor the symptomatic treatment of acute cough. The majority (90%–98%) of cases of \nacute cough are viral upper respiratory tract symptoms that resolve within 7–10 days. \nSeveral studies have validated the benefits of honey in patients >1 year of age for \nacute viral upper respiratory tract symptoms. Honey has antibacterial and antiviral \nproperties in addition to decreasing mucus production and cough without the potential \nside effects of prescription or over-the-counter cough medications.  \n \nAcute cough is typically caused by viruses and antibiotics are not indicated. \nAntitussives, opioids such as codeine or hydrocodone, inhaled or oral corticosteroids, \ninhaled β-agonists or anticholinergics, mucolytics, NSAIDs, first-generation \nantihistamines, decongestants, and guaifenesin have significant side-effect profiles and \ndo not decrease illness duration or symptoms in most patients. Dextromethorphan in \nparticular can increase the serotonin effect in patients taking SSRIs, and this patient is \ntaking sertraline."
+  },
+  {
+    "id": 19,
+    "question": "A 44-year-old male with a history of hypertension presents to the urgent care clinic after he was \nnoted to have a blood pressure of 175/105 mm Hg at a workplace screening event. He has not \nestablished medical care since relocating last year and has not been taking his previously prescribed \nmedications. His blood pressure in the clinic is 189/119 mm Hg after sitting for 10 minutes and being \npositioned appropriately. He does not have chest pain, shortness of breath, headache, or vision \nchanges. Physical examination findings are unremarkable. \n \nWhich one of the following would be the most appropriate next step in management?",
+    "options": [
+      "A) A urine drug screen",
+      "B) A stat troponin level",
+      "C) Reinitiation of his antihypertensive medication",
+      "D) Clonidine, 0.3 mg orally",
+      "E) Transfer to the emergency department"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient has severe asymptomatic hypertension, also known as hypertensive \nurgency. This condition is characterized by a systolic blood pressure of >180 mm Hg \nand a diastolic blood pressure of >110 mm Hg, with no evidence of end-organ damage. \nPatients with this condition are often nonadherent to their routine blood pressure \nmedications, and resuming the regimen with close follow-up is the best treatment. \nWhile alcohol, amphetamines, and cocaine can elevate blood pressure, ruling out \nsubstance abuse is not the first step in management. It is extremely rare to find \nabnormalities on an EKG, a chest x-ray, or cardiac markers in asymptomatic patients \nand these diagnostic tests are not recommended. Acute treatment with clonidine or \nother oral agents to lower blood pressure prior to discharge does not improve \noutcomes. Hypertensive urgency does not require the intensive monitoring, intravenous \ntherapy, or advanced testing available at an emergency department."
+  },
+  {
+    "id": 20,
+    "question": "An otherwise healthy 12-year-old is brought to your office by a parent because the child has had an \nitchy scalp for the last 2 months. The patient has tried multiple dandruff shampoos and is now using \ntea tree oil without relief. On examination you note several 1- to 2-cm annular lesions on the scalp \nwith small black dots and scale. There is tender lymphadenopathy of the occipital scalp. \n \nWhich one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Obtaining a scraping for culture",
+      "B) Initiating topical fluocinonide solution",
+      "C) Initiating topical ketoconazole shampoo",
+      "D) Initiating oral itraconazole (Sporanox)",
+      "E) Initiating oral terbinafine"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Pruritic annular scalp lesions with hair loss, scale, and tender lymphadenopathy should \nprompt a diagnosis of tinea capitis, a relatively common pediatric fungal infection with a \nprevalence of 0%–19% in school-aged children.  \n \nThe preferred therapy for tinea capitis is oral terbinafine or griseofulvin (SOR B). The \nshortest course is terbinafine at 2 weeks and it is effective for most causes of tinea \ncapitis. Griseofulvin is more expensive and requires a longer course of treatment. \nSecond-line therapies include fluconazole and itraconazole. Depending on the \nformulation, these can require 3–12 weeks of treatment.  \n \nFungal cultures can be negative if patients have used emollients or oils in the week \nprior to testing, and waiting for a culture to return will delay treatment. Fluocinonide \nsolution is a treatment for seborrheic dermatitis, eczema, or psoriasis but is ineffective \nin tinea capitis. Treatment with topical antifungals alone is ineffective because topical \ntreatments do not penetrate the hair shafts where the dermatophyte infection occurs. \nHowever, the use of topical antifungals in conjunction with the oral antifungal can \nspeed resolution."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 11-20)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

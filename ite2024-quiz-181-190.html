@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 181-190</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 181,
+    "question": "A 72-year-old male presents to your office 3 months after hospitalization for an ischemic stroke. He \nhas a history of diabetes mellitus that is well controlled on basal insulin. He has impaired mobility \nand balance, as well as left upper and lower extremity spasticity. He has fallen twice in the last week. \nHis blood pressure is well controlled and recent laboratory studies are notable for an LDL-choles\nterol \nlevel of 64 mg/dL and a hemoglobin A1c of 6.9%. There is no evidence of cognitive impairment. His \nPatient Health Questionnaire–9 (PHQ-9) score is 3. \n \nWhich one of the following would be the most appropriate next step in optimizing his post-stroke \ncare?",
+    "options": [
+      "A) Repeating neuroimaging",
+      "B) Increasing the basal insulin dosage",
+      "C) Initiating lorazepam (Ativan), 1–2 mg at bedtime",
+      "D) Initiating sertraline (Zoloft), 50 mg daily",
+      "E) Referral to a physical therapist"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient has common post-stroke complications and will benefit from physical \ntherapy to address his mobility and spasticity, and to prevent falls. Repeat \nneuroimaging would only be indicated with a change in neurologic examination, \nincluding new focal neurologic deficits. His diabetes mellitus is adequately controlled \nand further increasing his insulin puts him at increased risk of hypoglycemia. Lorazepam \nis not first-line therapy for spasticity and is also associated with increased fall risk. \nDepression is common post stroke, but this patient is not reporting symptoms of low \nmood and has a normal Patient Health Questionnaire–9 score."
+  },
+  {
+    "id": 182,
+    "question": "You see a 50-year-old female for a health maintenance examination. She is the primary caregiver for \nher father who has dementia, and she has heard that Alzheimer disease is genetic and asks if there is \nanything she can do to reduce her risk. She is in perimenopause and experiences severe hot flashes. \nShe recently started a kickboxing class and drinks 1–\n2 beers per week. On examination her vital signs \ninclude a blood pressure of 138/80 mm Hg, a pulse rate of 63 beats/min, and a BMI of 30 kg/m2. \n \nWhich one of the following should you recommend to decrease this patient’s risk for dementia?",
+    "options": [
+      "A) A memory training app on her smartphone",
+      "B) Abstaining from alcohol",
+      "C) Testing for biomarkers associated with Alzheimer disease",
+      "D) A target systolic blood pressure ≤130 mm Hg",
+      "E) Hormone therapy with estrogen and progesterone"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Maintaining a systolic blood pressure ≤130 mm Hg in midlife has been shown to reduce \nthe risk for developing dementia. While reading, playing music, and speaking a foreign \nlanguage have demonstrated benefits in maintaining cognition, there is no good-quality \nevidence to show that computer-based memory training games prevent cognitive \ndecline. Extremes of alcohol use (both long-term abstinence and abuse) are associated \nwith an increased risk for dementia. Most people who are positive for biomarkers \nassociated with Alzheimer disease will not go on to develop the disease. Additionally, \nthere is no evidence that presymptomatic identification of Alzheimer disease is \nbeneficial. Hormone therapy with estrogen and progesterone is an effective treatment \nfor vasomotor symptoms of menopause but is associated with an increased risk for \ndementia when administered in women ≥65 years of age. For women in their 40s and \n50s, hormone therapy with estrogen only has demonstrated a significant decrease in \ndementia, while estrogen plus progesterone therapy has demonstrated a nonsignificant \ndecrease."
+  },
+  {
+    "id": 183,
+    "question": "Which one of the following attention-deficit/hyperactivity disorder (ADHD) medications is \nconsidered safest to take while breastfeeding?",
+    "options": [
+      "A) Amphetamine (Evekeo)",
+      "B) Atomoxetine (Strattera)",
+      "C) Clonidine",
+      "D) Guanfacine",
+      "E) Methylphenidate (Ritalin)"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Racemic methylphenidate has been studied in breastfeeding mothers and drug levels in \nbreast milk were found to be about 0.2% of the adult dose. Drug levels were \nundetectable in breastfed infants and the infants had no long-term growth or \ndevelopmental issues. Methylphenidate can reduce serum prolactin levels, but this has \nnot been shown to have any clinical impact on milk supply. Less is known about \namphetamine in breastfeeding, but milk and infant serum levels are significantly higher \nthan with methylphenidate. Atomoxetine and guanfacine have no reliable data in \nbreastfeeding and should be avoided until more is known. Clonidine has been shown to \nbe present in significant amounts in breast milk and serum from breastfed infants (up \nto 50% of the maternal serum levels). While no adverse effects have been shown, this \nhigh level of medication in the infant raises concerns, and experts recommend avoiding \nclonidine while breastfeeding."
+  },
+  {
+    "id": 184,
+    "question": "A 20-year-old female is brought to the emergency department after experiencing blunt abdominal \ntrauma during a motor vehicle accident. A focused assessment with sonography for trauma (FAST) \nexamination is performed at the bedside and there are no signs of internal bleeding. \n \nBased on these results, which one of the following should be the next step in evaluation?",
+    "options": [
+      "A) No further imaging to evaluate for internal bleeding",
+      "B) Additional imaging only if the patient develops signs of hemodynamic compromise",
+      "C) Additional imaging to confirm the absence of bleeding",
+      "D) Diagnostic peritoneal lavage"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The focused assessment with sonography for trauma (FAST) evaluates the pericardium \nand 3 potential spaces within the peritoneal cavity for hemoperitoneum and \nhemopericardium. This bedside examination can be completed in less than 5 minutes, \nso it is ideal for emergency department settings. FAST has replaced diagnostic \nperitoneal lavage as a bedside evaluation for bleeding. A Cochrane review found that \nFAST has a 96% specificity but only a 74% sensitivity for detecting internal bleeding. \nThe sensitivity in children was found to be even lower at 62%. Therefore, while a \npositive result will almost always be reliable and should prompt immediate bleeding \ncontrol measures, a negative result carries the risk of being a false negative and must \nbe confirmed by additional imaging such as CT."
+  },
+  {
+    "id": 185,
+    "question": "A 65-year-old male sees you for follow-up after he was hospitalized for pneumonia a few months \nago. He has smoked 1 pack of cigarettes per day for 40 years. Pulmonary function testing today \nshows an FEV1 of 60% of predicted and an FEV1/FVC ratio of 0.65. Physical examination findings \ninclude a BMI of 24 kg/m2 and scattered rhonchi in the chest. \n \nWhich one of the following inhalers is the recommended initial treatment to decrease this patient’s \nnumber of exacerbations?",
+    "options": [
+      "A) Budesonide/formoterol (Symbicort)",
+      "B) Fluticasone propionate",
+      "C) Ipratropium bromide/albuterol (Combivent Respimat)",
+      "D) Salmeterol (Serevent Diskus)",
+      "E) Tiotropium (Spiriva)"
+    ],
+    "correctAnswer": 4,
+    "rationale": "According to the GOLD Spirometry Classification, an FEV1/FVC ratio <0.70 and an FEV1 \n≥50% and <80% of predicted is stage 2 COPD. Initial inhaler pharmacotherapy can be \nguided by the GOLD ABCD assessment that integrates symptoms and exacerbations. \nModerate exacerbations require either an oral antibiotic, an oral corticosteroid, or both, \nwhile a severe exacerbation results in an emergency department visit or hospitalization. \nPatients with 2 or more moderate exacerbations or 1 or more hospitalizations, such as \nthis patient, should be prescribed a long-acting muscarinic antagonist (LAMA) as first-\nline therapy. Monotherapy with this group of medications reduces symptoms, decreases \nexacerbations, and decreases hospitalizations.  \n \n  \n\nInhaled corticosteroids (ICS) such as fluticasone propionate are not recommended as \nmonotherapy for COPD, particularly for those who have had pneumonia. Using a long-\nacting β-agonist (LABA) with an ICS is less effective at reducing exacerbations and \nincreases the risk for pneumonia. Monotherapy with a LABA such as salmeterol reduces \nexacerbations requiring hospitalization, but symptoms are better controlled when a \nLABA is used in combination with a LAMA. Short-acting β-adrenergic agonists and short-\nacting muscarinic antagonists are appropriate for acute exacerbations rather than \nprevention."
+  },
+  {
+    "id": 186,
+    "question": "You are the attending physician at a nursing home and the charge nurse notifies you that 3 \nsymptomatic patients in 1 unit have tested positive for influenza A. The facility is implementing \nenhanced contact and droplet precautions. \n \nTo prevent additional cases, you should recommend chemoprophylaxis with oseltamivir (Tamiflu) \nfor",
+    "options": [
+      "A) no residents or staff",
+      "B) only residents of the affected unit who have not received influenza vaccine",
+      "C) only residents of the affected unit",
+      "D) only residents of the facility who have not received influenza vaccine",
+      "E) all residents of the facility"
+    ],
+    "correctAnswer": 2,
+    "rationale": "In its 2018 clinical practice guideline, the Infectious Diseases Society of America \nsummarized its recommendations on the diagnosis and management of seasonal \ninfluenza, including institutional outbreak management. These recommendations \ninclude active surveillance for additional cases any time a resident of a long-term care \nfacility is diagnosed with laboratory-confirmed influenza. Influenza can spread rapidly in \nthe long-term care setting and outbreak control measures should be implemented \nimmediately. The risk for severe disease and complications from influenza are high in \nfrail older adults, and those with cognitive impairment may be less able to describe their \nsymptoms, making case-finding more difficult. When a resident develops any \nrespiratory symptoms during an influenza outbreak, empiric antiviral treatment should \nbe initiated as soon as possible without waiting for diagnostic testing results. Residents \nwho have been exposed to those with influenza should receive chemoprophylaxis as \nsoon as possible, regardless of their vaccination status. It is not necessary to initiate \nchemoprophylaxis for residents who are located on remote units."
+  },
+  {
+    "id": 187,
+    "question": "A 65-year-old female with no chronic medical problems presents for an annual Medicare wellness visit. \nYou initiate a discussion regarding cervical cancer screening. \n \nAccording to current clinical guidelines, which one of the following would be an indication for \nadditional cervical cancer screening in this patient?",
+    "options": [
+      "A) A family history of cervical cancer in a first-degree relative",
+      "B) Loop excision of a high-grade precancerous lesion 15 years ago, with consecutive normal results \nsince then",
+      "C) Three consecutive normal cytology results within the past 10 years, most recently 3 years ago",
+      "D) Two consecutive normal cytology results with negative high-risk HPV co-testing within the past \n10 years, most recently 4 years ago",
+      "E) Unprotected intercourse with a new sex partner"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends against cervical cancer \nscreening for women >65 years of age with normal Papanicolaou (Pap) smears, who \nhave had adequate prior screening, and who otherwise are not at increased risk for \ncervical cancer (D recommendation). The most recent definition of “adequate prior \nscreening” given by the American Cancer Society (ACS) is 3 consecutive negative \ncytology results, 2 consecutive negative co-testing results, or 2 consecutive negative \nhigh-risk HPV tests in the 10 years prior to discontinuation of screening, with the most \nrecent test having occurred within the relevant recommended testing interval. The \nrecommended interval is every 3 years for cytology, and 5 years for both high-risk HPV \nand co-testing.  \n \nImportantly, USPSTF guidelines do not apply to individuals who are at increased risk for \ncervical cancer, including women with a history of high-grade precancerous cervical \nlesions or cervical cancer. The ACS and the American Society of Colposcopy and \nCervical Pathology (ASCCP) guidelines recommend continuation of cervical cancer \nscreening for women with a history of a high-grade precancerous lesion (defined as \ncervical intraepithelial neoplasia [CIN] grade 2 or higher) for a minimum of 25 years \nbeyond the treatment of the lesion, even if this extends beyond 65 years of age. Thus, \nif this patient had a history of treatment for a high-grade lesion 15 years ago, this \nwould warrant continued screening for an additional 10 years.  \n \nThe presence of a new sex partner should not impact the decision to discontinue \nscreening for women who otherwise are eligible for cessation of screening. In fact, ACS \nrecommendations apply to all asymptomatic people with a cervix, without regard to \ntheir sexual history. In contrast to several other common cancer types, cervical cancer \nrisk is not associated with a familial/genetic inheritance pattern; therefore, a family \nhistory of cervical cancer, even in a first-degree relative, should not impact a cervical \ncancer screening decision."
+  },
+  {
+    "id": 188,
+    "question": "A 67-year-old male presents for an annual health maintenance visit. His medical conditions include \nhypertension, dyslipidemia, severe aortic stenosis, and osteoarthritis. He is under the care of a \ncardiologist and is scheduled for an annual echocardiogram next week. He reports that he generally \nfeels well but “can’t keep up with the grandkids” anymore. He has not had any lightheadedness, chest \npain, shortness of breath, or lower extremity edema. \n \nWhich one of the following findings would support surgical treatment for aortic stenosis at this time?",
+    "options": [
+      "A) An elevated 10-year atherosclerotic cardiovascular disease risk",
+      "B) A left ventricular ejection fraction of 40%–45%",
+      "C) A need for an elective total knee replacement",
+      "D) A normal exercise stress test result"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Aortic stenosis (AS) occurs primarily in older adults and is a result of narrowing of the \naortic valve area due to damage from the aging process that involves lipid \naccumulation, calcification, and inflammation. While survival rates in patients with \nasymptomatic AS match those without AS, survival rates drop dramatically once \nsymptoms develop. Because there is no effective medical management for preventing \nthe progression of AS, recognizing indications for aortic valve replacement (AVR) results \nin improved survival and symptoms. Any symptomatic patient with severe AS \n(maximum transaortic velocity ≥4.0 m/s or mean pressure gradient ≥40 mm Hg) \nshould undergo AVR. It is difficult to determine whether this patient is truly \nsymptomatic from AS, but a left ventricular ejection fraction <50% would support a \nneed for AVR in this patient. An abnormal exercise stress test, rather than a normal \ntest, would also indicate a need for AVR. Finally, a need for other cardiac surgery, such \nas coronary artery bypass grafting, would also prompt AVR. An elevated atherosclerotic \ncardiovascular disease risk should prompt consideration of statin and aspirin prophylaxis \nbut does not play a role in deciding when to perform AVR. A need for a noncardiac, \nelective surgical intervention would not lead to a recommendation for AVR due to the \nhigh-risk nature of AVR."
+  },
+  {
+    "id": 189,
+    "question": "A 44-year-old male presents for evaluation of left shoulder pain and stiffness that has developed \ngradually over the past few months after a fall while skiing. He describes a dull, deep, poorly \nlocalized ache. On examination he has impaired active and passive range of motion in all planes. \nRadiography of the shoulder is unremarkable. \n \nWhich one of the following is most likely to lead to symptom resolution?",
+    "options": [
+      "A) Wearing a sling on the left arm for 4–6 weeks",
+      "B) Extracorporeal shock wave therapy",
+      "C) Biceps tendon sheath injection and physical therapy",
+      "D) Glenohumeral corticosteroid injection and physical therapy",
+      "E) Surgical repair"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient presents with adhesive capsulitis, manifested as the typical cardinal \nsymptoms of pain, stiffness, and dysfunction of the affected shoulder. A combination of \nglenohumeral or subacromial corticosteroid injection and physical therapy is most likely \nto produce early and sustained improvement in symptoms and joint functioning. \nProlonged use of a sling would worsen the condition. Referral for surgery may be \nindicated after a 3-month trial of conservative treatment fails. While extracorporeal \nshock wave therapy has shown benefit for frozen shoulder, its current role is as an \nadjunct to other primary therapies."
+  },
+  {
+    "id": 190,
+    "question": "A 6-year-old male is brought to your office by his parents for follow-up after being seen in the \nemergency department (ED) for an unprovoked, nonfebrile seizure. He does not have any prior \nseizure history and his past medical history is unremarkable. An EEG in the ED was normal. The \nparents are concerned about his risk for recurrent seizure and ask about treatment with anti-epileptic \ndrug (AED) therapy. \n \nWhich one of the following should you recommend?",
+    "options": [
+      "A) Starting AED monotherapy only if he has a second seizure",
+      "B) Starting AED monotherapy now",
+      "C) Starting combination AED therapy only if he has a second seizure",
+      "D) Starting combination AED therapy now"
+    ],
+    "correctAnswer": 0,
+    "rationale": "In the absence of risk factors such as abnormal EEG results, the presence of a \npredisposition to seizures, or an etiology such as severe head trauma or cerebral palsy, \nanti-epileptic drug (AED) therapy is not indicated after a first unprovoked childhood \nseizure. There is no significant difference in 1- to 2-year seizure remission rates \nbetween starting AED therapy after the first or second seizure, and there are significant \nrisks associated with AED treatment. AED monotherapy should be attempted before \nstarting AED combination therapy."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 181-190)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

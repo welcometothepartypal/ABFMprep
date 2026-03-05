@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 111-120</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 111,
+    "question": "A 6-year-old female is brought to the urgent care clinic for evaluation of a cough that has persisted \nfor more than 2 months. The cough is dry and nonproductive and seems worse when she goes outside \nin the cold weather. She has not had any recent illnesses. She does not have any wheezing or \nshortness of breath. Her vital signs and an examination are normal. A chest x-ray is unremarkable. \n \nWhich one of the following next steps in evaluation should be recommended to determine the most \nlikely underlying cause?",
+    "options": [
+      "A) Reassurance that no further testing is needed at this time",
+      "B) Polymerase chain reaction testing for pertussis",
+      "C) Spirometry",
+      "D) Bronchoscopy",
+      "E) 24-hour esophageal pH monitoring"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient most likely has cough variant asthma, a common cause of chronic (lasting \n>8 weeks) cough in children. The minimum appropriate testing for all children with \nchronic cough is chest x-ray and spirometry. Polymerase chain reaction testing for \npertussis is indicated in children who have had a recent upper respiratory tract illness \nthat develops into a classic whooping cough. Bronchoscopy should be considered if \nthere is a history of cough that started and persisted after a choking episode, \nsuggestive of foreign body aspiration. GERD is another common cause of chronic cough \nbut can usually be diagnosed by response to an empiric trial of an antacid medication \nand does not require 24-hour esophageal pH monitoring."
+  },
+  {
+    "id": 112,
+    "question": "A 45-year-old female sees you to discuss chronic insomnia. She typically falls asleep fairly easily but \nawakens throughout the night and has difficulty falling back asleep. Her episodes of wakefulness are \nnot caused by restless legs, pain, urinary frequency, or snoring. She has tried cognitive behavioral \ntherapy and melatonin without improvement and would like to try a prescription medication that is \nnot habit forming. \n \nWhich one of the following medications has the best evidence of efficacy and safety to help improve \nher insomnia?",
+    "options": [
+      "A) Diphenhydramine",
+      "B) Doxepin (Silenor)",
+      "C) Quetiapine (Seroquel)",
+      "D) Temazepam (Restoril)",
+      "E) Trazodone"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Low-dose doxepin has the best evidence of efficacy and safety to address this patient’s \nchronic insomnia with impaired sleep maintenance. Dosages of 3–6 mg nightly have \nbeen found to increase sleep efficiency and total sleep time. At this low dosage the \nadverse effect and safety profile was similar to placebo, even in older adults. It is \nthought that doxepin’s mechanism of action is via an antihistamine effect, and the \npatient should be counseled about the possibility of anticholinergic side effects such as \nnext-day sleepiness.  \n \nDiphenhydramine, a strong antihistamine, is typically much more sedating and is \nassociated with other anticholinergic side effects. It is not recommended for routine use \nfor insomnia. The antipsychotic quetiapine is sedating but should not be used in the \nabsence of a psychiatric condition such as bipolar disorder. Benzodiazepines such as \ntemazepam are sedating and can improve sleep onset but carry a significant risk for \nphysical dependence, and long-term use is not recommended. The antidepressant \ntrazodone is often used off-label to treat insomnia but evidence for this approach is \nweak and it should not be recommended as first-line therapy."
+  },
+  {
+    "id": 113,
+    "question": "A healthy 16-year-old male presents to your office for a sports preparticipation evaluation. The \npatient’s parent has a close family friend with diabetes mellitus and asks you about screening the \nadolescent for the condition. He has no signs or symptoms of diabetes. \n \nWhich one of the following is the current U.S. Preventive Services Task Force recommendation \nregarding screening for prediabetes and type 2 diabetes in children and adolescents?",
+    "options": [
+      "A) They should not be screened",
+      "B) They should be screened only if they have a strong family history of type 2 diabetes",
+      "C) They should be screened only if they have morbid obesity",
+      "D) They should routinely be screened",
+      "E) There is not enough evidence to make a recommendation for or against screening"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The most recent recommendation from the U.S. Preventive Services Task Force \nregarding screening for prediabetes and type 2 diabetes in children and adolescents \nstates that there is not enough evidence to recommend for or against screening. \nClinicians should use their judgment when recommending screening for particular \npatients and keep in mind that there may be harm caused by screening. Some \nadolescents may have a transient physiologic period of insulin resistance during \npuberty, which can spontaneously revert to a normal state. Screening these patients \nmay lead to overdiagnosis, labeling, and overtreatment."
+  },
+  {
+    "id": 114,
+    "question": "A 30-year-old gravida 2 para 2 sees you for evaluation of bothersome palpitations. She is 2 weeks \npost partum and is breastfeeding the infant. Her medications include ferrous sulfate and sertraline \n(Zoloft). \nOn physical examination she has a temperature of 36.7 °C (98.1 °F), a blood pressure of 130/82 mm \nHg, and a respiratory rate of 12/min. Her heart rate is 120 beats/min with occasional extra heartbeats \nnoted. Examination findings are otherwise normal. A CBC and comprehensive metabolic panel are \nnormal, and a TSH level is 0.2 μU/mL (N 0.5–4.0). An EKG reveals tachycardia and occasional \npremature atrial contractions. \n \nWhich one of the following would be the most appropriate initial management?",
+    "options": [
+      "A) Observation only",
+      "B) Discontinuing sertraline",
+      "C) Adding an antithyroid medication",
+      "D) Adding a β-blocker",
+      "E) A radioactive iodine uptake scan"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient has postpartum thyroiditis, a destructive triphasic condition that can occur \nafter pregnancy. This patient is in the hyperthyroid phase, which is followed by a \nhypothyroid phase that can last 3–12 months. The final stage is euthyroidism. β-\nBlockers are used for symptomatic treatment in the hyperthyroid phase. Observation \nonly is not appropriate in this patient since she is symptomatic. While amiodarone and \nlithium can affect the thyroid, sertraline does not. Antithyroid medication is not \nindicated. A radioactive iodine uptake scan is contraindicated in a patient who is \nbreastfeeding."
+  },
+  {
+    "id": 115,
+    "question": "A 4-year-old male with sickle cell disease is brought to the emergency department with left upper \nquadrant abdominal pain. He has a hemoglobin level of 7.0 g/dL, and his usual hemoglobin level is \n10.0 g/dL. A reticulocyte count is elevated above his normal, and his platelet count is 125,000/mm3 \n(N 150,000–400,000). \n \nWhich one of the following is the most likely etiology?",
+    "options": [
+      "A) Acute chest syndrome",
+      "B) Acute pain crisis",
+      "C) Aplastic anemia",
+      "D) Splenic sequestration",
+      "E) An upper gastrointestinal bleed"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The normal hemoglobin level in a patient with sickle cell anemia is 6–11 g/dL. Acute \nanemia, defined as a drop of ≥2 g/dL in the hemoglobin level, is not a normal finding in \nsickle cell crisis. In children, the most likely cause of acute anemia is splenic \nsequestration. Emergency treatment with RBCs is needed because shock may develop \nquickly. The typical presentation of this emergent condition includes acute anemia, a \nlow platelet level, and left upper quadrant pain and tenderness. Acute pain crises \nshould generally not have the hemoglobin decrease seen in this patient and \ntransfusions are not routine management. Another prominent cause of acute anemia is \nan aplastic crisis, which is usually accompanied by a significant decrease in the \nreticulocyte count. This would not be a usual presentation of acute chest syndrome, \nand an upper gastrointestinal bleed would not be a likely cause of this patient’s \ncondition."
+  },
+  {
+    "id": 116,
+    "question": "A 58-year-old female presents with concerns about hair loss. She has noticed increased hair shedding \nover the last few years and has recently noticed hair thinning. On examination she has thinning at the \ncenter frontal hairline. You diagnose female pattern hair loss. She is interested in a topical or \nsystemic treatment. \n \nWhich one of the following would be the most appropriate initial pharmacologic treatment for this \npatient’s hair loss?",
+    "options": [
+      "A) Topical estradiol",
+      "B) Topical minoxidil (Rogaine)",
+      "C) Transdermal testosterone (AndroGel)",
+      "D) Oral medroxyprogesterone (Provera)",
+      "E) Oral spironolactone (Aldactone)"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The initial pharmacologic management for female pattern hair loss is topical minoxidil. \nTopical finasteride in combination with topical minoxidil has also been shown to be \nefficacious. Similarly, oral spironolactone may be efficacious when used in combination \nwith topical minoxidil, but there is no evidence for spironolactone as monotherapy. \nWhile low estrogen levels likely play a role in female pattern hair loss, there is no \ncurrent evidence that using estrogen, progestin, or testosterone is helpful and these are \nnot recommended."
+  },
+  {
+    "id": 117,
+    "question": "A 55-year-old female who is hospitalized for acute pancreatitis and alcohol intoxication expresses a \ndesire for discharge against medical advice on day 2 of her admission. Which one of the following \nadditional factors would represent a CONTRAINDICATION to immediate discharge in this case?",
+    "options": [
+      "A) A current manifestation of mild alcohol withdrawal syndrome",
+      "B) A history of major depression with a past suicide attempt",
+      "C) An inability to demonstrate appreciation of her medical situation",
+      "D) A lack of health insurance",
+      "E) An unstable housing situation"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Discharges against medical advice comprise approximately 1%–2% of all hospital \ndischarges and are challenging encounters to navigate. In such situations, \ncommunication, patient safety, and follow-up planning are of paramount importance. In \nassessing a patient who has requested discharge against medical advice, one of the \nprimary tasks is to determine if the patient has the capacity to make this decision. \nDecision-making capacity evaluation involves 4 key components. The patient must be \nable to (1) understand the pertinent medical information, (2) appreciate the medical \nsituation and potential consequences, (3) demonstrate logical reasoning of the various \ntreatment options, and (4) communicate a choice. In this patient scenario, an inability \nto demonstrate appreciation of the medical situation and possible consequences of \nbeing discharged against the advice of the medical team would represent a \ncontraindication to discharging the patient without further evaluation. For a patient who \ncannot demonstrate decision-making capacity, the next step is to consult an advance \ndirective or surrogate decision-maker. If neither is available, the hospital ethics \ncommittee and medicolegal team should be contacted to provide further guidance.  \nWhile moderate or severe alcohol withdrawal with associated mental status impairment \nlikely would impair decision-making capacity, mild alcohol withdrawal syndrome alone \nwould not contraindicate a discharge against medical advice. Active suicidal ideation \nmay represent temporary impairment of decision-making capacity and psychiatric \nconsultation is advised in such cases. This patient's history of depression with a past \nsuicide attempt is not a contraindication to granting a request for discharge against \nmedical advice. Neither a lack of health insurance nor an unstable housing situation \nwould contraindicate a discharge against medical advice, although these factors should \nbe considered in disposition and follow-up planning, with an effort to optimize the \npatient’s safety in transitioning care to the outpatient setting."
+  },
+  {
+    "id": 118,
+    "question": "A 55-year-old female sees you because of weakness in the left leg. She has a history of hypertension, \ntype 2 diabetes, osteoarthritis of the knees, and degenerative disk disease of the cervical and lumbar \nspines. An examination is notable for focal weakness on dorsiflexion of her left foot and extension of \nher toes, and a neurologic examination is otherwise normal. \n \nWhich one of the following is the most likely explanation for these findings?",
+    "options": [
+      "A) Cervical myelopathy",
+      "B) Diabetic neuropathy",
+      "C) L4 nerve root impingement",
+      "D) Peroneal nerve compression",
+      "E) Tarsal tunnel syndrome"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The most common cause of foot drop is a compression neuropathy of the peroneal \n(also known as common fibular) nerve, most often at the fibular head just distal to the \nlateral knee. Tight-fitting braces and casts as well as prolonged leg crossing can cause \nthis neuropathy. Cervical myelopathy may cause lower extremity weakness, but it may \nalso cause numbness and upper motor neuron findings such as hyperreflexia. Diabetic \nneuropathy is typically bilateral and symmetric and rarely causes motor weakness. L5, \nbut not L4, nerve root impingement can also cause foot drop. Tibial nerve compression \nat the tarsal tunnel causes pain into the lateral midfoot, but it does not lead to foot \ndrop."
+  },
+  {
+    "id": 119,
+    "question": "A 71-year-old male with no significant past medical history presents to establish care now that he has \nhealth insurance. He has not seen a doctor in more than 20 years. He has no symptoms or current \nhealth concerns, and he does not take any medications. He quit smoking 18 years ago after smoking 2 \npacks per day for 30 years. He rarely drinks alcohol and regularly bicycles for exercise. He has not \nbeen sexually active since his partner died 12 years ago. He has a blood pressure of 129/89 mm Hg, a \nheart rate of 86 beats/min, a respiratory rate of 16/min, and a BMI of 26 kg/m2. Physical examination \nfindings are normal. \n \nBased on U.S. Preventive Services Task Force guidelines, which one of the following screening tests \nis recommended for this patient?",
+    "options": [
+      "A) Bone density testing",
+      "B) Hemoglobin A1c",
+      "C) Hepatitis C antibody testing",
+      "D) HIV testing",
+      "E) Low-dose chest CT"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for hepatitis \nC virus (HCV) infection in persons at risk for infection and also one-time screenings for \nall adults between 18 and 79 years of age (B recommendation). The USPSTF gives an I \nrecommendation to bone density screening. Diabetes mellitus screening with a \nhemoglobin A1c is not recommended because this patient is 71 years of age. Screening \nis recommended in adults 35−70 years of age with a BMI that is in the overweight or \nobese categories. This patient is over the age of 65 and no risk factors are noted, so \nHIV screening is not indicated. Lung cancer screening with low-dose CT of the chest is \nnot recommended because the patient quit smoking >15 years ago."
+  },
+  {
+    "id": 120,
+    "question": "A fully vaccinated 4-year-old female is brought to your office in September because of a 10-day \nhistory of febrile upper respiratory illness. During that time, she tested negative for COVID-19, \ninfluenzas A and B, Streptococcus, and respiratory syncytial virus. She appeared to be slowly \nimproving, but today she has begun to report pain in her right shoulder and thigh. This morning she \nrefused to eat her breakfast and choked on her milk. She was unable to dress unassisted today. \n \nOn examination she is afebri\nle with normal vital signs, appears tired, and is not speaking as clearly as \nusual. She has clear nasal discharge, no adenopathy, normal tympanic membranes, a supple neck, and \nclear lungs. There is no heart murmur. She can rise from her chair but cannot bear weight on her right \nleg. Her grip strength is good bilaterally, but she cannot raise her right arm against gravity. Reflexes \nat the right biceps and patella are absent. Her tongue muscles appear weak on examination. You \nrealize her sleepy appearance is due to a mild degree of bilateral ptosis. \n \nWhich one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Starting oral amoxicillin/clavulanate (Augmentin)",
+      "B) Starting oral prednisone",
+      "C) Checking IgG and IgM levels for Epstein-Barr virus and cytomegalovirus",
+      "D) Obtaining MRI of the right hip",
+      "E) Sending her to the emergency department for hospital admission"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient most likely has acute flaccid myelitis (AFM), a disease first named in 2014 \nto describe a rapid onset of flaccid limb weakness without a known cause. Most cases \nfollow a viral febrile illness; the disease can progress rapidly to respiratory failure and \ndangerous autonomic instability. When AFM is suspected, patients should be \nimmediately admitted to a hospital capable of intensive care support. Collecting samples \nfor analysis is important but should not delay admission, nor should infectious disease \nconsultation. Corticosteroids may also be administered once the patient is hospitalized, \nalthough human evidence is lacking in this condition. AFM cases have increased rapidly \nsince the condition was first recognized. The disease occurs predominantly in younger \nchildren and causes a nondemyelinating injury to the central grey matter of the spinal \ncord. This is best discerned via MRI and helps to differentiate this disease from acute \ntransverse myelitis, Guillain-Barré syndrome, or multiple sclerosis. Deficits are \nfrequently proximal and do not follow an ascending pattern, and they may include \ncranial nerves. Family physicians should be aware of this condition and prepared to \nrespond with the urgency required."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 111-120)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 171-180</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 171,
+    "question": "A generally healthy 13-month-old female is brought to the urgent care clinic by her parent because of \nconcerns that she might have pneumonia. The parent says that the toddler has been coughing for the \nlast week and has low energy and decreased appetite. She does not have a history of wheezing or \nbreathing problems. \n \nWhich one of the following history or physical examination findings, if present, would be the most \nconcerning for community-acquired pneumonia as a cause of this toddler’s cough?",
+    "options": [
+      "A) A 3-day history of fevers up to 100.2 °F",
+      "B) Cloudy nasal drainage",
+      "C) Coughing that wakes the child",
+      "D) Grunting and retractions",
+      "E) Recent pneumococcal vaccination"
+    ],
+    "correctAnswer": 3,
+    "rationale": "An abnormal chest examination, including grunting and retractions, is one of the \nphysical examination findings most predictive of community-acquired pneumonia in \npediatric patients and one of the criteria used in the Pediatric Acute Febrile Respiratory \nIllness rule. Nasal drainage and the absence of significant fever are negative predictors \nin this rule. Cough that disrupts sleep is a common reason for children to be seen by a \nphysician for medical care, but it is not necessarily suggestive of pneumonia. \nPneumococcal vaccination decreases a child’s risk for significant bacterial community-\nacquired pneumonia."
+  },
+  {
+    "id": 172,
+    "question": "An 89-year-old female with end-stage, widely metastatic lung cancer is receiving hospice care. Her \nsymptoms, including pain, have been well controlled until recently. According to her caregiver, she is \nnow experiencing excessive oropharyngeal secretions. \n \nWhich one of the following medications would most effectively control this patient’s secretions?",
+    "options": [
+      "A) Chlorpheniramine/hydrocodone suspension",
+      "B) Glycopyrrolate",
+      "C) Haloperidol",
+      "D) Hydroxyzine",
+      "E) Morphine"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Symptom management at the end of life aims to provide comfort and dignity for \npatients and their families. One of the common symptoms at the end of life is excessive \noropharyngeal secretions. This can cause increased noisy breathing in the last hours to \ndays of life, often referred to as a death rattle. Terminal secretions do not result in \nairway obstruction or respiratory distress for the patient but can be distressing to family \nmembers who are concerned that the patient is “drowning” in secretions. Family \nmembers often request that suctioning be performed; however, this does not reduce \nthe rattling noise and can cause further distress to the patient.  \n \nAnticholinergic medications can be used to reduce the volume of secretions and noisy \nbreathing, but there is little high-quality evidence to support this practice. \nGlycopyrrolate, hyoscyamine, and transdermal scopolamine may also be used. Neither \nchlorpheniramine/hydrocodone nor hydroxyzine has a role in typical end-of-life care. \nHaloperidol is effective for the treatment of delirium. Opioids such as morphine are \nused to treat dyspnea (SOR B) but have no effect on secretions."
+  },
+  {
+    "id": 173,
+    "question": "Which one of the following is a best practice strategy for avoiding the use of stigmatizing or \njudgmental language in the medical record?",
+    "options": [
+      "A) Attributing responsibility to patients for their condition",
+      "B) Documenting when a patient “refuses” a recommendation",
+      "C) Including socioeconomic status in the “one-liner” about the patient",
+      "D) Leading with ethnic identifiers",
+      "E) Using person-first language"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Person-first language focuses on the patient and not the condition and is an important \nhumanizing strategy that should be used in clinical documentation. For example, “a \npatient with diabetes” is preferred over referring to a patient as “a diabetic.” It is \nimportant to avoid blaming the patient by attributing responsibility for their condition to \nthem. Documenting that a patient “refuses” a recommendation carries a negative \nconnotation and it is preferable to use a neutral alternative such “chooses.” Social \nidentifiers such as race, ethnicity, or socioeconomic status can be markers of \nmarginalization and trigger unconscious bias. These identifiers should not be used to \nlead the history of present illness or included in a “one-liner.” Instead, they can be \nincluded in the social history if verified by the patient."
+  },
+  {
+    "id": 174,
+    "question": "A 32-year-old female presents to your office because of a 2-month history of painful intercourse and \nvaginal dryness. She is 1 year post partum and started combined oral contraceptives 4 months ago. \nShe is no longer breastfeeding and desires continued contraception. Her menstrual cycles have been \nregular, and she has not had any vaginal discharge. She reports intermittent dysuria and frequency, \nbut no urinary incontinence. The pelvic examination is within normal limits and her symptoms are \nnot reproduced on examination. A urine pregnancy test is negative, and a urinalysis is within normal \nlimits. \n \nWhich one of the following would most likely alleviate this patient’s symptoms?",
+    "options": [
+      "A) Switching to a levonorgestrel IUD (Mirena)",
+      "B) Trigger point injections",
+      "C) OnabotulinumtoxinA (Botox)",
+      "D) Cognitive behavioral therapy",
+      "E) Myofascial pelvic physical therapy"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient has dyspareunia, and the most likely etiology is vaginal dryness related to \nher use of combined oral contraceptives. The levonorgestrel IUD has not been \nassociated with vaginal dryness, and changing her contraception would likely alleviate \nher symptoms and provide ongoing desired contraception. She can use vaginal \nlubricants or moisturizers for vaginal dryness. She does not meet the diagnostic criteria \nfor vulvodynia, vaginismus, or myofascial pelvic pain syndrome. Trigger point injections, \ncognitive behavioral therapy, and myofascial pelvic physical therapy are possible \ntreatments for vaginismus or vulvodynia. OnabotulinumtoxinA is used off-label as a \ntreatment option for interstitial cystitis or female chronic pelvic pain but only after other \ntreatments have failed."
+  },
+  {
+    "id": 175,
+    "question": "A 32-year-old male has presented to your office 4 times over the past several months because of \nperiods of intractable nausea and vomiting lasting 1–2 days, with up to 14 episodes each day. He has \nalso experienced moderate abdominal pain, flushing, sweating, and dry mouth during these episodes. \nOn 2 occasions he has required brief admission to the hospital for fluid resuscitation. Promethazine, \nondansetron, and metoclopramide (Reglan) have been ineffective in treating his symptoms, but hot \nshowers provide him relief. His medical history is significant for allergic rhinitis and obesity. His \nsocial history includes episodes of binge drinking approximately twice monthly and daily marijuana \nuse since age 21. He has no history of intravenous drug use or tobacco abuse. \n \nPhysical findings are significant for a weight loss of 4.5 kg (10 lb) over the past 3 months and \nmoderate tenderness to epigastric palpation. During acute episodes, laboratory evaluations have \nrevealed only mild elevations in BUN and creatinine levels and hematocrit. Abdominal \nultrasonography and CT scans have been normal. \n \nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Abdominal migraines",
+      "B) Cannabinoid hyperemesis syndrome",
+      "C) Carcinoid syndrome",
+      "D) Pancreatitis",
+      "E) Peptic ulcer disease"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Cannabinoid hyperemesis syndrome (CHS) has become more common with increased \nlegalization and acceptance of cannabis use. While it can be used as an antiemetic, \ncannabis can also promote vomiting in susceptible individuals who have a significant \nhistory of cannabinoid use. Long duration, higher frequency of use, and higher amounts \nof cannabis use are all risk factors for CHS. Symptomatic relief with hot showers or \nbaths is not found in abdominal migraines, carcinoid syndrome, or peptic ulcer disease. \nPancreatitis would cause elevations in lipase levels and some findings on imaging would \nbe expected. Nausea from the other causes is generally relieved with traditional \nantiemetics. Carcinoid syndrome also causes episodic symptoms such as facial flushing, \ndiarrhea, hypotension, and tachycardia, but not nausea or vomiting."
+  },
+  {
+    "id": 176,
+    "question": "Which one of the following conditions is most associated with an increased risk for venous \nthromboembolism?",
+    "options": [
+      "A) Active cancer",
+      "B) COPD",
+      "C) Poorly controlled type 2 diabetes",
+      "D) Severe intermittent asthma",
+      "E) Stage 3 chronic kidney disease"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Patients with venous thromboembolism (VTE) should receive anticoagulant therapy for \nat least 3 months to reduce the risk for further embolization. In patients with persistent \nprovoking factors such as active cancer or antiphospholipid syndrome, or who have had \nprevious episodes of unprovoked VTE, the long-term risk for recurrence is high and \nindefinite anticoagulation therapy is recommended. The risk for VTE is much higher \nwith active cancer compared to COPD, poorly controlled type 2 diabetes, severe \nintermittent asthma, and stage 3 chronic kidney disease."
+  },
+  {
+    "id": 177,
+    "question": "A 59-year-old female asks when she should consider screening for osteoporosis. Her last menstrual \nperiod was at age 53. \n \nAccording to the U.S. Preventive Services Task Force, which one of the following risk factors, if \npresent, should lead to a calculation of osteoporosis risk with a screening tool and consideration of \nscreening for osteoporosis now?",
+    "options": [
+      "A) Low caffeine consumption",
+      "B) High alcohol consumption",
+      "C) Body weight >100 kg (220 lb)",
+      "D) A maternal aunt with a history of hip fracture",
+      "E) Nonsmoking status"
+    ],
+    "correctAnswer": 1,
+    "rationale": "In postmenopausal women younger than age 65, the U.S. Preventive Services Task \nForce recommendations for osteoporosis screening include assessing for osteoporosis \nrisk factors (parental history of hip fracture, smoking, high alcohol consumption, or low \nbody weight) and use of a clinical risk assessment tool if 1 or more risk factors are \npresent."
+  },
+  {
+    "id": 178,
+    "question": "A 62-year-old female sees you for evaluation of pain and stiffness in her neck. For several years she \nhas attributed these symptoms to the aging process, but she has recently developed a loss of dexterity \nin her hands that makes typing and knitting difficult. She does not have any loss of sensation or \nweakness in her extremities but has noticed some difficulties with balance in recent weeks. The pain \ndoes not radiate, and she does not have any history of recent trauma. She feels well otherwise and has \nnot had any fevers, chills, bowel incontinence, or bladder incontinence. \n \nOn examination you note mild tenderness of the spinous processes and paraspinous muscles of the \ncervical spine without focal tenderness. Her range of motion at the neck is limited due to pain. There \nare brisk reflexes in the bilateral upper and lower extremities and a positive Hoffman sign bilaterally \nwith 4 beats of clonus on the right and 5 on the left. Her strength and sensation to light touch are \nintact in the bilateral upper extremities. \n \nWhich one of the following cervical spine conditions is the most likely diagnosis?",
+    "options": [
+      "A) Facet joint arthropathy",
+      "B) Myelopathy",
+      "C) Radiculopathy",
+      "D) Vertebral compression fracture",
+      "E) Vertebral osteomyelitis"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The patient history and physical examination findings are most consistent with \ndegenerative cervical myelopathy, a condition in which spinal cord dysfunction develops \ndue to compression in the neck. Spinal cord compression can be due to disk herniation, \nligament hypertrophy, or osteophyte formation, sometimes collectively called \nspondylosis. Symptoms can initially be nonspecific and subtle, and they can overlap \nwith less serious conditions. Loss of hand dexterity, ataxia, and urinary urgency can be \nsigns of spinal cord compression and warrant a comprehensive neurologic examination. \nThe development of upper motor neuron signs including hyperreflexia, a positive \nHoffmann sign (digital reflex of the fingers), and clonus are key findings that warrant \nurgent evaluation with MRI.  \n \nFacet joint arthropathy causes more focal pain and is not associated with neurologic \nsymptoms. Cervical radiculopathy involves compression of the nerve root rather than \nthe spinal cord. Symptoms include shooting pain with sensory changes and weakness in \na dermatomal distribution. A vertebral compression fracture leads to focal pain in the \nneck at the site of the fracture without neurologic symptoms. Osteomyelitis also causes \nmore focal pain in the setting of systemic symptoms such as malaise and fever."
+  },
+  {
+    "id": 179,
+    "question": "A 30-year-old female presents to your office to discuss fertility and her irregular menses. The patient \nand her husband have been trying to conceive for the past 3 years but have been unsuccessful due to \nher irregular menstrual periods. Physical examination findings are significant for hirsutism and acne \nwith hyperpigmentation on the posterior aspect of the neck and in the axillae. Her BMI is 35 kg/m2. \nLaboratory studies from 1 month ago show a hemoglobin A1c of 5.0%. \n \nWhich one of the following medications would be the most appropriate treatment of this patient’s \ninfertility?",
+    "options": [
+      "A) A GLP-1 receptor agonist",
+      "B) Letrozole (Femara)",
+      "C) Metformin",
+      "D) Spironolactone (Aldactone)"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient likely has polycystic ovary syndrome (PCOS) based on the clinical history \nand physical examination findings. Letrozole is an aromatase inhibitor that decreases \nthe amount of estrogen produced by the body and is considered the first-line treatment \nfor inducing ovulation in women with PCOS.  \n \n\nGLP-1 receptor agonists reduce the degree of metabolic syndrome in patients with \nPCOS and are not indicated for ovulation induction. Metformin is inferior to letrozole for \novulation induction in patients with PCOS. Furthermore, this patient's hemoglobin A1c \nindicates that she does not have prediabetes or diabetes mellitus. Spironolactone is an \nantiandrogen and is used to treat many PCOS symptoms, such as hirsutism, but does \nnot induce ovulation."
+  },
+  {
+    "id": 180,
+    "question": "Which one of the following is present in polycythemia vera?",
+    "options": [
+      "A) An α-1 antitrypsin deficiency",
+      "B) An elevated α-fetoprotein level",
+      "C) An elevated erythropoietin level",
+      "D) Antimitochondrial antibodies",
+      "E) A Janus kinase 2 mutation"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The World Health Organization’s major diagnostic criteria for polycythemia vera include \nan elevated hemoglobin or hematocrit level, abnormal bone marrow biopsy results, and \nthe presence of the Janus kinase 2 (JAK2) genetic mutation, found in 98% of cases. \nThe only minor criterion is a subnormal erythropoietin level, which helps distinguish \npolycythemia vera from common causes of secondary erythrocytosis such as smoking, \nsleep apnea, and testosterone use."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 171-180)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

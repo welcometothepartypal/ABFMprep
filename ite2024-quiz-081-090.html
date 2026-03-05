@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 81-90</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 81,
+    "question": "Which one of the following cardiovascular changes reflects normal physiology of pregnancy in the \nfirst trimester?",
+    "options": [
+      "A) Decreased resting heart rate",
+      "B) Increased afterload",
+      "C) Increased preload",
+      "D) Increased systemic vascular resistance",
+      "E) Increased systolic blood pressure"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Several notable changes occur within the maternal cardiovascular system in the first \ntrimester of pregnancy. A rise in cardiac output results from a combination of 3 primary \nfactors: plasma volume expansion that causes an increase in preload, a decrease in \nafterload that mirrors a decline in systemic vascular resistance, and an increase in the \nresting heart rate compared to the pre-pregnancy state. Other cardiovascular changes \nearly in the course of pregnancy include a reduction in both systolic and diastolic blood \npressures compared to pre-pregnancy measurements."
+  },
+  {
+    "id": 82,
+    "question": "A physically active 25-year-old male presents with foot pain after an injury. X-rays are obtained. \n \nA proximal fracture at which one of the following metatarsals would be at the greatest risk for \nnonunion?",
+    "options": [
+      "A) First",
+      "B) Second",
+      "C) Third",
+      "D) Fourth",
+      "E) Fifth"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Proximal fifth metatarsal fractures are categorized by zones. Zone 2 is located at the \nmetaphyseal-diaphyseal junction at the fourth and fifth metatarsal joint. Zone 3 \nfractures are located at the proximal 1.5 cm of the diaphysis.  \n \nBecause of poor blood supply, fractures in zone 2 or zone 3 of the fifth metatarsal have \na risk for slow healing and nonunion. Surgical management of these fractures should be \nconsidered in active patients to decrease the risk for nonunion (SOR B)."
+  },
+  {
+    "id": 83,
+    "question": "A 70-year-old male with well-controlled hypertension reports that he slipped and fell in his bedroom \n2 weeks ago. The fall did not result in any injuries. He has heard that tai chi is effective at reducing \nfall risk in older adults, but no classes are offered locally. He asks about other options to prevent \nfuture falls. \n \nYou should tell this patient that in older adults, evidence shows that any type of exercise",
+    "options": [
+      "A) decreases fall risk for women but not men",
+      "B) decreases health-related quality of life",
+      "C) reduces the rate of falls",
+      "D) reduces the rate of falls requiring hospital admission"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Evidence shows that in older, community-dwelling adults, all types of exercise reduce \nthe rate of falls by 23% (rate ratio 0.77, 95% confidence interval [CI] 0.71 to 0.83) and \nthe number of persons experiencing ≥1 falls in 1 year by 15% (risk ratio 0.85, 95% CI \n0.81 to 0.89).  \n \nMore women than men have been studied in exercise research, but exercise appears to \nshow similar reductions in falls for men. Exercise has not been found to make a \nsignificant difference in quality of life in older adults. The evidence is insufficient to \ndetermine if exercise programs decrease fall-related hospital admissions."
+  },
+  {
+    "id": 84,
+    "question": "A 76-year-old male with a history of hypothyroidism, type 2 diabetes, remote partial ileocolectomy, \nand a Schatzki ring treated with dilation presents for follow-up. The review of symptoms is negative, \nbut his spouse has noted some new memory impairment. The patient consumes a healthy vegetarian \ndiet that includes dairy. Recent laboratory studies are significant for a vitamin B12 deficiency. His \ncurrent medications include: \nAtorvastatin (Lipitor) \nInsulin glargine (Lantus) \nLevothyroxine (Synthroid) \nLiraglutide (Victoza) \nWhich one of the following factors in this patient would be the most likely cause of a vitamin B12 \ndeficiency?",
+    "options": [
+      "A) Diet",
+      "B) Diabetic therapy",
+      "C) Statin therapy",
+      "D) Esophageal condition",
+      "E) Surgical history"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Patients who have undergone removal of the distal ileum are at high risk for vitamin B12 \nmalabsorption. Metformin can increase the risk for low vitamin B12, but this patient's \ndiabetic therapy consists of a GLP-1 receptor agonist and insulin. A strict vegan diet, \nbut not vegetarian, is a risk factor for vitamin B12 deficiency. Statins and esophageal \nstrictures are not known to affect vitamin B12 absorption."
+  },
+  {
+    "id": 85,
+    "question": "A 68-year-old male with coronary artery disease, major depression, and hypertension presents for \nroutine follow-up. He currently smokes a half-pack of cigarettes per day and asks what options are \navailable to help with smoking cessation. \n \nWhich one of the following would be the most effective treatment for smoking cessation?",
+    "options": [
+      "A) Bupropion (Wellbutrin SR) only",
+      "B) Varenicline only",
+      "C) Bupropion plus nicotine gum (Nicorette Gum)",
+      "D) Varenicline plus nicotine gum",
+      "E) The nicotine patch (Nicoderm CQ) plus nicotine gum"
+    ],
+    "correctAnswer": 3,
+    "rationale": "There are several pharmaceutical options available to aid in smoking cessation. \nVarenicline is the most effective medical option and is safe in patients with mental \nhealth conditions. Current evidence suggests that the addition of nicotine replacement \ntherapy (NRT) to varenicline improves smoking cessation rates. Both NRT and \nbupropion are effective for smoking cessation, but are not as effective as varenicline. \nCurrent evidence is insufficient to recommend a combination of NRT and bupropion."
+  },
+  {
+    "id": 86,
+    "question": "A 78-year-old male with a history of hypertension, type 2 diabetes, ongoing tobacco use, and carotid \nendarterectomy presents to the emergency department with bloody diarrhea and severe lower \nabdominal pain. Which one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Angiodysplasia",
+      "B) Arteriovenous malformation",
+      "C) Colon cancer",
+      "D) Irritable bowel syndrome",
+      "E) Ischemic colitis"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The differential diagnosis for the painful rectal bleeding in this patient includes \ninflammatory bowel disease, infectious colitis, hemorrhoids, and ischemic colitis. The \npatient's multiple risk factors for vascular disease place him at higher risk for ischemic \ncolitis. The differential diagnosis for painless rectal bleeding includes angiodysplasia, \narteriovenous malformation, colon cancer, diverticular bleeding, and post-polypectomy \nbleeding. Irritable bowel syndrome does not cause rectal bleeding."
+  },
+  {
+    "id": 87,
+    "question": "A 35-year-old male presents to the urgent care clinic this morning after he became lost while hiking \nand was trapped outdoors overnight. He stayed in freezing temperatures with no preparation and was \nwearing light daytime clothing. He reports a sensation of pins and needles and very sensitive skin in \nhis left index and middle fingers. On examination his vital signs are normal, including a core \ntemperature of 37.0 °C (98.6 °F). His skin is normal except for his left index and middle fingers, \nwhich appear pale. \n \nWhich one of the following would be the most appropriate initial treatment?",
+    "options": [
+      "A) Slow rewarming by remaining indoors at room temperature",
+      "B) Rapid rewarming using body heat by placing the hand in the axilla",
+      "C) Rapid rewarming in front of a dry heat source",
+      "D) Rapid rewarming in a warm water bath",
+      "E) Rapid rewarming using small chemical heating pads"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient has signs and a history of exposure indicative of frostbite. Treatment of \nfrostbite requires thorough evaluation of the patient and treatment of hypothermia, if \npresent. It is important to wait to rewarm until the chance of refreezing is low. Rapid \nrewarming should be performed in a water bath at 98.6–102.2 °F (37.0–39.0 °C). The \naffected extremity should be swirled in the water, avoiding the bath edge, until the skin \nappears red or purple and is soft to the touch. Slow rewarming is not recommended for \nfrostbite. Using body heat by placing the hand in the axilla is not a method of rapid \nrewarming, although it can be used for spontaneous thawing if rapid rewarming is not \npossible. Dry heat should not be used due to difficulty maintaining a stable \ntemperature. Small chemical heating pads that are often used for hands should be \navoided as they can cause burns. The degree of injury related to frostbite cannot be \ndetermined until after rewarming, which will determine further steps in treatment."
+  },
+  {
+    "id": 88,
+    "question": "A patient is considering hormonal contraception, and you counsel her regarding the potential for \nabnormal uterine bleeding. Which one of the following contraceptives is most associated with \nabnormal uterine bleeding that is less likely to improve with time?",
+    "options": [
+      "A) A combined oral contraceptive with continuous dosing",
+      "B) A combined oral contraceptive with cyclic dosing",
+      "C) Medroxyprogesterone acetate (Depo-Provera CI)",
+      "D) An etonogestrel implant (Nexplanon)",
+      "E) A levonorgestrel IUD (Mirena)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Abnormal uterine bleeding is a common issue for patients taking hormonal \ncontraception, and family physicians should engage in shared decision-making with \npatients regarding its potential duration.  \n \nFrequent or prolonged bleeding can occur in up to 23% of patients using the \netonogestrel implant, and this bleeding is less likely to improve over time. Patients on \neither continuous or cyclic combined oral contraceptives can be counseled to expect \nbleeding abnormalities during the first 3 months. The estrogen component helps with \ncycle control because it stabilizes the endometrium. Patients tend to have amenorrhea \nand lighter menses after 6–12 months of medroxyprogesterone acetate use (SOR B). \nWhile up to 35% of patients with the levonorgestrel IUD experience frequent or \nprolonged bleeding in the first 3 months of use, most have a reduction in uterine \nbleeding within 12 months (SOR B)."
+  },
+  {
+    "id": 89,
+    "question": "A 55-year-old female presents with lateral hip pain. You suspect greater trochanteric pain syndrome \nand prescribe anti-inflammatory medications and physical therapy. \n \nIf her pain does not respond to these measures, which one of the following alternative diagnoses is \nmost likely?",
+    "options": [
+      "A) Femoroacetabular impingement",
+      "B) Gluteus medius tendon tear",
+      "C) Ischiofemoral impingement",
+      "D) Labral tear",
+      "E) Piriformis syndrome"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The most common cause of lateral hip pain is greater trochanteric pain syndrome \n(formerly referred to as greater trochanteric bursitis), which can be caused by gluteus \nmedius tendinopathy or tearing, or iliotibial band friction. A gluteus medius tendon tear \nshould be considered in patients with greater trochanteric pain syndrome that does not \nrespond to anti-inflammatory medications and physical therapy. MRI and/or \nmusculoskeletal ultrasonography can be used for further diagnosis if a gluteus medius \ntendon tear is suspected, and surgical intervention may improve outcomes in these \npatients.  \n \nFemoroacetabular impingement is a cause of intra-articular hip pain that usually \npresents with anterior pain. It is caused by bony overgrowth of the femoral head and \nneck or by a pincer deformity of the acetabulum and is usually bothersome with \nactivities that require hyperflexion or a wide range of motion at the hip joint. \nIschiofemoral impingement is caused by impingement of the quadratus femoris muscle \nand nerve between the proximal femur at the level of the lesser trochanter and ischial \ntuberosity, resulting in deep buttock pain worsened by activities requiring a long stride. \nLabral tears are associated with anterior hip pain and may cause a popping, catching, \nor clicking sound with activities. Piriformis syndrome is caused by the piriformis \nentrapping the sciatic nerve, and causes hip and buttock pain as well as sciatica."
+  },
+  {
+    "id": 90,
+    "question": "A 15-year-old male is brought to your office for a sports preparticipation evaluation. You obtain a \nmedical history and perform a physical examination, including elements from the American Heart \nAssociation's (AHA) 14-point screening evaluation. \n \nAccording to the AHA 14-point screening evaluation, which one of the following findings would \nwarrant an EKG prior to clearing this patient for participation in sports?",
+    "options": [
+      "A) Elevated systemic blood pressure",
+      "B) Complete recovery from mild COVID-19 diagnosed 14 days ago",
+      "C) A family history of coronary artery bypass surgery in a 65-year-old grandfather",
+      "D) A family history of mitral stenosis due to rheumatic heart disease in a 45-year-old aunt",
+      "E) A coach’s request for an EKG"
+    ],
+    "correctAnswer": 0,
+    "rationale": "The American College of Cardiology/American Heart Association (ACC/AHA) recommend \nobtaining an EKG prior to clearance for sports participation only in a patient who has a \npositive result, such as elevated systemic blood pressure, on the AHA 14-point \nscreening evaluation. An athlete with COVID-19 and mild symptoms should rest and \navoid exercise for 14 days after diagnosis and may then return to sports if \nasymptomatic. A family history of cardiac problems or sudden death prior to age 50 is a \nqualifying element; however, a history of rheumatic heart disease in a relative would \nnot be relevant. A coach’s preference is not a qualifying element."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 81-90)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

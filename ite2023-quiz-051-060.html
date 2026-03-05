@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 51-60</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 51,
+    "question": "A 46-year-old female comes to your office because of left hip pain. After a thorough evaluation\nyou make a diagnosis of osteoarthritis, likely associated with congenital hip dysplasia.\nIn addition to nonpharmacologic therapies, including physical exercise, which one of the\nfollowing medications has the best evidence of treating her pain effectively?",
+    "options": [
+      "A) Topical diclofenac",
+      "B) Topical lidocaine",
+      "C) Oral acetaminophen",
+      "D) Oral naproxen",
+      "E) Oral tramadol"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Symptomatic osteoarthritis of the hip is estimated to affect 10% of U.S. adults. Nonpharmacologic\nmeasures are the cornerstone of treatment and include physical activity, including strength training, aerobic\nexercise, tai chi, and yoga; weight loss for those who are overweight; and education in self-management.\nWhen these interventions are not adequate to manage pain, medications should be considered. In patients\nwithout contraindications, oral NSAIDs such as naproxen should be considered as first-line management.\nThe hip joint is less amenable to topical therapies than the knee joint and topical NSAIDs such as\ndiclofenac do not have evidence of benefit for hip osteoarthritis. Topical lidocaine is similarly without\nevidence of benefit at the hip joint. Those with risk factors for gastrointestinal toxicity should receive\nprophylaxis with proton pump inhibitors when treated with oral NSAIDs. Acetaminophen is less effective\nthan NSAIDs but may be considered for use. Tramadol should not be used as a first-line treatment for pain\ndue to osteoarthritis of the hip.\nRef: Katz JN, Arant KR, Loeser RF. Diagnosis and treatment of hip and knee osteoarthritis: a review. JAMA.\n2021;325(6):568-578. 2) Drugs for osteoarthritis. JAMA. 2021;325(6):581-582.\n 20"
+  },
+  {
+    "id": 52,
+    "question": "A 25-year-old male presents for a pretravel consultation prior to embarking on a 10-day mission\ntrip to Central America with his church. His past medical history includes GERD, irritable bowel\nsyndrome, and generalized anxiety disorder. The last time he traveled internationally he\nexperienced a prolonged bout of traveler’s diarrhea, despite his best efforts at practicing good\nhand hygiene and careful food and drink selection. He asks if there are any medications that he\ncan take to prevent a similar experience this time.\nWhich one of the following is most appropriate for prophylactic use in this situation?",
+    "options": [
+      "A) Bismuth subsalicylate (Pepto-Bismol)",
+      "B) Calcium carbonate (Tums)",
+      "C) Ciprofloxacin (Cipro)",
+      "D) Omeprazole",
+      "E) A probiotic containing Lactobacillus acidophilus"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Bismuth subsalicylate has been shown to decrease the risk of contracting traveler’s diarrhea by 50%–65%\nand may be considered for patients who are at increased risk. Drawbacks include the frequent dosing of\nfour times daily and the risk of developing a black tongue and black stool. Bismuth subsalicylate is\ncontraindicated in the setting of aspirin allergy, kidney disease, breastfeeding, or concurrent anticoagulant\nuse. Medications that decrease gastric acidity, such as proton pump inhibitors, H2-blockers, and antacids,\nsubstantially increase one’s risk of contracting traveler’s diarrhea. Therefore, avoiding calcium carbonate\nand omeprazole would be preferable for this patient. Prophylactic antibiotics typically are not\nrecommended in this situation although may be considered for those who are at particularly high risk of\nhealth complications from a gastrointestinal illness. If a prophylactic antibiotic is desired, rifaximin should\nbe considered. Fluoroquinolones such as ciprofloxacin, however, should be avoided for prophylactic use\ndue to risks of inducing antibiotic resistance and causing central nervous system side effects, QTc\nprolongation, medication interactions, and tendon injuries. Probiotics have insufficient evidence of benefit\nfor preventing traveler’s diarrhea.\nRef: Sanford C, McConnell A, Osborn J. The pretravel consultation. Am Fam Physician. 2016;94(8):620-627. 2) Giddings SL,\nStevens AM, Leung DT. Traveler's diarrhea. Med Clin North Am. 2016;100(2):317-330. 3) Riddle MS, Connor BA,\nBeeching NJ, et al. Guidelines for the prevention and treatment of travelers' diarrhea: a graded expert panel report. J Travel\nMed. 2017;24(suppl_1):S57-S74."
+  },
+  {
+    "id": 53,
+    "question": "A 39-year-old male with no known previous medical history sees you for follow-up of recently\ndiagnosed depression. He works as a home renovation contractor and does not smoke. A\nphysical examination is normal other than a BMI of 36 kg/m2. Laboratory studies reveal a\nnormal TSH level and a hemoglobin level of 17.4 g/dL (N 13.3–16.2).\nYou suspect that which one of the following is a cause of his polycythemia?",
+    "options": [
+      "A) Alcohol use",
+      "B) Hemochromatosis",
+      "C) Hereditary spherocytosis",
+      "D) Lead exposure",
+      "E) Obstructive sleep apnea\n20"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Secondary polycythemia, or elevation of red blood cells, can have multiple causes. Conditions that affect\noxygenation such as obstructive sleep apnea may cause secondary polycythemia. While hemochromatosis\ncauses elevation of iron levels, it does not typically cause polycythemia. Hereditary spherocytosis causes\nhemolytic anemia. Smoking cigarettes is a common cause of secondary polycythemia, but alcohol use is\noften associated with macrocytic anemia. This patient may be at risk for lead toxicity, which can lead to\nanemia.\nRef: Djulbegovic M, Dugdale LS, Lee AI. Evaluation of polycythemia: a teachable moment. JAMA Intern Med.\n2018;178(1):128-130. 2) Fox S, Griffin L, Robinson Harris D. Polycythemia vera: rapid evidence review. Am Fam\nPhysician. 2021;103(11):680-687.\n 21"
+  },
+  {
+    "id": 54,
+    "question": "A 48-year-old female presents to your office because of painful sexual intercourse occurring\nwith both initial entry and deep penetration. She has been using lubricants, but still experiences\nburning and dryness. Her last menstrual period was 1 year ago. A pelvic examination reveals\nslightly pale vaginal mucosa.\nWhich one of the following would be the best and most cost-effective initial therapy?",
+    "options": [
+      "A) Vaginal estradiol cream (Estrace Vaginal)",
+      "B) Vaginal prasterone (Intrarosa)",
+      "C) Ospemifene (Osphena)",
+      "D) OnabotulinumtoxinA (Botox)",
+      "E) Pelvic floor physical therapy"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Dyspareunia is common in menopausal women and may be caused by vaginal atrophy that results in\nburning and dryness. Pain is generally caused by entry and deep penetration. An examination may show\npale and dry vaginal mucosa, although this may appear normal in early menopause. It may be treated with\nvaginal moisturizers or lubricants, but further treatment may be needed. Topical estrogen is the most\neffective initial therapy and is much more cost-effective than other alternatives. For patients with a\npreference for non-estrogen treatment, ospemifene is a selective estrogen receptor modulator. However,\nit costs more than $200 per month and should not be used if there is a history of thromboembolism. A\nvaginal dehydroepiandrosterone formulation called prasterone decreases pain by increasing epithelial\nthickness, but also costs over $200 monthly. OnabotulinumtoxinA and pelvic floor physical therapy are\nutilized when pelvic floor dysfunction is the cause of dyspareunia.\nRef: Hill DA, Taylor CA. Dyspareunia in women. Am Fam Physician. 2021;103(10):597-604."
+  },
+  {
+    "id": 55,
+    "question": "Which one of the following medications commonly causes hyponatremia in the elderly?",
+    "options": [
+      "A) Amlodipine (Norvasc)",
+      "B) Amoxicillin",
+      "C) Atorvastatin (Lipitor)",
+      "D) Escitalopram (Lexapro)",
+      "E) Spironolactone (Aldactone)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "A possible side effect of SSRIs is hyponatremia, which is more pronounced in the elderly. This fact is\nparticularly pertinent in elderly patients with poorly controlled psychiatric illness who are more inclined\nto psychogenic polydipsia, which also leads to hyponatremia. Amlodipine is known to cause peripheral\nedema, dizziness, and medication-induced hepatitis. Amoxicillin causes eosinophilia and ALT and AST\nelevations. Atorvastatin causes elevations in ALT, AST, and creatine kinase levels. Spironolactone causes\nhyperkalemia and hyperuricemia, but it is not known to cause hyponatremia.\nRef: Jacob S, Spinier SA. Hyponatremia associated with selective serotonin-reuptake inhibitors in older adults. Ann\nPharmacother. 2006;40(9):1618-1622. 2) Lexapro. Highlights of prescribing information. US Food and Drug\nAdministration; revised May 2023."
+  },
+  {
+    "id": 56,
+    "question": "A 16-year-old female sees you because she has not yet started her menses and has noticed little\nbreast development. Both her mother and her older sister started menstruating at age 13. She has\nnever been sexually active and has not had any abdominal pain, vaginal discharge, nipple\ndischarge, appetite changes, or urinary symptoms. She does not take any medications and does\nnot use tobacco, alcohol, or illicit substances. Her weight has been stable. She walks to and from\nschool daily and plays recreational basketball during the winter season, but otherwise does not\nget regular exercise.\nOn examination the patient appears well. She has a blood pressure of 110/70 mm Hg and a heart\nrate of 70 beats/min, and she is in the 5th percentile for height and 50th percentile for weight.\nCardiovascular, pulmonary, abdominal, and skin examinations are all normal. Her breast\ndevelopment is Tanner stage 2 and her genitourinary development is Tanner stage 4, with normal\nexternal genitalia and a normal-appearing nulliparous cervix. There is no edema to the\nextremities.\nLaboratory studies include a normal TSH level, prolactin level, and basic metabolic panel. A\nurine pregnancy test is negative. Pelvic ultrasonography reveals a normal uterus and the ovaries\nare nonvisualized.\nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Congenital adrenal hyperplasia",
+      "B) Cushing syndrome",
+      "C) Functional hypothalamic amenorrhea",
+      "D) Polycystic ovary syndrome",
+      "E) Turner syndrome\n21"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Turner syndrome is the most likely cause of this patient’s primary amenorrhea. Turner syndrome is\ncharacterized by a lack of normal X chromosome gene expression (45,X karyotype) and is estimated to\noccur in 1/3000 births. Females with Turner syndrome have ovarian sex hormone insufficiency, which\nleads to delayed puberty. Delayed diagnosis of Turner syndrome is common, and short stature and delayed\npuberty are sometimes the only symptoms. Diagnosis is made via karyotyping.  \nIndividuals with congenital adrenal hyperplasia would most likely have other signs, including\nclitoromegaly. Similarly, individuals with Cushing syndrome will have other features such as a\ndorsocervical fat pad and a rounded, swollen facial appearance. There is nothing in this patient’s history\nor physical examination to suggest functional hypothalamic amenorrhea given that her weight is normal\nand has not changed recently. Polycystic ovary syndrome more typically presents with oligomenorrhea\nrather than primary amenorrhea.\nRef: Klein DA, Paradise SL, Reeder RM. Amenorrhea: a systematic approach to diagnosis and management. Am Fam Physician.\n2019;100(1):39-48.\n 22"
+  },
+  {
+    "id": 57,
+    "question": "A 28-year-old female comes to your office for follow-up after learning during an emergency\ndepartment visit that she is pregnant. Ultrasonography reveals an estimated gestational age of\n14 weeks and 4 days. She has been using increasing dosages of oxycodone (OxyContin) daily\nfor the past 7 months and gets sick whenever she tries to stop. She reports using 90 mg daily\nwithout a prescription, and stealing when necessary to obtain the drug. She wishes to continue\nher pregnancy and is worried about the safety of her developing fetus.\nWhich one of the following is most appropriate for this patient?",
+    "options": [
+      "A) A prescription for oxycodone, 90 mg daily",
+      "B) Buprenorphine/naloxone (Suboxone) therapy",
+      "C) Outpatient detoxification with a clonidine-based protocol",
+      "D) Inpatient detoxification with a clonidine-based protocol"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Treatment with buprenorphine/naloxone, along with counseling, is considered optimal care for all pregnant\nwomen with active opioid addiction. Benefits include the avoidance of cycles of withdrawal and\nintoxication and a decrease in high-risk behaviors associated with opioid dependence and associated\nmedical complications. A prescription for oxycodone would not be appropriate for this patient. Medically\nsupervised withdrawal is associated with dramatically higher rates of relapse, and should only be offered\nto women who refuse maintenance therapy or are unable to access such therapy.\nRef: Jones HE, Finnegan LP, Kaltenbach K. Methadone and buprenorphine for the management of opioid dependence in\npregnancy. Drugs. 2012;72(6):747-757. 2) Dooley J, Gerber-Finn L, Antone I, et al. Buprenorphine-naloxone use in\npregnancy for treatment of opioid dependence. Can Fam Physician. 2016;62(4):e194-e200."
+  },
+  {
+    "id": 58,
+    "question": "In a patient with hyperuricemia with an elevated uric acid level but no prior episodes of acute\ngout, which one of the following is recommended?",
+    "options": [
+      "A) No urate-lowering medication",
+      "B) Allopurinol (Zyloprim), 100 mg daily",
+      "C) Febuxostat (Uloric), 40 mg daily",
+      "D) Naproxen, 250 mg three times daily",
+      "E) Probenecid, 100 mg twice daily"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Uric acid–lowering treatment is recommended for all patients with an elevated uric acid level who have\nhad two or more gout flareups per year. Consider starting it in patients with a second flareup occurring\nmore than 1 year later, those without an attack but who are at high risk, such as in those with kidney\nstones, patients with a uric acid level 9.0 mg/dL, or patients with stage 3 or greater chronic kidney\ndisease.\nThere is no benefit for urate lowering in asymptomatic patients with an elevated uric acid level who have\nnever had an acute episode of gout, thus allopurinol, febuxostat, and probenecid would not be appropriate.\nNSAIDs, colchicine, or corticosteroids are recommended for gout prophylaxis for the first 3–6 months\nafter initiating urate-lowering therapy to prevent acute flares, but this patient has no history of acute gout.\nAdditionally, vitamin C is not effective.\nRef: Dakkak M, Lanney H. Management of gout: update from the American College of Rheumatology. Am Fam Physician.\n2021;104(2):209-210."
+  },
+  {
+    "id": 59,
+    "question": "You are concerned about the alcohol use of a 45-year-old family physician colleague in your\ncommunity. One evening you smell alcohol on their breath when they are on-call making\nevening rounds at the hospital. When you try to talk with them about it, they deny having a\nproblem and tell you to mind your own business.\nWhich one of the following should be your next course of action?",
+    "options": [
+      "A) Do nothing further",
+      "B) Report your concern to your state medical board",
+      "C) Report your concern to the American Academy of Family Physicians",
+      "D) Report your concern to the American Board of Family Medicine",
+      "E) Report your concern to the American Medical Association"
+    ],
+    "correctAnswer": 1,
+    "rationale": "There is an ethical and, in most states, legal obligation to report this physician for the safety of their\npatients. The state medical board is the appropriate agency to contact with such a concern. They will\ninvestigate the report and have the authority to intervene. The American Academy of Family Physicians\nand American Board of Family Medicine are not involved with licensing or intervention in the event of\nphysician impairment.\nRef: Weiss BD. Duty to report incompetent physicians. Am Fam Physician. 2022;106(4):450-452.\n 23"
+  },
+  {
+    "id": 60,
+    "question": "A previously healthy 30-year-old male who is a nonsmoker comes to your clinic for an acute\nvisit because of a cough that produces yellowish phlegm. His illness started with a “cold” 10\ndays ago. He has no fever or chills, chest pain, or shortness of breath. On examination his vital\nsigns are normal, and his lungs are clear bilaterally to the bases. A chest radiograph is normal.\nThe most appropriate next step is",
+    "options": [
+      "A) reassurance only",
+      "B) amoxicillin",
+      "C) azithromycin (Zithromax)",
+      "D) doxycycline\n22"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Antibiotics do not show any benefit in the treatment of acute bronchitis. While patients may report previous\nsuccess with antibiotics for the same condition, a Cochrane review found no difference in general\nimprovement at follow-up between antibiotics, no treatment, and placebo. Due to the frequency of side\neffects of antibiotics and the problems of antibiotic resistance, the NNT Group has rated antibiotics for\nacute bronchitis as red on its rating system, indicating no benefits.\nRef: Harris AM, Hicks LA, Qaseem A. Appropriate antibiotic use for acute respiratory tract infection in adults. Ann Intern Med.\n2016;165(9):674. 2) Killeen BM, Wolfson AB. Antibiotics for acute bronchitis. Am Fam Physician. 2020;102(9):Online."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 51-60)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

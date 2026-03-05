@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 31-40</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 31,
+    "question": "A patient presents with right-sided facial weakness. You suspect Bell palsy, but an assessment \nsuggests a central brain lesion. \n \nA central brain lesion would result in which one of the following findings on the affected side?",
+    "options": [
+      "A) Ability to wrinkle the forehead",
+      "B) Inability to close the eye",
+      "C) Normal extraocular movements",
+      "D) Flattening of the nasolabial fold",
+      "E) Drooping of the mouth"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Patients with Bell palsy present with acute weakness or paralysis of the face caused by \ndysfunction of peripheral cranial nerve VII (the facial nerve). A central lesion should be \nsuspected if the patient is able to wrinkle the forehead on the affected side during the \nexamination. This is also true if the patient is able to close both eyes tightly.  \n \nWhile central nervous system lesions such as multiple sclerosis, stroke, or tumor can \nalso cause facial nerve palsy, some motor neurons to the forehead cross sides at the \nlevel of the brain stem, so the fibers in the facial nerve going to the forehead come \nfrom both cerebral hemispheres. Therefore, central lesions affecting the facial nerve will \nnot paralyze the forehead on the affected side. This causes unilateral facial paralysis \nwith sparing of the forehead.  \n \nExpected findings on the affected side in Bell palsy include inability to close the eye, \nnormal extraocular movements, flattening of the nasolabial fold, and drooping of the \nmouth."
+  },
+  {
+    "id": 32,
+    "question": "A 54-year-old female with Hashimoto thyroiditis sees you for follow-up. She does not report any \nclinical symptoms, but her TSH level is <0.1 μU/mL (N 0.5–5.0) and her free T4 level is elevated at \n1.9 ng/dL (N 0.6–1.6). Her only medication is levothyroxine (Synthroid), and she reports taking more \nthan the prescribed dosage to help with weight loss. You tell her that this may have several dangerous \noutcomes. \n \nWhich one of the following adverse reactions is the most likely to occur with misuse of this \nmedication?",
+    "options": [
+      "A) Atrial fibrillation",
+      "B) Exophthalmos",
+      "C) Goiter",
+      "D) Seizure",
+      "E) Tetany"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Thyrotoxicosis secondary to the overuse of thyroid hormone, as with other causes of \nhyperthyroidism, has significant adverse effects, including weight loss, diarrhea, and \nloose stools and more concerning adverse effects including osteoporosis, atrial \nfibrillation, and, more rarely, high-output heart failure related to the thyroid hormone \nreceptors in bone and heart tissue. Atrial fibrillation may be present in 10%–25% of \npatients with thyrotoxicosis. Even subclinical hyperthyroidism has been associated with \na significantly higher risk for atrial fibrillation. Exophthalmos and goiter do not occur \nbecause they are not caused by the thyroid hormone itself. Seizure and tetany are not \nknown effects of thyrotoxicosis."
+  },
+  {
+    "id": 33,
+    "question": "Which one of the following community design features can be used to encourage people to walk more?",
+    "options": [
+      "A) Frequently sought destinations (eg, school, work, stores) located at least 1 mile away from \nresidential areas",
+      "B) High-quality public transit systems",
+      "C) High-speed roadways that route traffic through neighborhoods",
+      "D) Moving sidewalks and escalators"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Public transportation systems encourage users to walk to stops or through stations, and \npeople are more likely to use public transportation if it is designed to be comfortable \nand convenient. In contrast, research has shown that people are less likely to walk \nwhen everyday destinations are located more than a half-mile away from home. Safety \nconcerns can be a barrier to walking, and high-speed roadways in neighborhoods \nincrease pedestrian risk. Convenient alternatives, such as moving sidewalks and \nescalators, also discourage walking."
+  },
+  {
+    "id": 34,
+    "question": "A 60-year-old transgender female comes to your office for a preventive care visit. You review her \norgan inventory and note that she has hormonally augmented breast tissue; a vulva and a vagina that \nwere constructed via the penile inversion technique, including an orchiectomy; and a prostate. Her \nBMI is 23 kg/m",
+    "options": [],
+    "correctAnswer": 2,
+    "rationale": "Transgender women who have undergone vaginoplasty retain the prostate, located \nanterior to the vagina at the base of the bladder. The prostate is likely to be very small \nas a result of estradiol therapy and testosterone suppression, and palpation of the \nprostate through the anterior vaginal wall would be difficult. However, given the \npreservation of this gland, it is reasonable to offer PSA screening after discussing the \nsensitivity, specificity, risks, and benefits.  \n \nDigital rectal examinations are not recommended for screening. Currently, there are no \nguidelines for anal Papanicolaou screening.  \n \nThe U.S. Preventive Services Task Force (USPSTF) recommends mammography for \npersons who were assigned female at birth. There is limited data to support \nmammography in transgender women with breast tissue because their breast cancer \nrisk is likely similar to that of cisgender men. It would be reasonable to acknowledge \nthe presence of this tissue and discuss the sensitivity, specificity, risks, and benefits of \nmammography with this patient, but the USPSTF does not have a stated \nrecommendation for or against this screening.  \n \nBone density screening for cisgender women at normal risk is suggested at age 65, but \nthere are no guidelines for such screening in transgender women, although this patient \ncould be considered at additional risk because she is agonadal."
+  },
+  {
+    "id": 35,
+    "question": "A 48-year-old female with a history of Crohn disease that has been poorly controlled for the past 4–6 \nmonths is admitted to the hospital. She has a BMI of 15 kg/m2 and has unintentionally lost more than \n18% of her body weight in this same span of time. Her potassium level is 3.3 mEq/L (N 3.5–5.2) and \nher phosphorous level is 2.6 mg/dL (N 3.0–4.5). \n \nIn addition to treating her Crohn disease, you should address her malnourished condition by initiating \nthiamine followed by refeeding and electrolytes using which one of the following strategies?",
+    "options": [
+      "A) Providing less than her expected calorie requirements and replenishing electrolytes immediately",
+      "B) Providing her full expected calorie requirements and replenishing electrolytes immediately",
+      "C) Providing her full expected calorie requirements and delaying replenishment of electrolytes for 6 \nhours",
+      "D) Providing more than her expected calorie requirements and replenishing electrolytes immediately",
+      "E) Providing more than her expected calorie requirements and delaying replenishment of electrolytes \nfor 6 hours"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient meets the criteria for being at high risk of developing refeeding syndrome \n(RFS) with a BMI <16 kg/m². In addition to her BMI she has had an unintentional \nweight loss of >15% in the past 3–6 months, and low levels of potassium and \nphosphorus prior to therapy. Another major risk factor is little or no nutrition for >10 \ndays. Even patients who have lower risk for RFS than this patient should initially receive \nas little as 25%–50% of their estimated caloric requirements, and their nutrition \ngradually increased. Electrolytes, especially magnesium, potassium, and phosphate, \nshould be replenished immediately and closely monitored as calorie initiation will drive \nthese electrolytes intracellularly. Minor risk factors for RFS include a BMI <18.5 kg/m², \na weight loss of >10% in the preceding 3–6 months, little or no nutrition for >5 days, \nand a history of alcohol or drug abuse."
+  },
+  {
+    "id": 36,
+    "question": "A 62-year-old female sees you for follow-up of bilateral lower extremity edema that worsens \nthroughout the day. A BNP level, TSH level, comprehensive metabolic panel, urinalysis, chest x-ray, \nEKG, and lower extremity venous ultrasound have all been normal. \n \nWhich one of the following diagnoses should you consider in this patient?",
+    "options": [
+      "A) Celiac disease",
+      "B) Cushing syndrome",
+      "C) Lyme disease",
+      "D) Obstructive sleep apnea",
+      "E) Raynaud disease"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Obstructive sleep apnea is an increasingly recognized possible etiology of lower \nextremity edema and should be considered during the evaluation of this patient. While \nthe exact pathophysiology is unknown, nocturnal hypoxemia is thought to lead to \nincreased sympathetic tone resulting in systemic hypertension. This nocturnal \nhypoxemia can lead to neuroendocrine activation and salt and water retention. Celiac \ndisease, Cushing syndrome, Lyme disease, and Raynaud disease are not associated \nwith lower extremity edema."
+  },
+  {
+    "id": 37,
+    "question": "A 42-year-old female sees you for routine follow-up of adrenal insufficiency diagnosed 2 years ago. \nToday she reports a 2-month history of fatigue, decreased energy, difficulty concentrating, and \nnausea. She has also had an unintentional 5-lb weight loss over the past 3 months. She takes oral \nhydrocortisone, 10 mg in the morning and 5 mg in the afternoon. She is adherent to her medication \nregimen and has not had any illnesses in the past year. \n \nWhich one of the following would be the most appropriate initial step in the management of this \npatient’s adrenal insufficiency?",
+    "options": [
+      "A) Increasing the hydrocortisone dosage",
+      "B) A random cortisol level",
+      "C) A cortisol stimulation test",
+      "D) CT of the adrenal glands"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Hydrocortisone is the preferred glucocorticoid for replacement therapy of adrenal \ninsufficiency, and the goal of treatment is to use the lowest dosage of glucocorticoids to \ncontrol symptoms. After initial replacement, the management of chronic adrenal \ninsufficiency includes assessment of signs and symptoms of under- or overreplacement. \nThis patient has signs and symptoms of underreplacement including fatigue, weight \nloss, nausea, decreased energy, and difficulty concentrating. Her glucocorticoid dosage \nshould be increased by 2.5–5 mg daily and her symptoms reassessed in 1 week. \nMeasurement of an early morning corticotropin (ACTH) level is helpful in assessing for \noverreplacement as indicated by a low level; however, an elevated corticotropin level is \nnot necessarily indicative of underreplacement.  \n \nChecking a random cortisol level is typically not necessary. A cortisol stimulation test is \nuseful in the diagnosis of adrenal insufficiency but not in monitoring replacement after \ndiagnosis. CT of the adrenal glands can be useful in evaluating the etiology of adrenal \ninsufficiency but not in the ongoing management of glucocorticoid replacement therapy."
+  },
+  {
+    "id": 38,
+    "question": "Which one of the following findings on a HINTS (head-impulse, nystagmus, test of skew) \nexamination suggests a central etiology for a patient with vertigo?",
+    "options": [
+      "A) Saccade when the patient’s head is thrust 10° to the right and left while the patient’s eyes are \nfixed on the examiner’s nose",
+      "B) Spontaneous nystagmus that is unidirectional and horizontal",
+      "C) Suppression of nystagmus with visual fixation",
+      "D) Vertical deviation upon uncovering a covered eye while the patient is looking straight ahead"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The HINTS (head-impulse, nystagmus, test of skew) examination can help determine \nwhether the etiology of vertigo is peripheral or central. When performed by trained \nclinicians, it is highly sensitive and specific in identifying central causes such as acute \nstroke. For a test of skew the patient looks straight ahead while each eye is covered \nand uncovered. Vertical deviation of a covered eye after uncovering suggests a central \netiology. Findings that are suggestive of peripheral causes of vertigo include \nspontaneous nystagmus that is unidirectional and horizontal, suppression of nystagmus \nwith visual fixation, and saccade (rapid movement of both eyes where the gaze \novercorrects to keep focused on the examiner) when the patient’s head is thrust 10° to \nthe right and left while the patient’s eyes are fixed on the examiner’s nose."
+  },
+  {
+    "id": 39,
+    "question": "A 32-year-old female sees you to request breast cancer screening after learning that her 45-year-old \nsister was diagnosed with breast cancer. She has no other known history of breast cancer. The patient \ndoes not have a family history of ovarian, tubal, or peritoneal cancers. Menarche occurred at 13 years \nof age and she has never been pregnant. On examination there is no nipple discharge or axillary \nlymphadenopathy and she has no palpable breast masses. \n \nBased on U.S. Preventive Services Task Force guidelines, which one of the following should you \nrecommend as the next step in evaluation?",
+    "options": [
+      "A) Monthly breast self-examinations",
+      "B) Screening mammography",
+      "C) Screening breast ultrasonography",
+      "D) Genetic counseling"
+    ],
+    "correctAnswer": 3,
+    "rationale": "According to the U.S. Preventive Services Task Force (USPSTF), primary care clinicians \nshould evaluate women individually for their family history of breast, ovarian, tubal, and \nperitoneal cancers with a familial risk assessment tool. Patients with a positive risk score \nshould be recommended for genetic counseling (B recommendation). The USPSTF \nrecommends against teaching patients breast self-examination due to a lack of \nsupporting evidence confirming a benefit of breast cancer detection. Neither screening \nmammography nor ultrasonography are recommended without anatomic abnormalities \nindicating further examination at this age."
+  },
+  {
+    "id": 40,
+    "question": "A 55-year-old female presents with numbness and tingling in the ring and little fingers of her right \nhand. She also reports weakness when gripping objects and difficulty spreading her fingers apart. A \nphysical examination reveals weakness of the first dorsal interosseous muscle and clawing of the ring \nand little fingers. A Tinel sign is positive over the medial epicondyle of the right elbow. \n \nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Axillary nerve compression",
+      "B) Carpal tunnel syndrome",
+      "C) Cubital tunnel syndrome",
+      "D) Median nerve neuropathy",
+      "E) Radial tunnel syndrome"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient's symptoms and the physical examination findings are classic for ulnar \nnerve compression at the elbow, also known as cubital tunnel syndrome. Numbness \nand tingling in the ring and little fingers, weakness in grip, and clawing of the fingers \nare all indicative of ulnar nerve dysfunction. A positive Tinel sign over the medial \nepicondyle further strengthens the diagnosis of cubital tunnel syndrome. Early diagnosis \nand treatment are crucial to prevent permanent nerve damage.  \n \nAxillary nerve compression would produce paresthesias or pain of the lateral shoulder \nand weakness in external shoulder rotation, extension, abduction, and forward flexion. \nCarpal tunnel syndrome affects the median nerve, not the ulnar nerve, and causes \nnumbness and tingling in the thumb, index finger, middle finger, and half of the ring \nfinger. Median nerve neuropathy would cause symptoms similar to carpal tunnel \nsyndrome, but not weakness of the first dorsal interosseous muscle or clawing of the \nfingers. Radial tunnel syndrome affects the radial nerve and causes weakness and \nsensory loss in the back of the hand and thumb."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 31-40)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

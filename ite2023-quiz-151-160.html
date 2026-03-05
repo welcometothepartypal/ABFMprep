@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 151-160</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 151,
+    "question": "A 72-year-old female with a history of hypertension, previous stroke with no residual deficits,\nand mild cognitive impairment presents for an annual health maintenance examination. Her\ndocumented weight 6 months ago was 79 kg (174 lb) and her current weight is 73 kg (161 lb).\nShe is sedentary and has not changed her diet.\nWhich one of the following is true about this patient’s condition?",
+    "options": [
+      "A) It is associated with increased mortality",
+      "B) It is associated with a lower risk of cardiovascular disease",
+      "C) More than 50% of patients with this condition will be diagnosed with a malignancy",
+      "D) High-calorie dietary supplements are recommended as primary treatment",
+      "E) Medications do not contribute to her condition\n55"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient has experienced a significant but unintentional weight loss of more than 5% in 6 months. Such\nweight loss has been associated with increased mortality in the elderly in several studies. An evaluation\nfor etiology of the weight loss should be completed, including a history with a medication review and a\nphysical examination, but many medical and psychiatric conditions are associated with unintentional weight\nloss. Unintentional weight loss is not associated with a lower risk of cardiovascular disease. About\none-third of patients with unintentional weight loss will be diagnosed with a malignancy. In the Choosing\nWisely campaign, the American Geriatrics Society recommended avoidance of high-calorie dietary\nsupplements and appetite stimulants due to the lack of evidence that they improve quality of life or offer\na survival benefit. A Cochrane review of supplements in elderly patients showed a small weight gain but\nno overall mortality benefit. Medications, including polypharmacy, can contribute to unintentional weight\nloss.\nRef: Gaddey HL, Holder KK. Unintentional weight loss in older adults. Am Fam Physician. 2021;104(1):34-40."
+  },
+  {
+    "id": 152,
+    "question": "A 27-year-old gravida 2 para 2 presents because of tenderness in her left lower breast, which\nshe first noticed this morning. Three weeks ago she vaginally delivered an 8 lb 1 oz infant. She\nbreastfed her first child for 10 months and initiated breastfeeding after this delivery without\ndifficulty. Currently she is feeding her infant on cue about every 2–4 hours. On examination she\nhas 4 cm of focal tenderness at 6 o’clock on the breast with no skin erythema. Her vital signs\ninclude a temperature of 37.0°C (98.6°F), a pulse rate of 84 beats/min, and a blood pressure\nof 118/72 mm Hg.\nWhich one of the following would be the most appropriate next step?",
+    "options": [
+      "A) A trial of conservative management of breastfeeding on cue and analgesics",
+      "B) Expressing breast milk by hand every 1½ hours to keep the breast emptied",
+      "C) Expressing breast milk with a breast pump hourly to keep the breast emptied",
+      "D) Amoxicillin/clavulanate (Augmentin), 875/125 mg twice daily for 5 days; plus pumping\nand discarding the breast milk",
+      "E) Cephalexin, 500 mg four times daily for 7 days; plus pumping and discarding the breast\nmilk"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient has mild lactational mastitis with no systemic symptoms. Antibiotics are unnecessary and the\ncondition may be managed conservatively with rest, cold compresses, over-the-counter acetaminophen or\nNSAIDs, and close monitoring for systemic symptoms. The patient should continue on-demand\nbreastfeeding (physiologic feeding). Efforts to keep the breast drained of milk, such as frequent breast\npumping or decreased feeding intervals, increase milk production, which may increase breast pain or\nabscess formation. If the patient develops fever or chills, antibiotics covering Staphylococcus and\nStreptococcus should be started. The standard treatment is dicloxacillin, 500 mg four times daily for 10–14\ndays. Other commonly used antibiotics are amoxicillin/clavulanate, 875/125 mg twice daily, or cephalexin,\n500 mg four times daily, for 10–14 days. Breast milk does not need to be discarded when the patient is\ntaking these antibiotics.\nRef: Louis-Jacques AF, Berwick M, Mitchell KB. Risk factors, symptoms, and treatment of lactational mastitis. JAMA.\n2023;329(7):588-589."
+  },
+  {
+    "id": 153,
+    "question": "Since the United States began fortifying grains with folic acid, which one of the following birth\ndefects has declined?",
+    "options": [
+      "A) Anencephaly",
+      "B) Cleft lip",
+      "C) Down syndrome",
+      "D) Omphalocele",
+      "E) Tetralogy of Fallot"
+    ],
+    "correctAnswer": 0,
+    "rationale": "In the United States birth defects affect 1 in 33 infants and are the leading cause of infant mortality. The\nCDC tracks data on birth defects to better understand genetic, behavioral, and environmental factors and\nto direct resources and develop interventions for appropriate populations. Most causes of birth defects are\nunknown. However, adequate folic acid intake during pregnancy can reduce the risk of neural tube defects\nsuch as anencephaly and spina bifida. There has been a 28% decline in anencephaly since the United States\nbegan fortifying grains with folic acid.\n 59\n\nCleft lip and cleft palate are associated with maternal smoking, diabetes mellitus, and the use of antiseizure\nmedications such as topiramate and valproic acid during the first trimester. Down syndrome is associated\nwith maternal age over 35. It is worth noting, however, that because most pregnancies occur in women\nunder the age of 35, the majority of babies born with Down syndrome also occur in mothers younger than\n35. Omphalocele is associated with maternal smoking, alcohol use, SSRI use, and obesity. The cause of\ntetralogy of Fallot is unknown, but like all other birth defects it is likely associated with a combination of\ngenes, maternal behavioral, and environmental exposures.\nRef: National environmental public health tracking: birth defects. Centers for Disease Control and Prevention. Reviewed October\n21, 2020. 2) Birth defects: specific birth defects. Centers for Disease Control and Prevention. Reviewed June 28, 2023."
+  },
+  {
+    "id": 154,
+    "question": "A 36-year-old male presents to the urgent care clinic 2 days after he fell on his outstretched arm\nwhile snow skiing. He waited until his return home to seek evaluation and treatment. On\npresentation to your clinic he reports pain located in the deltoid region that is exacerbated when\nlifting the arms overhead. The pain is so severe that it awakens him at night. Examination of the\nshoulder demonstrates weakness with external rotation, internal rotation, and abduction. The\nempty can and drop arm tests are positive. Initial shoulder radiographs are negative.\nBased on the presentation and examination, which one of the following would be the most\nappropriate next step in management?",
+    "options": [
+      "A) Rest, ice, compression, elevation, and home exercises",
+      "B) NSAIDs and physical therapy",
+      "C) Corticosteroid injection",
+      "D) MRI\n57"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Weakness and pain are common symptoms of rotator cuff tears. The empty can test has a sensitivity of\n70% and a specificity of 81% for supraspinatus muscle tear. The drop arm test has a low sensitivity of\n21% for supraspinatus muscle tear, but a very high specificity of 96%. MRI would allow evaluation of the\nsize and degree of tear as the next step in evaluation. In large or full thickness rotator cuff tears, immediate\nsurgical repair is recommended in otherwise young, healthy individuals. Delayed repair of such tears can\nresult in tendon degeneration, retraction, and compromised surgical results. Surgical repair should be\nperformed within 6 weeks of the injury. Rest, ice, compression, elevation, and home exercises; NSAIDs\nand physical therapy; and corticosteroid injection would not be the most appropriate options for the next\nstep in the management of this patient’s injury.\nRef: Lähteenmäki HE, Virolainen P, Hiltunen A, Heikkilä J, Nelimarkka OI. Results of early operative treatment of rotator cuff\ntears with acute symptoms. J Shoulder Elbow Surg. 2006;15(2):148-153. 2) Jain NB, Luz J, Higgins LD, et al. The\ndiagnostic accuracy of special tests for rotator cuff tear: the ROW cohort study. Am J Phys Med Rehabil.\n2017;96(3):176-183."
+  },
+  {
+    "id": 155,
+    "question": "A 5-year-old female is brought to the emergency department by her parents after her temperature\nincreases to 104°F. On examination she has noticeable inspiratory stridor. She is restless and\ndrooling, and her voice is muffled. In spite of the nurse’s repeated efforts to get the child to lie\nback, the patient continues to sit forward in a sniffing position. Her parents indicate that they\nhave declined vaccinations for the patient since leaving the hospital after delivery.\nWhich one of the following is the most important next step in management?",
+    "options": [
+      "A) Supplemental oxygen by nasal cannula",
+      "B) Intravenous fluids",
+      "C) Arterial blood gas measurement",
+      "D) A CBC",
+      "E) Direct visualization of the epiglottis in the operating room"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The most likely diagnosis is epiglottitis. Inflammatory edema of the epiglottis and surrounding tissues is\npotentially life-threatening, as this edema can lead to complete airway obstruction. The epiglottis must be\nvisualized in the operating room in case of life-threatening spasms that can lead to airway obstruction. The\nsurgeon must be prepared to perform tracheostomy if airway obstruction develops.\nSupplemental oxygen, intravenous fluids, and laboratory studies are reasonable supportive and diagnostic\noptions. However, immediate intervention in the operating room is the most important next step to prevent\nairway obstruction.\nRef: Sobol SE, Zapata S. Epiglottitis and croup. Otolaryngol Clin North Am. 2008;41(3):551-566. 2) Kliegman RM, St Geme\nJW III, Blum NJ, et al, eds. Nelson Textbook of Pediatrics. 21st ed. Elsevier Saunders; 2020:2203-2204. 3) Sur DKC, Plesa\nML. Antibiotic use in acute upper respiratory tract infections. Am Fam Physician. 2022;106(6):628-636.\n 60"
+  },
+  {
+    "id": 156,
+    "question": "An 8-year-old female is brought to your office by her parents for follow-up 6 months after you\nrecommended a DASH diet and 1 hour of physical play daily to address her BMI and blood\npressure, which were both greater than the 95th percentile for her age and height. Her mother\nalso has a history of obesity and hypertension. The patient otherwise has an unremarkable past\nmedical history. Although she has lost 1.4 kg (3 lb) her blood pressure remains at 125/77 mm\nHg. You diagnose stage 1 hypertension and recommend management with medication.\nIn addition to a CBC; electrolyte, BUN, and creatinine levels; a urinalysis; and a lipid panel,\nyou recommend",
+    "options": [
+      "A) no further testing",
+      "B) serum or urine catecholamine measurement",
+      "C) renal Doppler ultrasonography",
+      "D) CT angiography of the kidneys",
+      "E) echocardiography"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Echocardiography should be performed to assess for cardiac target end-organ damage, such as left\nventricular hypertrophy, when medication is being considered in children with hypertension. Evaluation\nfor secondary causes of hypertension is not needed in children >6 years of age with stage 1 hypertension\nif they are overweight or have a positive family history of hypertension and there are no physical\nexamination findings indicative of a secondary cause. Renal imaging, catecholamine and steroid levels,\nand renin activity are indicated in children <6 years of age or patients with stage 2 hypertension (95th\npercentile plus 12 mm Hg systolic or diastolic blood pressure or 140/90 mm Hg, whichever is lower).\nRef: Flynn JT, Kaelber DC, Baker-Smith CM, et al. Clinical practice guideline for screening and management of high blood\npressure in children and adolescents. Pediatrics. 2017;140(3):e20171904. 2) Smith DK, McMullan SM, Martin MJ. Getting\nhypertension under control in the youngest of patients. J Fam Pract. 2021;70(5):220-228."
+  },
+  {
+    "id": 157,
+    "question": "For a patient presenting for follow-up of monoclonal gammopathy of undetermined significance,\nwhich one of the following findings would be most concerning for progression to multiple\nmyeloma?",
+    "options": [
+      "A) A serum albumin level that is more than 1 g/dL below the lower limit of normal",
+      "B) A serum calcium level that is more than 1 mg/dL above the upper limit of normal",
+      "C) A hemoglobin level that is 2 g/dL above the upper limit of normal",
+      "D) The presence of 3 or more RBCs/hpf on microscopic urinalysis",
+      "E) An osteoblastic lesion seen on a skeletal radiograph\n58"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Multiple myeloma (MM), a malignancy of plasma cells, represents 1.6% of all cancer cases and\napproximately 10% of the hematologic malignancies seen in the United States. Patients with monoclonal\ngammopathy of undetermined significance (MGUS) have a 1% annual risk of progression to MM. Patients\nwho have progressed to MM typically manifest one or more of the classic CRAB findings: calcium\n(hypercalcemia of >11 mg/dL), renal impairment (a creatinine level >2 mg/dL or an estimated\nglomerular filtration rate <40 mL/min/1.73 m2), anemia (a hemoglobin level <10 g/dL), and bone\ninvolvement (osteolytic lesions, pathologic fractures, and/or severe osteopenia), which represent evidence\nof end-organ disease. Of the options listed, only hypercalcemia raises concern for progression of MGUS\nto MM. While patients with MM often have an elevated total serum protein level, the increase is from\nplasma cell–related proliferation and the resulting monoclonal protein production, not from an increase in\nalbumin. Patients with MM would be expected to have a decrease in the hemoglobin level, not an increase.\nRenal manifestations typically involve a decrease in the serum creatinine level rather than microscopic\nhematuria. Finally, bone involvement in MM includes lytic, as opposed to blastic, lesions.\nRef: Michels TC, Petersen KE. Multiple myeloma: diagnosis and treatment. Am Fam Physician. 2017;95(6):373-383.\n 61"
+  },
+  {
+    "id": 158,
+    "question": "A 27-year-old male with no significant medical history presents for evaluation of a new onset\nof blood in his semen occurring on three occasions over the past 10 days. He has not had any\nadditional genitourinary, gastrointestinal, or constitutional symptoms. He has no personal history\nof tobacco use and he is sexually active with his wife only. A physical examination, including\na genitourinary examination, is unremarkable. A CBC, comprehensive metabolic panel,\nprothrombin time/partial thromboplastin time, urinalysis and culture, and sexually transmitted\ninfection screening are all normal.\nWhich one of the following is the most appropriate next step?",
+    "options": [
+      "A) Reassurance and no additional testing",
+      "B) A PSA level",
+      "C) Ultrasonography of the scrotum and prostate",
+      "D) CT of the abdomen and pelvis",
+      "E) Referral to a urologist"
+    ],
+    "correctAnswer": 0,
+    "rationale": "In most cases, hematospermia (visible blood in the ejaculate) is benign and self-limiting, often caused by\ninfection or inflammation of the genitourinary tract. Other potential etiologies include trauma or iatrogenic\ninjury, systemic diseases including severe uncontrolled hypertension or a bleeding disorder, cysts, calculi,\nor prolonged abstinence. Hematospermia is rarely caused by genitourinary cancer, and underlying\nmalignancy is particularly unlikely in men <40 years of age with new-onset hematospermia. Although\nacute-onset hematospermia may cause great distress to the patient, if the initial evaluation is unrevealing\nthe most appropriate intervention for a man <40 years of age is reassurance that the problem will likely\nself-resolve, with the recommendation to return for follow-up if the problem persists or recurs. Further\nevaluation with PSA testing and referral to a urologist is indicated for men with symptoms persisting\nbeyond 10 occasions or 1 month’s duration and for men over 40 years of age. After an unremarkable\nhistory, examination, and basic laboratory workup, the next step is to provide reassurance with appropriate\nreturn precautions. PSA testing, ultrasonography of the scrotum and prostate, CT of the abdomen and\npelvis, and referral to a urologist are not warranted at this time.\nRef: Drake T, Hanna L, Davies M. Haematospermia. BMJ. 2016;355:i5124. 2) Papadakis MA, McPhee SJ, Rabow MW, eds.\nCurrent Medical Diagnosis & Treatment. 61st ed. McGraw Hill; 2022:952-977."
+  },
+  {
+    "id": 159,
+    "question": "A 38-year-old female with a past medical history of posttraumatic stress disorder (PTSD) seeks\ntreatment for recurring nightmares, which she has been experiencing for over 2 years following\na near-drowning experience. During the daytime, she has unwanted intrusive thoughts and flash\nimages of her drowning incident, and she avoids going near swimming pools. Her nightmares\nare increasingly distressing and she loses several hours of sleep nightly despite adequate\nbehavioral therapy.\nWhich one of the following is the best initial pharmacotherapy for PTSD-associated nightmares?",
+    "options": [
+      "A) Clonazepam (Klonopin)",
+      "B) Gabapentin (Neurontin)",
+      "C) Prazosin (Minipress)",
+      "D) Sertraline (Zoloft)",
+      "E) Venlafaxine (Effexor XR)"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Posttraumatic stress disorder (PTSD) is a psychiatric condition associated with previous exposure to a\ntraumatic event (or events). There are four symptom categories: intrusive/re-experiencing (e.g.,\nflashbacks, nightmares), avoidance/numbing, negative change in cognition and mood, and hyperarousal\n(e.g., anger outbursts, hypervigilance).\nPrazosin, an 1-adrenergic receptor antagonist, is efficient and remains the first choice for pharmacologic\ntherapy of PTSD-associated nightmares. The data is insufficient to support the use of clonazepam for\ntreating nightmares associated with PTSD. Gabapentin and sertraline may be used as adjunctive therapy\nwith antipsychotic and anxiolytic agents in treating PTSD-associated nightmares. Venlafaxine may improve\nbehavioral symptoms, but it is ineffective for treating PTSD-associated nightmares.\nRef: Lancaster CL, Teeters JB, Gros DF, Back SE. Posttraumatic stress disorder: overview of evidence-based assessment and\ntreatment. J Clin Med. 2016;5(11):105. 2) Morgenthaler TI, Auerbach S, Casey KR, et al. Position paper for the treatment\nof nightmare disorder in adults: an American Academy of Sleep Medicine position paper. J Clin Sleep Med.\n2018;14(6):1041-1055.\n 62"
+  },
+  {
+    "id": 160,
+    "question": "A 76-year-old male presents to your office for evaluation. He has a history of worsening New\nYork Heart Association class IV heart failure and is on maximum medical therapy. He had a left\nventricular assist device (LVAD) placed 6 months ago. He has a 50-pack-year smoking history\nand started smoking one pack a day at age 15. He quit smoking 10 years ago when he was\ndiagnosed with heart failure. He asks you to schedule lung cancer screening with low-dose CT,\nwhich he has received annually for the last 10 years.\nAccording to the U.S. Preventive Services Task Force, which one of the following is an\nindication to discontinue screening for lung cancer in this case?",
+    "options": [
+      "A) Limited life expectancy",
+      "B) Age 76",
+      "C) Quitting smoking within the last 10 years",
+      "D) Recent cardiac procedure\n59"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Lung cancer is the leading cause of cancer-related death in the United States. It is estimated that 90% of\ncases are related to tobacco exposure. Effective lung cancer screening programs are thought to reduce lung\ncancer–related morbidity and mortality via early detection in persons at high risk. The U.S. Preventive\nServices Task Force recommends annual screening for lung cancer with low-dose CT in adults ages 50–80\nwho have a 20-pack-year smoking history. Eligible individuals include those who currently smoke or have\nquit within the past 15 years. In this case, this patient’s New York Heart Association class IV heart failure\nrefractory to medical and surgical therapy limits his life expectancy and screening should be discontinued.\nThe lack of ability or willingness to have curative lung surgery would also be an indication to discontinue\nlung cancer screening. A recent cardiac procedure is not an indication to discontinue screening for lung\ncancer.\nRef: US Preventive Services Task Force. Final recommendation statement: lung cancer: screening. Updated March 9, 2021."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 151-160)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 31-40</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 31,
+    "question": "A 3-year-old male is brought to your office by his parents for evaluation of constipation that\nbegan about a year ago. They report that he cries before bowel movements, has resisted toilet\ntraining, and has unusually large stools about every 3 days, including this morning. He had\nnormal bowel movements in infancy and his growth and development have been normal.\nAn examination shows a healthy child with a soft, nondistended, nontender abdomen. A rectal\nexamination reveals normal sphincter tone and minimal soft stool.\nWhich one of the following would be the most appropriate next step in correcting his functional\nconstipation?",
+    "options": [
+      "A) Increasing fluid intake",
+      "B) Increasing physical activity",
+      "C) Adding docusate (Colace)",
+      "D) Adding polyethylene glycol (MiraLAX)",
+      "E) Adding probiotic supplements with Bifidobacterium or Lactobacillus species"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Polyethylene glycol is the most effective treatment for functional constipation in children. Increased fluid\nintake does not affect stool frequency in children. While evidence indicates that increased physical activity\nmay improve functional constipation in adults, it does not have the same effect in children. There is\nconflicting evidence regarding the effectiveness of docusate in pediatric patients with functional\nconstipation. Probiotic supplements do not have enough evidence to be recommended.\nRef: Khan L. Constipation management in pediatric primary care. Pediatr Ann. 2018;47(5):e180-e184. 2) Southwell BR.\nTreatment of childhood constipation: a synthesis of systematic reviews and meta-analyses. Expert Rev Gastroenterol\nHepatol. 2020;14(3):163-174. 3) Mulhem E, Khondoker F, Kandiah S. Constipation in children and adolescents: evaluation\nand treatment. Am Fam Physician. 2022;105(5):469-478."
+  },
+  {
+    "id": 32,
+    "question": "A 62-year-old male presents with daytime fatigue, sleepiness, snoring at night, and a BMI of 41\nkg/m2. You are concerned that he may have obesity hypoventilation syndrome (OHS) in addition\nto possible obstructive sleep apnea.\nWhich one of the following tests is most appropriate for establishing a diagnosis of OHS?",
+    "options": [
+      "A) Daytime awake serum HCO3–",
+      "B) Daytime awake PaCO2",
+      "C) Daytime awake PaO2",
+      "D) Nighttime serial measurement of peripheral oxygen saturation during sleep",
+      "E) Nighttime serum HCO3– within 2 minutes of awakening"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Obesity hypoventilation syndrome (OHS) is characterized by obesity and alveolar hypoventilation while\nawake, which is defined by an awake PaCO2 level >45 mm Hg. Ninety percent of patients have coexistent\nobstructive sleep apnea (OSA). The pathogenesis is related to the increased physical demands on breathing\ncaused by obesity. While decreased PaO2 or oxygen saturation is often present, it is not part of the\ndiagnostic criteria. In obese patients with lower risk (often with lower BMIs), a serum HCO3– level <27\nmmol/L may obviate the need for an arterial blood gas measurement as OHS becomes very unlikely. If\nthe HCO3– level is 27 mmol/L (a renal compensatory mechanism for hypoventilation-induced acidosis),\na PaCO2 measurement should be obtained to establish the diagnosis. The first-line treatment for ambulatory\npatients with this condition is CPAP. Nighttime measurement of peripheral oxygen saturation during sleep\nis a key component of sleep studies that are used to diagnose OSA, but it is not used to diagnose OHS.\nRef: Mokhlesi B, Masa JF, Brozek JL, et al. Evaluation and management of obesity hypoventilation syndrome. An official\nAmerican Thoracic Society clinical practice guideline. Am J Respir Crit Care Med. 2019;200(3):e6-e24.\n 12"
+  },
+  {
+    "id": 33,
+    "question": "In a patient with new-onset polymyalgia rheumatica, which one of the following medications can\nbe added to glucocorticoid therapy in order to reduce the risk of relapse?",
+    "options": [
+      "A) Ibuprofen",
+      "B) Icosapent ethyl (Vascepa)",
+      "C) Indomethacin",
+      "D) Mesalamine",
+      "E) Methotrexate\n12"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Polymyalgia rheumatica (PMR) should be treated with glucocorticoids to induce remission. There is good\nevidence that adjunctive therapy with methotrexate reduces both the cumulative dose of corticosteroids\nneeded and the risk of relapse (evidence rating A). NSAIDs such as ibuprofen and indomethacin reduce\npain but do not modify the inflammatory process. Icosapent ethyl is a derivative of omega-3 fatty acids that\nreduces cardiovascular events and may improve rheumatoid arthritis, likely via anti-inflammatory\nproperties. However, it has not been shown to be effective in PMR. Mesalamine is used to reduce\ninflammation in inflammatory bowel disease but is not effective against PMR.\nRef: Buttgereit F, Dejaco C, Matteson EL, Dasgupta B. Polymyalgia rheumatica and giant cell arteritis: a systematic review.\nJAMA. 2016;315(22):2442-2458. 2) Matteson EL, Dejaco C. Polymyalgia rheumatica. Ann Intern Med.\n2017;166(9):ITC65-ITC80. 3) Kostoglou-Athanassiou I, Athanassiou L, Athanassiou P. The effect of omega-3 fatty acids\non rheumatoid arthritis. Mediterr J Rheumatol. 2020;31(2):190-194. 4) Raleigh MF, Stoddard J, Darrow HJ. Polymyalgia\nrheumatica and giant cell arteritis: rapid evidence review. Am Fam Physician 2022;106(4):420-426."
+  },
+  {
+    "id": 34,
+    "question": "You are caring for a 21-year-old female with previously diagnosed bipolar II disorder,\ngeneralized anxiety disorder, attention-deficit/hyperactivity disorder, and insomnia. The patient\npresents for a same-day appointment with new symptoms of chills, excess sweating, flushing,\nand nausea of approximately 2 hours’ duration. The patient felt normal upon awakening, took\nmethylphenidate (Ritalin), 5 mg with breakfast, and went to work. She began to feel shaky\naround lunchtime and took a second dose of methylphenidate, 5 mg. Thirty minutes later she\nbegan having agitation, chills, sweating, flushing, and nausea and had to leave work. Her\ncurrent medications include the following:\nDesvenlafaxine (Pristiq), 50 mg daily\nDoxepin, 10 mg daily at bedtime\nMethylphenidate, 5 mg twice daily\nZiprasidone (Geodon), 40 mg twice daily\nAn examination reveals an alert and anxious patient with damp skin, a temperature of 38.1°C\n(100.6°F), and a heart rate of 110 beats/min. The pupils are slightly dilated and briskly reactive.\nA neurologic examination reveals a mild tremor and hyperreflexia without clonus.\nWhich one of the following would you recommend for this patient?",
+    "options": [
+      "A) Discontinuing all current medications until her symptoms subside",
+      "B) Replacing methylphenidate with atomoxetine (Strattera)",
+      "C) Replacing methylphenidate with amphetamine salts such as\ndextroamphetamine/amphetamine (Adderall)",
+      "D) Symptomatic treatment with diphenhydramine (Benadryl Allergy)",
+      "E) Symptomatic treatment with ondansetron"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Serotonin syndrome is a serious condition that can be life-threatening. This patient is taking multiple\nserotonergic medications and displays features suggestive of serotonin syndrome. Signs and symptoms of\nserotonin syndrome include mental status changes (e.g., agitation, hallucinations, delirium, coma),\nautonomic instability (e.g., hyperthermia, tachycardia, labile blood pressure, diaphoresis, dizziness,\nflushing), neuromuscular changes (e.g., tremor, rigidity, hyperreflexia), and gastrointestinal symptoms\n(e.g., nausea, vomiting, diarrhea). A timely diagnosis and immediate discontinuation of serotonergic\nmedications can help prevent worsening of the condition. Supportive care, sometimes in a hospital or\nintensive-care setting depending on severity, is the mainstay of treatment. Severe symptoms that necessitate\nhospital management include a temperature >38.5°C, confusion, delirium, and rigidity. Multiple classes\nof medications are associated with serotonin syndrome, including SSRIs/SNRIs, tricyclic antidepressants,\nantipsychotics, stimulants, triptans, and others. Changing to a different stimulant, or to a nonstimulant,\nwould not help resolve serotonin syndrome, nor would symptomatic treatment with diphenhydramine or\nsimilar agents. Serotonin syndrome has been reported with 5-HT3 receptor antagonists such as\nondansetron, particularly when used in combination with other serotonergic medications.\nRef: Foong AL, Grindrod KA, Patel T, Kellar J. Demystifying serotonin syndrome (or serotonin toxicity). Can Fam Physician.\n2018;64(10):720-727.\n 13"
+  },
+  {
+    "id": 35,
+    "question": "The daughter of an 82-year-old bedbound female with Alzheimer dementia requests a home visit\nto discuss transitions of care due to continued deterioration of her mother’s condition. The\ndaughter has been the caregiver for the past 5 years since her mother began to struggle with\nindependently managing her activities of daily living (ADLs). Recently, the patient’s appetite\nhas significantly diminished, and her daughter is concerned that she has lost 15 lb in the last 6\nmonths. She asks about feeding tube placement, medications to help her appetite, or ways to\nimprove her dementia. The patient no longer recognizes her daughter and is nonverbal but smiles\nwhen approached at her bedside upon examination. Her vital signs are stable, she appears\ncachectic, a physical examination is unremarkable, and pain is not present upon palpation.\nWhich one of the following is recommended at this time?",
+    "options": [
+      "A) Assisted oral feeding",
+      "B) Initiation of a high-calorie supplement",
+      "C) Initiation of a cholinesterase inhibitor",
+      "D) Initiation of an appetite stimulant",
+      "E) Percutaneous feeding tube placement\n13"
+    ],
+    "correctAnswer": 0,
+    "rationale": "According to the American Geriatrics Society’s Choosing Wisely recommendations, oral handfeeding is\nno worse for outcomes such as aspiration pneumonia, patient comfort, and death compared to percutaneous\nfeeding tube placement. Agitation and pressure ulcers may worsen with tube feeding. High-calorie shakes\nor supplements and appetite stimulants are not recommended as they may increase weight but do not\nimprove patient-oriented outcomes such as functional status, quality of life, or survival. Furthermore,\nappetite stimulants such as megestrol acetate may increase the risk of thrombosis and edema, and hasten\ndeath. According to randomized, controlled trials, cholinesterase inhibitors may statistically improve\ncognitive testing results, but they do not produce meaningful improvement. This patient is approaching\nend-stage Alzheimer dementia and initiating a cholinesterase inhibitor will not improve functioning and\nmay even worsen appetite, as a common side effect is gastrointestinal disturbance.\nRef: American Geriatrics Society. Tip sheet: ten things clinicians and patients should question. ABIM Foundation Choosing\nWisely campaign. Updated June 2017 2) Unwin BK, Bedsaul NB, Stubbs S. The physician's role in transitioning older\nadults into long-term care facilities. Am Fam Physician. 2022;106(6):714-717."
+  },
+  {
+    "id": 36,
+    "question": "A 24-year-old male presents for evaluation of a soft-tissue mass on his arm. Which one of the\nfollowing features, if present, should prompt further evaluation with advanced imaging?",
+    "options": [
+      "A) Diameter 5 cm",
+      "B) Fluctuant texture",
+      "C) Lack of tenderness with palpation",
+      "D) Persistent, slow growth over several years",
+      "E) Superficial location (above the fascia)"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Soft-tissue masses that are 5 cm in diameter carry a higher risk of malignancy and should prompt further\nevaluation with advanced imaging. Other features that raise concern for possible malignancy include rapid\ngrowth, sudden presentation without explanation, and lesions that are firm, deep, and adhere to\nsurrounding structures. Both benign and malignant masses can be painless, but a lack of tenderness with\npalpation alone would not prompt the need for advanced imaging. Advanced imaging would also not be\nnecessary for a mass that has a fluctuant texture, has grown persistently and slowly over several years, or\nis superficially located (above the fascia).\nRef: Achar S, Yamanaka J, Oberstar J. Soft tissue masses: evaluation and treatment. Am Fam Physician. 2022;105(6):602-612."
+  },
+  {
+    "id": 37,
+    "question": "In patients with type 2 diabetes, medications from which one of the following classes have been\nshown to reduce the progression of chronic kidney disease?",
+    "options": [
+      "A) Biguanides",
+      "B) DPP-4 inhibitors",
+      "C) SGLT2 inhibitors",
+      "D) Thiazolidinediones"
+    ],
+    "correctAnswer": 2,
+    "rationale": "SGLT2 inhibitors are recommended for people with stage 3 or higher chronic kidney disease (CKD) and\ntype 2 diabetes, as they slow CKD progression, reduce cardiovascular events, and reduce heart failure risk\nindependent of glucose management. GLP-1 receptor agonists reduce the risk of cardiovascular disease\nevents and hypoglycemia and appear to slow CKD progression. Biguanides (e.g., metformin), DPP-4\ninhibitors, and thiazolidinediones have not been shown to reduce the progression of CKD in patients with\ntype 2 diabetes (SOR B).\nRef: ElSayed NA, Aleppo G, Aroda VR, et al. 9. Pharmacologic approaches to glycemic treatment: standards of care in\ndiabetes—2023. Diabetes Care. 2023;46(Suppl 1):S140-S157. 2) ElSayed NA, Aleppo G, Aroda VR, et al. 11. Chronic\nkidney disease and risk management: standards of care in diabetes—2023. Diabetes Care. 2023;46(Suppl 1):S191-S202.\n 14"
+  },
+  {
+    "id": 38,
+    "question": "Which one of the following is the most appropriate timing to initiate the use of fluoride varnish\nin infants and children to prevent dental caries?",
+    "options": [
+      "A) At age 6 months if their primary water source is deficient in fluoride",
+      "B) At age 6 months and then four times yearly",
+      "C) At age 6 years and then four times yearly",
+      "D) When the first primary tooth erupts and then twice yearly",
+      "E) When the first permanent tooth erupts and then four times yearly"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Fluoride helps to prevent tooth decay and is an important aspect of good oral care. Family physicians can\nimpact oral health, which directly affects overall health, by incorporating this into their routine practice.\nFluoride varnish should be applied when the first primary tooth erupts. It should then be applied twice\nyearly in all infants and young children (SOR B). Also, if the patient’s primary water source is deficient\nin fluoride, then fluoride supplements should be prescribed for children beginning at 6 months of age.\nRef: Silk H, McCallum W: Fluoride: The family physician's role. Am Fam Physician 2015;92(3):174-179. 2) Stephens MB,\nWiedemer JP, Kushner GM: Dental problems in primary care. Am Fam Physician 2018;98(11):654-660. 3) US Preventive\nServices Task Force. Final recommendation statement: prevention of dental caries in children younger than 5 years:\nscreening and interventions. Updated December 7, 2021."
+  },
+  {
+    "id": 39,
+    "question": "A 55-year-old male sees you for a health maintenance examination. He tells you that his father\nhad a myocardial infarction at age 55 and asks you how he can reduce his risk for coronary\nartery disease. He exercises regularly and does not smoke. His vital signs include a blood\npressure of 128/78 mm Hg, a pulse rate of 75 beats/min, and a BMI of 28 kg/m2. A physical\nexamination is unremarkable.\nWhich one of the following is needed to calculate this patient’s American College of\nCardiology/American Heart Association 10-year atherosclerotic cardiovascular disease event risk\nusing the Pooled Cohort Equations?",
+    "options": [
+      "A) An ankle-brachial index",
+      "B) A high-sensitivity C-reactive protein level",
+      "C) A lipid panel",
+      "D) A coronary artery calcium score\n14"
+    ],
+    "correctAnswer": 2,
+    "rationale": "A lipid panel provides total cholesterol and HDL-cholesterol data, which are two of the components\nnecessary to calculate the American College of Cardiology/American Heart Association 10-year\natherosclerotic cardiovascular disease (ASCVD) event risk using the Pooled Cohort Equations. Other\ncomponents required to compute the ASCVD event risk score include race, sex, age, systolic blood\npressure level, smoking status, presence of diabetes mellitus, and antihypertension treatment. An\nankle-brachial index, a high-sensitivity C-reactive protein level, and a coronary artery calcium score are\nnot used in the Pooled Cohort Equations to calculate a patient’s 10-year ASCVD event risk.\nRef: Goff DC Jr, Lloyd-Jones DM, Bennett G, et al. American College of Cardiology/American Heart Association Task Force\non Practice Guidelines: 2013 ACC/AHA guideline on the assessment of cardiovascular risk: a report of the American\nCollege of Cardiology/American Heart Association Task Force on Practice Guidelines. Circulation. 2014;129(25 Suppl\n2):S49-S73. 2) US Preventive Services Task Force. Final recommendation statement: cardiovascular disease: risk\nassessment with nontraditional risk factors. Updated July 10, 2018."
+  },
+  {
+    "id": 40,
+    "question": "Which one of the following patients has an increased risk for autism spectrum disorder?",
+    "options": [
+      "A) A 6-month-old who does not respond to his name",
+      "B) A 12-month-old who does not engage in pretend play",
+      "C) A 15-month-old who claps her hands when excited",
+      "D) An 18-month-old who does not point to objects of interest",
+      "E) A 24-month-old who looks at a parent’s face to see how to react in a situation"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Autism spectrum disorder (ASD) is comprised of a range of neurodevelopment conditions that affect social\ncommunication and interaction and involve repetitive patterns of behavior, interests, or activities. Because\nearly diagnosis and treatment can improve outcomes in affected patients and families, the American\nAcademy of Pediatrics recommends universal screening for ASD with standardized autism-specific\nscreening tools, such as the M-CHAT, at 18 and 24 months; regular developmental surveillance at all\nvisits; and an appropriate response to family and caregiver concerns. An 18-month-old who does not point\nto show interest would be concerning for an increased risk for ASD, and further evaluation is warranted.\nA child who does not respond to his or her name by 12 months of age or engage in pretend play by 18–24\nmonths of age would also be at risk for ASD. Clapping hands when excited is a normal milestone for a\n15-month-old, and clapping is not considered a repetitive activity in this context. Looking at the parent’s\nface to see how to react, particularly in a new situation, is also a normal milestone for a 24-month-old.\n 15\n\nRef: Hyman SL, Levy SE, Myers SM; Council on Children with Disabilities, Section on Developmental and Behavioral\nPediatrics. Identification, evaluation, and management of children with autism spectrum disorder. Pediatrics.\n2020;145(1):e20193447. 2) Autism spectrum disorder (ASD): signs and symptoms. Centers for Disease Control and\nPrevention. Reviewed March 28, 2022. 3) Learn the signs. Act early: milestones. Centers for Disease Control and\nPrevention. Reviewed June 6, 2023."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 31-40)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

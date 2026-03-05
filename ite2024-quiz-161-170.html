@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 161-170</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 161,
+    "question": "A 25-year-old farmworker from Central America who has been working in the United States for 3 \nyears consults you regarding immunizations. He does not recall receiving any childhood vaccines. He \nis currently undergoing chemotherapy for non-Hodgkin lymphoma. His next chemotherapy session is \nin 2 weeks, and he would like to receive as many vaccinations as possible. \n \nWhich one of the following vaccines would be CONTRAINDICATED in this patient at this time?",
+    "options": [
+      "A) COVID-19",
+      "B) Hepatitis B",
+      "C) MMR",
+      "D) Pneumococcal",
+      "E) Tdap"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Live virus vaccines such as MMR and varicella are contraindicated in \nimmunocompromised persons, including those who are undergoing chemotherapy. \nHowever, COVID-19, hepatitis B, pneumococcal, and Tdap vaccines would all be \nindicated in this patient, especially considering his immunocompromised status."
+  },
+  {
+    "id": 162,
+    "question": "A 74-year-old male with no significant past medical history comes to your office because of pain in \nhis left lower extremity. The patient’s leg was recently immobilized in a cast because of a fibular \nfracture. Doppler ultrasonography reveals a thrombosis of the iliac vein. \n \nWhich one of the following is indicated for this patient?",
+    "options": [
+      "A) No anticoagulation",
+      "B) Anticoagulation for 3 months",
+      "C) Anticoagulation for 6 months",
+      "D) Anticoagulation for 12 months",
+      "E) Extended anticoagulation with no set stop date"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient experienced a deep vein thrombosis (DVT) that was provoked by his recent \nimmobilization in a cast. According to the American College of Chest Physicians 2021 \nguidelines, the recommended duration of anticoagulation for an initial episode of a \nprovoked DVT and pulmonary embolism is 3 months."
+  },
+  {
+    "id": 163,
+    "question": "A 60-year-old patient presents with a 3-month history of gustatory dysfunction and says that nothing \ntastes normal. Which one of the following nutritional deficiencies could be responsible for this \npatient’s taste disorder?",
+    "options": [
+      "A) Calcium",
+      "B) Selenium",
+      "C) Vitamin B3",
+      "D) Vitamin D",
+      "E) Vitamin E"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Disorders of taste and smell are reported by as many as one-fifth of those ≥40 years of \nage and one-third of those ≥80 years of age. These disorders affect patients’ quality of \nlife and safety. The differential diagnosis is extensive. Of the options listed, only a \ndeficiency of vitamin B3 can cause a taste disturbance (SOR C)."
+  },
+  {
+    "id": 164,
+    "question": "A 40-year-old female presents with symptoms of heartburn and regurgitation of sour-tasting fluid \ninto her throat after meals. She experiences these symptoms at least twice per week and says that they \nhave been significantly affecting her quality of life. She has tried lifestyle modifications, including \nelevating the head of her bed and avoiding trigger foods, without significant relief. \n \nWhich one of the following would be the most appropriate initial management of this patient's \ncondition?",
+    "options": [
+      "A) An antacid as needed",
+      "B) An H2-receptor antagonist as needed",
+      "C) A proton pump inhibitor (PPI) as needed",
+      "D) A PPI daily for 4–8 weeks",
+      "E) Esophageal pH monitoring"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient's symptoms of heartburn and regurgitation that occur at least twice per \nweek and significantly affect her quality of life are suggestive of GERD. The most \nappropriate initial management for this patient would be a proton pump inhibitor (PPI) \ndaily for 4–8 weeks. PPIs are more effective than antacids and H₂-receptor antagonists \nin providing sustained symptomatic relief and resolution of esophagitis.  \n \nAntacids provide short-term relief of symptoms by neutralizing gastric acid but do not \nprovide sustained relief or resolve esophagitis, making them inadequate as the initial \nmanagement strategy for this patient. Similarly, H₂-receptor antagonists reduce the \nsecretion of gastric acid but are less effective than PPIs in providing symptom relief and \nhealing esophagitis. They are typically used as an alternative treatment or for milder \ncases of GERD. As-needed PPIs are not the preferred initial management strategy for \nthis patient. Esophageal pH monitoring is indicated in cases in which there is diagnostic \nuncertainty or when evaluating the effectiveness of acid suppression therapy in \nrefractory GERD, but it is not necessary for the initial management of uncomplicated \nGERD."
+  },
+  {
+    "id": 165,
+    "question": "Which one of the following is true regarding bariatric surgery?",
+    "options": [
+      "A) It has no effect on obesity-related mortality",
+      "B) It results in weight loss equivalent to that seen with intensive multicomponent behavioral \ninterventions",
+      "C) It is effective for treating diabetes mellitus",
+      "D) Laparoscopic sleeve banding leads to the greatest weight loss"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Bariatric surgery is highly effective in treating obesity-related comorbidities, particularly \ndiabetes mellitus (SOR A). It also reduces obesity-related mortality (SOR B) and results \nin greater weight loss than nonsurgical weight loss interventions (SOR A). Among the 3 \nmajor bariatric surgery procedures, Roux-en-Y gastric bypass leads to the greatest \nweight loss over the first 2 years."
+  },
+  {
+    "id": 166,
+    "question": "Bruising in which one of the following locations would most likely suggest a diagnosis of child \nabuse?",
+    "options": [
+      "A) Forehead",
+      "B) Neck",
+      "C) Elbows",
+      "D) Knees",
+      "E) Shins"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Bruises on the torso, ears, or neck in children ≤4 years of age are predictive of child \nabuse. “TEN 4” is a useful mnemonic for identifying child abuse: torso (T), ear (E), neck \n(N), and 4 (children ≤4 years of age and any infant <4 months of age). Bruising is the \nmost common injury of physical abuse and may be the only external indicator of an \ninternal injury. Bruises vary by age, location, and pattern. Any bruises identified in a \nnonambulatory infant require careful medical evaluation for possible abuse.  \nBruising related to normal activity typically increases with age. The majority of \npreschool- and school-aged children have accidental bruises. The most common sites of \nbruising in nonabused, ambulatory children are the knees and shins, with the majority \nlocated over bony prominences, including the forehead."
+  },
+  {
+    "id": 167,
+    "question": "A 55-year-old male presents to your office with a 3-day history of pain, swelling, and tenderness in \nthe right first metatarsophalangeal (MTP) joint. Four days ago he attended a celebration where he \ndrank a large amount of beer and participated in a hot dog–eating contest. \n \nOn examination he is afebrile and visibly in pain from his right toe. The right first MTP joint is \nwarm, tender, and swollen. There is no streaking of the skin and no obvious abscess. \n \nWhich one of the following laboratory tests would support the likely diagnosis?",
+    "options": [
+      "A) A C-reactive protein level",
+      "B) A CBC",
+      "C) A comprehensive metabolic panel",
+      "D) An erythrocyte sedimentation rate",
+      "E) A uric acid level"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient is most likely having a flare of gout. Gout is caused by the deposition of \nmonosodium urate crystals in large joints, classically the first metatarsophalangeal joint. \nA patient with a gout flare typically has an elevated uric acid level.  \n \nA C-reactive protein level and an erythrocyte sedimentation rate would likely be \nelevated in this patient, but elevations in those laboratory values are not specific for the \nlikely diagnosis of gout. A CBC would potentially show elevated WBCs in this patient. \nHowever, leukocytosis is nonspecific and would not lead to the specific diagnosis of \ngout. A comprehensive metabolic panel likely would not provide insight into the likely \ndiagnosis."
+  },
+  {
+    "id": 168,
+    "question": "A 32-year-old female presents to your office because of a 2-month history of fatigue and myalgias. \nShe reports a 5-lb weight loss and bilateral joint pain in her hands and knees. She has had intermittent \nfevers to 101 °F with no cough, dyspnea, or abnormal urinary symptoms. Examination findings are \nnormal. An erythrocyte sedimentation rate is elevated at 35 mm/hr (N <20), and a CBC reveals \nleukocytosis and a hemoglobin level of 10.4 g/dL (N 12.0–15.0). An antinuclear antibody titer is \npositive at 1:80, and anti–double-stranded DNA and anti-Smith antibodies are elevated. \n \nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Polymyalgia rheumatica",
+      "B) Psoriatic arthritis",
+      "C) Rheumatoid arthritis",
+      "D) Septic arthritis",
+      "E) Systemic lupus erythematosus"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient’s presentation is suggestive of systemic lupus erythematosus, in which the \ndiagnosis is confirmed by a positive antinuclear antibody (ANA) test and positive anti–\ndouble-stranded DNA and anti-Smith antibodies.  \n \nPolymyalgia rheumatica usually occurs in older patients with bilateral joint pain and \nweakness in the shoulder joint who also have elevated erythrocyte sedimentation rates \nbut do not have a positive ANA test or other positive autoantibodies. Psoriatic arthritis \nusually presents as a polyarthritis and is not associated with a positive ANA test. \nRheumatoid arthritis typically presents with morning stiffness and symmetrical \npolyarthritis in small joints. Septic arthritis typically has an acute presentation involving \na single joint with findings of erythema, warmth, and leukocytosis."
+  },
+  {
+    "id": 169,
+    "question": "A 52-year-old female sees you for a health maintenance examination. Which one of the following \nfindings on fundoscopic examination would be most concerning for glaucoma?",
+    "options": [
+      "A) Constricted retinal vessels",
+      "B) Dilated retinal vessels",
+      "C) A diminished cup to disc ratio",
+      "D) An elevated cup to disc ratio",
+      "E) Papilledema"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Glaucoma is defined as a group of eye diseases that damage the optic nerve. It is \noften, but not always, accompanied by increased intraocular pressure. An increased cup \nto disc ratio (cupping) is an abnormality that is associated with glaucoma. This has \nbeen defined as a ratio >0.3–0.5. Retinal vessel changes are not associated with \nglaucoma. Papilledema is a swelling of the optic disc that is generally caused by \nincreased intracranial pressure."
+  },
+  {
+    "id": 170,
+    "question": "A 33-year-old female sees you for follow-up of recently diagnosed diarrhea-predominant irritable \nbowel syndrome (IBS-D). She has had some improvement in the consistency of her stools and in the \nfrequency and urgency of her bowel movements with the addition of a psyllium supplement, but she \ncontinues to have periodic significant cramping and bloating. She prefers over-the-counter products \nand supplements to prescription medication when possible. \n \nWhich one of the following over-the-counter products has the best evidence of benefit for improving \nglobal symptoms of IBS-D?",
+    "options": [
+      "A) Bismuth subsalicylate (Pepto-Bismol)",
+      "B) Omega-3 fatty acids",
+      "C) Peppermint oil",
+      "D) Hypericum perforatum (St John’s wort)",
+      "E) Wheat bran"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Peppermint oil has evidence of benefit in alleviating symptoms related to irritable bowel \nsyndrome (IBS) and is recommended by the American College of Gastroenterologists, \nthe American Gastroenterological Association, and the British Society of \nGastroenterology in their clinical practice guidelines. Peppermint oil is classified as an \nantispasmodic, and it is thought to have a relaxant effect on smooth muscle due to the \nblockade of calcium channels. Enteric-coated formulations are recommended to avoid \nesophageal reflux that may occur due to relaxation of the lower esophageal sphincter.  \nBismuth subsalicylate, omega-3 fatty acids, Hypericum perforatum (St John’s wort), and \nwheat bran are not evidence-based recommendations for the management of IBS in \nany guidelines. Furthermore, wheat bran is a source of insoluble fiber, and soluble fiber \nis recommended for IBS."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2024 ITE Quiz (Questions 161-170)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>
