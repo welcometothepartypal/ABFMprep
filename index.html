@@ -6,16 +6,15 @@
   <title>ABFM Study Resource Hub</title>
   <style>
     :root {
-      --bg-main: #f8fafc;
+      --bg-main: #f1f5f9;
       --bg-card: #ffffff;
       --primary: #2563eb;
-      --primary-hover: #1d4ed8;
+      --primary-soft: #dbeafe;
       --success: #10b981;
       --text-main: #1e293b;
       --text-muted: #64748b;
       --border: #e2e8f0;
-      --accent: #f1f5f9;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --radius: 12px;
     }
 
@@ -29,11 +28,11 @@
       padding: 40px 18px;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; }
+    .container { max-width: 1000px; margin: 0 auto; }
 
     header { text-align: center; margin-bottom: 40px; }
-    header h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
-    header p { color: var(--text-muted); font-size: 1.1rem; }
+    header h1 { font-size: 2.4rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.02em; }
+    header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 10px auto 0; }
 
     /* Stats Bar */
     .stats-bar {
@@ -57,7 +56,7 @@
       border-radius: var(--radius);
       margin-bottom: 16px;
       overflow: hidden;
-      transition: border-color 0.2s;
+      transition: all 0.3s ease;
     }
     details[open] { border-color: var(--primary); box-shadow: var(--shadow); }
 
@@ -66,72 +65,69 @@
       list-style: none;
       cursor: pointer;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      user-select: none;
     }
-    summary:hover { background-color: var(--accent); }
-    summary::after { content: '＋'; color: var(--primary); font-size: 1.2rem; }
+    summary:hover { background-color: #f8fafc; }
+    summary::after { content: '＋'; color: var(--primary); font-size: 1.2rem; transition: transform 0.2s; }
     details[open] summary::after { content: '－'; }
 
     .content-wrapper { padding: 0 24px 24px; border-top: 1px solid var(--border); }
 
-    /* Quiz Grids */
+    /* Quiz Grid */
     .quiz-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 12px;
       margin-top: 20px;
     }
 
     .quiz-card {
-      background: var(--accent);
+      background: #f8fafc;
       border: 1px solid var(--border);
-      padding: 18px 12px;
+      padding: 16px;
       border-radius: 10px;
       text-decoration: none;
       color: var(--text-main);
       text-align: center;
       transition: all 0.2s ease;
     }
-    .quiz-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+    .quiz-card:hover { border-color: var(--primary); transform: translateY(-2px); background: white; }
     
-    .quiz-card.completed { background: #f0fdf4; border-color: var(--success); }
-    .quiz-card.completed h3 { color: #166534; }
-    .quiz-card.completed h3::after { content: ' ✓'; font-size: 0.9rem; }
+    /* Progress State */
+    .quiz-card.completed { background: #ecfdf5; border-color: var(--success); }
+    .quiz-card.completed h3::after { content: ' ✓'; color: var(--success); }
 
-    .quiz-card h3 { font-size: 1rem; margin-bottom: 4px; }
-    .quiz-card p { font-size: 0.8rem; color: var(--text-muted); }
+    .quiz-card h3 { font-size: 0.95rem; margin-bottom: 4px; color: var(--primary); }
+    .quiz-card p { font-size: 0.75rem; color: var(--text-muted); }
 
     /* Podcasts */
     .resource-list { display: grid; gap: 12px; margin-top: 20px; }
     .resource-item {
       padding: 16px;
-      background: var(--bg-main);
+      background: #f8fafc;
       border: 1px solid var(--border);
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
     }
-    .resource-item h3 { font-size: 0.95rem; margin-bottom: 10px; }
-    audio { width: 100%; height: 36px; margin-bottom: 10px; }
-    .resource-link { font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600; margin-right: 15px; }
+    .resource-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .resource-header h3 { font-size: 0.95rem; font-weight: 600; }
+    .podcast-icon { font-size: 1.2rem; }
+    
+    audio { width: 100%; height: 35px; margin-bottom: 10px; border-radius: 5px; }
+    .link-group { display: flex; gap: 15px; }
+    .resource-link { font-size: 0.8rem; color: var(--primary); text-decoration: none; font-weight: 600; }
+    .resource-link:hover { text-decoration: underline; }
 
-    footer { text-align: center; margin-top: 50px; padding-bottom: 40px; color: var(--text-muted); }
-    .btn-reset {
-      background: transparent;
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.8rem;
-      margin-bottom: 15px;
-    }
-    .btn-reset:hover { background: #fee2e2; color: #dc2626; border-color: #fecaca; }
+    footer { text-align: center; margin-top: 50px; padding: 20px; color: var(--text-muted); font-size: 0.9rem; }
+    .btn-reset { margin-bottom: 15px; background: none; border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; cursor: pointer; color: var(--text-muted); font-size: 0.75rem; }
+    .btn-reset:hover { background: #fee2e2; color: #dc2626; }
 
     @media (max-width: 600px) {
-      .stats-bar { grid-template-columns: 1fr; gap: 15px; }
-      header h1 { font-size: 1.8rem; }
+      .stats-bar { grid-template-columns: 1fr; gap: 10px; }
     }
   </style>
 </head>
@@ -140,107 +136,146 @@
   <div class="container">
     <header>
       <h1>ABFM Study Resource Hub</h1>
-      <p>Interactive ITE prep for 2023, 2024, and 2025.</p>
+      <p>Interactive preparation and audio walkthroughs for Family Medicine Residents.</p>
     </header>
 
     <div class="stats-bar">
       <div><span class="stat-number">600</span><span class="stat-label">Total Questions</span></div>
-      <div><span class="stat-number">60</span><span class="stat-label">Quiz Sets</span></div>
-      <div><span class="stat-number">2025</span><span class="stat-label">Latest Version</span></div>
+      <div><span class="stat-number">60</span><span class="stat-label">Quiz Modules</span></div>
+      <div><span class="stat-number">10</span><span class="stat-label">Audio Guides</span></div>
     </div>
 
     <details open>
-      <summary>ITE 2025 Question Sets</summary>
+      <summary>✏️ ITE 2025 Resources</summary>
       <div class="content-wrapper">
-        <div class="quiz-grid" id="grid-2025">
-          </div>
+        <div class="quiz-grid" id="grid-2025"></div>
       </div>
     </details>
 
     <details>
-      <summary>ITE 2024 Question Sets & Podcasts</summary>
+      <summary>📚 ITE 2024 Resources & Podcasts</summary>
       <div class="content-wrapper">
-        <div class="quiz-grid" id="grid-2024">
-          </div>
+        <div class="quiz-grid" id="grid-2024"></div>
 
-        <h3 style="margin-top: 35px; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 8px;">🎧 ITE 2024 Podcasts</h3>
+        <h3 style="margin-top: 35px; font-size: 1.1rem; border-bottom: 2px solid var(--primary-soft); padding-bottom: 8px;">🎧 Audio Walkthroughs</h3>
         <div class="resource-list">
-            <div class="resource-item">
-                <h3>ITE 2024: Q 1-10 (Warfarin & Burn Care)</h3>
-                <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" type="audio/mp4"></audio>
-                <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" class="resource-link" target="_blank">Archive</a>
-            </div>
-            </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">📻</span><h3>Q 1-10: Warfarin & Burn Care</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">🎵</span><h3>Q 11-20: Clinical Pearls</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">⚡</span><h3>Q 21-30: Semaglutide & PE Diagnosis</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">🧠</span><h3>Q 31-40: Stroke & Thyroid Risks</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">🧂</span><h3>Q 41-50: Sodium & Addison’s</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">🧬</span><h3>Q 51-60: ALS & Bipolar Traps</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">🔬</span><h3>Q 61-70: Precision Medicine</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">💎</span><h3>Q 71-80: Gallstone Logic</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">💓</span><h3>Q 81-90: Pregnancy & Fractures</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+          <div class="resource-item">
+            <div class="resource-header"><span class="podcast-icon">📋</span><h3>Q 91-100: FM Protocols</h3></div>
+            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" type="audio/mp4"></audio>
+            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" target="_blank" class="resource-link">Archive Page</a></div>
+          </div>
+        </div>
       </div>
     </details>
 
     <details>
-      <summary>ITE 2023 Question Sets</summary>
+      <summary>📓 ITE 2023 Resources</summary>
       <div class="content-wrapper">
-        <div class="quiz-grid" id="grid-2023">
-          </div>
+        <div class="quiz-grid" id="grid-2023"></div>
       </div>
     </details>
 
     <footer>
-      <button class="btn-reset" onclick="resetProgress()">Reset All Progress</button>
-      <p>💡 Study Tip: Newer guidelines take priority in Board Logic.</p>
+      <button class="btn-reset" onclick="resetProgress()">Clear Study Progress</button>
+      <p>Built for Family Medicine Residents • GitHub Pages Ready</p>
     </footer>
   </div>
 
   <script>
-    // Helper to generate the links for each year efficiently
-    function populateGrid(elementId, year, prefix) {
-      const grid = document.getElementById(elementId);
+    // Link Generator to keep HTML clean
+    function generateLinks(containerId, year, prefix) {
+      const container = document.getElementById(containerId);
       for (let i = 1; i <= 20; i++) {
-        const startQ = ((i - 1) * 10) + 1;
-        const endQ = i * 10;
-        const padStart = String(startQ).padStart(i > 10 ? 2 : 3, '0');
-        const padEnd = String(endQ).padStart(3, '0');
+        const start = (i - 1) * 10 + 1;
+        const end = i * 10;
+        const padStart = String(start).padStart(prefix ? 3 : 2, '0');
+        const padEnd = String(end).padStart(3, '0');
         
-        let url = "";
-        if(year === 2025) url = `quiz-${String(startQ).padStart(2, '0')}-${endQ}.html`;
-        else url = `ite${year}-quiz-${padStart}-${padEnd}.html`;
+        let fileName = prefix ? `ite${year}-quiz-${padStart}-${padEnd}.html` : `quiz-${String(start).padStart(2, '0')}-${end}.html`;
 
         const card = document.createElement('a');
-        card.href = url;
+        card.href = fileName;
         card.className = 'quiz-card';
-        card.setAttribute('data-quiz-id', `${year}-q${i}`);
-        card.innerHTML = `<h3>Quiz ${i}</h3><p>Questions ${startQ}–${endQ}</p>`;
-        grid.appendChild(card);
+        card.setAttribute('data-id', `${year}-q${i}`);
+        card.innerHTML = `<h3>Quiz ${i}</h3><p>Q ${start}–${end}</p>`;
+        container.appendChild(card);
       }
     }
 
-    // Initialize grids
-    populateGrid('grid-2025', 2025, '');
-    populateGrid('grid-2024', 2024, 'ite2024-');
-    populateGrid('grid-2023', 2023, 'ite2023-');
+    // Init Grids
+    generateLinks('grid-2025', 2025, false);
+    generateLinks('grid-2024', 2024, true);
+    generateLinks('grid-2023', 2023, true);
 
     // Progress Logic
     document.addEventListener('DOMContentLoaded', () => {
-      const completed = JSON.parse(localStorage.getItem('ite_progress') || '[]');
+      const completed = JSON.parse(localStorage.getItem('ite_done') || '[]');
       completed.forEach(id => {
-        const card = document.querySelector(`[data-quiz-id="${id}"]`);
-        if (card) card.classList.add('completed');
+        const el = document.querySelector(`[data-id="${id}"]`);
+        if (el) el.classList.add('completed');
       });
 
-      document.body.addEventListener('click', (e) => {
-        const card = e.target.closest('.quiz-card');
-        if (card) {
-          const id = card.getAttribute('data-quiz-id');
-          let progress = JSON.parse(localStorage.getItem('ite_progress') || '[]');
-          if (!progress.includes(id)) {
-            progress.push(id);
-            localStorage.setItem('ite_progress', JSON.stringify(progress));
-            card.classList.add('completed');
+      document.querySelectorAll('.quiz-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const id = this.getAttribute('data-id');
+          let done = JSON.parse(localStorage.getItem('ite_done') || '[]');
+          if (!done.includes(id)) {
+            done.push(id);
+            localStorage.setItem('ite_done', JSON.stringify(done));
+            this.classList.add('completed');
           }
-        }
+        });
       });
     });
 
     function resetProgress() {
-      if (confirm('This will clear all your checkmarks. Continue?')) {
-        localStorage.removeItem('ite_progress');
+      if (confirm('Reset your checkmarks?')) {
+        localStorage.removeItem('ite_done');
         location.reload();
       }
     }
