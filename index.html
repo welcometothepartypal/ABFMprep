@@ -1,284 +1,735 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ABFM Study Resource Hub</title>
-  <style>
-    :root {
-      --bg-main: #f1f5f9;
-      --bg-card: #ffffff;
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
-      --success: #10b981;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --radius: 12px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABFM ITE Study Resource Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-1: #667eea;
+            --purple-2: #764ba2;
+            --green:    #10b981;
+            --green-dk: #059669;
+            --white:    #ffffff;
+            --off-white:#f8f9fc;
+            --border:   #e8eaf0;
+            --text:     #1a1d2e;
+            --muted:    #6b7280;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-card: 0 4px 24px rgba(102,126,234,0.13), 0 1px 4px rgba(0,0,0,0.07);
+            --shadow-hover: 0 12px 32px rgba(102,126,234,0.28), 0 2px 8px rgba(0,0,0,0.08);
+        }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 40px 18px;
-    }
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: linear-gradient(150deg, #5a72e8 0%, #764ba2 55%, #5e3a8a 100%);
+            min-height: 100vh;
+            padding: 32px 20px 60px;
+        }
 
-    .container { max-width: 1000px; margin: 0 auto; }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-    header { text-align: center; margin-bottom: 40px; }
-    header h1 { font-size: 2.4rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.02em; }
-    header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 10px auto 0; }
+        /* ── Header ── */
+        header {
+            text-align: center;
+            color: var(--white);
+            padding: 48px 20px 44px;
+        }
 
-    /* Stats Bar */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    .stat-number { display: block; font-size: 1.6rem; font-weight: 700; color: var(--primary); }
-    .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.92);
+            font-size: 0.72em;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 18px;
+            backdrop-filter: blur(6px);
+        }
 
-    /* Collapsible Sections */
-    details {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 16px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    details[open] { border-color: var(--primary); box-shadow: var(--shadow); }
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3em;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 14px;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.18);
+        }
 
-    summary {
-      padding: 20px 24px;
-      list-style: none;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 1.15rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    summary:hover { background-color: #f8fafc; }
-    summary::after { content: '＋'; color: var(--primary); font-size: 1.2rem; transition: transform 0.2s; }
-    details[open] summary::after { content: '－'; }
+        header p {
+            font-size: 1.05em;
+            opacity: 0.82;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
 
-    .content-wrapper { padding: 0 24px 24px; border-top: 1px solid var(--border); }
+        /* ── Stats Bar ── */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
 
-    /* Quiz Grid */
-    .quiz-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 20px;
-    }
+        .stat-item {
+            text-align: center;
+            padding: 22px 16px;
+            position: relative;
+        }
 
-    .quiz-card {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      padding: 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: var(--text-main);
-      text-align: center;
-      transition: all 0.2s ease;
-    }
-    .quiz-card:hover { border-color: var(--primary); transform: translateY(-2px); background: white; }
-    
-    /* Progress State */
-    .quiz-card.completed { background: #ecfdf5; border-color: var(--success); }
-    .quiz-card.completed h3::after { content: ' ✓'; color: var(--success); }
+        .stat-item + .stat-item::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 20%; height: 60%;
+            width: 1px;
+            background: var(--border);
+        }
 
-    .quiz-card h3 { font-size: 0.95rem; margin-bottom: 4px; color: var(--primary); }
-    .quiz-card p { font-size: 0.75rem; color: var(--text-muted); }
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--purple-1);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
 
-    /* Podcasts */
-    .resource-list { display: grid; gap: 12px; margin-top: 20px; }
-    .resource-item {
-      padding: 16px;
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-    }
-    .resource-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .resource-header h3 { font-size: 0.95rem; font-weight: 600; }
-    .podcast-icon { font-size: 1.2rem; }
-    
-    audio { width: 100%; height: 35px; margin-bottom: 10px; border-radius: 5px; }
-    .link-group { display: flex; gap: 15px; }
-    .resource-link { font-size: 0.8rem; color: var(--primary); text-decoration: none; font-weight: 600; }
-    .resource-link:hover { text-decoration: underline; }
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.78em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
 
-    footer { text-align: center; margin-top: 50px; padding: 20px; color: var(--text-muted); font-size: 0.9rem; }
-    .btn-reset { margin-bottom: 15px; background: none; border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; cursor: pointer; color: var(--text-muted); font-size: 0.75rem; }
-    .btn-reset:hover { background: #fee2e2; color: #dc2626; }
+        /* ── Progress Bar ── */
+        .progress-overview {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 18px 24px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
 
-    @media (max-width: 600px) {
-      .stats-bar { grid-template-columns: 1fr; gap: 10px; }
-    }
-  </style>
+        .progress-label {
+            font-weight: 600;
+            font-size: 0.88em;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .progress-label span { color: var(--purple-1); }
+
+        .progress-track {
+            flex: 1;
+            height: 7px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--purple-1), var(--purple-2));
+            border-radius: 100px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        .progress-pct {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--purple-1);
+            white-space: nowrap;
+            min-width: 36px;
+            text-align: right;
+        }
+
+        /* ── Accordion ── */
+        details {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-bottom: 14px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        details[open] { box-shadow: var(--shadow-hover); }
+
+        summary {
+            padding: 18px 24px;
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.15s;
+        }
+
+        summary:hover { background: var(--off-white); }
+        details[open] summary { border-bottom: 1px solid var(--border); }
+
+        .summary-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .summary-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15em;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(102,126,234,0.3);
+        }
+
+        .summary-text h2 {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .summary-text p {
+            font-size: 0.76em;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .summary-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+            color: white;
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 100px;
+            letter-spacing: 0.05em;
+        }
+
+        .chevron {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purple-1);
+            font-size: 0.8em;
+            transition: transform 0.2s, background 0.2s, color 0.2s;
+        }
+
+        details[open] .chevron {
+            transform: rotate(180deg);
+            background: var(--purple-1);
+            color: white;
+            border-color: var(--purple-1);
+        }
+
+        .section-content { padding: 22px 24px 28px; }
+
+        .section-desc {
+            color: var(--muted);
+            font-size: 0.87em;
+            margin-bottom: 18px;
+            line-height: 1.65;
+        }
+
+        /* ── Quiz Grid ── */
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 9px;
+        }
+
+        .quiz-card {
+            background: linear-gradient(145deg, var(--purple-1) 0%, var(--purple-2) 100%);
+            color: white;
+            padding: 15px 10px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 84px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.4);
+        }
+
+        .quiz-card h3 {
+            font-size: 0.88em;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .quiz-card p {
+            font-size: 0.73em;
+            opacity: 0.82;
+            font-weight: 500;
+        }
+
+        .quiz-card.completed {
+            background: linear-gradient(145deg, var(--green) 0%, var(--green-dk) 100%);
+        }
+
+        .check-badge {
+            display: none;
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            width: 15px;
+            height: 15px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 50%;
+            font-size: 0.58em;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .quiz-card.completed .check-badge { display: flex; }
+
+        /* ── Audio Section ── */
+        .audio-section-title {
+            font-size: 0.92em;
+            font-weight: 700;
+            color: var(--text);
+            margin: 30px 0 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.01em;
+        }
+
+        .resource-list { display: grid; gap: 9px; }
+
+        .resource-item {
+            background: var(--off-white);
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--purple-1);
+            transition: border-left-color 0.15s, background 0.15s;
+        }
+
+        .resource-item:hover {
+            background: #eef0fb;
+            border-left-color: var(--purple-2);
+        }
+
+        .resource-item h3 {
+            color: var(--text);
+            font-size: 0.86em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        audio {
+            width: 100%;
+            height: 32px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            accent-color: var(--purple-1);
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--purple-1);
+            text-decoration: none;
+            font-size: 0.76em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: color 0.15s;
+        }
+
+        .resource-link:hover { color: var(--purple-2); text-decoration: underline; }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            color: rgba(255,255,255,0.72);
+            padding: 38px 20px 10px;
+            font-size: 0.87em;
+            line-height: 1.75;
+        }
+
+        footer strong { color: rgba(255,255,255,0.95); }
+
+        .footer-actions { margin-bottom: 14px; }
+
+        .btn-reset {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.22);
+            color: rgba(255,255,255,0.8);
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.82em;
+            font-family: inherit;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .btn-reset:hover {
+            background: rgba(239,68,68,0.22);
+            border-color: rgba(239,68,68,0.45);
+            color: #fca5a5;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.1em; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .stat-item + .stat-item::before { display: none; }
+            .quiz-grid { grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); }
+            summary { padding: 14px 16px; }
+            .section-content { padding: 16px 16px 20px; }
+            .progress-overview { gap: 10px; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.75em; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
 <body>
+<div class="container">
 
-  <div class="container">
     <header>
-      <h1>ABFM Study Resource Hub</h1>
-      <p>Interactive preparation and audio walkthroughs for Family Medicine Residents.</p>
+        <div class="header-badge">Family Medicine Residency</div>
+        <h1>ABFM ITE Study Hub</h1>
+        <p>Comprehensive quiz sets and audio walkthroughs to prep for ABFM Boards</p>
     </header>
 
     <div class="stats-bar">
-      <div><span class="stat-number">600</span><span class="stat-label">Total Questions</span></div>
-      <div><span class="stat-number">60</span><span class="stat-label">Quiz Modules</span></div>
-      <div><span class="stat-number">10</span><span class="stat-label">Audio Guides</span></div>
+        <div class="stat-item">
+            <div class="stat-number">600</div>
+            <div class="stat-label">Questions</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">60</div>
+            <div class="stat-label">Quiz Modules</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Audio Guides</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Free</div>
+            <div class="stat-label">Always</div>
+        </div>
     </div>
 
-    <details open>
-      <summary>✏️ ITE 2025 Resources</summary>
-      <div class="content-wrapper">
-        <div class="quiz-grid" id="grid-2025"></div>
-      </div>
-    </details>
-
-    <details>
-      <summary>📚 ITE 2024 Resources & Podcasts</summary>
-      <div class="content-wrapper">
-        <div class="quiz-grid" id="grid-2024"></div>
-
-        <h3 style="margin-top: 35px; font-size: 1.1rem; border-bottom: 2px solid var(--primary-soft); padding-bottom: 8px;">🎧 Audio Walkthroughs</h3>
-        <div class="resource-list">
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">📻</span><h3>Q 1-10: Warfarin & Burn Care</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">🎵</span><h3>Q 11-20: Clinical Pearls</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">⚡</span><h3>Q 21-30: Semaglutide & PE Diagnosis</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">🧠</span><h3>Q 31-40: Stroke & Thyroid Risks</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">🧂</span><h3>Q 41-50: Sodium & Addison’s</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">🧬</span><h3>Q 51-60: ALS & Bipolar Traps</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">🔬</span><h3>Q 61-70: Precision Medicine</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">💎</span><h3>Q 71-80: Gallstone Logic</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">💓</span><h3>Q 81-90: Pregnancy & Fractures</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
-          <div class="resource-item">
-            <div class="resource-header"><span class="podcast-icon">📋</span><h3>Q 91-100: FM Protocols</h3></div>
-            <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" type="audio/mp4"></audio>
-            <div class="link-group"><a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" target="_blank" class="resource-link">Archive Page</a></div>
-          </div>
+    <div class="progress-overview">
+        <div class="progress-label">Your Progress &nbsp;<span id="prog-count">0 / 60</span></div>
+        <div class="progress-track">
+            <div class="progress-fill" id="prog-fill"></div>
         </div>
-      </div>
+        <div class="progress-pct" id="prog-pct">0%</div>
+    </div>
+
+    <!-- ITE 2025 -->
+    <details open>
+        <summary>
+            <div class="summary-left">
+                <div class="summary-icon">✏️</div>
+                <div class="summary-text">
+                    <h2>ITE 2025 Resources</h2>
+                    <p>20 quiz modules · 200 questions</p>
+                </div>
+            </div>
+            <div class="summary-right">
+                <span class="year-badge">2025</span>
+                <div class="chevron">▾</div>
+            </div>
+        </summary>
+        <div class="section-content">
+            <p class="section-desc">Practice with 10-question quizzes, each with full explanations and instant feedback. Completed quizzes turn green automatically.</p>
+            <div class="quiz-grid" id="grid-2025"></div>
+        </div>
     </details>
 
+    <!-- ITE 2024 -->
     <details>
-      <summary>📓 ITE 2023 Resources</summary>
-      <div class="content-wrapper">
-        <div class="quiz-grid" id="grid-2023"></div>
-      </div>
+        <summary>
+            <div class="summary-left">
+                <div class="summary-icon">📚</div>
+                <div class="summary-text">
+                    <h2>ITE 2024 Resources &amp; Podcasts</h2>
+                    <p>20 quiz modules · 10 audio walkthroughs</p>
+                </div>
+            </div>
+            <div class="summary-right">
+                <span class="year-badge">2024</span>
+                <div class="chevron">▾</div>
+            </div>
+        </summary>
+        <div class="section-content">
+            <p class="section-desc">Quiz sets and audio walkthroughs covering the full 2024 exam cycle. Listen on the go or work through the quizzes at your own pace.</p>
+            <div class="quiz-grid" id="grid-2024"></div>
+
+            <div class="audio-section-title">🎧 Audio Walkthroughs</div>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h3>📻 Q 1–10 · Warfarin &amp; Burn Care</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/1-10_Stop_Warfarin_Bridging_and_Avoid_Burn_Antibiotics.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>🎵 Q 11–20 · Clinical Pearls</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/11-20_2024_Family_Medicine_Exam_Clinical_Pearls.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>⚡ Q 21–30 · Semaglutide &amp; PE Diagnosis</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/21-30_Semaglutide_Deprescribing_and_Pulmonary_Embolism_Diagnosis.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>🧠 Q 31–40 · Stroke &amp; Thyroid Risks</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/31-40_Forehead_Wrinkles_Signal_Stroke_and_Thyroid_Risks.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>🧂 Q 41–50 · Sodium &amp; Addison's</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/41-50_Sodium_104%2C_Addison%E2%80%99s%2C_and_Safe_Sleep.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>🧬 Q 51–60 · ALS &amp; Bipolar Traps</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/51-60_Missing_Testicles%2C_ALS%2C_and_Bipolar_Traps.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>🔬 Q 61–70 · Precision Medicine</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/61-70_Why_Precision_Medicine_Means_Doing_Less.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>💎 Q 71–80 · Gallstone Logic</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/71-80_Microscopic_Colitis_and_Gallstones_Without_Gallbladders.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>💓 Q 81–90 · Pregnancy &amp; Fractures</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/81-90_Pregnancy_Hearts%2C_B12_and_Metatarsal_Fractures.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>📋 Q 91–100 · FM Protocols</h3>
+                    <audio controls preload="none"><source src="https://ia902804.us.archive.org/21/items/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" type="audio/mp4"></audio>
+                    <a href="https://archive.org/details/111-120-medical-board-logic-behind-deceptive-symptoms/91-100_The_Logic_Behind_Family_Medicine_Protocols.m4a" target="_blank" class="resource-link">↗ Archive Page</a>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <!-- ITE 2023 -->
+    <details>
+        <summary>
+            <div class="summary-left">
+                <div class="summary-icon">📓</div>
+                <div class="summary-text">
+                    <h2>ITE 2023 Resources</h2>
+                    <p>20 quiz modules · 200 questions</p>
+                </div>
+            </div>
+            <div class="summary-right">
+                <span class="year-badge">2023</span>
+                <div class="chevron">▾</div>
+            </div>
+        </summary>
+        <div class="section-content">
+            <p class="section-desc">Quiz sets from the 2023 exam cycle to build foundational knowledge and sharpen clinical pattern recognition.</p>
+            <div class="quiz-grid" id="grid-2023"></div>
+        </div>
+    </details>
+
+    <!-- Cheatsheets -->
+    <details>
+        <summary>
+            <div class="summary-left">
+                <div class="summary-icon">📝</div>
+                <div class="summary-text">
+                    <h2>Cheatsheets</h2>
+                    <p>High-yield reference sheets by topic</p>
+                </div>
+            </div>
+            <div class="summary-right">
+                <span class="year-badge" style="background: linear-gradient(135deg, #94a3b8, #64748b);">Soon</span>
+                <div class="chevron">▾</div>
+            </div>
+        </summary>
+        <div class="section-content">
+            <p class="section-desc">Concise, high-yield cheatsheets organized by clinical topic — perfect for last-minute review before exam day.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 6px;">
+                <div style="background: var(--off-white); border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; color: var(--muted);">
+                    <div style="font-size: 1.8em; margin-bottom: 8px;">💊</div>
+                    <div style="font-weight: 600; font-size: 0.88em; margin-bottom: 4px;">Pharmacology</div>
+                    <div style="font-size: 0.75em;">Coming Soon</div>
+                </div>
+                <div style="background: var(--off-white); border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; color: var(--muted);">
+                    <div style="font-size: 1.8em; margin-bottom: 8px;">❤️</div>
+                    <div style="font-weight: 600; font-size: 0.88em; margin-bottom: 4px;">Cardiology</div>
+                    <div style="font-size: 0.75em;">Coming Soon</div>
+                </div>
+                <div style="background: var(--off-white); border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; color: var(--muted);">
+                    <div style="font-size: 1.8em; margin-bottom: 8px;">🧠</div>
+                    <div style="font-weight: 600; font-size: 0.88em; margin-bottom: 4px;">Neurology</div>
+                    <div style="font-size: 0.75em;">Coming Soon</div>
+                </div>
+                <div style="background: var(--off-white); border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; color: var(--muted);">
+                    <div style="font-size: 1.8em; margin-bottom: 8px;">👶</div>
+                    <div style="font-weight: 600; font-size: 0.88em; margin-bottom: 4px;">Pediatrics</div>
+                    <div style="font-size: 0.75em;">Coming Soon</div>
+                </div>
+                <div style="background: var(--off-white); border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; color: var(--muted);">
+                    <div style="font-size: 1.8em; margin-bottom: 8px;">🦠</div>
+                    <div style="font-weight: 600; font-size: 0.88em; margin-bottom: 4px;">Infectious Disease</div>
+                    <div style="font-size: 0.75em;">Coming Soon</div>
+                </div>
+                <div style="background: var(--off-white); border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; color: var(--muted);">
+                    <div style="font-size: 1.8em; margin-bottom: 8px;">🔬</div>
+                    <div style="font-weight: 600; font-size: 0.88em; margin-bottom: 4px;">Endocrinology</div>
+                    <div style="font-size: 0.75em;">Coming Soon</div>
+                </div>
+            </div>
+        </div>
     </details>
 
     <footer>
-      <button class="btn-reset" onclick="resetProgress()">Clear Study Progress</button>
-      <p>Built for Family Medicine Residents • GitHub Pages Ready</p>
+        <div class="footer-actions">
+            <button class="btn-reset" onclick="resetProgress()">Clear Study Progress</button>
+        </div>
+        <p><strong>Study Tip:</strong> Complete one quiz set per day and thoroughly review any missed questions.</p>
+        <p style="margin-top:6px; opacity:0.55;">© 2025 ABFM ITE Study Resources · Created for Family Medicine Residents</p>
     </footer>
-  </div>
 
-  <script>
-    // Link Generator to keep HTML clean
-    function generateLinks(containerId, year, prefix) {
-      const container = document.getElementById(containerId);
-      for (let i = 1; i <= 20; i++) {
-        const start = (i - 1) * 10 + 1;
-        const end = i * 10;
-        const padStart = String(start).padStart(prefix ? 3 : 2, '0');
-        const padEnd = String(end).padStart(3, '0');
-        
-        let fileName = prefix ? `ite${year}-quiz-${padStart}-${padEnd}.html` : `quiz-${String(start).padStart(2, '0')}-${end}.html`;
+</div>
+<script>
+    const TOTAL = 60;
 
-        const card = document.createElement('a');
-        card.href = fileName;
-        card.className = 'quiz-card';
-        card.setAttribute('data-id', `${year}-q${i}`);
-        card.innerHTML = `<h3>Quiz ${i}</h3><p>Q ${start}–${end}</p>`;
-        container.appendChild(card);
-      }
+    function generateLinks(containerId, year) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        for (let i = 1; i <= 20; i++) {
+            const start = (i - 1) * 10 + 1;
+            const end   = i * 10;
+            let fileName;
+            if (year === 2025) {
+                fileName = `quiz-${String(start).padStart(2,'0')}-${end}.html`;
+            } else {
+                fileName = `ite${year}-quiz-${String(start).padStart(3,'0')}-${String(end).padStart(3,'0')}.html`;
+            }
+            const card = document.createElement('a');
+            card.href = fileName;
+            card.className = 'quiz-card';
+            card.setAttribute('data-id', `${year}-q${i}`);
+            card.innerHTML = `<h3>Quiz ${i}</h3><p>Q ${start}–${end}</p><span class="check-badge">✓</span>`;
+            container.appendChild(card);
+        }
     }
 
-    // Init Grids
-    generateLinks('grid-2025', 2025, false);
-    generateLinks('grid-2024', 2024, true);
-    generateLinks('grid-2023', 2023, true);
+    generateLinks('grid-2025', 2025);
+    generateLinks('grid-2024', 2024);
+    generateLinks('grid-2023', 2023);
 
-    // Progress Logic
+    function updateProgressUI() {
+        try {
+            const done = JSON.parse(localStorage.getItem('ite_done') || '[]');
+            const count = done.length;
+            const pct = Math.round((count / TOTAL) * 100);
+            document.getElementById('prog-count').textContent = `${count} / ${TOTAL}`;
+            document.getElementById('prog-fill').style.width = pct + '%';
+            document.getElementById('prog-pct').textContent = pct + '%';
+        } catch(e) {}
+    }
+
+    function loadProgress() {
+        try {
+            const done = JSON.parse(localStorage.getItem('ite_done') || '[]');
+            done.forEach(id => {
+                const el = document.querySelector(`.quiz-card[data-id="${id}"]`);
+                if (el) el.classList.add('completed');
+            });
+        } catch(e) {}
+        updateProgressUI();
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      const completed = JSON.parse(localStorage.getItem('ite_done') || '[]');
-      completed.forEach(id => {
-        const el = document.querySelector(`[data-id="${id}"]`);
-        if (el) el.classList.add('completed');
-      });
-
-      document.querySelectorAll('.quiz-card').forEach(card => {
-        card.addEventListener('click', function() {
-          const id = this.getAttribute('data-id');
-          let done = JSON.parse(localStorage.getItem('ite_done') || '[]');
-          if (!done.includes(id)) {
-            done.push(id);
-            localStorage.setItem('ite_done', JSON.stringify(done));
-            this.classList.add('completed');
-          }
+        loadProgress();
+        document.querySelectorAll('.quiz-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                try {
+                    let done = JSON.parse(localStorage.getItem('ite_done') || '[]');
+                    if (!done.includes(id)) {
+                        done.push(id);
+                        localStorage.setItem('ite_done', JSON.stringify(done));
+                        this.classList.add('completed');
+                        updateProgressUI();
+                    }
+                } catch(e) {}
+            });
         });
-      });
     });
 
     function resetProgress() {
-      if (confirm('Reset your checkmarks?')) {
-        localStorage.removeItem('ite_done');
-        location.reload();
-      }
+        if (confirm('Clear all quiz progress? This cannot be undone.')) {
+            try { localStorage.removeItem('ite_done'); } catch(e) {}
+            document.querySelectorAll('.quiz-card.completed').forEach(el => el.classList.remove('completed'));
+            updateProgressUI();
+        }
     }
-  </script>
+</script>
 </body>
 </html>
