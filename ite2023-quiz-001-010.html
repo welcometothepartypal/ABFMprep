@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITE 2023 Quiz - Questions 1-10</title>
+    <title>2023 ITE Quiz - Questions 1-10</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -13,22 +13,6 @@
     <div id="root"></div>
     <script type="text/babel">
         const { useState } = React;
-
-        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
-        // Call this function when the quiz is scored / results are shown.
-        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
-          try {
-            localStorage.setItem(
-              'ite_quiz_result_2025_1',
-              JSON.stringify({
-                correct: correctCount,        // number of correct answers, e.g. 7
-                total:   totalCount,          // total questions, always 10
-                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
-              })
-            );
-          } catch(e) {}
-        }
-
 
         const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
         const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
@@ -50,7 +34,7 @@
       "E) Radiation"
     ],
     "correctAnswer": 4,
-    "rationale": "Because of the prevalence of cancer in the United States, it is important for family physicians to recognize\noncologic emergencies. This patient presents with signs and symptoms related to superior vena cava\nsyndrome, which is caused by compression of the superior vena cava. This is most often caused by lung\ncancer or lymphoma, but it can also be related to indwelling catheters, lymph nodes, or metastatic tumors.\nAfter ensuring that the patient is hospitalized and stable, the initial treatment options include intravenous\ncorticosteroids, chemotherapy, radiation, and occasionally intravascular stenting.\nThis condition is not the result of an infection, so antibiotics would not be appropriate. Hyperviscosity\nsyndrome is another oncologic emergency associated with leukemia, multiple myeloma, and Waldenström\nmacroglobulinemia. It is treated with chemotherapy and plasmapheresis. Echocardiography and\nbronchoscopy are not indicated in the initial management of superior vena cava syndrome.",
+    "rationale": "Because of the prevalence of cancer in the United States, it is important for family physicians to recognize\noncologic emergencies. This patient presents with signs and symptoms related to superior vena cava\nsyndrome, which is caused by compression of the superior vena cava. This is most often caused by lung\ncancer or lymphoma, but it can also be related to indwelling catheters, lymph nodes, or metastatic tumors.\nAfter ensuring that the patient is hospitalized and stable, the initial treatment options include intravenous\ncorticosteroids, chemotherapy, radiation, and occasionally intravascular stenting.\nThis condition is not the result of an infection, so antibiotics would not be appropriate. Hyperviscosity\nsyndrome is another oncologic emergency associated with leukemia, multiple myeloma, and Waldenström\nmacroglobulinemia. It is treated with chemotherapy and plasmapheresis. Echocardiography and\nbronchoscopy are not indicated in the initial management of superior vena cava syndrome.\nRef: Higdon ML, Atkinson CJ, Lawrence KV. Oncologic emergencies: recognition and initial management. Am Fam Physician.\n2018;97(11):741-748. 2) Zimmerman S, Davis M. Rapid fire: superior vena cava syndrome. Emerg Med Clin North Am.\n2018;36(3):577-584.",
     "image": "quiz_images_2023/2023_mc_page_003.png"
   },
   {
@@ -64,7 +48,7 @@
       "E) Tiotropium/olodaterol (Stiolto Respimat)"
     ],
     "correctAnswer": 1,
-    "rationale": "In the single maintenance and reliever therapy (SMART) approach for asthma control, combination therapy\nwith an inhaled corticosteroid and a long-acting bronchodilator is used as both controller and rescue\nmedication. SMART is recommended as the preferred therapeutic approach in steps 3 and 4 in the 2020\nNational Asthma Education and Prevention Program guidelines. Formoterol is the only medication\navailable in the United States recommended for use in SMART therapy due to its rapid onset of action.\nBudesonide monotherapy, fluticasone/salmeterol, fluticasone/vilanterol, and tiotropium/olodaterol are not\nappropriate options for SMART in asthma control."
+    "rationale": "In the single maintenance and reliever therapy (SMART) approach for asthma control, combination therapy\nwith an inhaled corticosteroid and a long-acting bronchodilator is used as both controller and rescue\nmedication. SMART is recommended as the preferred therapeutic approach in steps 3 and 4 in the 2020\nNational Asthma Education and Prevention Program guidelines. Formoterol is the only medication\navailable in the United States recommended for use in SMART therapy due to its rapid onset of action.\nBudesonide monotherapy, fluticasone/salmeterol, fluticasone/vilanterol, and tiotropium/olodaterol are not\nappropriate options for SMART in asthma control.\nRef: Cloutier MM, Dixon AE, Krishnan JA, Lemanske RF Jr, Pace W, Schatz M. Managing asthma in adolescents and adults:\n2020 asthma guideline update from the National Asthma Education and Prevention Program. JAMA.\n2020;324(22):2301-2317."
   },
   {
     "id": 3,
@@ -77,7 +61,7 @@
       "E) The treatment of an NSAID-related gastric ulcer"
     ],
     "correctAnswer": 1,
-    "rationale": "Proton pump inhibitors (PPIs) are some of the most commonly used prescription or over-the-counter\nmedications. However, many patients do not have a clear indication for their use, leading to situations in\nwhich the risks may outweigh the benefits. In 2022 the American Gastroenterological Association\npublished 10 best practice statements to assist clinicians in addressing this issue. Key recommendations\ninclude regular review and documentation of the indication for any ongoing PPI use, and to consider\ndiscontinuing PPIs for any patient without a clear indication. Strategies for PPI discontinuation include\ntapering or abrupt discontinuation. Rebound acid hypersecretion can lead to a temporary increase in\nsymptoms in either approach. If deprescribing is attempted but not tolerated, patients may reasonably be\ncontinued on the lowest effective dose. Possible risks, mostly reported in retrospective rather than\nprospective studies, include an increased incidence of chronic kidney disease, fractures, dementia, and\nrespiratory infections, including COVID-19.\n 1\n\nWhile many patients remain on long-term PPI therapy without a clear indication, in some situations the\nbenefits of PPIs do clearly outweigh the risks. Such indications include Barrett esophagus, severe erosive\nesophagitis, eosinophilic esophagitis, and high risk for upper gastrointestinal (GI) bleeding. Risk factors\nfor GI bleeding include prior ulcer, age >65, high-dose NSAID therapy, or concurrent use of aspirin,\ncorticosteroids, or anticoagulants. Such patients should be advised to use PPIs indefinitely. PPIs are\nrecommended for short-term use for eradication of Helicobacter pylori and treatment of NSAID-induced\ngastric ulcers. They may also be considered as adjunctive short-term therapy in Mallory-Weiss tears and\nafter sclerotherapy or band ligation treatment of esophageal varices. None of these are indications for\nlong-term use in the absence of other indications."
+    "rationale": "Proton pump inhibitors (PPIs) are some of the most commonly used prescription or over-the-counter\nmedications. However, many patients do not have a clear indication for their use, leading to situations in\nwhich the risks may outweigh the benefits. In 2022 the American Gastroenterological Association\npublished 10 best practice statements to assist clinicians in addressing this issue. Key recommendations\ninclude regular review and documentation of the indication for any ongoing PPI use, and to consider\ndiscontinuing PPIs for any patient without a clear indication. Strategies for PPI discontinuation include\ntapering or abrupt discontinuation. Rebound acid hypersecretion can lead to a temporary increase in\nsymptoms in either approach. If deprescribing is attempted but not tolerated, patients may reasonably be\ncontinued on the lowest effective dose. Possible risks, mostly reported in retrospective rather than\nprospective studies, include an increased incidence of chronic kidney disease, fractures, dementia, and\nrespiratory infections, including COVID-19.\n 1\n\nWhile many patients remain on long-term PPI therapy without a clear indication, in some situations the\nbenefits of PPIs do clearly outweigh the risks. Such indications include Barrett esophagus, severe erosive\nesophagitis, eosinophilic esophagitis, and high risk for upper gastrointestinal (GI) bleeding. Risk factors\nfor GI bleeding include prior ulcer, age >65, high-dose NSAID therapy, or concurrent use of aspirin,\ncorticosteroids, or anticoagulants. Such patients should be advised to use PPIs indefinitely. PPIs are\nrecommended for short-term use for eradication of Helicobacter pylori and treatment of NSAID-induced\ngastric ulcers. They may also be considered as adjunctive short-term therapy in Mallory-Weiss tears and\nafter sclerotherapy or band ligation treatment of esophageal varices. None of these are indications for\nlong-term use in the absence of other indications.\nRef: Targownik LE, Fisher DA, Saini SD. AGA clinical practice update on de-prescribing of proton pump inhibitors: expert\nreview. Gastroenterology. 2022;162(4):1334-1342."
   },
   {
     "id": 4,
@@ -90,7 +74,7 @@
       "E) Smoking\n1"
     ],
     "correctAnswer": 0,
-    "rationale": "Dementia is a significant condition affecting 5 million adults and that number is likely to expand in the\nfuture due to the increasing number of individuals over age 65. The overall prevalence of dementia is\naround 5%, but it is 37% in those over age 90. Sixty percent to 80% of dementia is due to Alzheimer\ndisease. The greatest risk factor for dementia is older age. Strong risk factors include diabetes mellitus,\nmidlife obesity, a family history of dementia, a personal history of cardiovascular disease, cerebrovascular\ndisease, use of anticholinergic medications, apolipoprotein E4 genotype, and a low education level. Other\npotential risk factors that lack strong evidence include atrial fibrillation, smoking, head trauma, substance\nabuse such as alcohol use disorder, and medications such as benzodiazepines and proton pump inhibitors."
+    "rationale": "Dementia is a significant condition affecting 5 million adults and that number is likely to expand in the\nfuture due to the increasing number of individuals over age 65. The overall prevalence of dementia is\naround 5%, but it is 37% in those over age 90. Sixty percent to 80% of dementia is due to Alzheimer\ndisease. The greatest risk factor for dementia is older age. Strong risk factors include diabetes mellitus,\nmidlife obesity, a family history of dementia, a personal history of cardiovascular disease, cerebrovascular\ndisease, use of anticholinergic medications, apolipoprotein E4 genotype, and a low education level. Other\npotential risk factors that lack strong evidence include atrial fibrillation, smoking, head trauma, substance\nabuse such as alcohol use disorder, and medications such as benzodiazepines and proton pump inhibitors.\nRef: Falk N, Cole A, Meredith TJ. Evaluation of suspected dementia. Am Fam Physician. 2018;97(6):398-405."
   },
   {
     "id": 5,
@@ -103,7 +87,7 @@
       "E) Corticosteroid injection into the temporomandibular joint"
     ],
     "correctAnswer": 2,
-    "rationale": "The initial first-line pharmacologic therapy for temporomandibular disorders is naproxen. Cyclobenzaprine\nmay also be added if there is evidence of muscle spasm (A recommendation). If this is unsuccessful, other\noptions include a trial of amitriptyline or gabapentin. Opioid therapy is not appropriate first-line treatment\nfor temporomandibular disorders. Corticosteroid injections should be avoided due to potential cartilage\ndamage (B recommendation)."
+    "rationale": "The initial first-line pharmacologic therapy for temporomandibular disorders is naproxen. Cyclobenzaprine\nmay also be added if there is evidence of muscle spasm (A recommendation). If this is unsuccessful, other\noptions include a trial of amitriptyline or gabapentin. Opioid therapy is not appropriate first-line treatment\nfor temporomandibular disorders. Corticosteroid injections should be avoided due to potential cartilage\ndamage (B recommendation).\nRef: Matheson EM, Fermo JD, Blackwelder RS. Temporomandibular disorders: rapid evidence review. Am Fam Physician.\n2023;107(1):52-58.\n 2"
   },
   {
     "id": 6,
@@ -115,7 +99,7 @@
       "D) Subacute thyroiditis"
     ],
     "correctAnswer": 1,
-    "rationale": "Thyroiditis, a general term for inflammation of the thyroid gland, is associated with thyroid gland\ndysfunction. It is classified based on clinical symptoms: painless or painful, acute or subacute, and\nunderlying etiology (medication-induced, infection, radiation-induced, or autoimmune). The most common\nforms of thyroiditis include Hashimoto, subacute, and postpartum. Thyroiditis often results in a triphasic\ndisease pattern of thyroid dysfunction: hyperthyroidism due to the release of preformed thyroid hormone\nfrom damaged thyroid cells followed by hypothyroidism when the thyroid stores are depleted. Eventually\nnormal thyroid function is restored, or the patient develops permanent hypothyroidism. This patient\npresents with symptoms commonly seen in thyroid disease. Further testing reveals elevated TSH and\nthyroid peroxidase (TPO) levels. Elevated TPO levels are found in 95% of patients with Hashimoto\nthyroiditis. In addition, this patient’s family history includes rheumatoid arthritis, another autoimmune\ndisease, making Hashimoto thyroiditis the most likely diagnosis. Treatment is lifelong thyroid hormone\ntherapy.\nSeveral medications are linked to thyroiditis, including lithium, amiodarone, interferon-alfa, interleukin-2,\nimmune checkpoint inhibitors, and tyrosine kinase inhibitors. However, there is no proven link between\noral contraceptives and Hashimoto thyroiditis. Postpartum thyroiditis occurs within 1 year of delivery,\nmiscarriage, or medical abortion, not 2–3 years. Subacute thyroiditis is self-limited and often occurs after\nupper respiratory infections, causing thyroid pain and dysphagia due to inflammatory destruction of thyroid\nfollicles."
+    "rationale": "Thyroiditis, a general term for inflammation of the thyroid gland, is associated with thyroid gland\ndysfunction. It is classified based on clinical symptoms: painless or painful, acute or subacute, and\nunderlying etiology (medication-induced, infection, radiation-induced, or autoimmune). The most common\nforms of thyroiditis include Hashimoto, subacute, and postpartum. Thyroiditis often results in a triphasic\ndisease pattern of thyroid dysfunction: hyperthyroidism due to the release of preformed thyroid hormone\nfrom damaged thyroid cells followed by hypothyroidism when the thyroid stores are depleted. Eventually\nnormal thyroid function is restored, or the patient develops permanent hypothyroidism. This patient\npresents with symptoms commonly seen in thyroid disease. Further testing reveals elevated TSH and\nthyroid peroxidase (TPO) levels. Elevated TPO levels are found in 95% of patients with Hashimoto\nthyroiditis. In addition, this patient’s family history includes rheumatoid arthritis, another autoimmune\ndisease, making Hashimoto thyroiditis the most likely diagnosis. Treatment is lifelong thyroid hormone\ntherapy.\nSeveral medications are linked to thyroiditis, including lithium, amiodarone, interferon-alfa, interleukin-2,\nimmune checkpoint inhibitors, and tyrosine kinase inhibitors. However, there is no proven link between\noral contraceptives and Hashimoto thyroiditis. Postpartum thyroiditis occurs within 1 year of delivery,\nmiscarriage, or medical abortion, not 2–3 years. Subacute thyroiditis is self-limited and often occurs after\nupper respiratory infections, causing thyroid pain and dysphagia due to inflammatory destruction of thyroid\nfollicles.\nRef: Martinez Quintero B, Yazbeck C, Sweeney LB. Thyroiditis: evaluation and treatment. Am Fam Physician.\n2021;104(6):609-617."
   },
   {
     "id": 7,
@@ -128,7 +112,7 @@
       "E) Referring the mother to a psychiatrist\n3"
     ],
     "correctAnswer": 3,
-    "rationale": "Postpartum depression is common and patients who have given birth should be screened for a minimum\nof 1 year. A mother who knows what to feed an infant may have trouble executing it because of severe\npostpartum depression, leading to poor infant feeding practices. In this case, the provider will be more\nlikely to successfully treat the child’s anemia by treating the mother’s postpartum depression.\nWhile mothers with depression often need encouragement and support, false reassurance is paternalistic\nand potentially harmful. Education of the mother is sometimes useful, but studies have demonstrated that\nthe more likely barrier to implementing her knowledge is not a need for education on infant nutrition, but\nrather severe depression or other psychosocial barriers. It is ideal to involve all caretakers in efforts to\nsupport a child’s health, but a number of steps need to be taken prior to calling the father, including\nscreening for domestic violence, checking on HIPAA consents, and asking about custody. Referring the\nmother to a psychiatrist may ultimately be helpful but puts unnecessary barriers in place for the testing and\ntreatment of postpartum depression."
+    "rationale": "Postpartum depression is common and patients who have given birth should be screened for a minimum\nof 1 year. A mother who knows what to feed an infant may have trouble executing it because of severe\npostpartum depression, leading to poor infant feeding practices. In this case, the provider will be more\nlikely to successfully treat the child’s anemia by treating the mother’s postpartum depression.\nWhile mothers with depression often need encouragement and support, false reassurance is paternalistic\nand potentially harmful. Education of the mother is sometimes useful, but studies have demonstrated that\nthe more likely barrier to implementing her knowledge is not a need for education on infant nutrition, but\nrather severe depression or other psychosocial barriers. It is ideal to involve all caretakers in efforts to\nsupport a child’s health, but a number of steps need to be taken prior to calling the father, including\nscreening for domestic violence, checking on HIPAA consents, and asking about custody. Referring the\nmother to a psychiatrist may ultimately be helpful but puts unnecessary barriers in place for the testing and\ntreatment of postpartum depression.\nRef: Weinfield NS, Anderson CE. Postpartum symptoms of depression are related to infant feeding practices in a national WIC\nsample. J Nutr Educ Behav. 2022;54(2):118-124.\n 3"
   },
   {
     "id": 8,
@@ -141,7 +125,7 @@
       "E) CT of the abdomen and pelvis at age 55"
     ],
     "correctAnswer": 0,
-    "rationale": "Although testicular cancer is the most common solid cancer in men ages 15–34, with effective treatment\nand an overall survival rate of 97%, the U.S. Preventive Services Task Force recommends against\nscreening for testicular cancer in asymptomatic adolescent or adult males (D recommendation).\nA detailed history and physical examination should be obtained in symptomatic patients, followed by\nscrotal ultrasonography if there are positive findings on history and physical examination. Tumor markers\nand CT of the abdomen and pelvis are required for staging, treatment recommendations, and surveillance,\nbut not for screening purposes."
+    "rationale": "Although testicular cancer is the most common solid cancer in men ages 15–34, with effective treatment\nand an overall survival rate of 97%, the U.S. Preventive Services Task Force recommends against\nscreening for testicular cancer in asymptomatic adolescent or adult males (D recommendation).\nA detailed history and physical examination should be obtained in symptomatic patients, followed by\nscrotal ultrasonography if there are positive findings on history and physical examination. Tumor markers\nand CT of the abdomen and pelvis are required for staging, treatment recommendations, and surveillance,\nbut not for screening purposes.\nRef: US Preventive Services Task Force. Final recommendation statement: testicular cancer: screening. Updated April 15, 2011.\n2) Baird DC, Meyers GJ, Hu JS. Testicular cancer: diagnosis and treatment. Am Fam Physician. 2018;97(4):261-268."
   },
   {
     "id": 9,
@@ -153,7 +137,7 @@
       "D) Risperidone (Risperdal)"
     ],
     "correctAnswer": 3,
-    "rationale": "The first step in managing delirium in end-of-life care is to assess for any reversible or treatable causes,\nincluding uncontrolled pain, constipation, urinary retention, infections (e.g., urinary tract infections), and\nmedication side effects. Antipsychotic medications, such as haloperidol and risperidone, are recommended\nif conservative measures fail to control the symptoms of delirium. Benzodiazepines should be used with\ncaution as they can worsen delirium, especially in older patients. Melatonin is not indicated in the\nmanagement of delirium."
+    "rationale": "The first step in managing delirium in end-of-life care is to assess for any reversible or treatable causes,\nincluding uncontrolled pain, constipation, urinary retention, infections (e.g., urinary tract infections), and\nmedication side effects. Antipsychotic medications, such as haloperidol and risperidone, are recommended\nif conservative measures fail to control the symptoms of delirium. Benzodiazepines should be used with\ncaution as they can worsen delirium, especially in older patients. Melatonin is not indicated in the\nmanagement of delirium.\nRef: Albert RH. End-of-life care: managing common symptoms. Am Fam Physician. 2017;95(6):356-361."
   },
   {
     "id": 10,
@@ -166,7 +150,7 @@
       "E) Postinflammatory hyperpigmentation\n4"
     ],
     "correctAnswer": 4,
-    "rationale": "Patients with dark skin are at greater risk for postinflammatory hyperpigmentation, a reactive\nhypermelanosis. These are irregular hyperpigmented macules or patches that can occur after endogenous\ninflammation (e.g., acne vulgaris, pseudofolliculitis barbae, atopic dermatitis, lichen planus, psoriasis,\ncontact dermatitis) and external injuries (e.g., insect bites, chemical peels, cryotherapy, laser surgery).\nThis condition can occur at any age and is particularly noticeable in Fitzpatrick skin phototypes III, IV,\nV, and VI. Fitzpatrick skin phototype is used to classify the skin color spectrum and is based on an\nindividual’s propensity for sunburn (photodermatitis). It is not a surrogate marker for race or ethnicity.\nBroad-spectrum, water-based sunscreen with SPF 30 should be used to prevent postinflammatory\nhyperpigmentation (SOR C). Sunscreen that blocks visible light such as iron oxide is also useful.\nAcanthosis nigricans, acne keloidalis nuchae, dermatosis papulosa nigra, and melasma are conditions that\nare also more common in skin of color. However, they are not related to external injuries such as insect\nbites. Acanthosis nigricans are usually on the posterior neck, axillae, and groin. These are velvety,\nirregularly defined, hyperpigmented patches. Acne keloidalis nuchae occur in the nuchal and occipital\nscalp. These are keloid-like papules, plaques, and cicatricial alopecia. Dermatosis papulosa nigra is usually\non the face and neck. They are hyperpigmented, filiform, or sessile papules. Melasma are gray-brown\npatches that usually occur on the face.\n 4"
+    "rationale": "Patients with dark skin are at greater risk for postinflammatory hyperpigmentation, a reactive\nhypermelanosis. These are irregular hyperpigmented macules or patches that can occur after endogenous\ninflammation (e.g., acne vulgaris, pseudofolliculitis barbae, atopic dermatitis, lichen planus, psoriasis,\ncontact dermatitis) and external injuries (e.g., insect bites, chemical peels, cryotherapy, laser surgery).\nThis condition can occur at any age and is particularly noticeable in Fitzpatrick skin phototypes III, IV,\nV, and VI. Fitzpatrick skin phototype is used to classify the skin color spectrum and is based on an\nindividual’s propensity for sunburn (photodermatitis). It is not a surrogate marker for race or ethnicity.\nBroad-spectrum, water-based sunscreen with SPF 30 should be used to prevent postinflammatory\nhyperpigmentation (SOR C). Sunscreen that blocks visible light such as iron oxide is also useful.\nAcanthosis nigricans, acne keloidalis nuchae, dermatosis papulosa nigra, and melasma are conditions that\nare also more common in skin of color. However, they are not related to external injuries such as insect\nbites. Acanthosis nigricans are usually on the posterior neck, axillae, and groin. These are velvety,\nirregularly defined, hyperpigmented patches. Acne keloidalis nuchae occur in the nuchal and occipital\nscalp. These are keloid-like papules, plaques, and cicatricial alopecia. Dermatosis papulosa nigra is usually\non the face and neck. They are hyperpigmented, filiform, or sessile papules. Melasma are gray-brown\npatches that usually occur on the face.\n 4\n\nRef: Frazier WT, Proddutur S, Swope K. Common dermatologic conditions in skin of color. Am Fam Physician.\n2023;107(1):26-34."
   }
 ];
 
@@ -298,7 +282,7 @@
                   <div className="flex items-center justify-between mb-4">
                     <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
                       <BookOpen />
-                      ITE 2023 Quiz (Questions 1-10)
+                      2023 ITE Quiz (Questions 1-10)
                     </h1>
                     <div className="text-right">
                       <p className="text-sm text-gray-600">Score</p>
@@ -323,6 +307,11 @@
                   <div className="mb-6">
                     <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
                     <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-3 mb-6">
