@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 101-110</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_11',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 101,
+    "question": "A 22-year-old male presents with a 5-day history of left lower leg pain over the midshaft of his tibia. Two months ago, he started training for a half marathon. Radiographs performed yesterday at an urgent care clinic were normal. You suspect a bone stress injury. Which one of the following is the preferred definitive imaging modality to evaluate for a bone stress injury?",
+    "options": [
+      "A) Repeat radiography in 1 week",
+      "B) Point-of-care ultrasonography",
+      "C) CT",
+      "D) MRI",
+      "E) Nuclear bone scintigraphy"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Bone stress injuries are typically overuse injuries that are caused by an accumulation of bone microdamage. They often occur after an increase in the intensity, frequency, or interval of training. They can also occur when there is structurally compromised bone (osteoporosis, tumors, infections) as normal physiologic loads can damage such compromised bone. Radiography is the initial imaging modality because of its high specificity, despite its low sensitivity. If the radiograph is negative and the patient remains symptomatic, then MRI is the preferred follow-up study for definitive diagnosis. It is preferred over CT and nuclear bone scintigraphy because it has higher sensitivity and specificity and avoids the use of radiation. Repeat radiography is not the preferred definitive imaging modality because radiographs are often negative when taken within the first 2–3 weeks of symptoms. Point-of-care ultrasonography can be used by trained clinicians as an adjunct modality, but its sensitivity is not as high as the sensitivity of MRI."
+  },
+  {
+    "id": 102,
+    "question": "A 32-year-old female presents to an urgent care clinic with a flare-up of her usually well- controlled chronic urticaria. She takes cetirizine (Zyrtec), 10 mg daily. Which one of the following should you recommend?",
+    "options": [
+      "A) A pseudoallergen-free diet",
+      "B) Doubling the cetirizine dosage",
+      "C) A nasal corticosteroid",
+      "D) Cyclosporine (Sandimmune)",
+      "E) Omalizumab (Xolair)"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The first-line treatment of chronic urticaria is an oral second-generation H -antihistamine. 1 If that is not effective, a reasonable next step is to increase the H -antihistamine, up to 4 1 times the usual FDA-recommended dosing. Current evidence does not strongly support the effectiveness of a pseudoallergen-free diet in managing chronic urticaria. Nasal corticosteroids are effective for allergic rhinitis but have not been found to be useful for chronic urticaria. A short course of oral corticosteroids, such as prednisone, can be effective as a short-term solution for a flare-up but is not recommended for chronic control. Cyclosporine is only recommended for patients with severe refractory symptoms that have not responded to increased dosages of second-generation antihistamines and a trial of H -blockers. Omalizumab is effective for chronic urticaria and would be indicated if 2 aggressive antihistamine therapy is unsuccessful."
+  },
+  {
+    "id": 103,
+    "question": "A 35-year-old female comes to your office with an 8-day history of nasal congestion, rhinorrhea, and cough. Based on guidelines from the Infectious Diseases Society of America, this patient should be treated with antibiotic therapy if she has which one of the following additional symptoms?",
+    "options": [
+      "A) A fever up to 38.0 °C (100.4 °F)",
+      "B) Halitosis and tooth pain",
+      "C) An increase in nasal discharge after an initial improvement of symptoms",
+      "D) Purulent rhinorrhea"
+    ],
+    "correctAnswer": 2,
+    "rationale": "It is difficult to adequately distinguish between viral sinusitis and acute bacterial rhinosinusitis. However, most instances of acute bacterial rhinosinusitis improve without antibiotics. Major symptoms of sinusitis include purulent nasal discharge, nasal congestion, facial pain or pressure, decreased smell, and fever. Minor symptoms include headaches, cough, fatigue, ear pain or pressure, halitosis, and tooth pain. If adequate follow-up can be ensured, watchful waiting and symptomatic management is recommended for up to 10 days. Patients with severe symptoms (fever ≥39 °C with purulent nasal discharge and/or facial pain) or those with double sickening (new symptoms following improvement of an upper respiratory infection) should be treated immediately with empiric antibiotics."
+  },
+  {
+    "id": 104,
+    "question": "You are seeing a 44-year-old female who has a 25-pack-year smoking history. She quit smoking 6 years ago after a friend received a diagnosis of lung cancer. According to U.S. Preventive Services Task Force recommendations, lung cancer screening should be initiated at what age in this patient?",
+    "options": [
+      "A) No screening is indicated",
+      "B) 45",
+      "C) 50",
+      "D) 55",
+      "E) 60"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Lung cancer is the leading cause of cancer death in the United States, with approximately 90% of cases linked to smoking. In 2021, the U.S. Preventive Services Task Force recommended annual screening with low-dose CT in adults 50–80 years of age who have a 20-pack-year smoking history and either currently smoke or have quit within the past 15 years."
+  },
+  {
+    "id": 105,
+    "question": "A 25-year-old male presents with a 5-day history of dysuria and mucopurulent penile discharge. On examination the urethral meatus is erythematous and a small amount of discharge is noted. A urine dipstick is positive for leukocyte esterase and a nucleic acid amplification test is negative for Neisseria gonorrhoeae and Chlamydia trachomatis. Which one of the following would be the most appropriate treatment?",
+    "options": [
+      "A) Azithromycin (Zithromax), 1 g orally once",
+      "B) Levofloxacin, 500 mg orally for 7 days",
+      "C) Ceftriaxone, 500 mg intramuscularly once",
+      "D) Gentamicin, 240 mg intramuscularly once, plus azithromycin, 2 g orally once",
+      "E) Metronidazole, 2 g orally once, plus doxycycline, 100 mg orally twice daily for 7 days"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient has nongonococcal urethritis, which should be treated with azithromycin. Symptoms of urethritis include dysuria, purulent or mucopurulent urethral discharge, and urethral discomfort and/or erythema. Diagnostic criteria include typical signs and symptoms or a history of exposure along with ≥10 WBCs/hpf on a first-void urinalysis, ≥2 WBCs/oil immersion field found on Gram stain of the discharge, or a positive leukocyte esterase with first-void urine. At least half of nongonococcal urethritis cases have no known etiologic agent. Of the cases with known etiologies, Mycoplasma genitalium is responsible for 15%–20%. Treatment options for M genitalium include azithromycin, 1 g orally; doxycycline, 100 mg twice daily for 1 week; or moxifloxacin, 400 mg orally for 7–14 days. If the results of nucleic acid amplification testing for gonorrhea and chlamydia are unavailable, then intramuscular ceftriaxone plus a 7-day course of oral doxycycline would be appropriate and can be used for empiric therapy while awaiting results. Intramuscular gentamicin plus oral azithromycin is used as an alternative treatment regimen for Neisseria gonorrhoeae. Metronidazole is used to treat Trichomonas, which represents 1%– 8% of cases in men and should be diagnosed using a molecular-based test. Levofloxacin is a treatment option for chlamydia and is not first line."
+  },
+  {
+    "id": 106,
+    "question": "A 55-year-old female presents to the emergency department with what she describes as the worst headache of her life that began suddenly 1 hour ago. Her medical history is significant for tobacco use and uncontrolled hypertension. She indicates that she has had a few headaches over the last month, but today's headache came on suddenly and is extremely intense, unlike the previous headaches. There is no history of head trauma. Her accompanying relative adds that the patient has been experiencing waxing and waning levels of consciousness since the sudden onset of the headache. She has vomited several times, secondary to pain from the headache. Which one of the following is the most important, immediate next step in management?",
+    "options": [
+      "A) Morphine",
+      "B) Ondansetron",
+      "C) Head CT",
+      "D) Brain MRI",
+      "E) Lumbar puncture"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient's clinical picture is most consistent with a subarachnoid hemorrhage. Patients typically describe this as a sudden onset of the worst headache they have experienced. The most immediate and meaningful next step is to order a CT scan of the head to verify the diagnosis of subarachnoid hemorrhage. The diagnosis and management of subarachnoid hemorrhage is time sensitive. Neurosurgery should be consulted immediately if subarachnoid hemorrhage is verified. Brain MRI would likely take longer to obtain than head CT and is not diagnostically advantageous in subarachnoid hemorrhage compared to a head CT. Pain and nausea control are reasonable, but a CT scan of the head should take precedence because of the time sensitivity of diagnosis and management. A lumbar puncture should be considered if the head CT scan is negative but clinical suspicion for subarachnoid hemorrhage remains high, especially if the presentation occurs >6 hours after onset."
+  },
+  {
+    "id": 107,
+    "question": "A 28-year-old male who uses cannabis daily presents with a 2-week history of persistent nausea and vomiting. He notes little relief from previously prescribed ondansetron but does feel better during a hot shower. While tapering his cannabis use, which one of the following would be most likely to improve this patient's nausea?",
+    "options": [
+      "A) Topical diclofenac gel",
+      "B) Haloperidol",
+      "C) Metoclopramide (Reglan)",
+      "D) Prednisone",
+      "E) Prochlorperazine"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient has cannabinoid hyperemesis syndrome, characterized by heavy chronic cannabis use and nausea that improves with hot baths or showers. Current evidence suggests that haloperidol is more effective than more traditionally used antiemetics, such as metoclopramide or prochlorperazine, or corticosteroids in managing nausea associated with this syndrome. Topical capsaicin has also been shown to be effective. Topical capsaicin, when applied to the upper abdomen, may help alleviate symptoms by activating transient receptor potential vanilloid 1 (TRPV1) receptors. This mechanism can lead to desensitization of sensory nerve fibers, potentially reducing the need for antiemetic medications. Benzodiazepines may help acutely, and tricyclic antidepressants may have efficacy for longer-term management. Cessation of cannabis use is necessary for definitive treatment. Diclofenac gel is not appropriate pharmacotherapy for cannabinoid hyperemesis syndrome."
+  },
+  {
+    "id": 108,
+    "question": "A 30-year-old female with fibromyalgia sees you for follow-up. Her symptoms include widespread pain and prominent fatigue. At your advice, she has engaged in a trial of multidisciplinary, nonpharmacologic treatment including structured exercise, cognitive behavioral therapy, and therapeutic massage, and has experienced only partial improvement in her symptoms. She expresses interest in trying a medication to treat her pain. Which one of the following medications would be most likely to improve this patient's pain?",
+    "options": [
+      "A) Acetaminophen",
+      "B) Duloxetine (Cymbalta)",
+      "C) Gabapentin (Neurontin)",
+      "D) Hydrocodone/acetaminophen",
+      "E) Ibuprofen"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Duloxetine is an SNRI that is effective for treating fibromyalgia pain (SOR A). Other medications with level A evidence of effectiveness in reducing fibromyalgia-related pain include amitriptyline, cyclobenzaprine, and pregabalin. The SNRI milnacipran also has level A evidence for reducing fibromyalgia-related pain and has evidence for reducing fatigue and improving cognition in patients with fibromyalgia. Other SNRIs, including venlafaxine, have not been studied as extensively. Current evidence is insufficient to support acetaminophen or gabapentin use to treat fibromyalgia pain. Similarly, there is insufficient evidence to support the routine use of opioids such as hydrocodone, which are associated with a significant risk of adverse effects, dependence, misuse, and worsening hyperalgesia. NSAIDs such as ibuprofen are no better than placebo and introduce significant risk of adverse effects."
+  },
+  {
+    "id": 109,
+    "question": "An 8-year-old male is brought to your office by his parents because of concerns about ongoing nocturnal enuresis. He wets his bed several nights per week despite behavioral interventions. He has no daytime urinary symptoms. Physical examination findings and urinalysis are normal. You discuss treatment options and the parents indicate a preference for medication, as the patient will be attending an overnight summer camp in several weeks. Which one of the following would be the preferred pharmacologic treatment for this child’s nocturnal enuresis?",
+    "options": [
+      "A) Desmopressin (DDAVP)",
+      "B) Imipramine",
+      "C) Oxybutynin",
+      "D) Tamsulosin (Flomax)"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Behavioral methods and enuresis alarms are first-line treatments for monosymptomatic nocturnal enuresis without an identifiable cause. If pharmacotherapy is initiated, intranasal or oral desmopressin is acceptable. Imipramine and oxybutynin are additional options if there is no response to oral desmopressin. Tamsulosin is not recommended for this indication."
+  },
+  {
+    "id": 110,
+    "question": "A 25-year-old male with a childhood diagnosis of attention-deficit/hyperactivity disorder (ADHD) presents for re-evaluation of ADHD. He did not take medication for ADHD as a child. He is now having problems with attention and concentration that are affecting his work. He was recently placed on a stimulant medication, but had to discontinue it when his blood pressure and heart rate became elevated. He is still interested in pharmacologic therapy. Which one of the following would be the most appropriate next medication?",
+    "options": [
+      "A) Atomoxetine (Strattera)",
+      "B) Clonidine",
+      "C) Escitalopram (Lexapro)",
+      "D) Guanfacine",
+      "E) Nortriptyline (Pamelor)"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Stimulants are first-line pharmacotherapy for adults with attention-deficit/hyperactivity disorder (ADHD) given the extensive data supporting their effectiveness. However, there are potential adverse effects that can prevent patients from taking them, such as headaches, insomnia, poor appetite, weight loss, anxiety, depression, elevated heart rate, and elevated blood pressure. When stimulants are not tolerated or do not provide an adequate response, the second-line therapy would be an SNRI such as atomoxetine or viloxazine. Clonidine and guanfacine are only approved for the treatment of ADHD in children and adolescents. Although they are sometimes used off-label in adults, there is limited evidence to support such use. Tricyclic antidepressants such as nortriptyline have limited evidence and are not approved for ADHD treatment. Escitalopram is not effective for treating ADHD."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 101-110)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

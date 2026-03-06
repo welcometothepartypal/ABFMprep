@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 181-190</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2023_19',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 181,
+    "question": "A 60-year-old female presents to the emergency department after developing confusion with\nsevere headache and nausea. Shortly after arrival she has a generalized tonic-clonic seizure\nlasting less than 30 seconds. She has a blood pressure of 220/130 mm Hg, a pulse rate of 85\nbeats/min, and an oxygen saturation of 98% on room air. Cardiac enzymes are negative.\nNoncontrast CT of the head is negative for hemorrhage and contrast CT of the chest and\nabdomen reveals no aortic dissection. Based on guidelines from the American Heart Association,\nthe patient’s blood pressure is lowered by approximately 20% during the first hour of treatment.\nAssuming the patient remains clinically stable, the goal over the next 2–6 hours is to lower her\nblood pressure to",
+    "options": [
+      "A) 130/90 mm Hg",
+      "B) 140/90 mm Hg",
+      "C) 150/100 mm Hg",
+      "D) 160/100 mm Hg",
+      "E) 170/100 mm Hg\n66"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient is having a hypertensive emergency with encephalopathy and the goal is to lower her blood\npressure by no more than 25% in the first hour. Over the next 2–6 hours, her blood pressure should be\nlowered to 160/100 mm Hg. After that level is achieved, her blood pressure may be cautiously lowered\nto normal over the ensuing 24–48 hours. Lowering blood pressure too aggressively can lead to cerebral\nischemia and should be avoided.\nRef: Whelton PK, Carey RM, Aronow WS, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA\nguideline for the prevention, detection, evaluation, and management of high blood pressure in adults: executive summary:\na report of the American College of Cardiology/American Heart Association task force on clinical practice guidelines.\nCirculation. 2018;138(17):e426-e483.\n 70"
+  },
+  {
+    "id": 182,
+    "question": "A 58-year-old female sees you to request testing for a possible vitamin D deficiency. She lives\nindependently and has no health problems except for osteoarthritis. Her BMI is 25 kg/m2 and\nshe has no pain or muscle weakness. After discussing the U.S. Preventive Services Task Force\nrecommendations regarding screening for vitamin D deficiency, she chooses to be tested. A\nserum 25-hydroxyvitamin D level is 18 ng/mL.\nWhich one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Explaining to her that there is no accepted cut-off for deficiency, and that the benefits\nof supplementation with this laboratory result are unclear",
+      "B) Initiating vitamin D supplementation to decrease the risk of cardiovascular events\nbecause her serum 25-hydroxyvitamin D level is <20 ng/mL",
+      "C) Initiating vitamin D supplementation to decrease the risk of mortality because her serum\n25-hydroxyvitamin D level is <20 ng/mL",
+      "D) Ordering a 1,25-dihydroxyvitamin D study"
+    ],
+    "correctAnswer": 0,
+    "rationale": "There are unclear benefits of vitamin D supplementation with a total serum 25-hydroxyvitamin D level of\n18 ng/mL even though this test is considered the best available study of vitamin D status. There are many\nlaboratory assays with poor standardization and no consensus regarding what 25-hydroxyvitamin D level\nis sufficient or recommended for health optimization. In community-dwelling, nonpregnant individuals\nwithout risk factors there is insufficient evidence to support that supplementation decreases all-cause\nmortality, cardiovascular events, or fractures. A 1,25-dihydroxyvitamin D level would be used to test for\nrickets and osteomalacia.\nRef: US Preventive Services Task Force. Final recommendation statement: vitamin D deficiency in adults: screening. Updated\nApril 13, 2021. 2) Campos-Outcalt D. How to proceed when it comes to vitamin D. J Fam Pract. 2021;70(6):289-292."
+  },
+  {
+    "id": 183,
+    "question": "Which one of the following is a predictor of a poor response to psychotherapy in adolescents\nwith major depressive disorder?",
+    "options": [
+      "A) High global functioning on assessment",
+      "B) Hypersomnia",
+      "C) Inappropriate guilt",
+      "D) Presence of family conflict"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Predictors of a poor response to psychotherapy in adolescents with major depressive disorder include\npresence of family conflict, severe depression, low global functioning on assessment, high scores on\nsuicidality measures, coexisting anxiety, distorted thought patterns, and feelings of hopelessness. High\nglobal functioning on assessment, hypersomnia, and inappropriate guilt are not predictors of a poor\nresponse to psychotherapy in adolescents with major depressive disorder.\nRef: Miller L, Campo JV. Depression in adolescents. N Engl J Med. 2021;385(5):445-449."
+  },
+  {
+    "id": 184,
+    "question": "A 32-year-old male presents to your office because of a 3-month history of severe headaches.\nThe pain is localized to the right orbital area and is accompanied by a red, watery eye. He notes\nrhinorrhea and sweating on the right side of his face along with feeling restless. The headaches\noccur daily and usually last 30 minutes to 1 hour. They can be triggered by strong odors or\nconsuming alcohol. The patient reports that his symptoms improved when he tried a friend’s\nsumatriptan (Imitrex). A neurologic examination is unremarkable. He asks about medication to\nprevent these bouts of pain.\nThe first-line prophylactic medication for this condition is",
+    "options": [
+      "A) lithium",
+      "B) topiramate (Topamax)",
+      "C) ubrogepant (Ubrelvy)",
+      "D) valproic acid",
+      "E) verapamil"
+    ],
+    "correctAnswer": 4,
+    "rationale": "While cluster headache is rare, it can be diagnosed clinically and the individual can be properly managed.\nIt is much more common in males, with a mean age of onset of 30. Attacks are severe and unilateral, and\nlocated in the supraorbital, orbital, or temporal regions. They can occur as frequently as every other day\nor as often as eight times per day. The pain is severe and has accompanying autonomic symptoms,\nincluding nasal congestion, rhinorrhea, unilateral watery eye, eyelid edema, sweating of the forehead, and\na constricted pupil. The pain may last for only 15 minutes but can last up to 3 hours. One key feature is\na sense of restlessness or agitation. These bouts can be triggered by alcohol, nitrates in food, strong odors,\nand nitroglycerin.\nAbortive treatments include triptans or supplemental oxygen 100% at 12–15 L/min for 15–20 minutes. The\nfirst-line prophylaxis for cluster headache is verapamil. Lithium is also effective for prophylaxis, however\nit is not first line. Topiramate has been recommended, but clinical trials have shown no evidence.\nUbrogepant is indicated for acute treatment for migraine. Valproic acid is ineffective for prophylaxis for\ncluster headache.\nRef: Malu OO, Bailey J, Hawks MK. Cluster headache: rapid evidence review. Am Fam Physician. 2022;105(1):24-32.\n 71"
+  },
+  {
+    "id": 185,
+    "question": "Which one of the following is an indication for urgent dialysis in a patient with an acute kidney\ninjury?",
+    "options": [
+      "A) Encephalopathy",
+      "B) A potassium level of 5.5 mEq/L (N 3.4–4.5)",
+      "C) Pulmonary edema that is responsive to diuretics",
+      "D) Negligible urine output for 2 hours",
+      "E) A urine output of 500 mL over 24 hours\n67"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Uremic complications such as encephalopathy, neuropathy, or pericarditis are indications for urgent\ndialysis in patients with acute kidney injury. Other indications include a potassium level >6.5 mEq/L,\npulmonary edema that is not responsive to diuretics, negligible urine output for >6 hours, and a urine\noutput of <200 mL over 24 hours.\nRef: Mercado MG, Smith DK, Guard EL. Acute kidney injury: diagnosis and management. Am Fam Physician.\n2019;100(11):687-694."
+  },
+  {
+    "id": 186,
+    "question": "A 63-year-old female presents to your office for evaluation of a lesion on her left forearm\n(shown below). She reports that it started as a “pimple” about a month ago and has since\nincreased in size. It is not painful or itchy and has not bled. She has no personal or family\nhistory of skin cancer.\nWhich one of the following should you recommend for management of this lesion?",
+    "options": [
+      "A) Reassurance that the lesion is benign",
+      "B) Intralesional corticosteroid injection",
+      "C) Cryotherapy",
+      "D) Shallow shave biopsy",
+      "E) Excisional biopsy with 3- to 5-mm margins"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Keratoacanthomas begin as round, firm papules that grow rapidly over weeks to months into dome-shaped\nnodules with keratin-filled centers. They cannot be distinguished clinically or histologically from squamous\ncell carcinoma. Therefore, they should have early definitive management such as excisional biopsy with\n3- to 5-mm margins. Mohs surgery may be considered if tissue sparing is desired for cosmetic reasons.\nReassurance, intralesional corticosteroid injection, cryotherapy, and shallow shave biopsy are not adequate\nmanagement strategies.\nRef: Higgins JC, Maher MH, Douglas MS. Diagnosing common benign skin tumors. Am Fam Physician. 2015;92(7):601-607.",
+    "image": "quiz_images_2023/2023_mc_page_070.png"
+  },
+  {
+    "id": 187,
+    "question": "A 56-year-old male presents to your clinic for evaluation of knee pain. He reports several weeks\nof right knee pain with an occasional locking sensation. He has tried rest, acetaminophen, and\nibuprofen with minimal relief. He usually walks for 1 hour daily but is currently unable to do\nthis due to pain. His vital signs are normal except for a BMI of 33 kg/m2.\nOn examination the left knee is unremarkable. The right knee is notable for pain localized to the\nright anterolateral region. There is no tenderness to palpation. You gently rotate the patient’s\ntorso while he stands on the affected leg with the knee at 20° of flexion, resulting in pain in the\nright knee. The remainder of the examination is unremarkable.\nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) An anterior cruciate ligament tear",
+      "B) Gout",
+      "C) Iliotibial band syndrome",
+      "D) A lateral collateral ligament sprain",
+      "E) A meniscal tear"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient likely has a meniscal tear as demonstrated by a positive Thessaly maneuver. Meniscal tears\ncan be acute after a traumatic twisting injury or chronic and degenerative in nature. They are often\ncomorbid with osteoarthritis, as is likely in this case. A joint effusion may be present with a meniscal tear\nbut is not always seen. Typically, a tear to the anterior cruciate ligament will present acutely after an\ninjury, with edema and moderate to severe pain. Provocative testing may be limited due to pain, but a\npositive Lachman test is the most sensitive maneuver. Gout typically presents with an acutely red, warm,\nswollen joint that may be confused with septic arthritis. Iliotibial band syndrome presents as leg or knee\npain, often with tenderness just proximal to the lateral femoral epicondyle and would be unlikely to result\nin a positive Thessaly maneuver. A sprain of the lateral collateral ligament may have tenderness to\npalpation and should have laxity of the ligament noted on provocative testing.\nRef: Bunt CW, Jonas CE, Chang JG. Knee pain in adults and adolescents: the initial evaluation. Am Fam Physician.\n2018;98(9):576-585.\n 72"
+  },
+  {
+    "id": 188,
+    "question": "A 37-year-old male presents for a medical clearance examination. He has no symptoms or\nconcerns. His past medical and surgical histories are unremarkable. His social history is\nsignificant for a 20-pack-year cigarette use and occasional alcohol intake. When asked if he has\nconsidered quitting smoking, he says that he may wish to quit some day for his health, but he\nis not currently ready.\nIn addition to behavioral counseling, which one of the following medications has been shown\nto be effective for smoking cessation in patients who are reluctant to quit?",
+    "options": [
+      "A) Bupropion (Wellbutrin SR)",
+      "B) Clonidine",
+      "C) Nicotine transdermal patch (Nicoderm CQ)",
+      "D) Nortriptyline (Pamelor)",
+      "E) Varenicline\n68"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Randomized, controlled studies demonstrate that varenicline is effective in smoking cessation, even when\npatients are not ready to quit (SOR B). According to the American Thoracic Society, varenicline is also\npreferred for smoking cessation compared to bupropion and nicotine replacement therapy. Other smoking\ncessation pharmacotherapies, such as bupropion, nicotine replacement therapy, and alternative treatment\nwith clonidine and nortriptyline, are only initiated when an individual is ready to quit.\nRef: Gaddey HL, Dakkak M, Jackson NM. Smoking cessation interventions. Am Fam Physician. 2022;106(5):513-522."
+  },
+  {
+    "id": 189,
+    "question": "You are considering a workup for resistant hypertension in a 58-year-old male due to a lack of\nresponse to medication therapy. Which one of the following is the most common cause of\nuncontrolled hypertension?",
+    "options": [
+      "A) Hyperaldosteronism",
+      "B) Increased salt intake",
+      "C) Medication nonadherence",
+      "D) Obstructive sleep apnea",
+      "E) Renal artery stenosis >75%"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The most common cause of uncontrolled blood pressure is medication nonadherence, with an incidence\nof 83.7%. Hyperaldosteronism, high salt intake, obstructive sleep apnea, and renal artery stenosis are all\npossible causes of treatment-resistant hypertension, but they are less likely than medication nonadherence.\nRef: Abegaz TM, Shehab A, Gebreyohannes EA, Bhagavathula AS, Elnour AA. Nonadherence to antihypertensive drugs: a\nsystematic review and meta-analysis. Medicine (Baltimore). 2017;96(4):e5641. 2) Smith DK, Lennon RP, Carlsgaard PB.\nManaging hypertension using combination therapy. Am Fam Physician. 2020;101(6):341-349."
+  },
+  {
+    "id": 190,
+    "question": "A 68-year-old male with a past medical history of tobacco use and alcohol abuse presents with\nhalitosis. On physical examination you note that he has thick white hyperkeratosis with a furry\nappearance on the anterior two-thirds of his tongue.\nWhich one of the following should you recommend?",
+    "options": [
+      "A) Serial observations with close follow-up",
+      "B) Increased fiber intake and regular tongue brushing",
+      "C) Oral fluconazole (Diflucan)",
+      "D) Topical corticosteroids",
+      "E) Referral for biopsy of the tongue"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This description is typical for a patient with retention hyperkeratosis of the filiform papillae, or “hairy\ntongue,” on the anterior two-thirds of the tongue. It causes a furry appearance with hair-like projections\nthat become colonized with bacteria and can take on a dark pigmentation. This condition occurs in up to\n11% of the population and is more common in older patients, with a 3:1 predilection for males. Tobacco\nand alcohol use, poor oral hygiene, a low-fiber diet, hyposalivation, mouth breathing, and\nimmunosuppression are associated with hairy tongue. It can cause halitosis but otherwise lacks symptoms.\nOf the options listed, the most effective treatment is increased fiber intake and regular tongue brushing with\ntoothpaste or hydrogen peroxide. Serial observations with close follow-up, oral fluconazole, topical\ncorticosteroids, and referral for biopsy of the tongue should not be recommended for this patient.\nRef: Randall DA, Wilson Westmark NL, Neville BW: Common oral lesions. Am Fam Physician. 2022;105(4):369-376.\n 73"
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 181-190)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

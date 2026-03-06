@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 91-100</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2024_10',
+              JSON.stringify({
+                correct: correctCount,
+                total:   totalCount,
+                missed:  missedQuestionsArray
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 91,
+    "question": "A 50-year-old male sees you for follow-up of hypertension. His only medications are \nhydrochlorothiazide and lisinopril (Zestril). He does not smoke cigarettes or drink alcohol, and he \ndoes not have any concerns today. Examination findings are unremarkable. A comprehensive \nmetabolic panel is normal, but a CBC reveals a platelet count of 110,000/mm3 (N 150,000–450,000). \nA repeat platelet count is 115,000/mm3. \n \nWhich one of the following would be the most appropriate initial test?",
+    "options": [
+      "A) A prothrombin time and partial thromboplastin time",
+      "B) A peripheral blood smear",
+      "C) A serum haptoglobin level",
+      "D) Serum protein electrophoresis",
+      "E) Bone marrow aspiration"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient has mild thrombocytopenia, defined as a platelet count of 100,000–\n150,000/mm3. Moderate thrombocytopenia is defined as a platelet count of 50,000–\n99,000/mm3 and severe thrombocytopenia as <50,000/mm3. This can be due to splenic \nsequestration, decreased production, increased destruction, consumption in immune \ncomplexes or thrombi, or platelet clumping. \n \nThe initial test is examination of a peripheral blood smear to look for evidence of \nclumping, giant platelets, or fragmented RBCs. If the smear is normal except for \ndecreased platelets, then the problem would be drug-induced thrombocytopenia or \nimmune thrombocytopenic purpura. \n \nObtaining a prothrombin time and partial thromboplastin time is a rapid way to test the \nintegrity of the clotting cascade. A serum haptoglobin level can be used to confirm \nhemolysis. Serum protein electrophoresis would be utilized if there is suspicion of \nmonoclonal gammopathy. Referral to a hematologist for bone marrow evaluation is \nrecommended for moderate to severe disease."
+  },
+  {
+    "id": 92,
+    "question": "A 68-year-old male presents to your office because of a sudden onset of pain and cold sensation in \nthe right lower leg that began 3 hours ago. He rates his pain as 9 out of 10. He has a past medical \nhistory of hypertension, coronary artery disease with a coronary artery bypass graft 3 years ago, and \nstage 3a chronic kidney disease. He currently smokes cigarettes.  \n \nHis vital signs include a blood pressure of 160/85 mm Hg, a heart rate of 99 beats/min with regular \nrhythm, a respiratory rate of 18/min, and an oxygen saturation of 94% on room air. An examination \nreveals a right lower leg that is cold at the midcalf and right foot without palpable or Doppler pedal \npulses. Doppler imaging reveals a venous hum. His capillary refill is very slow, and there is a loss of \npinprick sensation in all of the toes of the right foot. His motor ability is maintained. You hear a \npossible faint bruit over the right femoral artery. \n \nWhich one of the following is the most appropriate next step in management?",
+    "options": [
+      "A) Urgent outpatient echocardiography",
+      "B) Urgent outpatient arteriography of the right leg",
+      "C) Emergent referral to the emergency department (E",
+      "D) for evaluation by a vascular subspecialist",
+      "D) Aspirin, 650 mg, plus sublingual nitroglycerin, and ambulance transfer to the ED",
+      "E) Hospital admission for heparin infusion"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient has acute limb ischemia (ALI), a medical emergency with possible \nirreversible limb loss within 4–6 hours. According to the American Heart Association, \nemergent revascularization is recommended to salvage this patient’s limb. An emergent \nreferral to a vascular subspecialist is the most appropriate immediate action. Depending \non location, this may be a vascular surgeon, a radiologist with invasive vascular \ntreatment ability, or a cardiovascular or general surgeon with peripheral vascular \ntraining and expertise. Determining the source of the thrombosis is not as urgent as \nlimb salvage. Arteriography is a possible aspect of limb salvage but is not the entire \nprocedure. Aspirin, nitroglycerin, and transfer to an emergency department is \nappropriate for acute coronary thrombosis but not for ALI. Anticoagulation is required \nbut is not a sufficient treatment."
+  },
+  {
+    "id": 93,
+    "question": "A 23-month-old toddler is brought to the clinic with a temperature of 38.2 °C (100.7 °F). The parents \nsay the child has been urinating more frequently. A urine dipstick and culture confirm a urinary tract \ninfection. \n \nAfter treatment with an antibiotic, which one of the following would be the most appropriate next \nstep?",
+    "options": [
+      "A) A repeat urine culture",
+      "B) Antibiotic prophylaxis",
+      "C) Renal and bladder ultrasonography",
+      "D) A voiding cystourethrogram",
+      "E) A dimercaptosuccinic acid (DMS",
+      "A) renal scan"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The American Academy of Pediatrics recommends renal and bladder ultrasonography in \nchildren ≤24 months of age after a first episode of febrile urinary tract infection (UTI) \nto assess for vesicoureteral reflux. A voiding cystourethrogram is indicated if there are \nabnormal findings on ultrasonography. A repeat urine culture and prophylactic antibiotic \ntherapy are not indicated in this case. Most children do not need a dimercaptosuccinic \nacid (DMSA) renal scan after a first episode of UTI."
+  },
+  {
+    "id": 94,
+    "question": "A 38-year-old female with uncontrolled hypertension, prediabetes, and polycystic ovary syndrome \nsees you for follow-up. Her past surgical history includes a cesarean delivery and a tubal ligation. She \nis concerned because she has not had any menstrual bleeding in the past 5 months. A urine pregnancy \ntest today is negative. \n \nWhich one of the following would be the most appropriate treatment?",
+    "options": [
+      "A) No medication",
+      "B) Drospirenone/ethinyl estradiol (Yaz) daily",
+      "C) Levonorgestrel/ethinyl estradiol (Jolessa) continuous cycle daily",
+      "D) Medroxyprogesterone (Provera) for 10 days every 3 months",
+      "E) A copper IUD (Paragard)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient has oligomenorrhea in the setting of polycystic ovary syndrome (PCOS). \nPatients with PCOS have a relative excess of estrogen stimulation of the endometrium \nand are at risk for endometrial hyperplasia and cancer. Combined hormonal \ncontraceptives or medications that contain progesterone reduce this risk by stabilizing \nthe endometrium, as well as improving excess androgen. Intermittent progestin therapy \nis the most appropriate option for this patient. Levonorgestrel-containing IUDs would \nalso be an option. Hypertension is a relative contraindication for estrogen use, and this \npatient does not need hormonal contraception."
+  },
+  {
+    "id": 95,
+    "question": "A 65-year-old patient presents to your office for an annual health maintenance examination. You \ndiscuss vaccination recommendations, and the patient reports having received the live zoster vaccine \n8 years ago. \n \nWhich one of the following should you recommend regarding herpes zoster (shingles) vaccination?",
+    "options": [
+      "A) No further vaccination",
+      "B) No further vaccination if laboratory testing reveals immunity",
+      "C) One dose of recombinant zoster vaccine (Shingrix)",
+      "D) Two doses of recombinant zoster vaccine",
+      "E) Two doses of live varicella vaccine (Varivax)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The CDC’s Advisory Committee on Immunization Practices recommends recombinant \nzoster vaccine for the prevention of herpes zoster (shingles) infection for \nimmunocompetent patients age 50 and older. The vaccine is given as a series of 2 \ndoses, administered 2–6 months apart. For patients who previously received live zoster \nvaccine, the full 2-dose series of recombinant vaccine is recommended."
+  },
+  {
+    "id": 96,
+    "question": "Which one of the following studies should be obtained in all toddlers with suspected physical abuse?",
+    "options": [
+      "A) A funduscopic examination",
+      "B) Skeletal survey radiography",
+      "C) Head CT without contrast",
+      "D) Abdominal CT with contrast",
+      "E) A bone scan"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The American Academy of Pediatrics and the American College of Radiology guidelines \nrecommend that all children with suspected physical abuse undergo a skeletal survey, \nparticularly those who are ≤2 years of age. A funduscopic examination should be \nobtained if retinal hemorrhages are suspected in children <2 years. Head CT without \ncontrast is indicated if there is a concern for subdural, subarachnoid, or \nintraparenchymal injury. Abdominal CT with contrast is recommended if there is a \nconcern for intra-abdominal injuries. A bone scan should be obtained if there is a \nconcern for occult fractures up to 2 weeks after injury."
+  },
+  {
+    "id": 97,
+    "question": "A 72-year-old female presents with suspected tinnitus. She describes a long-standing, low-grade \nringing in both ears that seems to be worsening over time. She started using hearing aids last month \nfor a recent diagnosis of presbycusis, but the tinnitus has not improved. It is nonpulsatile and not \nassociated with any other symptoms including headache, numbness, tingling, or weakness. \nExamination findings, including a neurologic examination and an ear examination, are normal except \nfor her known hearing loss. \n \nWhich one of the following has the best evidence of improving quality of life in patients such as this?",
+    "options": [
+      "A) Carbamazepine (Tegretol)",
+      "B) Acupuncture",
+      "C) Cognitive behavioral therapy",
+      "D) Transcranial magnetic stimulation",
+      "E) Surgical microvascular decompression"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Tinnitus is a common problem with unknown etiology that can significantly impact \nquality of life. It can signify a more concerning underlying neurologic condition such as \nvestibular schwannoma, and it is also associated with the use of medications that cause \nototoxicity and with sensorineural hearing loss. Acute tinnitus can occur with otitis \nmedia, middle ear effusion, and cerumen impaction. Patients with tinnitus that is severe \nenough to cause distress should have an audiologic evaluation. Head imaging is only \nrequired in the setting of asymmetric or pulsatile tinnitus, asymmetric hearing loss, or \nabnormal neurologic findings.  \n \nThe treatment with the best evidence of improved quality of life related to tinnitus is \ncognitive behavioral therapy. Hearing aids may alleviate tinnitus in hearing-impaired \npatients. Individuals with depression or anxiety related to their tinnitus should receive \ntreatment for those conditions. Anticonvulsants such as carbamazepine do not have \nevidence of benefit and are not recommended. Other therapies with insufficient \nevidence of benefit include acupuncture, transcranial magnetic stimulation, surgical \ndecompression of cranial nerve VIII, and hyperbaric oxygen."
+  },
+  {
+    "id": 98,
+    "question": "A 72-year-old female presents with pain in her right foot after missing a step while descending a \nstaircase. She was leading with her right foot when she stumbled. On examination she has tenderness \nin the right dorsal and plantar midfoot. Foot x-rays are normal. An image of the right plantar foot is \nshown below. \nWhich one of the following would be most appropriate at this time?",
+    "options": [
+      "A) Non–weight bearing status, plus CT or MRI",
+      "B) Corticosteroid injection",
+      "C) Heel splints and physical therapy",
+      "D) Rigid ankle support and physical therapy",
+      "E) Rigid ankle support and referral to an orthopedic surgeon"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient has a Lisfranc injury of the right midfoot. Lisfranc injuries occur to the \ntarsometatarsal joint complex of the foot, which is stabilized by a complex ligamentous \nstructure. Injuries can range from simple subluxations to complex fractures with \ndislocations. Falling forward on a plantar-flexed foot, such as when missing a stair step, \nis a common mechanism of injury. Forced dorsiflexion, which often occurs in sports or \nmotor vehicle collisions, is another common mechanism. Missed Lisfranc injuries can \nlead to instability, deformity, and painful chronic osteoarthritis of the midfoot.  \nX-rays are the first step in diagnosis but have a sensitivity of around 84%. Plantar \nbruising is a classic sign and should trigger a high index of suspicion for Lisfranc injury \neven with negative plain or weight-bearing x-rays, and CT or MRI should be ordered. If \na Lisfranc injury is seen on imaging or is highly suspected, the patient should remain \nnon–weight bearing. Depending on the severity of the injury, referral to an orthopedic \nsurgeon may be warranted after definitive imaging. Corticosteroid injection, heel splints, \nrigid ankle support, and physical therapy are not appropriate at this time."
+  },
+  {
+    "id": 99,
+    "question": "A previously healthy 67-year-old female presents with a 3-month history of new progressive low and \nmiddle back pain despite physical therapy and analgesics. She has also noted an onset of fatigue and \nweight loss. Results of a CBC and comprehensive metabolic panel are notable for normocytic \nanemia, hypercalcemia, and an elevated creatinine level. \n \nWhich one of the following tests would help confirm the suspected diagnosis?",
+    "options": [
+      "A) Anti–cyclic citrullinated peptide (anti-CCP) antibody",
+      "B) Antimitochondrial antibody",
+      "C) Creatine phosphokinase",
+      "D) Erythrocyte sedimentation rate",
+      "E) Serum free light chains"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient’s case is highly consistent with multiple myeloma. In patients with \nsuspected multiple myeloma, the measurement of serum free light chain levels as well \nas serum and urine protein electrophoresis can help confirm the diagnosis. Free light \nchains, including the subtypes kappa and lambda, are smaller components of \nimmunoglobulins that are typically bound to heavy chains. In multiple myeloma, \nelevated levels of one of these unbound or \"free\" light chains can be found in the \nserum, or in the urine as the Bence Jones protein. A ratio of involved to uninvolved free \nlight chains ≥100 and an involved free light chain concentration of ≥10 mg/dL is part of \nthe diagnostic criteria for multiple myeloma.  \n \n\nAn anti–cyclic citrullinated peptide (anti-CCP) antibody test is used to confirm a \ndiagnosis of rheumatoid arthritis. Testing for antimitochondrial antibodies is used to \nassess for primary biliary cirrhosis. A creatine phosphokinase test is used as a marker of \nmuscle damage. An erythrocyte sedimentation rate is a nonspecific marker of \ninflammation."
+  },
+  {
+    "id": 100,
+    "question": "The U.S. Preventive Services Task Force recommends screening which one of the following groups \nfor obstructive sleep apnea (OSA)?",
+    "options": [
+      "A) All adults >50 years of age",
+      "B) All adults who have ≥1 first-degree relative with documented OSA",
+      "C) All adults who have a BMI ≥35 kg/m2",
+      "D) All adults who have hypertension",
+      "E) No groups should be routinely screened"
+    ],
+    "correctAnswer": 4,
+    "rationale": "In November 2022, the U.S. Preventive Services Task Force concluded that the current \nevidence was insufficient to assess the balance of benefits and harms of screening for \nobstructive sleep apnea (OSA) in the general adult population (I recommendation). This \napplies to all adults ≥18 years of age without signs of OSA or with unrecognized \nsymptoms of OSA. This recommendation also includes persons who are unaware of or \nare unconcerned by their symptoms."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 91-100)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

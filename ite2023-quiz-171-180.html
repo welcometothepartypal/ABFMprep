@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 171-180</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2023_18',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 171,
+    "question": "A 45-year-old nurse presents with a 3-week history of heel pain that is worse at the end of a\nworkday. She reports that there has not been any trauma. An examination is significant for\ntenderness inferior to the lateral calcaneus extending below the malleolus to the lateral midfoot.\nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Achilles tendinopathy",
+      "B) Lisfranc arthropathy",
+      "C) Peroneal tendinopathy",
+      "D) Plantar fasciitis",
+      "E) Tarsal tunnel syndrome"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Peroneal tendinopathy is most commonly an overuse injury and results in tenderness along the path of the\nperoneal tendon from the lateral heel to the midfoot. Achilles tendinopathy involves tenderness in the\nposterior heel about 2–4 cm above the insertion of the Achilles tendon onto the calcaneus. Lisfranc\narthropathy is caused by damage to the ligaments that support the midfoot and causes tenderness across\nthe dorsal midfoot. Plantar fasciitis is characterized by pain and tenderness at the insertion of the plantar\nfascia on the plantar heel. Tarsal tunnel syndrome causes medial ankle pain that typically radiates to the\nmedial midfoot.\nRef: Tu P. Heel pain: diagnosis and management. Am Fam Physician. 2018;97(2):86-93."
+  },
+  {
+    "id": 172,
+    "question": "A 78-year-old male presents to your office for a health maintenance visit at the request of his\nspouse. He does not have any current symptoms or concerns. He states that he has not seen a\nphysician since he was a teenager. The patient reports breaking his arm as a child but has no\nother known medical conditions. He has a 30-pack-year history of smoking cigarettes but has\nnot smoked for 10 years. He has one glass of wine with dinner 3–4 times a month and does not\nuse illicit substances. His sexual history consists of sex with only his wife. His family history\nincludes a mother who died of a stroke and a father who died of pancreatic cancer. He walks 2\nmiles five times a week. His vital signs and a physical examination are normal.\nWhich one of the following screenings is recommended by the U.S. Preventive Services Task\nForce for this patient?",
+    "options": [
+      "A) Hepatitis B testing",
+      "B) Prostate-specific antigen testing",
+      "C) Abdominal aortic aneurysm ultrasonography",
+      "D) A DEXA scan",
+      "E) Low-dose CT of the chest"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends annual screening for lung cancer with\nlow-dose CT of the chest for men and women ages 50–80 with a 20-pack-year smoking history or more,\nor patients who currently smoke or have quit smoking in the past 15 years (B recommendation). This\npatient is 78 years old with a 30-pack-year history and he quit smoking only 10 years ago.\n 66\n\nPatients at increased risk for hepatitis B virus infection should be tested (B recommendation). This patient\ndoes not have a history that is high risk for hepatitis B infection, such as needle-sharing, injecting illicit\nsubstances, having sex with other men, and HIV infection, so he does not need to be tested at this time.\nShared clinical decision-making to discuss the benefits and harms of prostate-specific antigen (PSA) testing\nin men ages 55–69 years should be considered. This patient’s age makes PSA testing inappropriate (D\nrecommendation).\nAccording to the clinical evidence, one-time screening for abdominal aortic aneurysm (AAA) with\nultrasonography demonstrates moderate benefit for males between the ages of 65–75 who have ever\nsmoked or have smoked at least 100 cigarettes (B recommendation). Smoking history is the strongest\npredictor for AAA (B recommendation). This patient does have a smoking history, but his age is outside\nthe recommended window for AAA screening. According to the USPSTF, there is insufficient evidence\nto screen men for osteoporosis (I recommendation), so a DEXA scan would not be appropriate.\nRef: US Preventive Services Task Force. Recommendation topics. Updated 2023."
+  },
+  {
+    "id": 173,
+    "question": "A 47-year-old female presents to your office with a 3-day history of sore throat, a fever of\n100.9°F, and a dry cough. On examination she has tender anterior cervical lymphadenopathy\nand swollen tonsils without exudate. Her lungs are clear to auscultation. A point-of-care\nstreptococcal rapid antigen detection test is negative.\nWhich one of the following would be the most appropriate next step in management?",
+    "options": [
+      "A) Supportive care only",
+      "B) Penicillin V potassium",
+      "C) A repeat streptococcal rapid antigen test",
+      "D) A throat culture",
+      "E) Laryngoscopy\n63"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient presents with symptoms of pharyngitis that are most likely attributed to a viral infection.\nHowever, many patients expect to receive prescriptions for antibiotics when evaluated for common\nrespiratory infections. Use of the Modified Centor Criteria can assist with determining the likelihood of\na group A streptococcal infection before prescribing antibiotics. The Modified Centor Criteria gives points\nfor age, absence of cough, fever, tender anterior cervical lymphadenopathy, and tonsillar exudates or\nswelling. This patient would receive 0 points because she has a cough, –1 point because she is older than\n45, 1 point because she has a fever 100.4°F, 1 point because she has tender anterior cervical\nlymphadenopathy, and 1 point because she has tonsillar swelling. Therefore, her total Modified Centor\nCriteria score is 2, and she should be additionally evaluated with a rapid antigen detection test for group\nA Streptococcus (GAS).\nRapid streptococcal antigen tests can reduce inappropriate antibiotic prescriptions for adults at the point\nof care without adverse consequences (SOR A). Since this adult patient’s test is negative she does not\nrequire treatment with antibiotics, and supportive care is recommended. There is no role for repeating a\nrapid streptococcal antigen test due to the high specificity of these tests. A confirmatory throat culture is\nnot required in adults due to the low incidence of GAS pharyngitis and rheumatic fever in this age group.\nIn contrast, children and adolescents with negative rapid streptococcal antigen test results should have\nconfirmatory throat cultures because of the high prevalence of GAS. An order for laryngoscopy is not\nappropriate in this patient without symptoms of epiglottis.\nRef: Kim HN, Kim J, Jang WS, Nam J, Lim CS. Performance evaluation of three rapid antigen tests for the diagnosis of group\nA Streptococci. BMJ Open. 2019;9(8):e025438. 2) Sur DKC, Plesa ML. Antibiotic use in acute upper respiratory tract\ninfections. Am Fam Physician. 2022;106(6):628-636.\n 67"
+  },
+  {
+    "id": 174,
+    "question": "A 15-year-old male is brought to the clinic for evaluation of his eating habits. His parents note\nthat on several occasions they have found him alone with multiple empty food packages. He\nconfirms that yesterday he consumed two fried chicken sandwiches, two orders of French fries,\nand two milkshakes in a 1-hour time period in which he was alone in his room. After this\nepisode he was uncomfortably full for several hours.\nWhich one of the following would support your suspicion that this individual has binge-eating\ndisorder?",
+    "options": [
+      "A) Distorted body image",
+      "B) Feeling content after eating",
+      "C) Markedly low body weight for age and sex",
+      "D) Sense of loss of control during overeating episodes",
+      "E) Use of laxatives to control weight"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Eating disorders are potentially life-threatening. The true prevalence of eating disorders is unclear, but it\nis estimated that 2%–4% of adolescents may meet criteria for binge-eating disorder (BED) with equal\ndistribution across gender. The DSM-5 has specific criteria for diagnosing eating disorders. BED has\nseveral key features, including recurrent episodes of binge eating. Binge eating occurs in a distinct period\nof time and consists of consuming an amount of food outside the accepted norms for a meal, typically\n3000–5000 kcal, and experiencing a sense of loss of control during the episode. Distorted body image and\nmarkedly low body weight for age and sex are seen in anorexia nervosa. There is no weight specification\nin the diagnostic criteria for BED and it is estimated that 50% of those suffering with BED are overweight\nor obese. Patients with BED feel a sense of distress, anguish, or despair (not contentment) after the eating\nepisode and regarding this eating pattern in general. The use of laxatives to control weight or compensate\nfor binge eating is typically seen with bulimia nervosa.\nRef: Hornberger LL, Lane MA; Committee on Adolescence. Identification and management of eating disorders in children and\nadolescents. Pediatrics. 2021;147(1):e2020040279."
+  },
+  {
+    "id": 175,
+    "question": "A 35-year-old female presents for contraceptive counseling. Her last menstrual period was 3\nweeks ago and she had unprotected sex 2 days ago. A pregnancy test is negative.\nWhich one of the following would be the most effective emergency contraceptive agent for this\npatient?",
+    "options": [
+      "A) Oral levonorgestrel (Plan B One-Step)",
+      "B) Oral ulipristal (Ella)",
+      "C) Subcutaneous depot medroxyprogesterone acetate (Depo-Provera)",
+      "D) An etonogestrel subdermal implant (Nexplanon)",
+      "E) A copper IUD (Paragard)"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The copper IUD is the most effective form of emergency contraception with a pregnancy rate of 0.1%,\nfollowed by oral ulipristal with a pregnancy rate of 1.3%. Oral levonorgestrel is less effective than both\nwith a pregnancy rate of 2.5%. Subcutaneous depot medroxyprogesterone acetate and the etonogestrel\nsubdermal implant are not recommended as emergency contraceptives.\nRef: Paradise SL, Landis CA, Klein DA. Evidence-based contraception: common questions and answers. Am Fam Physician.\n2022;106(3):251-259."
+  },
+  {
+    "id": 176,
+    "question": "An 80-year-old male with well-controlled hypertension undergoes surgery to repair a hip\nfracture. He had coronary artery stenting 6 years ago and is asymptomatic. His current\nmedications include lisinopril (Zestril), atorvastatin (Lipitor), and low-dose aspirin. He also\ntakes chronic gabapentin (Neurontin) for postherpetic neuralgia, which is continued\npostoperatively. Multimodal analgesia is used, including intravenous morphine as needed after\nsurgery.\nIn the postoperative period, this patient would be at greatest risk for which one of the following?",
+    "options": [
+      "A) Gabapentin withdrawal symptoms",
+      "B) Heart failure",
+      "C) Respiratory depression",
+      "D) Restless legs syndrome",
+      "E) Seizure\n64"
+    ],
+    "correctAnswer": 2,
+    "rationale": "In the postoperative period, this patient would be at greatest risk for respiratory depression. In 2019 the\nFDA issued a Drug Safety Communication about the risk of serious breathing difficulties that may occur\nwith the use of gabapentin or pregabalin in patients who have respiratory risk factors. The FDA found that\nrespiratory depression can occur when opioids or other medications that depress the central nervous system\n(CNS) are administered to patients who are taking gabapentinoids or to those with underlying respiratory\nimpairments such as COPD or age-related loss of function. This patient is taking chronic gabapentin, is\nelderly, and is being prescribed the opioid morphine as needed for postoperative pain.\nGabapentinoids, including gabapentin, are being increasingly used for conditions such as seizures, nerve\npain, and restless legs syndrome. Misuse is also increasing. They are often combined with other CNS\ndepressants such as opioids, anti-anxiety medications, antidepressants, and antihistamines, thus increasing\nthe risk of respiratory depression.\n 68\n\nSince gabapentin is continued after surgery in this patient, withdrawal symptoms would not be likely.\nWhile the patient should be monitored for heart failure, his cardiac status is stable on the current regimen.\nThis patient would not be at increased risk for restless legs syndrome or seizures due to continued\nmanagement with gabapentin.\nRef: US Food & Drug Administration. FDA warns about serious breathing problems with seizure and nerve pain medicines\ngabapentin (Neurontin, Gralise, Horizant) and pregabalin (Lyrica, Lyrica CR): when used with CNS depressants or in\npatients with lung problems. Updated December 19, 2019. 2) Goodman CW, Brett AS. Gabapentinoids for pain: potential\nunintended consequences. Am Fam Physician. 2019;100(11):672-675. 3) Roth AR, Lazris A, Haskell H, James J.\nAppropriate use of opioids for chronic pain. Am Fam Physician. 2020;102(6):335-337. 4) Mattson CL, Chowdhury F,\nGilson TP. Notes from the field: trends in gabapentin detection and involvement in drug overdose deaths—23 states and\nthe District of Columbia, 2019–2020. MMWR Morb Mortal Wkly Rep. 2022;71(19):664-666."
+  },
+  {
+    "id": 177,
+    "question": "A 20-year-old college football player is struck by another athlete and is lying still in the supine\nposition on the field. On examination on the field, the athlete reports bilateral numbness,\ntingling, and pain radiating to his fingertips but does not appear to be confused. He is alert and\napprehensive of cervical range of motion but does not exhibit weakness of the upper extremities.\nWhich one of the following would be the most appropriate management for this athlete?",
+    "options": [
+      "A) Immediate examination for neurologic compromise and return to play if the examination\nis unremarkable",
+      "B) Return to play if symptoms resolve in less than 15 minutes and a repeat neurologic\nexamination is normal",
+      "C) Serial neurologic examinations; if there is no progression of neurologic symptoms, he\nmay remain on the sideline but may not re-enter the same game",
+      "D) Immediate removal of his helmet and pads sequentially, log-rolling him, and\ntransporting him to the emergency department (E",
+      "D) via EMS if symptoms continue for\nmore than 15 minutes",
+      "E) Keeping his helmet and pads intact, log-rolling him, and transporting him to the ED via\nEMS"
+    ],
+    "correctAnswer": 4,
+    "rationale": "According to consensus recommendations, athletes with suspected neck injuries and red flags such as\nbilateral symptoms of pain, numbness, tingling, and apprehension of cervical range of motion should be\nassumed to have a cervical spine injury and should be log-rolled without removal of helmet and pads, and\ntransported via EMS to the emergency department (SOR C). Due to red flags concerning neck injury in\nthis athlete, it is not safe for him to return to the field and he should be emergently transported for further\nassessment and diagnostic imaging. This athlete reported bilateral symptoms, and 15 minutes of resolution\nis not considered acceptable for release and return to play. In the case of a cervical spine injury with\nassociated altered mental status and/or airway compromise, the helmet and pads may be removed but only\nsimultaneously to avoid further cervical injury. Resolution of symptoms within 5 minutes, lack of\nbilaterality, and a normal neurologic examination may allow for return to play at the physician’s discretion.\nRef: Usman S. Management of head and neck injuries by the sideline physician. Am Fam Physician. 2022;106(5):543-548."
+  },
+  {
+    "id": 178,
+    "question": "A patient with early-stage Alzheimer disease is brought to your office by his wife to discuss the\nbenefits and risks of possible major surgery. Which one of the following would be the most\nappropriate next step in determining this patient’s decision-making capacity for surgical informed\nconsent?",
+    "options": [
+      "A) Assessing his ability to understand the risks, benefits, and alternatives",
+      "B) Reviewing his living will",
+      "C) Determining his health care surrogate",
+      "D) Obtaining a competence evaluation",
+      "E) Obtaining a psychiatric evaluation"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Medical decision-making capacity is defined as a patient’s ability to understand the benefits, risks, and\nalternatives to a given treatment, or the option of no treatment. Other elements of medical decision-making\ncapacity include the ability to demonstrate appreciation of said benefits, risks, and alternatives; the ability\nto demonstrate reasoning in making a decision; and the ability to communicate a choice.\nA living will and surrogate decision maker are considerations when a patient has been determined to lack\ndecision-making capacity. They are not used to determine decision-making capacity. A living will is an\nadvance directive that communicates a patient’s values and treatment preferences when and if they are\nincapacitated.\nA surrogate decision maker is an advocate for the patient when it has been determined they do not have\ndecision-making capacity. For example, a surrogate can be someone the patient has appointed in a type\nof advance directive called a durable power of attorney for health care. If the patient has not appointed\nsomeone, then a default person according to state law is specified.\n 69\n\nCapacity and competence are not the same. Capacity is a medical term about the ability or inability to make\ndecisions about medical treatments and care, whereas competence is a legal term referring to global\ndecision-making about issues such as finances, property, and wills. Capacity is determined by the treating\nphysician and can vary with the circumstances of the decision such as its complexity. While a psychiatric\nconsultation may be helpful in certain circumstances, it is not required.\nRef: Talebreza S, Widera E. Advance directives: navigating conflicts between expressed wishes and best interests. Am Fam\nPhysician. 2015;91(7):480-484. 2) Barstow C, Shahan B, Roberts M. Evaluating medical decision-making capacity in\npractice. Am Fam Physician. 2018;98(1):40-46."
+  },
+  {
+    "id": 179,
+    "question": "A 62-year-old female with a history of compensated cirrhosis secondary to nonalcoholic\nsteatohepatitis presents to establish care and has no acute issues. She has read that she may have\nan increased risk for liver cancer and asks if she should be screened.\nWhich one of the following should you advise?",
+    "options": [
+      "A) No routine surveillance, but evaluation based on signs or symptoms",
+      "B) Ultrasonography every 6 months",
+      "C) Annual -fetoprotein testing",
+      "D) Annual CT",
+      "E) Annual MRI\n65"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Patients with cirrhosis are at higher risk for development of hepatocellular carcinoma (HCC). Surveillance\nleads to detection of HCC at earlier stages and improvements in survival rates. It is recommended that\nadults with cirrhosis undergo ultrasonography surveillance every 6 months with or without the addition of\n-fetoprotein levels. Annual CT and annual MRI are not indicated for this patient.\nRef: Heimbach JK, Kulik LM, Finn RS, et al. AASLD guidelines for the treatment of hepatocellular carcinoma. Hepatology.\n2018;67(1):358-380. 2) Smith A, Baumgartner K, Bositis C. Cirrhosis: diagnosis and management. Am Fam Physician.\n2019;100(12):759-770."
+  },
+  {
+    "id": 180,
+    "question": "A 58-year-old female with coronary artery disease and alcohol use disorder presents with\nprogressive shortness of breath over the past 3 weeks. A chest radiograph demonstrates bilateral\npleural effusions that are greater on the right side. Laboratory studies, including pleural fluid\nanalysis, show the following:\nSerum protein                        5.5 g/dL (N 6.0–8.0)\nSerum LDH                         305 IU/L (N 105–333)\nPlasma glucose                       88 mg/dL (N 70–100)\nPleural fluid protein                   2.9 g/dL\nPleural fluid LDH                     295 IU/L\nPleural fluid glucose                   51 mg/dL\nWhich one of the following is the most likely cause of the effusion?",
+    "options": [
+      "A) Cirrhosis of the liver",
+      "B) Congestive heart failure",
+      "C) COPD",
+      "D) Malignancy",
+      "E) Pulmonary embolism"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The modified Light’s criteria are used to determine whether pleural effusions are transudative or exudative.\nThis fluid is exudative as defined by a pleural fluid protein to serum protein ratio >0.5, a pleural fluid\nLDH to serum LDH ratio >0.6, and a pleural fluid LDH greater than two-thirds the upper limit of normal\nfor serum. Lung malignancy is a cause of exudative pleural effusions. Cirrhosis and congestive heart\nfailure cause transudative rather than exudative effusions. COPD does not cause pleural effusions. This\nfluid also has low glucose, which suggests malignancy or infection rather than pulmonary embolism.\nRef: Light RW. Disorders of the pleura. In: Loscalzo J, Fauci AS, Kasper DL, Hauser SL, Longo DL, Jameson JL, eds.\nHarrison’s Principles of Internal Medicine. 21st ed. McGraw Hill; 2022:2197-2200."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 171-180)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

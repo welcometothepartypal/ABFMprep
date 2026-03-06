@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 41-50</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_5',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+// QUIZ 5: Questions 41-50
+const questionsData = [
+  {
+    id: 41,
+    question: "A new lipid-lowering drug is being evaluated for its cardioprotective effects. The event rate for acute myocardial infarction is 0.085 in the low-intensity treatment group and 0.045 in the high-intensity treatment group, yielding an absolute risk reduction (ARR) of 0.04. Which one of the following is the number needed to treat (NNT)?",
+    options: [
+      "A) <1",
+      "B) 25",
+      "C) 40",
+      "D) 50"
+    ],
+    correctAnswer: 1,
+    rationale: "The number needed to treat (NNT) is the number of patients who need to receive a particular treatment in order for 1 patient to benefit. The NNT is the inverse of the absolute risk reduction (ARR), the amount by which a particular treatment reduces the risk of a negative outcome. To calculate the ARR, the experimental event rate (EER) is subtracted from the control event rate (CER). In this example, the low-intensity treatment group had a risk of acute myocardial infarction of 0.085 (CER) whereas the high-intensity treatment group had a risk of 0.045 (EER). This would make the equation: 0.085 – 0.045 = an ARR of 0.04. The NNT is then calculated by dividing 1 by the ARR: 1 / 0.04 = 25. This means that 25 patients would need to receive the high-intensity treatment to prevent 1 additional myocardial infarction."
+  },
+  {
+    id: 42,
+    question: "A 75-year-old female presents to your office with a 3-month history of episodes of lightheadedness on standing. Orthostatic blood pressure testing in your office reveals an initial blood pressure of 134/76 mm Hg that drops to 104/46 mm Hg on standing. A laboratory evaluation is unremarkable and review of her medications does not show an obvious cause for her symptoms. Echocardiography and tilt table testing are unremarkable. You diagnose orthostatic hypotension. Monotherapy with which one of the following would be indicated for the management of this patient's neurogenic orthostatic hypotension?",
+    options: [
+      "A) Atomoxetine (Strattera)",
+      "B) Fludrocortisone",
+      "C) Methylphenidate (Ritalin)",
+      "D) Midodrine",
+      "E) Sodium bicarbonate"
+    ],
+    correctAnswer: 3,
+    rationale: "Midodrine has been found to be the safest and best-tolerated medication for the management of neurogenic orthostatic hypotension (SOR B). Atomoxetine is an adjunctive treatment for neurogenic orthostatic hypotension that is generally successful when added to medication such as midodrine, but it is not effective as monotherapy. Although fludrocortisone is sometimes used off-label for this indication, it should be used with caution because of the risk of left ventricular hypertrophy, renal failure, and hypokalemia. Methylphenidate has not been shown to have a role in the successful treatment of neurogenic orthostatic hypotension. Treatment with sodium tablets is usually inadequate, does not correct the neurogenic issue, and substantially increases the risk of hypernatremia and resultant renal injury."
+  },
+  {
+    id: 43,
+    question: "A 22-year-old female with a past medical history of type 1 diabetes presents to the emergency department with multiple bouts of vomiting. She says that she is not consistently adherent to her insulin regimen. She has a plasma glucose level of 350 mg/dL, elevated ketones, and high anion gap metabolic acidosis. Treatment for diabetic ketoacidosis is initiated with intravenous fluids and insulin therapy. Glucose should be added to this patient's saline infusion when her plasma glucose levels reach which one of the following ranges?",
+    options: [
+      "A) <150 mg/dL",
+      "B) 150–200 mg/dL",
+      "C) 201–250 mg/dL",
+      "D) 251–300 mg/dL",
+      "E) 301–350 mg/dL"
+    ],
+    correctAnswer: 2,
+    rationale: "The mainstay of treatment for diabetic ketoacidosis is intravenous fluid replacement and insulin therapy along with careful monitoring and frequent reassessment. Once plasma glucose levels reach 201–250 mg/dL, glucose should be added to the saline infusion to maintain plasma glucose levels in the 150–200 mg/dL range. Because acidosis and ketosis resolve more slowly than hyperglycemia, glucose needs to be added while insulin and saline therapy are continued."
+  },
+  {
+    id: 44,
+    question: "A 32-year-old female with a recent diagnosis of posttraumatic stress disorder presents to your clinic with difficulty sleeping. She recently left an abusive relationship and has been attending trauma-focused psychotherapy. She has found the psychotherapy helpful, but she continues to experience midsleep awakening due to hyperarousal and nightmares. Which one of the following would be the most appropriate treatment?",
+    options: [
+      "A) Amitriptyline",
+      "B) Mirtazapine (Remeron)",
+      "C) Prazosin",
+      "D) Risperidone (Risperdal)",
+      "E) Temazepam (Restoril)"
+    ],
+    correctAnswer: 2,
+    rationale: "Prazosin is an α2-agonist that decreases sympathetic nervous tone during sleep and has been found to be helpful for midsleep awakening due to hyperarousal and nightmares in patients with posttraumatic stress disorder. Amitriptyline, mirtazapine, and risperidone have significant side-effect profiles and would not be appropriate initial treatments for this patient's sleep symptoms. Temazepam is a benzodiazepine and should be avoided if possible due to its potential for misuse and chronic long-term effects."
+  },
+  {
+    id: 45,
+    question: "A 58-year-old female with type 2 diabetes controlled on metformin recently underwent bariatric surgery. Today, she reports feeling off balance and having a burning sensation in her bilateral hands and feet that is worse at night. She reports difficulty ambulating and has fallen several times over the past few weeks. She has intermittent nausea, vomiting, and confusion, and reports aches and pains all over. A physical examination is significant for absent patellar and Achilles reflexes. Her strength is 4/5 in the bilateral lower extremities with decreased pinprick sensation. Which one of the following is the most likely diagnosis?",
+    options: [
+      "A) Diabetic peripheral neuropathy",
+      "B) Lyme disease",
+      "C) Myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS)",
+      "D) Secondary syphilis",
+      "E) Vitamin B1 deficiency (beriberi)"
+    ],
+    correctAnswer: 4,
+    rationale: "This patient presents with a symmetrical peripheral neuropathy with sensory and motor components that are characteristic of beriberi caused by vitamin B1 deficiency. Risk factors include alcohol use, bariatric surgery, older age, diabetes mellitus, and HIV infection. Severe thiamine deficiency can lead to heart failure. Blood and urine tests for thiamine levels are recommended to confirm the diagnosis. Diabetic peripheral neuropathy usually presents as a symmetric polyneuropathy, but it does not usually involve motor components, except in severe cases. Neurologic manifestations of Lyme disease include meningitis, facial nerve palsy, and radiculoneuritis; peripheral neuropathy is rare with Lyme disease and typically presents as a mononeuropathy, not a polyneuropathy. Myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS) typically occurs after an acute infection with severe fatigue, sleep changes, and cognitive changes exacerbated by physical activity, and is not associated with peripheral neuropathy. Secondary syphilis typically presents with a rash and constitutional symptoms and is not associated with peripheral neuropathy."
+  },
+  {
+    id: 46,
+    question: "A 76-year-old female with a past medical history of hypertension and major depressive disorder presents because of acute right knee pain that began after she sustained a mechanical fall and landed on her knee while taking a walk near her house yesterday. She was able to walk home without difficulty. When asked to point to the pain, she points to an area lateral to the inferior patella. Examination of the knee reveals no redness or swelling but minor warmth over the anterior knee. Lower extremity sensation is intact. The patient has full range of motion with pain. There is no tenderness of the patella or the fibular head with palpation. Provocative testing including an Apley grind test, a McMurray test, a Lachman test, and anterior and posterior drawer tests is negative. Which one of the following would be the most appropriate next step to aid in diagnosis?",
+    options: [
+      "A) No further testing or imaging",
+      "B) Ultrasonography",
+      "C) Radiography",
+      "D) MRI",
+      "E) Arthrocentesis with culture and Gram stain"
+    ],
+    correctAnswer: 2,
+    rationale: "According to the Ottawa knee rules, a well-validated tool used to limit unnecessary radiography, a knee x-ray is indicated in this patient to rule out fracture because she is ≥55 years of age. Radiography is currently the preferred modality over ultrasonography for diagnosing a fracture in an adult. Because ligament and meniscal testing is negative, MRI is not indicated. Arthrocentesis with culture and Gram stain would be indicated if the history and physical examination suggest an infection of the joint space."
+  },
+  {
+    id: 47,
+    question: "A 31-year-old gravida 3 para 2 at 8 weeks' gestation presents to the urgent care clinic because of a 2-day history of headache and fever. This morning she removed an engorged tick from her leg. On examination she is ill appearing but alert and interactive. An HEENT examination is normal and there is no pain with neck flexion. A cardiopulmonary examination is normal. There is no rash. You suspect Rocky Mountain spotted fever. In addition to supportive care, which one of the following would be the most appropriate treatment?",
+    options: [
+      "A) No additional treatment",
+      "B) Amoxicillin",
+      "C) Chloramphenicol",
+      "D) Doxycycline",
+      "E) Erythromycin"
+    ],
+    correctAnswer: 3,
+    rationale: "Doxycycline is the recommended treatment for all individuals with presumed Rocky Mountain spotted fever (RMSF). RMSF can be fatal, so testing for the condition is not recommended because it would delay treatment. Short courses (5–10 days) of doxycycline have been shown to be safe in children and pregnant persons. Inpatient treatment with rapid desensitization is recommended for individuals with a true allergy to doxycycline. Chloramphenicol is another treatment option for RMSF, but it is associated with a higher risk for death than doxycycline. There is no role for amoxicillin or erythromycin in the treatment of RMSF."
+  },
+  {
+    id: 48,
+    question: "A 53-year-old female with no significant past medical history presents to the emergency department with fatigue, pruritus, and right upper quadrant discomfort. A physical examination reveals mild hepatomegaly. Laboratory findings show an alkaline phosphatase of 450 U/L (N 44–147), AST 70 U/L (N 10–40), total bilirubin 1.5 mg/dL (N 0.1–1.2), and positive antimitochondrial antibodies. Which one of the following is the most likely diagnosis?",
+    options: [
+      "A) Autoimmune hepatitis",
+      "B) Drug-induced liver injury",
+      "C) Metabolic dysfunction–associated steatotic liver disease (MASLD) (nonalcoholic fatty liver disease)",
+      "D) Primary biliary cholangitis",
+      "E) Primary sclerosing cholangitis"
+    ],
+    correctAnswer: 3,
+    rationale: "Primary biliary cholangitis is characterized by chronic cholestasis, positive antimitochondrial antibodies (AMA), and elevated alkaline phosphatase (ALP). The AASLD guidelines state that the diagnosis of primary biliary cholangitis can be established with the presence of at least 2 of the following: biochemical evidence of cholestasis (elevated ALP), presence of AMA, and histopathologic evidence of nonsuppurative destructive cholangitis. Elevated AMA is particularly helpful as it is found in >95% of cases. Autoimmune hepatitis usually presents with elevated aminotransferases and positive antinuclear antibodies or anti-smooth muscle antibodies rather than AMA. MASLD typically presents with elevated aminotransferases associated with metabolic syndrome and is not characterized by cholestasis or positive AMA. Primary sclerosing cholangitis is often associated with inflammatory bowel disease and is diagnosed based on characteristic imaging findings of bile duct strictures; positive AMA is rarely found in primary sclerosing cholangitis."
+  },
+  {
+    id: 49,
+    question: "A generally healthy 28-year-old female presents to your office because she is concerned about changes in her mood. For the last few months she has been intermittently irritable and unable to sit still. She has had some weight loss, is not sleeping well, and feels fatigued. She has been working extra hours to get ahead of her office deadlines. She has maxed out her credit card and repeatedly cheated on her husband, who filed for divorce 2 weeks ago. She now feels depressed and anxious, and has considered suicide but does not have suicidal ideations today. She says that she has had similar episodes in the past. Today the patient's vital signs, a CBC, a comprehensive metabolic panel, and TSH and vitamin B12 levels are unremarkable. A urine pregnancy test and drug screen are negative. She is alert and oriented during the office visit. Which one of the following would be the most appropriate therapy at this time?",
+    options: [
+      "A) Bupropion",
+      "B) Paroxetine (Paxil)",
+      "C) Quetiapine (Seroquel)",
+      "D) Sertraline (Zoloft)",
+      "E) Electroconvulsive therapy"
+    ],
+    correctAnswer: 2,
+    rationale: "This patient has features of bipolar disorder, a mental health condition affecting >1% of the world's population. Patients with bipolar disorder have a high suicide rate, so proper diagnosis and prompt treatment are important. FDA-approved medications for the treatment of bipolar disorder include lithium, anticonvulsants, and atypical antipsychotics such as quetiapine. Although this patient has symptoms of depression, monotherapy with an antidepressant is contraindicated in patients with mixed features, manic episodes, or bipolar I disorder. Augmenting therapies such as omega-3 fatty acids, light therapy, ketamine, and probiotics may be helpful but current evidence is insufficient. Electroconvulsive therapy can be an effective treatment for psychotic depression, mania, refractory illness, catatonia, and suicidal behavior. However, pharmacotherapy is the first-line treatment for bipolar disorder."
+  },
+  {
+    id: 50,
+    question: "A 23-year-old nulligravida presents for IUD removal because she wants to conceive. She has never been pregnant, is in good health, and takes no medications. Her blood pressure is normal and her BMI is 33 kg/m2. Which one of the following should you recommend regarding aspirin prophylaxis for preeclampsia?",
+    options: [
+      "A) No aspirin as she does not meet criteria",
+      "B) Aspirin for 1–3 months prior to conception",
+      "C) Aspirin at 12 weeks' gestation",
+      "D) Aspirin if her blood pressure during pregnancy is >135/80 mm Hg"
+    ],
+    correctAnswer: 2,
+    rationale: "The U.S. Preventive Services Task Force and the American College of Obstetricians and Gynecologists recommend aspirin prophylaxis for pregnant patients who are at increased risk for preeclampsia. Indications include 1 or more high-risk factors or 2 or more moderate-risk factors. High-risk factors include a history of preeclampsia, multifetal gestation, kidney disease, autoimmune disease, type 1 or type 2 diabetes, and chronic hypertension. Moderate-risk factors include first pregnancy, maternal age ≥35 years, BMI >30 kg/m2, family history of preeclampsia, sociodemographic characteristics, and personal history factors. This patient is nulliparous and has a pre-pregnancy BMI >30 kg/m2, giving her 2 moderate-risk factors. The recommended aspirin prophylaxis for preeclampsia is 81 mg per day and should be started at 12 weeks' gestation. Low-dose aspirin has been shown to decrease the frequency of preeclampsia as well as other adverse pregnancy outcomes such as intrauterine growth restriction and preterm birth."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 41-50)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

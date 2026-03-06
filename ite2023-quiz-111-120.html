@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 111-120</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2023_12',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 111,
+    "question": "You diagnose hand-foot-and-mouth disease in a 5-year-old male. His parents ask when he can\nreturn to kindergarten.\nYou advise that if he feels well enough to participate, he may return",
+    "options": [
+      "A) 5 days after the onset of symptoms",
+      "B) when afebrile and there are no mouth sores causing drooling",
+      "C) when afebrile as long as all skin lesions can be covered with a dressing",
+      "D) when afebrile and all skin lesions have crusted over\n42"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Hand-foot-and-mouth disease (HFMD) is very common among children younger than 10 years of age, and\nis very easily spread by fecal-oral, oral-oral, and respiratory droplet routes. As the disease is ubiquitous\nand has a very low complication rate, the CDC recommends allowing children to return to school or day\ncare when they are afebrile, feel well enough to participate, and are not actively drooling with mouth\nlesions. There is no specific time course that must be followed, and the status of skin lesions does not\naffect return to school.\nRef: Saguil A, Kane SF, Lauters R, Mercado MG. Hand-foot-and-mouth disease: rapid evidence review. Am Fam Physician.\n2019;100(7):408-414. 2) Hand, foot, and mouth disease (HFMD): how hand, foot, and mouth disease spreads. Centers for\nDisease Control and Prevention. Reviewed May 11, 2023."
+  },
+  {
+    "id": 112,
+    "question": "A 35-year-old female with previously regular menses presents with a 3-month history of\namenorrhea, hot flashes, and increased irritability. A pregnancy test is negative, an estrogen\nlevel is low, and an FSH level is markedly elevated. There is no change in repeat testing 1\nmonth later and you make a diagnosis of primary ovarian insufficiency. Further testing does not\nreveal a cause for her condition. She does not desire more children.\nWhich one of the following should you recommend to this patient for hormone replacement\ntherapy?",
+    "options": [
+      "A) No treatment",
+      "B) Transdermal estradiol without progestogen",
+      "C) Continuous oral estradiol without progestogen",
+      "D) Continuous oral estradiol and cyclic progestogen",
+      "E) Continuous oral estradiol and a levonorgestrel IUD (Mirena)"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Patients with primary ovarian insufficiency should be started on hormone replacement therapy (HRT) as\nsoon as possible after diagnosis, preferably within a year. HRT treats symptoms and benefits bone health,\ncardiovascular health, and cognitive function. It should be continued until the age of expected natural\nmenopause. In a patient with a uterus, protection against endometrial cancer with progesterone is required.\nA significant proportion of patients with this disorder occasionally ovulate or have spontaneous return of\nmenses. HRT does not provide contraception. A levonorgestrel IUD provides both endometrial protection\nand contraception.\nRef: Stuenkel CA, Gompel A. Primary ovarian insufficiency. N Engl J Med. 2023;388(2):154-163."
+  },
+  {
+    "id": 113,
+    "question": "A 40-year-old male presents to the urgent care clinic with a 2-day history of a progressive\ninability to walk. His husband is concerned that he has Guillain-Barré syndrome.\nWhich one of the following, if present in this patient, would be concerning for Guillain-Barré\nsyndrome?",
+    "options": [
+      "A) Afferent pupillary defect",
+      "B) Asymmetric flaccid weakness",
+      "C) Muscle spasticity",
+      "D) Nystagmus",
+      "E) Symmetric hyporeflexia"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Guillain-Barré syndrome (GBS) is a common cause of acute weakness. While the clinical presentation can\nvary, patients commonly present with progressive symmetric ascending flaccid weakness and symmetrical\nhyporeflexia or areflexia. Asymmetric flaccid weakness and muscle spasticity are not seen in GBS. While\npatients may have cranial nerve findings, those are not common. Nystagmus is not typically associated with\nGBS.\nRef: Shahrizaila N, Lehmann HC, Kuwabara S. Guillain-Barré syndrome. Lancet. 2021;397(10280):1214-1228.\n 44"
+  },
+  {
+    "id": 114,
+    "question": "You are instructing a new medical assistant in preordering laboratory studies for upcoming\npatients. You have a series of patients with appointments for physical examinations in the next\nweek.\nBased on U.S. Preventive Services Task Force guidelines, which one of the following patients\nshould have a screening fasting glucose level or hemoglobin A1c?",
+    "options": [
+      "A) A 24-year-old female with a BMI of 26 kg/m2",
+      "B) A 36-year-old male with a BMI of 27 kg/m2",
+      "C) A 52-year-old female with a BMI of 22 kg/m2",
+      "D) A 72-year-old male with a BMI of 32 kg/m2",
+      "E) An 84-year-old female with a BMI of 40 kg/m2\n43"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends that all nonpregnant adults ages 35–70\nwho are overweight (BMI 25 kg/m2) or obese (BMI 30 kg/m2) be screened for diabetes mellitus and\nprediabetes with a fasting glucose level, hemoglobin A1c, or glucose tolerance test (B recommendation).\nIn 2021, the age of screening was decreased from 40 to 35.\nIn addition to the above recommendations, patients with a family history of diabetes or a personal history\nof gestational diabetes or polycystic ovary syndrome should be considered for screening at a younger age.\nIn patients who belong to groups with high rates of diabetes such as American Indian/Alaska Native, Asian\nAmerican, Black, Hispanic/Latino, or Native Hawaiian/Pacific Islander, screening can also start at a\nyounger age. The recommended interval for screening is every 3 years.\nRoutine screening for prediabetes and diabetes in persons over the age of 70 is not a current\nrecommendation. While the risk of prediabetes and diabetes increases with age, patients older than 70 with\nprediabetes have a low likelihood of progressing to diabetes. More commonly, they either maintain\nprediabetes status or regress to normoglycemia (SOR B).\nRef: US Preventive Services Task Force. Final recommendation statement: prediabetes and type 2 diabetes: screening. Updated\nAugust 24, 2021. 2) Rooney MR, Rawlings AM, Pankow JS, et al. Risk of progression to diabetes among older adults with\nprediabetes. JAMA Intern Med. 2021;181(4):511-519."
+  },
+  {
+    "id": 115,
+    "question": "A randomized, controlled study of 300 participants tested the effectiveness of a new medication\nto reduce breast cancer–related deaths. Within 2 years of treatment, 15 out of 150 participants\nwith breast cancer in the treatment group died, while 60 out of the 150 participants in the control\ngroup died.\nBased on this study, what is the number needed to treat to prevent one breast cancer–related\ndeath?",
+    "options": [
+      "A) 2",
+      "B) 3",
+      "C) 5",
+      "D) 10",
+      "E) 15"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The number needed to treat (NNT) is the number of patients who need to be treated with a specific\nmedication to prevent one negative outcome or to achieve one positive outcome. It is the inverse of the\nabsolute risk reduction (ARR), which is the difference in risk between participants in the control group and\nthe treatment group. The closer the NNT is to 1, the more effective the new treatment is versus the\nplacebo.\nEvent rate in the control group (CER) = 60/150 = 0.4\nEvent rate in the experimental group (EER) = 15/150 = 0.1\nAbsolute risk reduction (ARR) = CER – EER = 0.4 – 0.1 = 0.3\nNNT = 1/ARR = 3.33\nRef: EBM tools: number needed to treat. Oxford University’s Centre for Evidence-Based Medicine."
+  },
+  {
+    "id": 116,
+    "question": "An 88-year-old female is admitted to the hospital with a hip fracture after tripping and falling,\nand her orthopedist recommends surgery. You are consulted for co-management and risk\nstratification prior to surgery.\nThe patient has a history of controlled blood pressure and had a coronary artery bypass graft 10\nyears earlier. She is not experiencing any cardiac symptoms or syncope.\nThe most appropriate intervention would be operative management within how many hours?",
+    "options": [
+      "A) 48",
+      "B) 60",
+      "C) 72",
+      "D) 84",
+      "E) 96"
+    ],
+    "correctAnswer": 0,
+    "rationale": "The American Academy of Orthopaedic Surgeons’ clinical practice guideline recommends operative\nmanagement of a hip fracture within 24–48 hours of injury unless a delay is needed to stabilize\ncomorbidities (SOR C). Early intervention reduces complications, improves pain control, and reduces the\nduration of hospitalization.\n 45\n\nRef: American Academy of Orthopaedic Surgeons. Management of hip fractures in older adults: evidence-based clinical practice\nguideline. American Academy of Orthopaedic Surgeons, 2021. 2) Schroeder JD, Turner SP, Buck E. Hip fractures:\ndiagnosis and management. Am Fam Physician. 2022;106(6):675-683."
+  },
+  {
+    "id": 117,
+    "question": "A 42-year-old male presents for evaluation of a persistent cough. Three weeks ago, he developed\na runny nose, dry cough, and generalized malaise without fever. One week later, he began to\ndevelop persistent fits of coughing followed by bouts of posttussive emesis. You suspect\npertussis.\nWhich one of the following laboratory tests should be used to confirm your diagnostic suspicion?",
+    "options": [
+      "A) Culture",
+      "B) Direct fluorescent antibody assay",
+      "C) Polymerase chain reaction (PCR)",
+      "D) Serology for IgG\n44"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Polymerase chain reaction (PCR) is the most rapid and accurate test to confirm pertussis and is the\ndiagnostic test of choice (evidence rating B). Cultures are challenging to grow and results take 7–10 days.\nDirect fluorescent antibody assays have low sensitivity and specificity and are no longer used. Serology\nfor IgG does not peak until the paroxysmal and convalescent stages, and is used primarily for\nepidemiologic purposes.\nRef: Kline JM, Smith EA, Zavala A. Pertussis: common questions and answers. Am Fam Physician. 2021;104(2):186-192."
+  },
+  {
+    "id": 118,
+    "question": "A 9-year-old male has persistent severe depression despite cognitive behavioral therapy. Which\none of the following medications is approved by the FDA for the treatment of major depressive\ndisorder in this age group?",
+    "options": [
+      "A) No antidepressant medications",
+      "B) Bupropion (Wellbutrin)",
+      "C) Escitalopram (Lexapro)",
+      "D) Fluoxetine (Prozac)",
+      "E) Sertraline (Zoloft)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Only two medications, escitalopram and fluoxetine, are approved by the FDA for the treatment of major\ndepressive disorder in children and adolescents. Fluoxetine is approved for treatment in children age 8\nwhile escitalopram is only approved for use in children age 12. Bupropion and sertraline are not approved\nby the FDA for the treatment of major depressive disorder in children.\nRef: Selph SS, McDonagh MS. Depression in children and adolescents: evaluation and treatment. Am Fam Physician.\n2019;100(10):609-617."
+  },
+  {
+    "id": 119,
+    "question": "A 52-year-old male sees you for follow-up after a recent right-sided ischemic stroke. The\nevaluation in the hospital demonstrated an unremarkable cardiac workup, an LDL-cholesterol\nlevel of 110 mg/dL, and a right internal carotid artery stenosis of 45%. His blood pressure today\nis 120/75 mm Hg and an examination is notable for some residual right-sided facial weakness.\nHis current medications are aspirin, clopidogrel (Plavix), and hydrochlorothiazide.\nWhich one of the following would be most likely to reduce his risk for a secondary stroke?",
+    "options": [
+      "A) Atorvastatin (Lipitor)",
+      "B) Losartan (Cozaar)",
+      "C) Warfarin",
+      "D) Carotid endarterectomy"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Two randomized, controlled trials (RCTs) have demonstrated significant reduction in risk for secondary\nstroke with high-dose statin therapy. The studies further demonstrated that an LDL-cholesterol goal <70\nmg/dL was superior to targets of 90–100 mg/dL in preventing secondary stroke events.\nData from RCTs and large meta-analyses show compelling evidence that blood pressure targets in patients\nwith previous stroke should be similar to targets for other cardiovascular conditions, namely <130/80 mm\nHg. There has been no benefit shown with lower blood pressure targets. Although angiotensin receptor\nblockers such as losartan are recommended for the treatment of hypertension, there is limited evidence of\nefficacy for secondary stroke prevention, so losartan would not be appropriate for this patient whose blood\npressure is at goal. Use of warfarin in addition to aspirin does not provide any benefit and increases the\nrisk for hemorrhage. Several randomized clinical trials have demonstrated that the greatest benefit for\ncarotid endarterectomy (CEA) was in asymptomatic patients with >70% stenosis, with other analyses\ndemonstrating no benefit in patients with <50% stenosis. In symptomatic patients (e.g., ipsilateral TIA\nor nondisabling stroke), CEA is recommended in those with moderate (50%–69%) or severe (70%–99%)\ncarotid artery stenosis.\nRef: Kleindorfer DO, Towfighi A, Chaturvedi S, et al. 2021 guideline for the prevention of stroke in patients with stroke and\ntransient ischemic attack: a guideline from the American Heart Association/American Stroke Association. Stroke.\n2021;52(7):e364-e467.\n 46"
+  },
+  {
+    "id": 120,
+    "question": "A 48-year-old male presents to the emergency department for an initial episode of acute gallstone\npancreatitis with a lipase level of 700 U/L (N 10–140). A right upper quadrant ultrasound shows\ngallstones within the gallbladder but is otherwise normal. He is treated with intravenous fluids\nand medications to control pain and nausea, and is admitted to a regular medical floor bed. The\nnext morning he reports that his symptoms are improving with oral medications. A physical\nexamination is notable for normal vital signs and mild epigastric tenderness. A comprehensive\nmetabolic panel shows improving leukocytosis and stable parameters including a normal bilirubin\nlevel.\nWhich one of the following management options is most appropriate in this situation?",
+    "options": [
+      "A) Rechecking a serum lipase level and starting oral feeding if the result is normal",
+      "B) Initiating enteral feeding through a nasojejunal tube",
+      "C) Initiating parenteral feeding through an intravenous line",
+      "D) Consulting a gastroenterologist for endoscopic retrograde cholangiopancreatography\n(ERCP)",
+      "E) Consulting a general surgeon for cholecystectomy during this admission\n45"
+    ],
+    "correctAnswer": 4,
+    "rationale": "When compared to delayed cholecystectomy, early cholecystectomy has been shown to decrease\ncomplications, hospital readmission rates, and length of hospital stay without increasing surgical\ncomplication rates. Therefore, patients with mild acute gallstone pancreatitis should be considered for\ncholecystectomy during the index admission (SOR B). Evidence also supports early enteral feeding as\ntolerated, as opposed to restricted oral intake (SOR A). In this case, the patient should be offered oral\nfeeding without a repeat serum lipase level factoring into this decision. Both placement of an enteral\nfeeding tube and initiation of parenteral nutrition would be inappropriate, given the evidence to support\nearly oral feeding. The risks of parenteral feeding include longer hospitalization and increased rates of\ninfection, multiorgan failure, and mortality when compared to enteral feeding (SOR A). Endoscopic\nretrograde cholangiopancreatography (ERCP) within 24 hours is indicated when acute pancreatitis is\ncomplicated by cholangitis or persistent biliary tract obstruction, but otherwise it is not indicated.\nRef: Crockett SD, Wani S, Gardner TB, Falck-Ytter Y, Barkun AN; American Gastroenterological Association Institute Clinical\nGuidelines Committee. American Gastroenterological Association Institute guideline on initial management of acute\npancreatitis. Gastroenterology. 2018;154(4):1096-1101. 2) Oppenlander KE, Chadwick C, Carman K. Acute pancreatitis:\nrapid evidence review. Am Fam Physician. 2022;106(1):44-50."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 111-120)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

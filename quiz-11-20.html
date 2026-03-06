@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 11-20</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+          {
+            id: 11,
+            question: "A 40-year-old male with type 2 diabetes presents to the emergency department with chest pain and shortness of breath. The patient has normal vital signs. A physical examination and laboratory tests, including serial troponin levels, are normal. Outpatient records from about 6 months ago include a normal cardiac stress test that was negative for myocardial ischemia.\n\nWhich one of the following would be the most appropriate next step in evaluation?",
+            options: [
+              "A) Stress echocardiography",
+              "B) Coronary CT angiography",
+              "C) Fractional flow reserve with CT",
+              "D) Cardiac MRI"
+            ],
+            correctAnswer: 1,
+            rationale: "For this intermediate-risk patient with no history of coronary artery disease (CAD) who presents with angina and a negative workup for acute coronary syndrome plus negative stress testing within 1 year, coronary CT angiography would be the next step to determine if he has obstructive CAD or atherosclerotic plaques. A repeat stress test would not be indicated. Fractional flow reserve with CT is useful to help guide revascularization after an abnormal coronary CT angiogram reveals vessel stenosis. Cardiac MRI would be useful to determine structural abnormalities."
+          },
+          {
+            id: 12,
+            question: "A 40-year-old male with a history of alcohol use disorder presents to your office for help abstaining from alcohol. Until recently, he has been drinking at least 6 beers per day and often more on weekend days. He has 2 prior arrests for DUI, and his wife plans to file for divorce if he does not change. Over the past 2 weeks, he has been able to wean himself off alcohol and has joined a sobriety group. He requests medication to help him maintain his sobriety.\n\nWhich one of the following medications should you recommend for this patient?",
+            options: [
+              "A) Acamprosate",
+              "B) Disulfiram",
+              "C) Gabapentin (Neurontin)",
+              "D) Topiramate (Topamax)"
+            ],
+            correctAnswer: 0,
+            rationale: "This patient meets criteria for moderate alcohol use disorder (AUD). Although AUD is a leading cause of preventable death, less than 2% of patients with AUD are prescribed medications. Acamprosate is recommended for patients who have achieved abstinence and desire to maintain it (SOR A). Gabapentin is useful for the prevention of withdrawal and is safe for those who are still drinking (SOR A). Topiramate is useful in decreasing heavy drinking (SOR B). There is insufficient evidence to recommend disulfiram."
+          },
+          {
+            id: 13,
+            question: "A 15-year-old male presents to your office with an intensely pruritic rash 2 days after returning from a camping trip in the woods. On examination you observe a rash on the hands, arms, face, and genitals with vesicles and a few bullae.\n\nWhich one of the following would be the most appropriate treatment option?",
+            options: [
+              "A) Topical clobetasol, applied twice daily to affected areas until symptoms resolve",
+              "B) Oral methylprednisolone, starting at 1 mg/kg and tapering over 5 days",
+              "C) Oral prednisone, starting at 1 mg/kg and tapering over 15 days",
+              "D) Subcutaneous triamcinolone, 80 mg once",
+              "E) Draining the bullae and large vesicles"
+            ],
+            correctAnswer: 2,
+            rationale: "Poison ivy is perhaps the most common cause of allergic contact dermatitis in the United States, causing up to 10 million persons annually to seek medical care. Caused by the oleoresin urushiol that is present in Toxicodendron species (poison ivy, sumac, oak), allergic contact dermatitis is a type IV delayed hypersensitivity reaction. Symptoms develop 12–72 hours after exposure. Prior sensitization is necessary. The rash has varying presentations, including irregular erythematous patches, linear streaks of vesicles, and larger fluid-filled bullae. The blister fluid does not cause the rash to spread. This illusion of spreading is due to the time variability in when the rash develops (hours to days) based on how much resin was in contact with the skin.\n\nSystemic corticosteroids are indicated for facial, genital, or significant vesiculobullous involvement. In type IV hypersensitivity reactions, rebound inflammation occurs if treatment with corticosteroids is insufficient in dose or duration. The most effective treatment in this patient would be a 15-day prednisone taper, starting with 1 mg/kg (60 mg at maximum). A single injection of triamcinolone has variable efficacy and often does not take effect as quickly as oral prednisone; however, if used, it should be administered intramuscularly, never subcutaneously, due to the likelihood of lipoatrophy.\n\nTopical corticosteroids, even the most potent formulations, do not work on bullous lesions and are contraindicated on the face and genitals. A common prescription for poison ivy dermatitis is a 5-day dose pack of methylprednisolone. This provides temporary improvement but is frequently followed by a rebound in rash, which indicates an insufficient dose and duration of the corticosteroid. There is no indication for draining the bullae or vesicles in this patient."
+          },
+          {
+            id: 14,
+            question: "A 50-year-old male sees you for follow-up of a pulmonary nodule. He recently presented to the emergency department (ED) after a motor vehicle accident in which he sustained a broken clavicle. A CT scan in the ED showed a 6-mm, incidental, solid pulmonary nodule and he was advised to follow up with his primary care physician. Today the patient is asymptomatic other than muscle soreness. He does not have any history of smoking. An examination does not reveal any enlarged lymph nodes.\n\nWhich one of the following would be the most appropriate next step in management?",
+            options: [
+              "A) No additional follow-up",
+              "B) A repeat CT scan in 6–12 months",
+              "C) A repeat CT scan in 18–24 months",
+              "D) Biopsy of the nodule to determine pathology",
+              "E) Referral to a pulmonologist"
+            ],
+            correctAnswer: 1,
+            rationale: "Evaluation of a pulmonary nodule balances the benefits of minimal testing for benign nodules with the risks of malignant nodules. It requires knowledge of the factors associated with the probability that the nodule is malignant, the performance characteristics of additional testing, and the advantages and disadvantages of more or less intensive follow-up. The probability of malignancy and the effectiveness of diagnostic tests depend on the size and characteristics of the nodule, which can be classified into 3 categories: small solid nodules, larger solid nodules, and subsolid nodules. A solid nodule between 6 mm and 8 mm should be monitored with CT of the chest in 6–12 months. Flexibility in these time intervals (eg, 3–6 months, 6–12 months) is included in the guidelines to accommodate nodule features other than size, as well as clinician and patient preferences. A solid nodule that has remained unchanged in size on chest CT over a period of 2 years or longer is considered benign. Primary care physicians should consider referral to a pulmonologist for patients with a larger solid nodule (8–30 mm) or a subsolid nodule due to their higher risk of malignancy."
+          },
+          {
+            id: 15,
+            question: "A 42-year-old male presents with a 3-month history of intermittent abdominal pain and fatigue. He generally feels discomfort in the upper abdomen and feels nauseated when eating. He works as a mechanic and has arthritis, for which he takes 600–800 mg of ibuprofen. He drinks 6–8 beers nightly, but does not smoke or use other substances. You order some preliminary laboratory studies, which show the following results:\n\nSodium 137 mEq/L (N 135–145)\nPotassium 4.9 mEq/L (N 3.8–5.0)\nChloride 101 mEq/L (N 98–107)\nCreatinine 1.0 mg/dL (N 0.3–1.5)\nBUN 37 mg/dL (N 10–20)\nCalcium 9.1 mg/dL (N 9.0–10.5)\nHemoglobin 8.8 g/dL (N 12.0–15.0)\n\nWhich one of the following would be the most appropriate next step in management?",
+            options: [
+              "A) A high-dose proton pump inhibitor",
+              "B) Endoscopy",
+              "C) Nasogastric lavage",
+              "D) Blood transfusion",
+              "E) Arterial embolization"
+            ],
+            correctAnswer: 0,
+            rationale: "This patient likely has an upper gastrointestinal (GI) bleed from erosive gastritis or peptic ulcer disease. This is suggested by a history of abdominal pain and nausea and the consistent use of ibuprofen with alcohol. The patient's BUN is elevated, and his hemoglobin level shows anemia. Given that the patient is hemodynamically stable and his hemoglobin level is above the transfusion threshold, he does not need excessive workup prior to treatment, but guidelines recommend initiating a proton pump inhibitor on presentation with no delay regardless of status for endoscopy.\n\nUrgent endoscopy is only indicated in patients with hemodynamic instability and signs of upper GI bleeding. There are no randomized, controlled trials or guidelines to support the use of nasogastric lavage. Current guidelines recommend blood transfusion for patients with upper gastrointestinal bleeding when the hemoglobin level is <7 g/dL in most cases or <8 g/dL (80 g/L) in patients with coronary artery disease, recent cardiac surgery, or hematologic malignancies. Arterial embolization is only performed if endoscopy has failed to control bleeding."
+          },
+          {
+            id: 16,
+            question: "You see a 6-month-old infant for a routine visit. The child has started teething and the parents are concerned about preventing cavities, as their municipality does not fluoridate the water.\n\nIn addition to providing daily oral fluoride supplementation, which one of the following should you recommend?",
+            options: [
+              "A) Brushing the emerging teeth daily with a rice-sized amount of fluoridated toothpaste",
+              "B) Using mouthwash as an adjunct to toothbrushing until age 5",
+              "C) Application of fluoride varnish to teeth annually, starting at age 1",
+              "D) Application of fluoride varnish to teeth twice yearly, starting at age 3"
+            ],
+            correctAnswer: 0,
+            rationale: "Fluoride is widely recognized for its role in preventing dental caries, and community water fluoridation remains a safe, effective, and evidence-based strategy for improving oral health. Dietary supplements are recommended for infants and children when the community water supply is nonfluoridated. It is also recommended for parents to brush the teeth of infants and toddlers once or twice daily with a rice-sized amount of fluoridated toothpaste, increasing to a pea-sized amount of toothpaste at age 3. At age 6, children are less likely to swallow toothpaste, which can lead to fluorosis (permanent brownish staining of teeth). Children may be more independent in toothbrushing starting at age 6, although some may still need assistance for adequate brushing.\n\nMouthwash with or without fluoride should not be used in children younger than 6 years. It can be used after age 6 if the child can reliably spit out the mouthwash rather than swallow it. Starting at the emergence of the first tooth, fluoride varnish should be applied every 3 months for children at high risk of caries and every 6 months for all other children."
+          },
+          {
+            id: 17,
+            question: "A 75-year-old male presents to your office with his family. Although he is a long-term patient of yours, you have not seen him in more than 1 year. His family tells you that they have noticed a gradual progression of neurologic symptoms over the past 6 months, including a noticeably slower gait and a tremor of his right hand. The patient says that he has noticed worsening short-term memory loss.\n\nOn examination, the patient has a flat affect and speaks slowly. You observe a shuffling gait and a resting pill-rolling tremor of his right hand. You also note cogwheel rigidity of his right arm.\n\nWhich one of the following would be the most appropriate initial medication for the treatment of this patient's condition?",
+            options: [
+              "A) Amitriptyline",
+              "B) Carbidopa/levodopa (Sinemet)",
+              "C) Fluoxetine (Prozac)",
+              "D) Gabapentin (Neurontin)",
+              "E) Propranolol hydrochloride"
+            ],
+            correctAnswer: 1,
+            rationale: "This patient likely presents with Parkinson disease based on the hallmark symptoms and physical examination findings. First-line medications for Parkinson disease are carbidopa/levodopa, monoamine oxidase-B inhibitors, and nonergot dopamine agonists.\n\nAmitriptyline is a tricyclic antidepressant that is commonly used for treatment of depression and neuropathic pain. It is on the Beers Criteria list and must be used with great caution in older patients. Fluoxetine is typically prescribed for major depressive disorder, which is likely not the primary diagnosis in this patient. Furthermore, the Beers Criteria list cautions against prescribing fluoxetine in older patients. Gabapentin is typically used for partial seizures and postherpetic neuralgia. Propranolol hydrochloride is effective for management of essential tremor, but this patient's clinical picture is more indicative of Parkinson disease."
+          },
+          {
+            id: 18,
+            question: "A 26-year-old female presents to your clinic because of headache and vision changes. She has also noticed an increase in the size of her hands and feet, changes to her facial features, carpal tunnel symptoms, proximal muscle weakness, fatigue, and menstrual irregularities. MRI of the brain shows a 7-mm pituitary adenoma.\n\nWhich one of the following diagnostic tests is most likely to be abnormal in this patient?",
+            options: [
+              "A) A dexamethasone suppression test",
+              "B) A serum prolactin level",
+              "C) A TSH level",
+              "D) A serum insulin-like growth factor 1 level"
+            ],
+            correctAnswer: 3,
+            rationale: "Pituitary adenomas are classified according to their primary cell origin and the specific hormones they produce. Somatotroph adenomas secrete growth hormone and cause symptoms consistent with acromegaly, including an increase in hand and foot size, enlargement of the mandible, carpal tunnel symptoms, fatigue, proximal muscle weakness, and menstrual irregularities. Somatotroph adenomas are diagnosed by a high serum insulin-like growth factor 1 level. Corticotroph adenomas secrete corticotropin (ACTH) and cause symptoms consistent with Cushing disease such as mood changes, weight gain, proximal muscle weakness, easy bruising, and menstrual irregularity. Corticotroph adenomas can be diagnosed by an abnormal result on a dexamethasone suppression test. Lactotroph adenomas secrete prolactin and cause symptoms consistent with hyperprolactinemia such as galactorrhea, decreased libido, and oligomenorrhea or amenorrhea. Lactotroph adenomas can be diagnosed with an elevated serum prolactin level. Thyrotroph adenomas secrete TSH and cause symptoms consistent with hyperthyroidism such as weight loss, palpitations, heat intolerance, and anxiety. Thyrotroph adenomas can be diagnosed with elevated TSH, free T4, and total T4 levels."
+          },
+          {
+            id: 19,
+            question: "An otherwise healthy 52-year-old female with a past surgical history of hysterectomy for the treatment of uterine fibroids presents with increasing episodes of hot flashes lasting 3–5 minutes and occurring 5–10 times per day over the past 5 months. She finds the symptoms highly disruptive and is interested in options for medical therapy.\n\nWhich one of the following would be the most effective therapy for this patient's symptoms?",
+            options: [
+              "A) A transdermal estradiol patch (Climara)",
+              "B) Transdermal testosterone gel (AndroGel)",
+              "C) Vaginal estradiol cream (Estrace Vaginal)",
+              "D) Soy phytoestrogen supplementation",
+              "E) Paroxetine (Paxil)"
+            ],
+            correctAnswer: 0,
+            rationale: "Oral or transdermal estrogen is the most effective treatment for vasomotor symptoms in menopausal women (SOR A). Antidepressants, including SSRIs and SNRIs, are effective alternatives to hormone therapy for the treatment of vasomotor symptoms in menopause (SOR A). The SSRI paroxetine is FDA approved for this indication. Testosterone therapy is not effective for vasomotor symptoms. Vaginal estrogen cream is recommended for women whose primary symptoms are vaginal rather than vasomotor. Phytoestrogen supplements such as soy have not been shown to consistently improve vasomotor symptoms associated with menopause (SOR B)."
+          },
+          {
+            id: 20,
+            question: "A 25-year-old male is brought to the level 1 trauma center with a gunshot wound. He is awake, alert, and oriented, and has full capacity for decision-making. The patient then becomes hemodynamically unstable with a blood pressure of 80/40 mm Hg, a heart rate of 140 beats/min, and a hemoglobin level of 4.0 g/dL (N 14.0–18.0). Whole blood transfusion is indicated, but the patient refuses blood products as he is a practicing Jehovah's Witness. An advance directive on file at the hospital confirms this. He is aware that not administering blood will most likely cause his death. You disagree with the patient and would like to administer a whole blood transfusion as his condition is life-threatening.\n\nWhich one of the following would be the most appropriate next step?",
+            options: [
+              "A) Presenting the case to the ethics committee",
+              "B) Respecting the patient's wishes by avoiding transfusion",
+              "C) Consulting the patient's family and administering whole blood with their approval",
+              "D) Administering packed RBCs",
+              "E) Administering whole blood"
+            ],
+            correctAnswer: 1,
+            rationale: "When a patient has either an advance directive or demonstrates decision-making capacity, their autonomous refusal of treatment must be respected, even if it leads to adverse medical outcomes or conflicts with the physician's values or ethical beliefs. Blood refusal directives are considered legally binding and physicians have been found liable for violating religious freedom when violating these directives. Transfusion of blood products may be permissible for patients who are Jehovah's Witnesses if they are incapacitated and require transfusion but do not have a blood refusal directive or surrogate decision-maker."
+          }
+        ];
+
+        function saveQuizResult(correctCount, totalCount, missedArr) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_2',
+              JSON.stringify({ correct: correctCount, total: totalCount, missed: missedArr })
+            );
+          } catch(e) {}
+        }
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              const finalScore = answeredQuestions.filter(a => a.correct).length + (selectedAnswer === question.correctAnswer ? 1 : 0);
+              const missed = answeredQuestions
+                .filter(a => !a.correct)
+                .map(a => a.questionId - 10);
+              if (selectedAnswer !== question.correctAnswer) {
+                missed.push(question.id - 10);
+              }
+              saveQuizResult(finalScore, questionsData.length, missed);
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const finalCorrect = answeredQuestions.filter(a => a.correct).length;
+            const percentage = Math.round((finalCorrect / questionsData.length) * 100);
+            const missedQuestions = answeredQuestions.filter(a => !a.correct).map(a => a.questionId);
+
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {finalCorrect} out of {questionsData.length}
+                      </p>
+                    </div>
+
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {missedQuestions.length > 0 && (
+                      <div className="mb-6 p-4 bg-red-50 rounded-lg text-left">
+                        <h3 className="font-semibold mb-1 text-red-800">Questions to review:</h3>
+                        <p className="text-red-700 text-sm">Questions {missedQuestions.join(', ')}</p>
+                      </div>
+                    )}
+
+                    <p className="text-xs text-gray-400 mb-4">Your score has been saved to the Study Hub calculator.</p>
+
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 11–20)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed whitespace-pre-line">{question.question}</p>
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed whitespace-pre-line">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

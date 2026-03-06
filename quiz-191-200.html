@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 191-200</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_20',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 191,
+    "question": "A healthy 57-year-old female presents for an annual health maintenance visit. Her last menstrual period was 2 years ago. She exercises 5 times per week, does not smoke, and rarely drinks alcohol. Her BMI is 23 kg/m2. Her 80-year-old mother has no history of fractures, but takes alendronate (Fosamax), 70 mg weekly. According to the U.S. Preventive Services Task Force, which one of the following would be the preferred strategy to screen for osteoporosis in this patient?",
+    "options": [
+      "A) Using the FRAX tool now to determine the need for DXA screening",
+      "B) Using the FRAX tool at age 65 to determine the need for DXA screening",
+      "C) Screening now with DXA",
+      "D) Screening at age 65 with DXA"
+    ],
+    "correctAnswer": 3,
+    "rationale": "According to the U.S. Preventive Services Task Force (USPSTF), women ≥65 years of age should be screened for osteoporosis using DXA bone mineral density testing, regardless of fracture risk assessment. Postmenopausal women <65 years of age with 1 or more additional risk factors such as smoking, excessive alcohol consumption, or parental history of hip fracture should also be screened with DXA. This patient does not have any significant risk factors. Tools such as FRAX can be used to help counsel patients regarding the future risk of fracture, but they are not intended to be used to determine who should receive further screening with DXA."
+  },
+  {
+    "id": 192,
+    "question": "You are evaluating a patient with acute-on-chronic kidney disease and a serum potassium level of 6.5 mEq/L (N 3.3–5.0). In addition to peaked T waves, which one of the following additional electrocardiogram changes is most likely to be present?",
+    "options": [
+      "A) Delta waves",
+      "B) Prolonged QRS interval",
+      "C) Prolonged QT interval",
+      "D) ST segment depression",
+      "E) U waves"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Hyperkalemia (potassium level >5.0 mEq/L) can occur with impaired renal excretion, transcellular shifts, and increased potassium intake. Management of severe hyperkalemia includes using diagnostic EKG to identify cardiac conditions requiring emergent treatment. EKG changes associated with hyperkalemia include peaked T waves, prolonged PR interval, loss of P waves, and prolonged QRS interval. Hyperkalemia resulting in prolonged QRS interval, bradycardia, and junctional rhythm is associated with adverse events, including ventricular fibrillation, cardiopulmonary resuscitation, and death within 6 hours of measurement. Findings associated with hypokalemia (potassium level <3.5 mEq/L) include flattened T waves, prolonged QT interval, ST segment depression, U waves, and T- wave inversion. Delta waves are not associated with potassium disorders but are present in Wolff-Parkinson-White syndrome."
+  },
+  {
+    "id": 193,
+    "question": "A 15-year-old male comes to your clinic 30 minutes after being hit in the face by a baseball during practice. He is alert and answers questions appropriately. After clearing the blood, you find that his upper front tooth (No. 8) is quite loose and the root is visible. The tooth is lying lower than his other teeth. The tooth appears intact and without fracture. There is no crepitus or pain when palpating the alveolar and mandibular bones. You immediately call his dentist to arrange an emergency appointment. Which one of the following would be the most appropriate next step prior to sending the patient to the dentist's office?",
+    "options": [
+      "A) No intervention is needed",
+      "B) Repositioning the tooth in the socket and having the patient bite down on gauze",
+      "C) Gently removing the tooth and placing it in saline or milk",
+      "D) Ceftriaxone, 1 g intramuscularly",
+      "E) Imaging of the facial bones"
+    ],
+    "correctAnswer": 1,
+    "rationale": "For dislodged or fully avulsed permanent teeth, immediate reimplantation or repositioning is recommended (SOR C). Time is imperative in saving teeth. If reimplantation does not occur within 1 hour, there is little likelihood that it will be successful. If possible, replace the tooth in its anatomic position and have the patient bite down on a washcloth or gauze to keep it in place. It is not advised to remove a loose tooth, as the safest medium for the tooth is the socket. If the tooth is fully avulsed, hold it by the crown, rinse with saline, and reimplant. A tooth that cannot be reimplanted should be placed in a saline solution or milk. Antibiotic treatment is not imperative at this time. Without evidence of a dental or bony fracture, immediate imaging is not necessary as it would delay reimplantation and referral to a dentist."
+  },
+  {
+    "id": 194,
+    "question": "A 50-year-old female presents for follow-up of laboratory studies. At her last visit, she presented with palpitations, anxiety, and unintentional weight loss. An examination was notable for exophthalmos. Her laboratory results show a very low TSH level with elevated free T and normal total T levels. A radioactive iodine uptake scan demonstrates a high, 4 3 homogeneous uptake of iodine. Which one of the following medications is the most appropriate treatment for this condition?",
+    "options": [
+      "A) Levothyroxine (Synthroid)",
+      "B) Methimazole",
+      "C) Prednisone",
+      "D) Propylthiouracil",
+      "E) Verapamil"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient has hyperthyroidism, specifically Graves disease. Diffusely high radioactive iodine uptake differentiates Graves disease from other thyroid conditions, including toxic adenoma (high uptake concentrated in one spot), toxic multinodular goiter (high uptake in multiple spots), and thyroiditis (low uptake). Treatment options for Graves disease include antithyroid medications, radioactive iodine ablation, and surgical thyroidectomy. The most appropriate treatment is usually determined based on the risks and benefits of each option and patient preference. Methimazole is the preferred antithyroid medication for treatment of Graves disease due to its improved safety profile compared to propylthiouracil, which has a greater risk of severe liver injury. Pregnant patients in the first trimester should be treated with propylthiouracil because it has a lower teratogenic risk than methimazole. Levothyroxine is used to treat hypothyroidism. Prednisone is used to treat severe hyperthyroidism, such as thyroid storm. A calcium channel blocker such as verapamil would be indicated if a β-blocker is contraindicated or not tolerated."
+  },
+  {
+    "id": 195,
+    "question": "An 85-year-old male on the third day of hospitalization for the treatment of pneumonia develops symptoms of altered mental status. Evaluation of his medications does not identify a reason for his altered mental status. The nursing staff has been unable to successfully redirect him to keep him calm. Which one of the following medications would be appropriate for the management of the patient's delirium?",
+    "options": [
+      "A) Haloperidol",
+      "B) Lithium",
+      "C) Lorazepam (Ativan)",
+      "D) Olanzapine (Zyprexa)",
+      "E) Oxycodone"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Delirium is a syndrome characterized by an acute, fluctuating disturbance of attention, awareness, and cognition. Initial efforts should focus on identifying and addressing any underlying causes while providing redirection. However, if no reversible cause is found, managing delirium using medications becomes the most appropriate next step to ensure the patient's safety. While there are no FDA-approved medications for the management of delirium, second-generation antipsychotics such as olanzapine are preferred for this indication. Haloperidol is a less preferred option, compared to a second-generation antipsychotic. It is known to cause QT prolongation and other concerning side effects in older patients. Lithium is indicated for chronic management of bipolar disorder and does not have a role in the acute management of this patient's delirium. The side effects of benzodiazepines such as lorazepam make them undesirable for managing delirium, particularly in an older adult. Oxycodone is an opioid analgesic that would likely provide some degree of sedation but would not be appropriate for managing this patient's delirium."
+  },
+  {
+    "id": 196,
+    "question": "An 84-year-old male with a history of coronary artery disease, mild cognitive impairment, and type 2 diabetes is admitted to your hospital for a hip fracture after a recent fall. On examination the patient has normal speech but is confused. He is clearly unable to articulate his understanding of the risks and benefits of surgery. You should do which one of the following to determine this patient's decision-making capacity regarding surgery?",
+    "options": [
+      "A) Administer the Aid to Capacity Evaluation assessment tool",
+      "B) Administer the Montreal Cognitive Assessment evaluation tool",
+      "C) Document a lack of capacity and consult his designated durable power of attorney",
+      "D) Consult with psychiatry",
+      "E) Defer to the court"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient clearly lacks the capacity to make decisions, and a surrogate decision-maker should be consulted. If designated, a durable power of attorney for health care should make decisions for this patient. Structured assessments for determining decision-making capacity or cognitive function may help in uncertain cases but are not necessary in this situation. Psychiatry consultation is rarely necessary to determine decision-making capacity and would not be appropriate in this situation. Decision-making capacity is determined by the treating clinician, not the court."
+  },
+  {
+    "id": 197,
+    "question": "A 36-year-old backcountry skier becomes separated from her group during a blizzard. The ski patrol locates her several hours later, sitting on the ground and not moving or shivering. She is conscious but confused. Which one of the following would be the most important initial step?",
+    "options": [
+      "A) Obtaining a core body temperature",
+      "B) Providing a warm drink and high-calorie snack, and reconnecting her with her group",
+      "C) Having her remove her wet clothes and wrapping her in an insulated vapor barrier",
+      "D) Placing large heat pads around her upper body and wrapping her in an insulated vapor barrier",
+      "E) Performing emergency rapid sequence field intubation and preparing for evacuation"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Hypothermia is a potentially life-threatening condition that physicians and first responders should be able to promptly recognize and treat. While core temperature is useful for academic purposes or in a hospital, it is impractical to obtain and unimportant in the field. A simplified hypothermia assessment for field use evaluates the patient's level of consciousness, presence or absence of shivering, level of alertness, and spontaneous movements to categorize the severity of hypothermia. This patient is not moving or shivering, and although she is conscious she is not alert. This patient is experiencing moderate hypothermia and requires immediate intervention. A patient with moderate hypothermia should be kept horizontal, have large warming packs placed in the axillae and around the upper chest, be wrapped in an insulated vapor barrier (the burrito method), and be prepared for transport to the nearest medical facility, ideally one with an ICU. Warm fluids and high-calorie foods can be used for a patient who is cold stressed or has mild hypothermia. Wet clothes should not be removed in the field unless shelter is available and rescue is more than 30 minutes away because this risks further lowering the patient's core temperature. Intubation is not necessary because the patient is protecting her airway and is conscious. Furthermore, it would not warm her."
+  },
+  {
+    "id": 198,
+    "question": "A 63-year-old male presents for his annual health maintenance examination. He maintains a healthy lifestyle, eats well, and exercises regularly. A physical examination is normal. His most recent prostate cancer screening revealed a PSA level of 4.6 ng/mL (N 0.3–4.0), and his previous result 2 years ago was normal. Which one of the following would be the most appropriate next step in management?",
+    "options": [
+      "A) Repeating PSA testing in 4–8 weeks",
+      "B) Empiric antibiotic therapy",
+      "C) A digital rectal examination",
+      "D) Biopsy of the prostate",
+      "E) MRI of the prostate"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Prostate cancer screening recommendations vary, and there is little evidence that routine screening for prostate cancer improves patient-oriented outcomes. While the American Academy of Family Physicians does not recommend routine prostate-specific antigen (PSA)–based screening for prostate cancer, the American Urology Association (AUA) recommends prostate cancer screening with PSA testing for those 45–50 years of age. For those 50–69 years of age, the AUA recommends screening every 2–4 years between ages 50-69. The AUA also recommends obtaining a follow-up PSA level for individuals with newly elevated PSA before considering additional biomarkers, imaging, or biopsy. While this is based on expert opinion, the authors note that PSA may normalize in as many as 40% of individuals. The authors also suggest a higher threshold for biopsy based on age, with 4.5 ng/mL being the upper limit of normal for this patient's age group. The Choosing Wisely AUA initiative recommends against using empiric antibiotics to treat elevated PSA levels in asymptomatic individuals. A digital rectal examination is not recommended as a screening method alone or in addition to a screening PSA."
+  },
+  {
+    "id": 199,
+    "question": "An otherwise healthy 37-year-old female presents because of a 4-day history of multiple episodes of watery, nonbloody diarrhea. She has no fever, chills, abdominal pain, or vomiting. She does not have a history of recent antibiotic use, hospitalization, or travel, but does say that her teenage son recently returned from a spring break trip and has similar symptoms. Physical examination findings include dry mucous membranes and tachycardia. The abdomen is soft with mild generalized tenderness on deep palpation. Which one of the following next steps would be most appropriate at this time?",
+    "options": [
+      "A) No testing",
+      "B) Fecal calprotectin",
+      "C) Fecal lactoferrin",
+      "D) Fecal leukocytes"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Testing for fecal calprotectin, lactoferrin, and leukocytes is of limited value in evaluating a nontoxic patient with acute diarrhea, including infectious diarrhea. Testing for fecal occult blood and infection with Clostridioides difficile is also not recommended in these patients. Detecting fecal calprotectin in a patient with inflammatory bowel disease and bacterial diarrhea lacks consistency and is not recommended. Although the presence of fecal lactoferrin can be associated with a bacterial etiology, its lack of specificity makes it less useful. Fecal leukocytes disintegrate easily in stool samples, reducing test sensitivity. Indications for obtaining stool testing for acute infection include the presence of severe abdominal pain or tenderness, bloody or mucoid stools, clinical findings of sepsis, fever ≥38.3 °C (101.0 °F), immunocompromised state, recent hospitalization, recent antibiotic therapy, and diarrhea that lasts >7 days."
+  },
+  {
+    "id": 200,
+    "question": "Which one of the following dog bite wounds should be considered for primary closure instead of being left to heal by secondary intention?",
+    "options": [
+      "A) A crush injury to the arm",
+      "B) A gaping wound to the hand",
+      "C) A linear wound to the face",
+      "D) A puncture wound to the leg"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Dog bite wounds may be primarily closed if desired for cosmetic reasons such as wounds to the face. However, dog bite wounds that carry a higher risk of infection such crush injuries, wounds to the hand, and puncture wounds, should be left to heal by secondary intention. Other factors that increase the risk of infection include delayed presentation (>6–12 hours for bites to the arm or leg and >12–24 hours for bites to the face) and bites in people who are immunosuppressed, including those with diabetes mellitus."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 191-200)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 131-140</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_14',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 131,
+    "question": "A 36-year-old female comes to your office for a health maintenance examination. She mentions that she engages in amateur rifle target shooting matches. Which one of the following would be the most appropriate advice concerning this patient’s physical safety?",
+    "options": [
+      "A) She should wear electronic hearing protection that amplifies quiet sounds",
+      "B) She should wear noise-canceling headphones",
+      "C) She should wear loose-fitting clothing",
+      "D) She should wear her regular glasses so that she has eye protection"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Hearing protection is essential while shooting firearms because noise exposure often exceeds 140 dB. Even a single gunshot can cause permanent hearing loss. Earmuffs and earplugs with a noise reduction rate of 28–31 dB are common and inexpensive protective devices. Electronic hearing protection can amplify quiet sounds such as a range safety officer's instructions, but also safely protect against loud sounds. Many ranges require their use. Noise-canceling headphones do not provide enough noise reduction for gunshots. Wearing loose-fitting clothing can trap the ejected hot brass casings, leading to unsafe gun handling. Safety eyeglasses that meet the necessary certifications can protect against shrapnel from the bullet striking the target or a malfunction. Regular glasses do not provide sufficient eye protection."
+  },
+  {
+    "id": 132,
+    "question": "A 66-year-old male presents to your office with a 2-hour history of discomfort in the midsternal area that began while taking a walk earlier today. He says that he feels 90% better. He had a Welcome to Medicare visit 1 year ago, in which an EKG was normal. You order an EKG today. Which one of the following EKG findings, if present in this patient, should prompt urgent transport to the emergency department?",
+    "options": [
+      "A) First-degree atrioventricular block",
+      "B) Frequent PVCs",
+      "C) Left bundle branch block",
+      "D) Sinus tachycardia",
+      "E) Voltage criteria for left ventricular hypertrophy"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Approximately 1% of primary care office visits are for evaluation of chest pain, in which 2%–4% of these patients have unstable angina or myocardial infarction. Twelve-lead EKG is recommended to look for ST-segment changes, new-onset left bundle branch block, presence of Q waves, and new T-wave inversions. The presence of new-onset left bundle branch block increases the likelihood of acute coronary syndrome (ACS) and acute myocardial infarction. Patients with suspected ACS or the aforementioned changes on EKG should be transported immediately to the emergency department. The presence of first-degree atrioventricular block, frequent PVCs, sinus tachycardia, or voltage criteria for left ventricular hypertrophy does not increase the likelihood of ACS."
+  },
+  {
+    "id": 133,
+    "question": "A generally healthy 56-year-old female sees you for follow-up of pneumonia diagnosed in the emergency department (ED). A chest x-ray performed in the ED showed a left lower lobe infiltrate and several compression fractures involving the thoracic vertebrae. A DXA scan performed 7 months ago showed a T-score of –1.9. Her daily medications include a multivitamin; calcium, 1000 mg; and vitamin D (cholecalciferol), 800 IU. Today she feels well and has no concerns. This patient would be most likely to benefit from therapy for which one of the following conditions?",
+    "options": [
+      "A) Osteopenia",
+      "B) Osteoporosis",
+      "C) Spondylolisthesis",
+      "D) Spondylolysis"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Although this patient's T-score indicates osteopenia, the presence of fragility fractures indicates osteoporosis. The T-score is obtained by measuring bone mineral density using DXA at the spine, total hip, or femoral neck. A T-score between –1.0 and –2.49 indicates osteopenia, whereas a T-score of ≤–2.5 denotes osteoporosis. However, postmenopausal osteoporosis may be diagnosed by bone mineral density or by the presence of a fragility fracture, which is a fracture that occurs with no associated trauma or after a fall from standing height or lower. Hence, osteoporosis can be diagnosed and the patient further evaluated and treated even though her T-score is >–2.5. Spondylolisthesis is the acquired anterior displacement of one vertebral body over another and is typically associated with degenerative changes. Spondylolysis is a cause of acute back pain resulting from a stress fracture involving the pars interarticularis of the lumbar vertebral body. It is typically found in young athletes."
+  },
+  {
+    "id": 134,
+    "question": "A gravida 2 para 1 at 28 weeks' gestation presents with an episode of second-trimester bleeding that spontaneously resolved. She has not had any prenatal laboratory studies during either of her pregnancies. Ultrasonography today shows a healthy fetus and a small placental abruption. Which one of the following would be most important to order at this time?",
+    "options": [
+      "A) An antiphospholipid antibody profile",
+      "B) An HIV test",
+      "C) An Rh factor test",
+      "D) A toxoplasmosis antibody test",
+      "E) A urine toxicology screen for cocaine"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Blood type/Rh factor testing should be ordered when evaluating second-trimester bleeding. This patient would require a dose of Rho(D) immune globulin (RhoGAM) if found to be Rh negative. Therefore, of all the tests listed, an Rh factor test is the most time sensitive and affects the plan of care. Patients may have had unattended home births with prior pregnancies or refused laboratory tests altogether. With the potential exposure to mixing of maternal and fetal blood during the patient's first delivery, it is crucial during this pregnancy to ensure maternal and fetal blood are compatible because there is a high risk of contact between maternal and fetal blood. An antiphospholipid antibody profile would be appropriate for evaluation of an underlying hypercoagulable disorder, such as in cases of late pregnancy loss (>10 weeks), recurrent early pregnancy loss (<10 weeks), certain preterm deliveries, or thrombosis. Although HIV testing is an important component of prenatal laboratory studies, it would not be the most important test to order at this time. A toxoplasmosis antibody test may be considered if there are signs of infection or exposure to toxoplasmosis. While cocaine use can cause placental abruption, a urine toxicology screen for cocaine is not the most pressing laboratory study to order at this time."
+  },
+  {
+    "id": 135,
+    "question": "A generally healthy 50-year-old nurse presents to your clinic 1 day after sustaining an accidental needlestick containing the blood of a person with active hepatitis B virus infection who has not yet begun treatment. Your patient completed the hepatitis B (HepB) vaccine series at age 30 before beginning his first nursing job. Hepatitis serologies drawn yesterday at his place of employment were positive for hepatitis B surface antibody (>10 mIU/mL). Which one of the following would be recommended for this patient?",
+    "options": [
+      "A) No additional vaccination",
+      "B) Hepatitis B immune globulin (HBIG) only",
+      "C) Recombinant HepB vaccine only",
+      "D) Both HBIG and recombinant HepB vaccine"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Postexposure prophylaxis with hepatitis B immune globulin or hepatitis B vaccine is not recommended in those who have completed the hepatitis B vaccine series and have proven immunity to hepatitis B virus. The presence of hepatitis B surface antibody titers of >10 mIU/mL are indicative of immunity either from previous vaccination or from previous infection with hepatitis B (both hepatitis B core and surface antibodies are reactive). Hepatitis B immune globulin would be recommended in a patient with negative hepatitis B serology testing."
+  },
+  {
+    "id": 136,
+    "question": "A 20-year-old female presents for a routine health maintenance examination and has no medical concerns today. She does not have a history of sexual activity, and screenings for alcohol and substance use, intimate partner violence, anxiety, depression, and suicidality are negative. An examination reveals fair skin, an elevated BMI of 31 kg/m2, and normal blood pressure. According to the U.S. Preventive Services Task Force, you should recommend screening for which one of the following?",
+    "options": [
+      "A) Cervical cancer",
+      "B) Chlamydia",
+      "C) Diabetes mellitus",
+      "D) HIV",
+      "E) Skin cancer"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient is a healthy young adult female who presents with an elevated BMI but no other identified risk factors. The U.S. Preventive Services Task Force recommends HIV screening for all persons 15–65 years of age (A recommendation). Cervical cancer screening is not recommended in women before age 21 (D recommendation), thus precluding the patient from screening. Chlamydia screening is recommended for all sexually active females under 25 years of age (B recommendation), but this patient has no history of sexual activity. Diabetes mellitus screening is recommended for persons 35–70 years of age with overweight or obesity (B recommendation). While the patient's age precludes her from this screening, she should be offered intensive multicomponent behavioral intervention for weight loss. Preventive counseling for skin cancer is recommended for persons with fair skin types who are 6 months to 24 years of age (B recommendation), but screening examinations are not recommended (I recommendation). This patient should also be offered screening for hepatitis C."
+  },
+  {
+    "id": 137,
+    "question": "A 65-year-old male presents to your clinic with symptoms of flashing lights and increased floaters in his left eye. He does not have any pain, and he has no past medical history. His vital signs are normal. His visual acuity is at baseline when wearing his glasses, and you note a visual field defect on the left. Which one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Migraine with aura",
+      "B) Central retinal artery occlusion",
+      "C) Retinal detachment",
+      "D) Globe rupture",
+      "E) Acute ischemic stroke"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Family physicians frequently evaluate ophthalmologic symptoms and should be familiar with conditions requiring emergent evaluation. Peripheral flashing lights and floaters are common symptoms of retinal detachment. This patient should be referred for urgent ophthalmologic evaluation including a dilated fundoscopic examination. While positive and negative visual features are seen with migraine with aura, these features should be transient and followed by a headache typical of migraine. New-onset migraine in a 65-year-old is also uncommon and would require further evaluation. Central retinal artery occlusion, often ischemic or thromboembolic, typically occurs in those with risk factors such as diabetes mellitus, vascular disease, and tobacco use. Rapid, painless vision loss is often accompanied by afferent pupillary defect and the lesion can be visualized on a dilated fundoscopic examination as a cherry-red spot. Globe rupture is unlikely to occur without a history of trauma. Acute ischemic stroke may cause vision loss but is unlikely to cause ocular symptoms of flashing lights and floaters."
+  },
+  {
+    "id": 138,
+    "question": "A 46-year-old male presents for an acute visit due to a 2-week history of low back pain. He was moving furniture when the pain started, and he felt a pop in his right lower back area. The pain is severe enough that it keeps him from standing up straight and is causing him trouble with sleeping. He does not have fever or chills, numbness, paresthesia, or weakness in his lower extremities. He has no radicular pain on a straight leg–raising test. He went to a chiropractor who did x-rays and told him he needed to get an MRI. Which one of the following, if present, would be an indication for advanced imaging?",
+    "options": [
+      "A) Current cigarette use",
+      "B) Current intravenous drug use",
+      "C) Disrupted sleep due to nocturnal pain",
+      "D) Restricted posture due to pain",
+      "E) New urinary retention"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Early advanced imaging for low back pain increases the probability of surgery and is associated with a higher use of opioids, a higher cost of care, higher pain scores, and more work absenteeism. While there is no consensus on what constitutes red flags for low back pain, new urinary retention is concerning for cauda equina syndrome. Other symptoms associated with cauda equina syndrome are bladder fullness and saddle anesthesia. The severity of pain does not correlate clearly with pathologic back pain. While cigarette use increases the chance of an underlying cancer, without a known history of cancer or other signs, it is not an indication for advanced imaging. While intravenous drug use increases the risk of epidural abscess, with no other signs of infection or history of infection, it is not solitarily an indication for advanced imaging. Nocturnal pain is not uncommon in benign low back pain and may be associated with a more specific underlying cause if the pain occurs in the second part of the night (early morning)."
+  },
+  {
+    "id": 139,
+    "question": "How long after intranasal administration does naloxone (Narcan) reach peak plasma concentrations?",
+    "options": [
+      "A) Immediately",
+      "B) 30–60 seconds",
+      "C) 3–5 minutes",
+      "D) 15–30 minutes",
+      "E) 1–2 hours"
+    ],
+    "correctAnswer": 3,
+    "rationale": "After intranasal administration of naloxone, peak plasma concentrations are attained within 15–30 minutes, although its effect on the patient may be seen sooner. Absorption may be affected by substances or conditions that impact the nasal mucosa function or its blood flow. The half-life of naloxone is 2 hours, which is shorter than many long-acting opioids. Ongoing monitoring is important even after reversal of opioid respiratory depression is achieved."
+  },
+  {
+    "id": 140,
+    "question": "A 24-year-old male presents for evaluation of a bulge in his groin. He reports that it is larger at the end of the day and with straining but says it often goes away when he lies down. He reports a mild dull ache that limits his ability to lift lumber at work. On examination there is no obvious bulge in the inguinal area. When the patient bears down, a bulge becomes apparent. Which one of the following is the most appropriate next step?",
+    "options": [
+      "A) Inguinal ultrasonography",
+      "B) Scrotal ultrasonography",
+      "C) Abdominal and pelvic CT",
+      "D) Physical therapy",
+      "E) Surgical referral"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient presents with an inguinal hernia that is apparent on examination. When the hernia is apparent, no further imaging is needed. Recent studies have found that nearly 50% of patients sent for inguinal imaging have been unnecessarily referred. When the hernia is symptomatic or limits function, surgical referral is appropriate. If the hernia is asymptomatic, then watchful waiting would be a viable option. Physical therapy would not be appropriate for this patient with a symptomatic inguinal hernia."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 131-140)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

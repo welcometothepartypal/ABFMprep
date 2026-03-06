@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 91-100</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_10',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 91,
+    "question": "Which one of the following medications is the recommended initial management of COPD in patients who are classified as GOLD group A?",
+    "options": [
+      "A) Inhaled umeclidinium (Incruse Ellipta)",
+      "B) Inhaled aclidinium bromide/formoterol (Duaklir Pressair)",
+      "C) Inhaled budesonide/formoterol (Symbicort)",
+      "D) Inhaled fluticasone furoate/umeclidinium/vilanterol (Trelegy Ellipta)",
+      "E) Nebulized formoterol (Perforomist)"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Long-acting muscarinic antagonists (LAMAs) such as umeclidinium are recommended as the preferred initial management of COPD that is classified as GOLD group A. Long-acting β-agonists (LABAs) such as formoterol may be used as an alternative for these patients. LAMA/LABA combinations such as aclidinium bromide/formoterol are recommended as initial management of COPD that is classified as GOLD group B. LAMA/LABA combinations are also recommended for management of COPD that is classified as GOLD group E. Inhaled corticosteroid (ICS)/LAMA/LABA combinations such as fluticasone furoate/umeclidinium/vilanterol can also be considered for initial management of COPD that is classified as GOLD group E, especially if blood eosinophil levels are ≥300 cells/μL."
+  },
+  {
+    "id": 92,
+    "question": "A 29-year-old female with type 2 diabetes is brought to the emergency department by her family, who state that she has grown increasingly confused over the last few days, with additional symptoms of polyuria and polydipsia. Her initial vital signs demonstrate hypotension and tachycardia. Laboratory Findings Serum glucose 750 mg/dL Serum osmolality 350 mOsm/kg H O (N 275–295) Urine ketones trace Arterial pH 7.3 Anion gap normal Which one of the following would be the most appropriate initial treatment?",
+    "options": [
+      "A) Subcutaneous short-acting insulin",
+      "B) Subcutaneous long-acting insulin",
+      "C) Intravenous isotonic fluid hydration",
+      "D) Intravenous isotonic fluid hydration with sodium bicarbonate"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient presents with acute confusion, dehydration, hyperglycemia, and hyperosmolality. The appropriate diagnosis is hyperglycemic hyperosmolar state (HHS), rather than diabetic ketoacidosis (DKA), given her lack of significant ketonuria and acidosis. She is hypovolemic and dehydrated as evidenced by her change in vital signs. Initial treatment consists of intravenous fluids with isotonic solutions, such as 0.9% normal saline or lactated Ringer solution. She will also need an intravenous insulin infusion of short-acting insulin at a dose of 0.05 units/kg/hr. After the initial fluid bolus, potassium chloride can be added to intravenous fluids to correct her total body potassium depletion. Sodium bicarbonate should only be considered if the arterial pH is <7.0 (see Figure 4 of the American Diabetes Association guideline for treatment pathways of DKA and HHS)."
+  },
+  {
+    "id": 93,
+    "question": "A 65-year-old male with symptomatic heart failure presents for follow-up. He currently has no symptoms of dyspnea at rest, but has moderate to significant limitations with ordinary activity. His most recent echocardiogram showed a left ventricular ejection fraction of 38%. His last hemoglobin A was the highest it has ever been at 6.3%, and he does not take any 1c glucose-lowering medications. His current medications include losartan (Cozaar), carvedilol (Coreg), furosemide (Lasix), and spironolactone (Aldactone). On examination he has a blood pressure of 120/75 mm Hg and an oxygen saturation of 94% on room air, and there are no pulmonary crackles or peripheral edema. Adding which one of the following would be most likely to further reduce this patient’s mortality risk?",
+    "options": [
+      "A) A calcium channel blocker",
+      "B) A GLP-1 receptor agonist",
+      "C) An SGLT2 inhibitor",
+      "D) A thiazide diuretic",
+      "E) Metformin"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Treatment with an SGLT2 inhibitor is recommended to decrease all-cause mortality in patients with heart failure with reduced ejection fraction (HFrEF), regardless of the presence or absence of diabetes mellitus. According to guidelines from the American College of Cardiology/American Heart Association, first-line medical management for symptomatic HFrEF is angiotensin receptor/neprilysin inhibitor (ARNi) therapy. If ARNi therapy is not feasible, an ACE inhibitor or angiotensin receptor blocker is second-line therapy. These patients should also receive therapy with a cardioselective β-blocker, a loop diuretic (for pulmonary congestion or edema), and a mineralocorticoid receptor antagonist. Neither calcium channel blockers (CCBs) nor thiazide diuretics provide mortality benefits in HFrEF; although thiazide diuretics may be used for the adjunctive management of symptomatic congestion and edema, CCBs may lead to worse cardiac outcomes. The potential mortality benefits of GLP-1 receptor agonists in patients with HFrEF are still being investigated. Metformin has been shown to improve mortality in patients with heart failure with preserved ejection fraction (left ventricular ejection fraction >50%)."
+  },
+  {
+    "id": 94,
+    "question": "A 45-year-old male with a past medical history of hyperlipidemia and obesity presents with concerns of polydipsia and polyuria that have progressively worsened over the last 2 weeks. His older sister was recently diagnosed with type 2 diabetes and your patient asks to be tested. Which one of the following test results would be sufficient to diagnose diabetes in this patient?",
+    "options": [
+      "A) A hemoglobin A ≥6.0% 1c",
+      "B) A 1-hour plasma glucose level ≥140 mg/dL on 50-g oral glucose testing",
+      "C) A fasting plasma glucose level ≥120 mg/dL",
+      "D) A random blood glucose level ≥200 mg/dL"
+    ],
+    "correctAnswer": 3,
+    "rationale": "According to guidelines from the American Diabetes Association, diabetes mellitus can be diagnosed with a random blood glucose level ≥200 mg/dL in patients with classic symptoms of hyperglycemia, such as polyuria and polydipsia, as seen in this patient. An 8- hour fasting plasma glucose level ≥126 mg/dL, a hemoglobin A ≥6.5%, or a 2-hour plasma 1c glucose level ≥200 mg/dL on 75-g oral glucose tolerance testing can also indicate diabetes but would require confirmatory testing with a second abnormal laboratory value to confirm the diagnosis. A fasting plasma glucose level 100–125 mg/dL or a hemoglobin A 5.7%–6.4% suggests a 1c diagnosis of prediabetes. A 1-hour plasma glucose level ≥140 mg/dL on 50-g oral glucose testing is an abnormal first step in a 2-step screening approach for gestational diabetes mellitus in pregnant individuals."
+  },
+  {
+    "id": 95,
+    "question": "A 36-year-old male presents to your office with continued pain in his right arm after sustaining a right forearm fracture 6 weeks ago that was treated with cast immobilization. At the time of the injury, he noted a severe, throbbing pain in his right forearm that improved with NSAID therapy. Now, he feels a severe, sharp pain with burning and numbness throughout the arm and hand that worsens with any pressure, including clothing. He reports weakness in his right hand and notes that he drops objects such as cups. He is afebrile and his vital signs are within normal limits. An examination reveals pain to light touch in the right arm. The right arm is warmer to the touch than the left arm with trace edema noted. The patient's right-hand grip is 4/5, and his left-hand grip is 5/5. You note 2+ radial and brachial pulses and normal bilateral reflexes. Which one of the following is the most likely etiology of this patient's pain?",
+    "options": [
+      "A) Cellulitis",
+      "B) Complex regional pain syndrome",
+      "C) Factitious disorder",
+      "D) Functional neurologic symptom disorder (conversion disorder)",
+      "E) Peripheral neuropathy"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient meets the Budapest criteria for complex regional pain syndrome (CRPS) including hyperalgesia, temperature asymmetry, evidence of edema, and motor weakness following trauma to the limb. CRPS is a clinical diagnosis. The absence of fever or other signs of infection makes cellulitis unlikely. The examination findings make factitious disorder and functional neurologic symptom disorder (conversion disorder) unlikely. The absence of the characteristic stocking-glove altered sensation makes peripheral neuropathy unlikely."
+  },
+  {
+    "id": 96,
+    "question": "A 28-year-old nulligravida has a 2- to 3-day history of severe lower abdominal pain. On examination the patient’s temperature is 37.7 °C (99.9 °F), bowel sounds are normal, and there is diffuse lower abdominal tenderness without rebound. On pelvic examination there is adnexal tenderness and pain on cervical motion. Vaginal discharge shows leukocytes. A pregnancy test is negative. In addition to sexually transmitted infection testing and empiric treatment, which one of the following should you recommend?",
+    "options": [
+      "A) No further testing",
+      "B) A repeat pregnancy test in 7 days",
+      "C) Pelvic ultrasonography",
+      "D) Pelvic MRI",
+      "E) Laparoscopy"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient's likely diagnosis is pelvic inflammatory disease (PID), and the diagnosis can be made clinically in most cases. In women at risk of PID, treatment should be initiated if any of the following are present: cervical motion tenderness, uterine tenderness, or adnexal tenderness. These criteria are considered sensitive for the diagnosis, but the clinician should be mindful to evaluate for other causes, such as appendicitis or tubo- ovarian abscess (TOA) as indicated by the history and physical examination. Appendicitis would likely cause unilateral pain. TOA often presents acutely with unilateral pain on examination and an adnexal mass. These findings may prompt the clinician to pursue additional testing such as pelvic ultrasonography. A pelvic ultrasound may show fluid-filled or thickened tubes in the setting of PID, but it is not routinely indicated. MRI may be necessary if an ultrasound were to demonstrate TOA or findings other than simple PID. CT of the abdomen may be completed to evaluate complications above the pelvis. Laparoscopy would not be the initial evaluation. This patient is acutely ill and repeating a pregnancy test a week later would not be appropriate."
+  },
+  {
+    "id": 97,
+    "question": "A 65-year-old male with a past medical history of hypertension and hyperlipidemia presents to the urgent care clinic approximately 20 hours after experiencing an episode of sudden-onset right-hand weakness. He was suddenly unable to grasp his utensils while eating dinner. These symptoms resolved after about 20 minutes. His wife had encouraged him to seek urgent evaluation, but he declined because his symptoms had resolved. Today the patient's vital signs include a blood pressure of 124/72 mm Hg, a heart rate of 80 beats/min, and a respiratory rate of 12/min. The neurologic examination findings are normal. An EKG shows normal sinus rhythm. The ABCD2 score is 4. Further management includes which one of the following regimens?",
+    "options": [
+      "A) Aspirin, 81 mg daily",
+      "B) Clopidogrel (Plavix), 300 mg on day 1, followed by 75 mg daily",
+      "C) Clopidogrel, 300 mg on day 1, followed by 75 mg daily on days 2–10; plus aspirin, 81 mg daily",
+      "D) Clopidogrel, 300 mg on day 1, followed by 75 mg daily on days 2–21; plus aspirin, 81 mg daily"
+    ],
+    "correctAnswer": 3,
+    "rationale": "In patients presenting with a moderate- to high-risk TIA or minor stroke within 24 hours of symptom onset, dual antiplatelet therapy (DAPT) for 21 days prior to transitioning to a single antiplatelet agent decreases the 90-day stroke risk from 7.8% to 5.2% compared to aspirin alone. This patient has symptoms consistent with a high-risk TIA based on an ABCD2 score (age, blood pressure, clinical features of TIA, duration, and diabetes mellitus history) of 4. Recommended management includes loading doses of clopidogrel (300–600 mg) and aspirin (50–325 mg) within 24 hours of symptom onset followed by clopidogrel (75 mg) and aspirin (50–325 mg daily) for 21 days. The patient can then transition to a single antiplatelet agent. Initial treatment with a single antiplatelet agent or with DAPT for less than 21 days does not reduce stroke risk compared to DAPT for 21 days."
+  },
+  {
+    "id": 98,
+    "question": "A 55-year-old patient with a previous history of opioid use disorder and untreated hypertension presents to your office to establish care. They are now in recovery and would like to catch up on screening laboratory studies. Their blood pressure today is 160/90 mm Hg. Laboratory studies show elevated AST, ALT, and alkaline phosphatase levels and are positive for hepatitis C antibody and hepatitis C viral load. Testing for hepatitis B and HIV is negative. Lipids are elevated. You calculate an atherosclerotic cardiovascular disease 10-year risk score of 10%. A right upper quadrant ultrasound shows fibrotic changes of the liver. The patient is surprised that they have liver damage, as they feel well and have never consumed much alcohol. In addition to referring the patient to a gastroenterologist, which one of the following should you begin now to improve fibrotic changes?",
+    "options": [
+      "A) Treatment of hepatitis C",
+      "B) Prophylactic antibiotics",
+      "C) A nonselective β-blocker",
+      "D) Pre-exposure prophylaxis (PrEP) for HIV",
+      "E) Upper endoscopy with banding of any varices"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Treatment of hepatitis C in patients with metabolic dysfunction–associated steatohepatitis (formerly known as nonalcoholic steatohepatitis) can improve fibrotic changes, as can bariatric surgery. Prophylactic antibiotics should be initiated to prevent spontaneous bacterial peritonitis (SBP) in patients with a history of SBP; low ascitic fluid protein levels (<1.5 g/dL); advanced hepatic disease as indicated by a Child-Pugh score ≥9 or a bilirubin level ≥3 mg/dL; or renal disease as indicated by a serum creatinine level ≥1.2 mg/dL or a serum sodium level ≤130 mEq/L. Nonselective β-blockers should be started in patients with significant varices seen on upper endoscopy. Coinfection with hepatitis C virus and HIV increases a patient's risk of fibrotic progression to cirrhosis. A conversation regarding risks and benefits of initiating pre-exposure prophylaxis (PrEP) would be beneficial; however, PrEP has not been shown to improve fibrotic changes. Offering treatment for viral hepatitis along with PrEP increases access for patients who are at risk of coinfection. In individuals with metabolic dysfunction–associated steatotic liver disease (MASLD) (formerly known as nonalcoholic fatty liver disease) and cirrhosis, antibiotic prophylaxis is recommended in specific scenarios: in patients with a history of SBP, during episodes of acute upper gastrointestinal bleeding, and in select high-risk patients with low ascitic fluid protein levels (<1.5 g/dL) along with either advanced liver disease (Child-Pugh score ≥9 and a bilirubin level ≥3 mg/dL) or signs of renal impairment (a creatinine level ≥1.2 mg/dL, a BUN level ≥25 mg/dL, or a sodium level ≤130 mEq/L)."
+  },
+  {
+    "id": 99,
+    "question": "A 46-year-old female sees you for an annual well woman visit. Her only concern is pelvic pressure that becomes more bothersome throughout the day. She notes occasional urinary incontinence of small amounts when coughing or running. She says these symptoms mildly bother her, and mostly wants to make sure there is not a more serious problem. On physical examination, using the lower half of a bivalve speculum, you note a prolapse of the anterior wall, 0.5 cm proximal to the hymenal ring. Which one of the following would be the most appropriate next step for this patient?",
+    "options": [
+      "A) Reassurance only",
+      "B) Pelvic floor muscle training",
+      "C) Topical estrogen",
+      "D) Surgical consultation"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Pelvic organ prolapse is a common problem, and can be described as apical, of the anterior wall, or of the posterior wall. The Pelvic Organ Prolapse Quantification system can be used to evaluate the prolapse and determine grading. A grade 2 prolapse indicates a prolapse that extends within 1 cm above or below the hymenal ring. Pelvic floor muscle training can reduce prolapse by 1–2 cm and provide subjective improvement in symptoms. There is no clear evidence of the benefit of estrogen alone for pelvic organ prolapse. Surgical management is often the ultimate treatment for pelvic organ prolapse, but it is important to note that urinary incontinence can worsen after repair. This patient is minimally bothered by her symptoms; therefore, surgical treatment would not be recommended at this time but may be indicated in the future. Pelvic organ prolapse is generally progressive until menopause, after which it can alternate between regression and progression."
+  },
+  {
+    "id": 100,
+    "question": "A 72-year-old male with a past medical history of coronary artery disease, COPD, and hyperlipidemia sees you because of an acute onset of left lower leg pain 1 hour ago. He was in his usual state of health when the pain occurred. His left foot is numb and cold, and he is having difficulty walking. He has a 60-pack-year smoking history. Physical examination findings include a mottled appearance of the left lower leg and foot. Posterior tibial and dorsalis pedis pulses are absent. Which one of the following would be the most appropriate first step in management?",
+    "options": [
+      "A) Rivaroxaban (Xarelto)",
+      "B) Stat duplex ultrasonography",
+      "C) Stat CT angiography",
+      "D) Expedited outpatient referral to a vascular surgeon",
+      "E) Transfer to the nearest emergency department with access to a vascular surgeon"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient's presentation is concerning for acute limb ischemia and he requires immediate transfer to an emergency facility with vascular surgeon accessibility (SOR C). Anticoagulation with unfractionated heparin should be started soon after arrival. Acute limb ischemia is a vascular emergency as skeletal muscle can only survive 4–6 hours without blood flow. Acute limb ischemia is characterized by the 6 P’s: pain, pallor, poikilothermia, pulselessness, paresthesia, and paralysis. Direct-acting oral anticoagulants can be used to manage symptomatic peripheral artery disease (PAD), but not for acute management of limb ischemia. While duplex ultrasonography or CT angiography can be used to determine the presence and location of the obstructed vessel, transfer to an emergency facility should not be delayed for imaging. Referral to a vascular surgeon would delay treatment and would be more appropriate for chronic PAD symptoms."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 91-100)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

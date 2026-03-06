@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 111-120</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_12',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 111,
+    "question": "A 19-year-old college basketball player consults you for follow-up after sustaining an anterior shoulder dislocation for the first time. He initially presented to the emergency department where his shoulder was reduced and immobilized in a sling. Which one of the following is most likely to decrease the risk of future recurrence?",
+    "options": [
+      "A) Continued sling use for 4 weeks",
+      "B) Completion of a course of physical therapy",
+      "C) Administration of an intra-articular corticosteroid injection",
+      "D) Surgical repair"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Although anterior shoulder dislocations have a high rate of recurrence (up to 90%), evidence from cohort studies has consistently found a lower rate of recurrence in active patients <25 years of age who have received surgical treatment for first-time dislocations. Because of this patient's age and activity level, referral for surgical repair would be appropriate. Other treatment options for anterior shoulder dislocation include the use of a sling for 2–4 weeks with graduated rehabilitation of passive and active range of motion. If no surgery is warranted, athletes can return to play when they are pain free with symmetrical shoulder range of motion and able to perform sport-specific motions, which can be as early as 2–3 weeks after injury. Intra-articular corticosteroids are not advised after a shoulder dislocation."
+  },
+  {
+    "id": 112,
+    "question": "A 32-year-old gravida 2 para 2 female who is 3 weeks post partum presents to the local urgent care center for left breast pain, swelling, and redness that started a few hours ago. She does not have fever or chills. A breast examination is significant for warm, tender, and mildly erythematous nodules localized to the upper outer quadrant of the left breast. In addition to initiating NSAIDs, which one of the following would be the most appropriate next step in management?",
+    "options": [
+      "A) Applying cold compresses to the affected breast",
+      "B) Applying warm compresses to the affected breast",
+      "C) Using a manual breast pump on the affected breast for complete breast emptying",
+      "D) Obtaining a CBC and C-reactive protein levels",
+      "E) Obtaining a breast milk culture"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Mastitis is a spectrum of inflammatory breast conditions, which includes lactational or inflammatory mastitis, bacterial mastitis, breast abscess, postpartum breast engorgement, and more. Patients with inflammatory mastitis exhibit unilateral breast erythema, swelling, and pain and may experience systemic inflammatory responses such as fever, malaise, or headache. The initial steps in managing inflammatory mastitis are supportive care with NSAIDs, cold compresses, and watchful waiting. Inflammatory mastitis is diagnosed clinically and does not require laboratory testing or imaging. If a patient's symptoms worsen or do not improve within 24–48 hours with conservative measures, narrow-spectrum antibiotics targeting the most common organisms (Staphylococcus species and Streptococcus species) should be empirically initiated for bacterial mastitis. Warm compresses and frequent breast pumping for complete breast emptying to avoid milk stasis are no longer recommended. CBC and C-reactive protein testing are not helpful as these levels can be elevated in both inflammatory and bacterial mastitis. Breast milk cultures are seldom necessary because they may produce false- positive results caused by normal skin bacteria colonization."
+  },
+  {
+    "id": 113,
+    "question": "A young couple in your practice presents for preconception counseling. Both partners are known carriers of cystic fibrosis (CF). They ask what risk this poses to their future children. Which one of the following accurately reflects the risk of CF disease transmission to any potential offspring of this couple?",
+    "options": [
+      "A) 25% risk of being affected and 25% risk of being a carrier",
+      "B) 25% risk of being affected and 50% risk of being a carrier",
+      "C) 50% risk of being affected and 25% risk of being a carrier",
+      "D) 50% risk of being affected and 50% risk of being a carrier"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Cystic fibrosis is a genetic disorder with an autosomal recessive pattern of inheritance. People who are affected by the disease are homozygous for the condition, with 2 copies of the mutated gene. Carriers are heterozygous for the condition with 1 mutated gene and 1 normal gene. When both partners in a couple are carriers, any potential offspring has a 25% chance of being affected, a 50% chance of being an unaffected carrier, and a 25% chance of being an unaffected noncarrier."
+  },
+  {
+    "id": 114,
+    "question": "A 47-year-old nurse presents with a 9-month history of fatigue and brain fog that has kept them from working. Their symptoms began after a confirmed diagnosis of COVID-19. They report sleeping at least 7 hours per night but wake unrefreshed and experience lightheadedness throughout the day. They used to run 4 miles 5 days per week but now report feeling exhausted and experience energy crashes after showering and getting dressed. The patient's vital signs and BMI are normal. A physical examination is unremarkable. Their Patient Health Questionnaire–9 (PHQ-9) score is 3. A CBC, TSH level, basic metabolic panel, and erythrocyte sedimentation rate are within the normal range. Which one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Depression",
+      "B) Fibromyalgia",
+      "C) Myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS)",
+      "D) Obstructive sleep apnea",
+      "E) Systemic lupus erythematosus"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Based on the National Academy of Medicine criteria for myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS), this patient has demonstrated the core symptoms of ME/CFS (unrefreshing sleep, new-onset fatigue, and postexertional malaise) for at least 6 months, in addition to brain fog and lightheadedness. Notably, their symptoms developed after a previous COVID-19 infection, an illness that is commonly associated with ME/CFS. A Patient Health Questionnaire–9 (PHQ-9) score of 3 indicates no or minimal depression, which would not account for severe fatigue or energy crashes after minimal exertion. Exercise may actually improve depression. Secondary causes of fatigue, such as fibromyalgia and systemic lupus erythematosus, typically improve with exercise. Although obstructive sleep apnea may cause unrefreshing sleep, it is not associated with profound fatigue and postexertional malaise."
+  },
+  {
+    "id": 115,
+    "question": "On examination she is neurovascularly intact. Her vital signs are normal except for an elevated heart rate of 110 beats/min and a blood pressure of 150/92 mm Hg. Which one of the following would be the most appropriate next step in the management of this patient's injury?",
+    "options": [
+      "A) Discharging home with concussion precautions",
+      "B) Observation in the ED, and acetaminophen",
+      "C) Observation in the ED, and ibuprofen",
+      "D) CT of the head"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Heart failure with reduced ejection fraction (HFrEF) is a major public health concern affecting more than 6.5 million U.S. adults. Family physicians should be familiar with its typical clinical presentations and diagnosis, which is best established using echocardiography. Symptoms vary and may include dyspnea, ankle edema, and fatigue. Orthopnea, as evident by modification of sleeping from supine to reclined or semi- reclined, is also common. Symptoms of right-sided heart failure, such as early satiety, abdominal bloating, ill-fitting clothes, and shortness of breath when bent forward, are also frequently encountered, but are less specific. Physical examination may reveal signs of congestion such as elevated jugular venous pressure, S gallop, or a laterally displaced 3 apical impulse. Some predictors of HFrEF include increased heart rate, coronary artery disease (hazard ratio [HR] 1.73), and previous myocardial infarction (MI) (HR 3.49). The diagnosis is made by documenting left ventricular systolic dysfunction with a left ventricular ejection fraction ≤40% and an elevated BNP level. An EKG is a key component of the workup and evaluation of contributing factors, such as arrhythmia or acute MI, but not diagnosis. A chest x-ray, while quick and readily available, may identify cardiomegaly or vascular congestion but is normal in approximately 20% of those with acute HFrEF, limiting diagnostic utility. Given this patient's history of MI, CT angiography would be inappropriate and is typically reserved for evaluating coronary artery disease in low-risk patients. CT angiography is used to evaluate for pulmonary embolism, which is less likely, given this patient's lack of immobility, prolonged travel, or other risk factors, as well as a history and physical examination that favor heart failure (displaced apical impulse, orthopnea, abdominal distention/weight gain)."
+  },
+  {
+    "id": 116,
+    "question": "A 3-year-old male is brought to your office by his parents for a routine well child visit. He is up to date on vaccines and the parents have no concerns to discuss today. According to the U.S. Preventive Services Task Force, this child should be screened for which one of the following conditions?",
+    "options": [
+      "A) Amblyopia",
+      "B) Anemia",
+      "C) Autism spectrum disorder",
+      "D) Dental caries",
+      "E) Hearing loss"
+    ],
+    "correctAnswer": 0,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends vision screening at least once in all children 3–5 years of age to detect amblyopia or its risk factors (B recommendation). Screening may be performed using visual acuity testing with picture identification, Snellen or \"tumbling E,\" or by an automated device that assesses visual acuity. Early identification of vision disorders can help prevent permanent vision loss due to amblyopia. Anemia screening is recommended for all children at 1 year of age by the American Academy of Pediatrics (AAP), but this approach was found to have insufficient evidence of benefit by the USPSTF (I recommendation). Screening for autism spectrum disorder is recommended by the AAP at 18 and 24 months of age, but the USPSTF found insufficient evidence that universal screening results in improved care in families without concerns about their child's development (I recommendation). The USPSTF found insufficient evidence of benefit of screening for dental caries in children <5 years of age (I recommendation). Instead, it recommends that fluoride varnish be applied every 3–6 months in all children 6 months to 5 years of age to prevent dental caries (B recommendation). This should be performed in the family physician's office if it has not been applied by a dentist. Additionally, an oral fluoride supplement is recommended to prevent dental caries in children without adequate fluoride in their water supply (B recommendation). Universal hearing screening is recommended for newborns, but screening at this age is not recommended."
+  },
+  {
+    "id": 117,
+    "question": "A 50-year-old female comes to your clinic for an annual wellness examination. Her past medical history is notable for dermatomyositis diagnosed 2 years ago. She is otherwise healthy and her BMI is normal. Patients with dermatomyositis are at increased risk of which one of the following conditions?",
+    "options": [
+      "A) Chronic kidney disease",
+      "B) Diabetes mellitus",
+      "C) Hyperlipidemia",
+      "D) Malignancy",
+      "E) Obesity"
+    ],
+    "correctAnswer": 3,
+    "rationale": "While counseling on diet and exercise and screening for diabetes mellitus and hyperlipidemia are important, malignancy screening is the most important component of the wellness visit in this patient with dermatomyositis diagnosed after the age of 40. Cancer is a leading cause of death in this patient population and is diagnosed in up to 25% of these patients within 3 years of their dermatomyositis diagnosis. The most likely cancers in this population include adenocarcinomas of the ovary, lung, pancreas, stomach, and colon as well as non-Hodgkin lymphoma. Population-level cancer screening recommendations are generally insufficient for this population, and advanced cancer screening modalities, including CT scans and PET scans, may be recommended based on the patient's individual risk factors to target these types of cancers. Chronic kidney disease and obesity have not been observed to have an increased risk in patients with dermatomyositis."
+  },
+  {
+    "id": 118,
+    "question": "Of the following cognitive biases, which one best describes the practice of prioritizing data that supports an initial impression, even when the initial impression is incorrect?",
+    "options": [
+      "A) Anchoring",
+      "B) Availability",
+      "C) Implicit",
+      "D) Outcomes"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Anchoring bias describes the practice of physicians prioritizing information and data that supports their initial impressions, even when these impressions are incorrect. In other words, it is when physicians are biased toward their first impression. Availability bias describes the likelihood of a diagnosis being erroneously linked to how easy it is to think of examples. Implicit bias is defined as attitudes and beliefs about race, ethnicity, age, ability, gender, or other characteristics. Implicit bias operates on an unconscious level and can only be measured indirectly. Outcomes bias refers to the attribution of all results to prior decisions, regardless of whether there is a reason to do so."
+  },
+  {
+    "id": 119,
+    "question": "An otherwise healthy 15-year-old female presents for evaluation of a 7-month history of heavy menstrual bleeding. Her periods are 10 days long, irregular, and require 10 tampons per day. She sometimes passes large clots. Other than some fatigue, she feels well today and her vital signs are normal. A point-of-care hemoglobin level is 10.2 g/dL (N 12.0–16.0). Which one of the following would be the most appropriate next step in evaluation?",
+    "options": [
+      "A) Testing for a bleeding disorder",
+      "B) FSH and LH levels",
+      "C) Estrogen and progesterone levels",
+      "D) Pelvic ultrasonography",
+      "E) Pelvic MRI"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Heavy menstrual bleeding (HMB) is very common in adolescents and may be a sign of an underlying bleeding disorder. Although bleeding disorders affect 1%–2% of the general population, the prevalence increases to 20% among adolescent girls with heavy menstrual bleeding. Platelet dysfunction and von Willebrand disease are most commonly identified. Evaluation for bleeding disorders is indicated when there is frequent pad or tampon use (>1 every 1–2 hours); menstrual bleeding lasting longer than 7 days; passage of clots larger than 1 inch in diameter; a personal history of anemia treatment, excessive bleeding with tooth extraction or surgery, or excessive bruising; or a family history of a bleeding disorder. The initial workup for HMB in an adolescent includes a CBC; a prothrombin time, partial thromboplastin time, and INR; a von Willebrand panel; and hCG, ferritin, fibrinogen, and TSH levels. Testing for chlamydia and gonorrhea should be considered in sexually active patients. Testosterone, prolactin, and DHEA levels should be obtained if there are signs of polycystic ovary syndrome or other endocrine disorders. Levels of FSH, LH, estrogen, and progesterone are not helpful in the evaluation of excessive uterine bleeding. Pelvic imaging is not routinely necessary but should be considered for HMB that does not respond to initial management. Hormonal contraceptives and tranexamic acid may be used for the treatment of HMB, but workup for a bleeding disorder is the most important first step."
+  },
+  {
+    "id": 120,
+    "question": "A 45-year-old patient presents with a 6-month history of epigastric burning pain that occurs several days per week. The pain does not seem to have a clear correlation to eating. There has been no substernal pain or regurgitation and no weight loss, vomiting, diarrhea, constipation, fever, night sweats, or fatigue. The patient has no prior medical history and takes no medications, but has tried calcium carbonate occasionally without benefit. A physical examination reveals normal vital signs and no abdominal abnormalities or enlarged lymph nodes. Which one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Sucralfate (Carafate)",
+      "B) Stool antigen testing for Helicobacter pylori",
+      "C) Serum testing for H pylori",
+      "D) Abdominal ultrasonography",
+      "E) Referral for upper endoscopy"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient presents with symptoms of dyspepsia. Dyspepsia is a diagnosis of exclusion and should be considered if at least 1 of the following symptoms is present: early satiety, epigastric pain, epigastric burning, and postprandial fullness. The majority of patients diagnosed with dyspepsia have functional dyspepsia with no evidence of organic disease on endoscopy. Testing for and treating Helicobacter pylori infection is recommended in patients with dyspepsia, with evidence of improvement 1 year after treatment. The stool antigen test and the urea breath test are the preferred noninvasive options for detecting H pylori. Serum testing for H pylori is not recommended because it has lower sensitivity and specificity than other noninvasive tests. Sucralfate has not been shown to be effective for dyspepsia. Abdominal ultrasonography, particularly of the upper abdomen, is indicated when evaluating for liver pathology or gallbladder disease but is not useful for investigating dyspepsia. Endoscopy is recommended for patients >60 years of age with new dyspepsia, and for patients <60 years of age with multiple or severe alarm symptoms, such as marked weight loss, rapidly progressive dysphagia, an epigastric mass, or supraclavicular lymphadenopathy."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 111-120)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

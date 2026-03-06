@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 ITE Quiz - Questions 121-130</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2024_13',
+              JSON.stringify({
+                correct: correctCount,
+                total:   totalCount,
+                missed:  missedQuestionsArray
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 121,
+    "question": "While performing a mental status examination, you request that the patient spell “world” backward. \nThis test assesses which one of the following mental status components?",
+    "options": [
+      "A) Attention",
+      "B) Executive function",
+      "C) Memory",
+      "D) Orientation",
+      "E) Visuospatial proficiency"
+    ],
+    "correctAnswer": 0,
+    "rationale": "The mental status examination is used to differentiate among conditions such as \ndelirium, dementia, mania, and depression. The components of the mental status \nexamination include attention, executive function, memory, orientation, and visuospatial \nproficiency. Attention is assessed by asking the patient to spell a word backward or \ncount backward by 7s or 5s. Drawing a clock face with the hands at the 11:10 position \ntests for executive function. Memory is tested by asking the patient to repeat 3 words, \nallowing 5 minutes to elapse, and then asking the patient to recall the words. \nOrientation is assessed by asking the year, day, time, location, or name. Visuospatial \nproficiency is tested by requesting that the patient copy intersecting pentagons or a 3-\ndimensional cube on paper. Another option is to draw a triangle and request that the \npatient draw the same shape upside down."
+  },
+  {
+    "id": 122,
+    "question": "A 3-month-old male is brought to your office by his parents with a 6-week history of stridor that \nworsens when the infant is lying down and when he eats. On examination the infant appears well and \nis in no respiratory distress. His lungs are clear, and his growth curve is stable at the 85th percentile \nfor both weight and length. You note subtle stridor with each inhalation that is more pronounced \nwhen he feeds. \n \nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Bacterial tracheitis",
+      "B) Croup",
+      "C) Epiglottitis",
+      "D) Foreign body aspiration",
+      "E) Laryngomalacia"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This well-appearing child with chronic stridor most likely has the chronic condition \nlaryngomalacia, in which the supraglottic structures collapse over the trachea during \ninhalation and result in the characteristic stridor. Symptoms typically begin between 1 \nand 2 months of age and are often chronic. Affected children are otherwise well. The \nstridor may be more pronounced with eating, and in some cases can lead to impaired \nweight gain or choking, cyanosis, or aspiration with feeding. As the child grows, the \ntrachea will also grow and the condition will resolve.  \n \nBacterial tracheitis, croup, and epiglottitis are all acute, infectious causes of stridor. \nForeign body aspiration is typically an acute presentation that is more common in older \nchildren who are able to grasp and manipulate foreign objects more easily."
+  },
+  {
+    "id": 123,
+    "question": "A 35-year-old female presents with a swollen right index finger after accidentally slamming the car \ndoor on the finger yesterday. She has constant pain of the distal finger but no throbbing under her \nfingernail. On examination the end of the right index finger is swollen, and she has a small subungual \nhematoma. She is able to flex and extend the distal interphalangeal (DIP) joint with some pain, but \nhas normal strength. An x-ray shows a transverse fracture across the distal phalanx that does not \ninvolve the joint. \n \nWhich one of the following is the optimal treatment plan for this patient?",
+    "options": [
+      "A) Ice, NSAIDs, and DIP flexion as tolerated",
+      "B) Draining the subungual hematoma and bandaging the finger",
+      "C) Buddy taping the finger for 3–4 weeks",
+      "D) Splinting the DIP joint in full extension for 4–6 weeks",
+      "E) Referral to an orthopedic surgeon"
+    ],
+    "correctAnswer": 3,
+    "rationale": "A distal phalanx fracture can occur after a crush injury or direct force to the end of the \nfinger. The affected finger will have swelling, bruising, and often a subungual \nhematoma. Simple fractures can be managed with splinting in extension for 4–6 weeks \nwith a finger guard or U-shaped aluminum splint. Hematomas that are more than 50% \nof the nail bed surface can be drained with a hot needle or instrument. Buddy taping is \nused for minimally angled middle or proximal phalanx fractures that do not involve the \njoints. A patient who is unable to flex or extend the distal interphalangeal (DIP) joint, \nhas decreased sensation, or has a complex fracture extending into the joint should be \nreferred to an orthopedic surgeon."
+  },
+  {
+    "id": 124,
+    "question": "Which one of the following is an effective topical treatment for postinflammatory hyperpigmentation \nin persons with Fitzpatrick skin types IV, V, and VI?",
+    "options": [
+      "A) Ammonium lactate 12% lotion (Lac-Hydrin)",
+      "B) Clindamycin 1% gel (Clindagel)",
+      "C) Hydrocortisone 1% cream (Cortizone-10)",
+      "D) Hydroquinone 4% cream",
+      "E) Metronidazole 0.75% gel"
+    ],
+    "correctAnswer": 3,
+    "rationale": "There are a variety of topical therapies for the treatment of postinflammatory \nhyperpigmentation in persons with Fitzpatrick skin types IV, V, and VI, including \nhydroquinone, fluocinolone/hydroquinone/tretinoin, and azelaic acid. Adapalene, \ntretinoin, and tazarotene are also acceptable options for hyperpigmentation associated \nwith acne. Ammonium lactate 12% lotion, clindamycin 1% gel, hydrocortisone 1% \ncream, and metronidazole 0.75% gel are not effective topical therapies for \npostinflammatory hyperpigmentation in such patients."
+  },
+  {
+    "id": 125,
+    "question": "A 12-year-old female is brought to your clinic for a sports preparticipation evaluation for volleyball. \nHer family history is significant for a paternal grandfather with cardiovascular disease. In early \nchildhood, she was diagnosed with atopic dermatitis and mild intermittent asthma that is controlled \nwith a short-acting bronchodilator. The review of systems is unremarkable except for occasional \nshortness of breath when she is exposed to cats. On examination in a supine position, a systolic \nnonradiating murmur is best heard over the left upper sternal border. The murmur decreases with the \nValsalva maneuver. \n \nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) An atrial septal defect",
+      "B) Hypertrophic obstructive cardiomyopathy",
+      "C) Mitral valve prolapse",
+      "D) A pulmonary flow murmur",
+      "E) Tricuspid stenosis"
+    ],
+    "correctAnswer": 3,
+    "rationale": "A pulmonary flow murmur is an innocent systolic harsh murmur most commonly \nidentified in adolescents and best heard at the left upper sternal border with minimal \nradiation. It is reduced when the Valsalva maneuver is performed. Atrial septal defects \npresent as midsystolic murmurs best heard over the left upper sternal border. They \nradiate to the back and start softly then intensify in sound. Hypertrophic obstructive \ncardiomyopathy causes a midsystolic murmur heard over the left lower sternal border \nand apex. It is enhanced by the Valsalva maneuver. A mitral valve prolapse murmur is \nenhanced with the Valsalva maneuver in late systole, has a midsystolic click, and \nradiates to the apex. Tricuspid stenosis is a pathologic mid-diastolic murmur heard over \nthe left lower sternal border. It increases with deep inspiration."
+  },
+  {
+    "id": 126,
+    "question": "A 36-year-old patient presents to the emergency department (ED) for the third time this month for \nfevers ≥101 °F. Extensive workups at past visits have not identified an etiology. The patient does not \ntake any medications and has not traveled recently. Today a C-reactive protein level and an \nerythrocyte sedimentation rate are elevated, but a CBC, urinalysis, and chest x-ray are normal. Blood \ncultures are pending and prior cultures have been negative. A complete physical examination is \nunremarkable with no sign of localized infection or disease. \n \nWhich one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Oral naproxen, 500 mg",
+      "B) Intravenous ceftriaxone, 1 g, plus intravenous azithromycin (Zithromax), 500 mg",
+      "C) Fluorodeoxyglucose (FDG)-PET/CT",
+      "D) Exploratory laparotomy",
+      "E) Bone marrow biopsy"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Fever of unknown origin (FUO) in adults is defined as a clinically documented fever \n≥38.3 °C (101 °F) that occurs on multiple occasions without a clear diagnosis. Most \ncases of FUO are due to common diseases. About 75% of all cases of FUO in adults \nresolve spontaneously without a determined diagnosis.  \n \n\nWhen an initial workup is unremarkable, imaging with fluorodeoxyglucose (FDG)-\nPET/CT is helpful in identifying an inflammatory, infectious, or neoplastic cause (SOR B) \nwith sensitivities ranging from 86% to 98% and specificities from 52% to 85%. It is \nestimated that a diagnosis is found in >50% of patients using FDG-PET/CT.  \nPatients who are neither neutropenic nor severely immunocompromised should not be \nstarted on empiric antibiotics (SOR C) or anti-inflammatories, as these have not been \nshown to effectively treat FUO. Previously, exploratory laparotomy was preferred in the \nworkup of FUO but is now no longer indicated as the accuracy of less invasive \ndiagnostic tests, such as CT, has increased. Bone marrow biopsy is not indicated in this \npatient with a normal CBC."
+  },
+  {
+    "id": 127,
+    "question": "A 72-year-old male presents to the emergency department (ED) with a 2-day history of nausea, \nvomiting, and diarrhea. The symptoms developed after the recent repair of an inguinal hernia, and his \nsurgeon advised him to come to the ED. The patient has a history of chronic heart disease, \nhypertension, and diabetes mellitus with kidney disease. His medications include atorvastatin \n(Lipitor), amlodipine (Norvasc), and dapagliflozin (Farxiga). He does not drink alcohol or use illicit \ndrugs. On presentation he is lucid and making jokes with the staff. His vital signs in the ED include a \nblood pressure of 110/60 mm Hg, a heart rate of 110 beats/min, and an oxygen saturation of 96% on \nroom air. Physical examination findings are unremarkable. He receives intravenous ondansetron, 4 \nmg, and laboratory studies are pending. \n \nSeveral hours later, the patient appears drowsy and has difficulty focusing. He fluctuates between \nlethargy and rambling about unrelated topics. Despite conservative treatment for the suspected \ncondition, he starts displaying severe agitation, putting himself and the staff members at risk for \nharm. \n \nWhich one of the following oral medications would be most appropriate for this patient?",
+    "options": [
+      "A) Diazepam (Valium)",
+      "B) Haloperidol",
+      "C) Lorazepam (Ativan)",
+      "D) Risperidone (Risperdal)",
+      "E) Sertraline (Zoloft)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient’s symptoms meet the DSM-5 criteria for delirium related to his emergency \ndepartment visit. Delirium is characterized by an acute disturbance in cognition, \nawareness, and attention that deviates from the patient’s baseline cognition, fluctuates \nin severity, and develops within hours to days. Delirium has 3 subtypes: hyperactive, \nhypoactive, and mixed. An accurate diagnosis is vital to prevent inappropriate \ntreatments, increased morbidity and mortality, and prolonged hospitalization. It is \namong the most common complications in hospitalized adults age 65 and older, \nespecially among those who have undergone surgery. Patients with delirium have an \nincreased risk for death in the following year. While the pathophysiology of delirium is \nnot well understood, multiple comorbidities, older age, poor functional status, \npolypharmacy, and recent surgery are all independent risk factors. Symptoms can \noverlap with other diseases and a comprehensive history and physical examination are \nessential for a timely diagnosis.  \n \nPrevention using a multidisciplinary approach is the optimal management for delirium. \nNonpharmacologic interventions are the foundation of delirium management, and no \nmedications are approved by the FDA for its treatment. However, when indicated, \nsecond-generation antipsychotics such as risperidone, olanzapine, and quetiapine, are \npreferred over haloperidol because they have fewer side effects and a faster onset of \naction. The benzodiazepines lorazepam and midazolam may be given parenterally if \ndelirium is attributed to alcohol consumption, uncontrollable seizure activity, or hypnotic \ndrug withdrawal, but oral diazepam is not indicated. Trazodone may be used as an \nalternative treatment, but sertraline would not be appropriate."
+  },
+  {
+    "id": 128,
+    "question": "A 69-year-old male with a history of coronary artery disease sees you for follow-up after \nhospitalization for new-onset atrial fibrillation. After some difficulty with low blood pressure with \nother rate control agents, he was discharged on amiodarone. \n \nThis patient should be monitored for amiodarone toxicity with which one of the following?",
+    "options": [
+      "A) An amiodarone plasma level",
+      "B) A blood glucose level",
+      "C) A CBC with differential",
+      "D) Pulmonary function testing",
+      "E) Urinalysis"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Patients treated with amiodarone should be monitored with pulmonary function testing \nat baseline and if clinical suspicion of pulmonary toxicity develops. Amiodarone is \ncommonly used to manage ventricular arrhythmias, and for rate and rhythm control in \natrial fibrillation. Amiodarone is associated with pulmonary fibrosis, and baseline \nassessment with pulmonary function tests including measurement of diffusing capacity \nof the lungs for carbon monoxide (DLCO) and chest x-ray is recommended. Amiodarone \nis also associated with hypothyroidism and less commonly with hyperthyroidism, liver \ninflammation, peripheral neuropathies, optic neuritis and corneal microdeposits, and \nbluish skin discoloration. Amiodarone plasma levels, blood glucose monitoring, a CBC \nwith differential, and urinalysis are not routinely indicated in patients taking \namiodarone."
+  },
+  {
+    "id": 129,
+    "question": "A 39-year-old female presents for a postpartum visit 2 months after a preterm delivery that was \ncomplicated by chronic hypertension and a bicornuate uterus. She does not smoke cigarettes. \n \nWhich one of the following would be the most appropriate contraceptive for this patient?",
+    "options": [
+      "A) Oral levonorgestrel/ethinyl estradiol",
+      "B) An etonogestrel/ethinyl estradiol vaginal ring (NuvaRing)",
+      "C) An etonogestrel subdermal implant (Nexplanon)",
+      "D) A levonorgestrel IUD (Mirena)",
+      "E) A copper IUD (Paragard)"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient has a structural abnormality of the uterus and IUDs are contraindicated. \nFurthermore, even well-controlled hypertension is a relative contraindication to \nestrogen-containing contraceptives such as combination pills and the vaginal ring, due \nto associated vascular risks in a patient older than 35 years. Nonhormonal methods and \nprogesterone-only contraceptive pills, depot injections, and implants remain options. \nThe etonogestrel implant is the most effective of these options."
+  },
+  {
+    "id": 130,
+    "question": "A 77-year-old female with a medical history of atrial fibrillation, COPD, depression, and \nhypothyroidism presents for follow-up of a recent visit to the emergency department (ED) for a fall in \nwhich she hit her head on the edge of a dresser. CT of the head in the ED was negative for \nintracranial bleeding and she received staples for a scalp laceration. \nWhich one of the following medications in this patient's current regimen is most likely to increase her \nfall risk?",
+    "options": [
+      "A) Apixaban (Eliquis)",
+      "B) A budesonide/formoterol inhaler (Symbicort)",
+      "C) Fluoxetine (Prozac)",
+      "D) Levothyroxine (Synthroid)",
+      "E) Prednisone"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Use of an SSRI has been found to increase fall risk in older persons. While \nanticoagulants such as apixaban increase the risk for bleeding from fall-related injuries, \nthey are recommended to prevent stroke in patients with atrial fibrillation regardless of \nfall risk and have not been noted to increase the risk of falling. Budesonide/formoterol, \nlevothyroxine, and prednisone have not been associated with an increased fall risk."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 121-130)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

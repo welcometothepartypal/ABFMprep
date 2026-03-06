@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 ITE Quiz - Questions 151-160</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2025_16',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 151,
+    "question": "A 75-year-old male with acute confusion presents to the emergency department and is found to have a blood pressure of 280/140 mm Hg. Which one of the following potential etiologies would provide the strongest indication for lowering his systolic blood pressure to a target of 120 mm Hg within 20 minutes?",
+    "options": [
+      "A) Acute aortic dissection",
+      "B) Acute ischemic stroke",
+      "C) Acute renal failure",
+      "D) Hypertensive encephalopathy",
+      "E) Intracerebral hemorrhage"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Treatment of acute aortic dissection includes aggressive lowering of the systolic blood pressure to 100–120 mm Hg within 20 minutes and concomitant lowering of the pulse rate to <60 beats/min to reduce shear stress on the aortic wall, minimize the risk of propagating the dissection, and reduce the risk of other complications, including rupture and aneurysmal degeneration. The optimal treatment of acute ischemic stroke, acute renal failure, hypertensive encephalopathy, and intracerebral hemorrhage requires blood pressure to be lowered more cautiously to avoid the risk of complications that may be seen with overly rapid and aggressive blood pressure–lowering."
+  },
+  {
+    "id": 152,
+    "question": "A 56-year-old male sees you because he has been falling asleep at work in the afternoon. Upon questioning he notes that he is very tired all the time. Although he is in bed 8 hours per night and wakes with an alarm, he gets up 3 times nightly to urinate. He says that he has been told he snores. He does not have any constipation, dry skin, mood changes, stomach pain, changes in urine stream, shortness of breath, or chest pain. The patient is 173 cm (68 in) tall and weighs 95 kg (209 lb). His vital signs include a blood pressure of 140/88 mm Hg, a pulse rate of 79 beats/min, and a respiratory rate of 16/min. Which one of the following is most likely to yield the correct diagnosis?",
+    "options": [
+      "A) A serum TSH level",
+      "B) Vitamin B and folate levels",
+      "C) Iron studies",
+      "D) A comprehensive metabolic panel",
+      "E) Polysomnography"
+    ],
+    "correctAnswer": 4,
+    "rationale": "The combination of obesity, loud snoring, and fatigue is suspicious for obstructive sleep apnea, and polysomnography is the definitive diagnostic study. A TSH level would be useful if hypothyroidism were suspected as the cause of this patient's fatigue, but it is less likely because he does not have any mood changes, dry skin, or constipation. Low vitamin B , folate, and iron levels are also less likely based on this patient's presentation. A 12 comprehensive metabolic panel would be useful if kidney or liver function were suspected as the cause of the patient's fatigue, but these are less likely because he does not have shortness of breath, stomach pain, or chest pain."
+  },
+  {
+    "id": 153,
+    "question": "A 16-year-old female presents for a routine well child examination. She has never been sexually active and does not use illicit substances. Based on guidelines from the U.S. Preventive Services Task Force, screening patients such as this for which one of the following has the strongest evidence of benefit?",
+    "options": [
+      "A) Anxiety",
+      "B) Chlamydia and gonorrhea",
+      "C) Eating disorders",
+      "D) Elevated blood pressure",
+      "E) Scoliosis"
+    ],
+    "correctAnswer": 0,
+    "rationale": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for anxiety in children and adolescents 8–18 years of age (B recommendation). The USPSTF does recommend screening for chlamydia and gonorrhea for sexually active females in this patient's age group (B recommendation); however, this patient is not sexually active. Screening adolescents for eating disorders, elevated blood pressure, and scoliosis all have insufficient evidence to assess the benefits and harms (I recommendation)."
+  },
+  {
+    "id": 154,
+    "question": "A 50-year-old female presents for evaluation of unilateral shoulder pain without a history of acute injury. She has tried ibuprofen with minimal symptomatic relief. Plain radiographs of the affected shoulder taken at an urgent care clinic last week demonstrated no abnormal findings. Which one of the following physical examination findings would best support a diagnosis of adhesive capsulitis as the primary etiology of this patient's shoulder pain?",
+    "options": [
+      "A) Apprehension in a 90° position with abduction and external rotation",
+      "B) Crepitus on passive abduction with preserved passive range of abduction",
+      "C) Restricted active range of abduction with preserved passive range of abduction",
+      "D) Restricted passive range of abduction and external rotation",
+      "E) Weakness on resisted abduction and external rotation"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The hallmark finding of adhesive capsulitis, also known as frozen shoulder, is pain associated with restricted passive range of motion, particularly in external rotation, flexion, and abduction. Osteoarthritis of the glenohumeral joint also commonly causes pain and stiffness with limited passive range of motion; however, radiographs would show evidence of osteoarthritis, with joint space narrowing, sclerosis, osteophyte formation, and subchondral cystic change. With adhesive capsulitis, radiographs are typically normal, although characteristic findings are seen on MRI. Limited passive range of motion occurs with adhesive capsulitis and osteoarthritis because both conditions involve structural changes within the intra-articular space of the glenohumeral joint, thus resulting in mechanical restriction of the range of motion. Apprehension in a position of abduction and external rotation would suggest a diagnosis of shoulder instability. Crepitus on passive range of motion would suggest a mechanical abnormality within the shoulder girdle (either intra- or extra-articular) and is nonspecific to any one condition. Limited active range of motion in abduction with preserved passive range of motion is common to extra-articular sources of shoulder pain, such as rotator cuff tendinitis and impingement, subacromial bursitis, biceps tendinitis, and partial or complete rotator cuff tears. Weakness on manual muscle testing in abduction and external rotation would raise concern for a high-grade or full-thickness rotator cuff tear."
+  },
+  {
+    "id": 155,
+    "question": "A 60-year-old male with a history of type 2 diabetes presents to your office because he is concerned about an ulcer on the bottom of his right foot. He is uncertain how long the ulcer has been present. He is afebrile and otherwise asymptomatic. His most recent hemoglobin A is 9.7% and was obtained 9 months ago. His medications include metformin, 2000 mg 1c daily, and insulin glargine (Lantus), 34 units nightly. He does not regularly check his blood glucose levels. On examination, the patient has an ulcer on the plantar surface of the right foot overlying the head of the fifth metatarsal, measuring 1.0 cm in diameter. The ulcer appears deep with erythema that extends approximately 2.5 cm from the margin of the ulcer. A probe-to-bone test is positive. Which one of the following would be the most appropriate next test to evaluate for osteomyelitis?",
+    "options": [
+      "A) A WBC count",
+      "B) A culture swab",
+      "C) Transcutaneous oximetry",
+      "D) Plain radiography"
+    ],
+    "correctAnswer": 3,
+    "rationale": "In a patient with diabetes mellitus and suspected osteomyelitis of the foot, initial evaluation should include a probe-to-bone test, a serum inflammatory marker such as an erythrocyte sedimentation rate (ESR), and plain radiography. Plain radiography is the recommended initial imaging modality in the diagnosis of osteomyelitis due to its low cost, safety, and availability. If a plain radiograph suggests osteomyelitis, advanced imaging may not be necessary. While an elevated WBC count can be used to grade the severity of a diabetes-related foot infection, it can be normal in about half of patients with a severe diabetes-related foot infection and is not helpful in the diagnosis of osteomyelitis. A highly elevated ESR, however, is suggestive of an osteomyelitis infection. Superficial wound cultures are poorly sensitive and specific for identifying diabetes-related wound organisms compared to deep tissue cultures and are not used in the assessment of diabetes-related foot infections or osteomyelitis. While evaluation of peripheral vasculature and oxygenation may be warranted in the management of diabetes-related foot infections and osteomyelitis, it does not contribute to the diagnosis of osteomyelitis."
+  },
+  {
+    "id": 156,
+    "question": "A 63-year-old female with hypertension sees you for routine follow-up. She has been bothered by swelling in her legs for the last several months. Her blood pressure is well controlled and she does not have any shortness of breath, cough, difficulty breathing while lying down, or pain in her legs when walking. She thinks the swelling is better earlier in the day. Her current medications include hydrochlorothiazide, lisinopril (Zestril), estrogen, levothyroxine (Synthroid), and as-needed acetaminophen. A physical examination demonstrates mild pitting edema of both legs from the ankle to the distal third of each calf. There are 2+ pedal pulses and no skin changes. Examinations of the heart and lungs are normal. Which one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Holding estrogen, and monitoring for improvement in peripheral edema",
+      "B) Holding lisinopril, and monitoring for improvement in peripheral edema",
+      "C) Bilateral ankle-brachial indices",
+      "D) Bilateral venous compression ultrasonography",
+      "E) Bilateral venous duplex ultrasonography with reflux"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Adverse medication effects should always be considered when evaluating new symptoms, such as the association between estrogen use and peripheral edema. This patient's age suggests that she is likely remote from menopause, which provides a reason to consider discontinuing estrogen therapy. Peripheral edema is not associated with ACE inhibitor use. In fact, combining an ACE inhibitor with a calcium channel blocker (CCB) may decrease the edema attributable to CCB use. Ankle-brachial indices are indicated for the evaluation of suspected arterial disease. Arterial disease typically presents as lower extremity pain during activity that improves with rest. Arterial disease may lead to decreased arterial pulses. Arterial disease should be ruled out in those at risk before starting compression therapy for venous disease. Venous compression ultrasonography is indicated when deep vein thrombosis (DVT) is suspected. DVT is unlikely in the presentation of chronic bilateral lower extremity edema. DVT should be considered in acute unilateral edema, and the Wells score should be used to determine if there is an intermediate or high risk. The combination of a low-risk Wells score and a negative D-dimer level safely rules out DVT. Venous duplex ultrasonography with reflux is helpful in evaluating for chronic venous insufficiency. While this patient may have chronic venous insufficiency, her current medication use could be causing her edema. This should be evaluated before pursuing additional diagnostic testing given her lack of alarm symptoms, such as signs of heart failure or lower extremity ulcerations."
+  },
+  {
+    "id": 157,
+    "question": "Which one of the following antibiotics would be recommended for the treatment of syphilis in a pregnant patient who has a history of penicillin allergy?",
+    "options": [
+      "A) Azithromycin (Zithromax)",
+      "B) Ceftriaxone",
+      "C) Doxycycline",
+      "D) Penicillin G benzathine (Bicillin L-A) after desensitization"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Parenteral penicillin G benzathine is the only therapy with documented effectiveness for treating syphilis in a pregnant person. In pregnant patients with any stage of syphilis and a reported penicillin allergy, the CDC recommends desensitization followed by treatment with penicillin G benzathine. Azithromycin and erythromycin are insufficient to cure maternal infection or treat fetal infection. There is insufficient data to recommend cephalosporins such as ceftriaxone for the treatment of maternal infections and the prevention of congenital infections. Doxycycline and tetracycline are not recommended for use in the second and third trimesters."
+  },
+  {
+    "id": 158,
+    "question": "A 7-year-old male with no significant past medical history presents with his parents for a well child visit. His BMI has consistently been above the 80th percentile. His parents have both struggled with maintaining healthy weights. To help them promote a healthy lifestyle for their child, you should tell the parents which one of the following?",
+    "options": [
+      "A) An hour per day of moderate or vigorous physical activity is recommended starting at age",
+      "B) Calorie restriction alone is sufficient in maintaining a healthy weight",
+      "C) Children should avoid video screen–based physical activity",
+      "D) Organic fruit juices can be provided to achieve the recommended daily servings of fruits and vegetables"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Anticipatory guidance for lifestyle management in children should incorporate multiple approaches that address nutrition, physical activity, and behaviors that contribute to possible energy imbalance. These recommendations include 60 minutes per day of moderate to vigorous physical activity for children 6–17 years of age. Calorie restriction is beneficial in reducing weight in adolescents when combined with additional strategies, such as physical activity and behavioral changes. While excessive video screen time has been associated with increased pediatric obesity, screen-based physical activity (eg, video games that require whole-body movement) can help reduce weight in children with overweight and obesity. Children should consume 5 servings of fruits and vegetables per day. The American Academy of Pediatrics recommends against the use of fruit juices as a substitute for whole fruit due to its high calorie content."
+  },
+  {
+    "id": 159,
+    "question": "A 56-year-old female presents with numbness of her bilateral feet. She first became aware of this during a recent pedicure when she had difficulty feeling the nail technician work on her toes and the plantar surface of her feet. Since that time, she has noted a feeling of \"walking on cotton gauze\" and has started wearing slippers around her home. She had intense pruritus of her feet approximately 6 months ago that persisted for several weeks, but it was not accompanied by paresthesia. She is otherwise in good health and participates in an aerobics class 3 days per week. She takes lisinopril (Zestril), 10 mg daily, for essential hypertension. She does not have any other symptoms. On examination, her cranial nerves, muscle strength, and reflexes are normal. Sensation is diminished over the plantar surface and toes of both feet. She has 2+ dorsalis pedis and posterior tibial pulses bilaterally. Routine laboratory studies, including a CBC, comprehensive metabolic panel, hemoglobin A , serum protein electrophoresis, and TSH, 1c vitamin B , and folate levels, are all in normal range. She is concerned that she may be developing multiple sclerosis. Which one of the following would be the most appropriate next step?",
+    "options": [
+      "A) Gabapentin (Neurontin), 100 mg 3 times daily",
+      "B) Vitamin B (pyridoxine), 50 mg daily",
+      "C) Lyme antibody testing",
+      "D) Nerve conduction testing and electromyography (EMG)",
+      "E) Brain MRI"
+    ],
+    "correctAnswer": 3,
+    "rationale": "This patient demonstrates a symmetric pattern of paresthesia without red flag symptoms such as ataxia, double vision, or speech issues, which makes a lesion of the central nervous system or a nerve root less likely. Because the results of her routine laboratory studies are normal, electrodiagnostic testing would be the recommended next step. While gabapentin can be helpful in treating painful peripheral neuropathy, further workup is needed to determine the cause of this patient's symptoms. Lyme antibody testing and vitamin level testing plus supplementation may be helpful if electrodiagnostic testing exhibits an axonal pattern. Imaging of the brain or spine, such as with MRI, is not recommended in patients without central neurologic signs or asymmetry."
+  },
+  {
+    "id": 160,
+    "question": "A 56-year-old female presents for evaluation of right heel pain. She recently returned from a hiking trip during which she developed progressive heel discomfort. The patient's only medication is losartan (Cozaar), which she takes for hypertension. After a thorough examination, you diagnose Achilles tendinopathy. Which one of the following would be the most appropriate next step in diagnosis and management?",
+    "options": [
+      "A) MRI for confirmation of diagnosis",
+      "B) Non–weight-bearing until pain is improved",
+      "C) Corticosteroid injection of the Achilles tendon",
+      "D) Platelet-rich plasma injection",
+      "E) Referral for physical therapy"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Achilles tendinopathy is a common injury in active individuals. The diagnosis is made clinically; therefore, additional imaging is not indicated unless there is concern for an alternate diagnosis. Current recommendations for management include physical therapy for activity modification and targeted exercises. Neither complete rest nor corticosteroid injection are currently recommended for management of Achilles tendinopathy. While platelet-rich plasma injection continues to be studied in tendon injuries, it is not currently recommended as first-line management. Furthermore, studies remain mixed as to whether platelet-rich plasma injections are superior to placebo for pain control and return to normal activity."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2025 ITE Quiz (Questions 151-160)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

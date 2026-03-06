@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 41-50</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2023_5',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 41,
+    "question": "A 56-year-old male with hypertension and a BMI of 39 kg/m2 comes to your office for follow-up\nafter a full-night study in the sleep laboratory for evaluation of snoring and fatigue. The study\nrevealed an apnea-hypopnea index (AHI) of 12 events per hour of sleep. He has several\nquestions about his treatment options. He reports that he is very concerned about this problem\nand is willing to try anything, but a family member suggested he consider the newer procedures.\nIn addition to diet, exercise, and behavioral modifications, which one of the following would be\nthe most appropriate intervention at this time?",
+    "options": [
+      "A) An oral appliance",
+      "B) CPAP therapy",
+      "C) Hypoglossal nerve stimulation",
+      "D) Pharyngeal soft-tissue modification",
+      "E) Bariatric surgery"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient has obstructive sleep apnea (OSA) based on an apnea-hypopnea index (AHI) of 5 in the\npresence of symptoms and cardiovascular disease, such as hypertension. CPAP therapy is considered the\nmost effective treatment for OSA if used correctly and consistently and is the first-line treatment\nrecommendation. However, many patients struggle with tolerating CPAP, which results in poor adherence\nand undertreatment. An oral appliance may be tried for mild sleep apnea (an AHI of 5 to <15) and is\nbetter than no treatment for patients who do not tolerate CPAP. Given the development of newer surgical\ntreatments, the American Academy of Sleep Medicine (AASM) recommends that clinicians discuss\nreferrals for additional treatments if adult patients with obesity cannot tolerate or do not accept CPAP. The\nAASM recommends that clinicians who treat OSA discuss referral to a sleep surgeon who can perform\nupper airway surgery (pharyngeal soft-tissue modification, skeletal modification, and upper airway\nstimulation such as hypoglossal nerve stimulation) with adult patients who have a BMI >40 kg/m2 and are\nintolerant or unaccepting of CPAP (Strong Recommendation). It also recommends discussing referral to\na bariatric surgeon with adult OSA patients with obesity (class II/III, BMI 35 kg/m2) who are intolerant\nor unaccepting of CPAP (Strong Recommendation). Discussing a referral does not necessarily have to\nresult in a referral, but patients should be informed that other viable alternative treatments exist and can\nreduce disease burden.\nRef: Semelka M, Wilson J, Floyd R. Diagnosis and treatment of obstructive sleep apnea in adults. Am Fam Physician.\n2016;94(5):355-360. 2) Kent D, Stanley J, Aurora RN, et al. Referral of adults with obstructive sleep apnea for surgical\nconsultation: an American Academy of Sleep Medicine clinical practice guideline. J Clin Sleep Med.\n2021;17(12):2499-2505."
+  },
+  {
+    "id": 42,
+    "question": "A 35-year-old female presents with a 4-month history of pain in her neck, chest, mid and lower\nback, hip, and right leg. She has difficulty falling asleep at night and does not feel refreshed\nupon awakening in the morning. She feels like she is not as mentally sharp as she used to be and\nfeels mildly depressed at times. A physical examination is notable for multiple soft-tissue tender\npoints without evidence of joint deformity, inflammation, or erythema.\nWhich one of the following would be appropriate first-line pharmacologic therapy for this\npatient’s condition?",
+    "options": [
+      "A) Amitriptyline",
+      "B) Celecoxib (Celebrex)",
+      "C) Hydrocodone",
+      "D) Hydroxychloroquine (Plaquenil)",
+      "E) Naproxen\n15"
+    ],
+    "correctAnswer": 0,
+    "rationale": "This patient meets diagnostic criteria for fibromyalgia, which is characterized by diffuse, chronic pain\nwithout evidence of inflammation, erythema, or joint deformities. Pharmacologic treatments for\nfibromyalgia include tricyclic antidepressants such as amitriptyline, SNRIs such as duloxetine and\nmilnacipran, and gabapentinoids such as pregabalin. Evidence does not show benefit from NSAIDs such\nas celecoxib or naproxen or opioids such as hydrocodone. Hydroxychloroquine is a disease-modifying\nantirheumatic agent used to treat rheumatoid arthritis and malaria and is not appropriate for the treatment\nof fibromyalgia.\nRef: Winslow BT, Vandal C, Dang L. Fibromyalgia: diagnosis and management. Am Fam Physician. 2023;107(2):137-144.\n 16"
+  },
+  {
+    "id": 43,
+    "question": "A 45-year-old female sees you for follow-up 3 days after a visit to the emergency department\n(ED) for acute abdominal pain due to an initial episode of a kidney stone. Her past medical\nhistory and family history are unremarkable. A CT scan in the ED demonstrated a\nnonobstructing, 4-mm mid-ureteral stone and several smaller stones in both kidneys, measuring\nup to 2 mm. Laboratory studies in the ED showed a calcium level of 11.4 mg/dL (N 8.0–10.0)\nand microscopic hematuria on urinalysis but were otherwise normal. She was treated with\nintravenous hydration and pain control and was discharged home. She passed the stone the next\nday.\nA physical examination today is normal. Follow-up laboratory studies confirm an elevated serum\ncalcium level, along with elevated serum parathyroid hormone and 24-hour urine calcium levels.\nA DEXA scan and repeat microscopic urinalysis are normal.\nAt this point, you should",
+    "options": [
+      "A) prescribe a bisphosphonate",
+      "B) prescribe a thiazide diuretic",
+      "C) refer her for genetic evaluation",
+      "D) refer her for cystoscopy",
+      "E) refer her for parathyroidectomy"
+    ],
+    "correctAnswer": 4,
+    "rationale": "This patient has laboratory evidence of primary hyperparathyroidism, with hypercalcemia and an\ninappropriately elevated (as opposed to suppressed) parathyroid hormone (PTH) level. An elevated 24-hour\nurine calcium level further distinguishes primary hyperparathyroidism from familial hypocalciuric\nhypercalcemia. Treatment of primary hyperparathyroidism with parathyroidectomy has been shown to\nnormalize PTH and calcium levels, decrease kidney stone production, and prevent declines in renal\nfunction and bone mineral density. Untreated primary hyperparathyroidism increases overall mortality as\nwell as cardiovascular and cerebrovascular disease risk, in addition to increasing the risk of kidney stone\nproduction, renal function decline, and loss of bone mineral density. Parathyroidectomy is indicated in this\npatient based on her symptomatic hypercalcemia, age <50, and serum calcium level >1 mg/dL above\nthe upper limit of normal. Other potential indications include the presence of osteoporosis, reduced kidney\nfunction, or other asymptomatic renal involvement, including silent nephrolithiasis on imaging,\nnephrocalcinosis, or hypercalciuria.\nPatients with primary hyperparathyroidism who are not candidates for surgery may be managed medically.\nBisphosphonates may be used to increase bone mineral density. For this patient with a normal DEXA scan,\nsurgical treatment would obviate the possible future need to treat her for bone density loss related to\nhyperparathyroidism. Thiazides may be used for treating certain hyperparathyroid states due to their impact\non reducing calcium excretion and improving bone mineral density, although they are typically avoided\nin primary hyperparathyroidism because they can worsen hypercalcemia. Genetic evaluation would be\nwarranted for a patient suspected of having multiple endocrine neoplasia type 1 or 2A, although this patient\ndoes not have any family history or presenting features to suggest involvement of either of these rare\nfamilial syndromes. Cystoscopy may be indicated in the setting of ureteral obstruction but is not necessary\nin this case.\nRef: Insogna KL. Primary hyperparathyroidism. N Engl J Med. 2018;379(11):1050-1059. 2) Sell J, Ramirez S, Partin M.\nParathyroid disorders. Am Fam Physician. 2022;105(3):289-298."
+  },
+  {
+    "id": 44,
+    "question": "A 42-year-old male sees you for a routine health maintenance examination. He has no\nsymptoms, no high-risk behaviors, and no past medical history. The physical examination is\nunremarkable. He has had no health care screenings since a sports preparticipation evaluation\nat age 14.\nWhich one of the following screenings should you recommend for this patient at this time?",
+    "options": [
+      "A) Carotid stenosis",
+      "B) Glaucoma",
+      "C) HIV",
+      "D) Testicular cancer",
+      "E) Vitamin D deficiency"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The U.S. Preventive Services Task Force recommends that all adolescents and adults between the ages of\n15 and 65 be screened for HIV (A recommendation). Screening for carotid stenosis and for testicular\ncancer is not recommended (D recommendation). The evidence for glaucoma screening and vitamin D\ndeficiency is unclear and no recommendation has been made.\nRef: US Preventive Services Task Force. Final recommendation statement: testicular cancer: screening. Updated April 15, 2011.\n2) US Preventive Services Task Force. Final recommendation statement: human immunodeficiency virus (HIV) infection:\nscreening. Updated June 11, 2019. 3) US Preventive Services Task Force. Final recommendation statement: asymptomatic\ncarotid artery stenosis: screening. Updated February 2, 2021. 4) US Preventive Services Task Force. Final recommendation\nstatement: vitamin D deficiency in adults: screening. Updated April 13, 2021. 5) US Preventive Services Task Force. Final\nrecommendation statement: primary open-angle glaucoma: screening. Updated May 24, 2022.\n 17"
+  },
+  {
+    "id": 45,
+    "question": "A 20-year-old college student comes to your office on Monday morning after injuring his right\narm during a rugby match 2 days earlier. He is not certain of the mechanism of injury but was\nstruck forcefully on the lower posterior part of his upper arm above the elbow. He describes\nparesthesias on the extensor side of his forearm and the back of his hand. His upper arm is\nbruised and mildly swollen at the described location.\nIn addition to the paresthesias on the extensor forearm and the back of the hand, which one of\nthe following motor findings would you expect?",
+    "options": [
+      "A) An inability to maintain all fingers fanned out under resistance",
+      "B) Weakness of elbow flexion with the hand in a prone position",
+      "C) Weakness of finger and wrist extension under resistance",
+      "D) Weakness of flexion of the fourth and fifth fingers",
+      "E) Weakness of thumb apposition\n16"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This student athlete likely has a contusion to the radial nerve in the spiral groove of the distal humerus,\nresulting in the so-called “Saturday night palsy” after undue pressure on the distal upper arm. This could\nbe the result of significant direct pressure over several hours, or such an injury could happen acutely, as\nin the described scenario. Findings include paresthesias and possible decreased light or sharp touch\nsensation on the back of the hand and extensor forearm. Motor findings include weakness of finger and\nwrist extension, best evaluated by testing while the examiner applies resistance to the actions. Thumb\napposition is controlled by the median nerve and splaying out the fingers (lumbricals) is mainly an ulnar\nnerve function. Unless the nerve has been severed, the sensory loss and motor weakness typically resolve\nwithin days to weeks.\nRef: Silver S, Ledford CC, Vogel KJ, Arnold JJ: Peripheral nerve entrapment and injury in the upper extremity. Am Fam\nPhysician 2021;103(5):275-285."
+  },
+  {
+    "id": 46,
+    "question": "A 55-year-old male sees you because of heartburn and dysphagia. Esophagogastroduodenoscopy\nshows moderately severe esophagitis.\nWhich one of the following is the most appropriate long-term pharmacologic management for\nthis condition?",
+    "options": [
+      "A) Famotidine (Pepcid), 10 mg daily",
+      "B) Metoclopramide (Reglan), 10 mg before meals",
+      "C) Omeprazole, 40 mg daily",
+      "D) Sucralfate (Carafate), 1 g twice daily"
+    ],
+    "correctAnswer": 2,
+    "rationale": "Patients with moderately severe esophagitis require ongoing proton pump inhibitors (PPIs) to manage\nsymptoms. There is a nearly 100% recurrence of symptoms at 6 months if a PPI is stopped. Lifelong\nomeprazole use would be the best choice for this patient. PPIs are recommended over H2-blockers such\nas famotidine for maintenance and healing of erosive esophagitis. Prokinetic agents such as\nmetoclopramide are not recommended for GERD unless gastroparesis is also present. Sucralfate is not\nrecommended for GERD except in the case of pregnancy.\nRef: Katz PO, Dunbar KB, Schnoll-Sussman FH, Greer KB, Yadlapati R, Spechler SJ. ACG clinical guideline for the diagnosis\nand management of gastroesophageal reflux disease. Am J Gastroenterol. 2022;117(1):27-56."
+  },
+  {
+    "id": 47,
+    "question": "A 12-year-old transgender female accompanied by her mother comes to your office to discuss\npersistent gender dysphoria. The patient has been in counseling for 2 years along with her\nfamily, who is supportive of her gender identity. The patient’s mother asks about puberty\nblockers.\nIn discussing GnRH analogs with her, you note that the current recommendation for beginning\nthis medication is when she is at which Tanner stage of development?",
+    "options": [
+      "A) 1",
+      "B) 2",
+      "C) 3",
+      "D) 4",
+      "E) 5"
+    ],
+    "correctAnswer": 1,
+    "rationale": "The 2022 World Professional Association for Transgender Healthcare (WPATH) standards of care\nrecommends that in eligible adolescents, pubertal suppression may begin at Tanner stage 2. Treatment\nprior to the onset of puberty is not recommended. Tanner stage 1 is prepubescent and Tanner stage 2 is\nthe initial pubescent stage. It is not necessary and may be harmful to wait for further pubertal stages before\ninitiating puberty blockers in an eligible transgender adolescent.\nRef: Coleman E, Radix AE, Bouman WP, et al. Standards of care for the health of transgender and gender diverse people,\nversion 8. Int J Transgend Health. 2022;23(Suppl 1):S1-S259.\n 18"
+  },
+  {
+    "id": 48,
+    "question": "A 63-year-old female with a history of obesity and hypertension sees you for evaluation of\nshortness of breath on exertion and lower extremity edema. Echocardiography shows grade 2\ndiastolic dysfunction and an ejection fraction of 50%. You diagnose heart failure with preserved\nejection fraction.\nWhich one of the following medications has the best evidence to reduce hospitalization due to\nheart failure or cardiovascular death in patients such as this?",
+    "options": [
+      "A) Carvedilol (Coreg)",
+      "B) Empagliflozin (Jardiance)",
+      "C) Lisinopril (Zestril)",
+      "D) Sacubitril/valsartan (Entresto)",
+      "E) Spironolactone (Aldactone)\n17"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Heart failure with preserved ejection fraction (HFpEF), defined as an EF 50%, has a relative paucity of\nevidence-based treatments leading to improved patient outcomes compared to heart failure with reduced\nejection fraction (HFrEF), defined as an EF <40%. While all of the options listed have good evidence\nof benefit in HFrEF, only the SGLT2 inhibitor empagliflozin has been shown to improve the composite\noutcome of hospitalization due to heart failure or cardiovascular death in HFpEF. The 2022 American\nHeart Association/American College of Cardiology/Heart Failure Society of America guideline for the\nmanagement of heart failure recommends SGLT2 inhibitors as having the best evidence of benefit in\nHFpEF.\n-Blockers such as carvedilol may be used for rate control in patients with atrial fibrillation and HFpEF\nbut are not clearly beneficial otherwise. Clinical trials of ACE inhibitors such as lisinopril and angiotensin\nreceptor blockers such as valsartan have not shown improved outcomes for patients with HFpEF.\nSacubitril/valsartan similarly did not achieve the primary end point of improvement in time to HF\nhospitalization or cardiovascular death in this patient population. The mineralocorticoid antagonist\nspironolactone is associated with improved diastolic function in patients with HFpEF and was found to\nimprove hospitalizations but not cardiovascular death as a primary outcome.\nRef: Pitt B, Pfeffer MA, Assmann SF, et al. Spironolactone for heart failure with preserved ejection fraction. N Engl J Med.\n2014;370(15):1383-1392. 2) Empagliflozin (Jardiance) for heart failure with reduced ejection fraction. Med Lett Drugs Ther.\n2021;63(1636):171-172. 3) Anker SD, Butler J, Filippatos G, et al. Empagliflozin in heart failure with a preserved ejection\nfraction. N Engl J Med. 2021;385(16):1451-1461. 4) Heidenreich PA, Bozkurt B, Aguilar D, et al. 2022 AHA/ACC/HFSA\nguideline for the management of heart failure: a report of the American College of Cardiology/American Heart Association\njoint committee on clinical practice guidelines. Circulation. 2022;145(18):e895-e1032."
+  },
+  {
+    "id": 49,
+    "question": "A 45-year-old male presents to the urgent care clinic with a 2-hour history of central chest pain\nthat began at rest with associated shortness of breath. In addition, he has had a mild dry cough\nand rhinorrhea for a few days but no fever. He has not had any nausea, dizziness, or\ndiaphoresis, and the chest pain does not radiate. He took a low-dose aspirin at home at the\ninsistence of his partner but states that it did not affect the pain. He has no past medical history,\ntakes no medications, consumes 4–6 alcoholic drinks per night, and does not smoke. He has a\nsedentary job in customer service and walks his dog twice a day. He lives at home with his\npartner and toddler, who also has a mild cough and runny nose.\nOn examination the patient has a temperature of 37.0°C (98.6°F), a blood pressure of 150/100\nmm Hg, a heart rate of 118 beats/min, a respiratory rate of 14/min, and an oxygen saturation\nof 98% on room air. The patient is well appearing, and an HEENT examination reveals no\njugular vein distention. A cardiovascular examination reveals tachycardia without murmur.\nThere is no chest wall tenderness to palpation. The lung examination reveals decreased breath\nsounds on the right compared with the left, and there are no crackles or wheezes. There is no\nlower extremity edema.\nA chest radiograph and an EKG are shown below. Laboratory studies including D-dimer and\ntroponin levels, a CBC, and a comprehensive metabolic panel have been ordered and the results\nare pending.\nWhich one of the following would be the most appropriate next step in management?",
+    "options": [
+      "A) Initiation of antibiotics",
+      "B) Initiation of heparin infusion",
+      "C) Chest tube placement",
+      "D) Cardiac catheterization"
+    ],
+    "correctAnswer": 2,
+    "rationale": "This patient’s chest radiograph is consistent with a large right pneumothorax and complete lung collapse.\nIn addition, there is a leftward mediastinal shift that raises the concern for a tension pneumothorax. The\nmost appropriate next step in management would be placement of a chest tube. The chest radiograph is not\nconsistent with pneumonia, so antibiotics would not be appropriate. While a pulmonary embolus and\nnon–ST-elevation myocardial infarction could have a similar presentation, the abnormal chest radiograph\npoints to the most likely diagnosis, and a heparin infusion would not be indicated. Cardiac catheterization\nis not the most appropriate next step in the management of a pneumothorax because the focus should be\non stabilizing the lung condition and ensuring proper healing before considering invasive procedures.\nRef: Walls RM, Hockberger RS, Gausche-Hill M, et al, eds. Rosen’s Emergency Medicine: Concepts and Clinical Practice. 9th\ned. Elsevier; 2018:881-885. 2) DeMaio A, Semaan R. Management of pneumothorax. Clin Chest Med. 2021;42(4):729-738.\n 19",
+    "image": "quiz_images_2023/2023_mc_page_020.png"
+  },
+  {
+    "id": 50,
+    "question": "A 40-year-old male presents because he is losing large clumps of hair when he brushes or\nwashes it. He feels well otherwise and does not take any medications. His past medical history\nis unremarkable except for a cholecystectomy 4 months ago for acute cholecystitis. A physical\nexamination is normal except for uniform, diffuse thinning of the hair on his scalp. You do not\nobserve any patches of hair loss, redness, inflammation, scaling, or scarring of his scalp.\nWhich one of the following would be the most appropriate next step in managing this patient’s\nhair loss?",
+    "options": [
+      "A) Reassurance only",
+      "B) Cognitive behavioral therapy",
+      "C) Terbinafine",
+      "D) Intracutaneous scalp corticosteroid injections\n18"
+    ],
+    "correctAnswer": 0,
+    "rationale": "There are three phases of hair growth: the anagen, or growth phase; the catagen, or degeneration phase;\nand the telogen, or resting phase. It is during the telogen phase that hair sheds. This patient has telogen\neffluvium in which diffuse, not patchy, hair loss is caused by large numbers of hairs entering the telogen\nphase and falling out 3–5 months after a stressor. The stress may be emotional or physiologic, such as this\npatient’s acute cholecystitis with cholecystectomy. A history of hair coming out in clumps is suggestive\nof this diagnosis. The incidence is similar among age groups and sexes. Telogen effluvium is usually\nself-limited and resolves within 2–6 months. The treatment is reassurance.\nCognitive behavioral therapy is used to treat trichotillomania, an impulse-control disorder in which patients\npull, twist, or twirl hair, typically in the frontoparietal area. It can include the eyelashes and eyebrows.\nTerbinafine is an antifungal that can be used to treat tinea capitis, a patchy dermatophyte infection of the\nhair shaft and follicles that is associated with itching, scaling, and pustules. Intralesional corticosteroids\ncan be used for alopecia areata where the hair loss pattern is patchy or involves the entire scalp. It can also\ninvolve the entire body. The hair loss is more gradual in this condition. \nRef: Phillips TG, Slomiany WP, Allison R. Hair loss: common causes and treatment. Am Fam Physician. 2017;96(6):371-378."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 41-50)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>

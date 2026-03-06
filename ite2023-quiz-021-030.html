@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 ITE Quiz - Questions 21-30</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        // ── SAVE QUIZ RESULT FOR SCORE CALCULATOR ──
+        // Call this function when the quiz is scored / results are shown.
+        function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
+          try {
+            localStorage.setItem(
+              'ite_quiz_result_2023_3',
+              JSON.stringify({
+                correct: correctCount,        // number of correct answers, e.g. 7
+                total:   totalCount,          // total questions, always 10
+                missed:  missedQuestionsArray // array of question numbers wrong, e.g. [2, 5, 9]
+              })
+            );
+          } catch(e) {}
+        }
+
+
+        const ChevronLeft = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>;
+        const ChevronRight = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>;
+        const CheckCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+        const XCircle = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
+        const BookOpen = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
+        const RotateCcw = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>;
+        const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
+
+        const questionsData = [
+  {
+    "id": 21,
+    "question": "A 35-year-old female with a history of heavy menstrual bleeding is found to have a hemoglobin\nlevel of 10.4 g/dL (N 12.0–15.0). An elevated blood level of which one of the following\nbiomarkers would be most consistent with iron deficiency anemia in this patient?",
+    "options": [
+      "A) Ferritin",
+      "B) Hepcidin",
+      "C) Reticulocyte count",
+      "D) Total iron-binding capacity",
+      "E) Transferrin saturation"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Patients with iron deficiency anemia have an increase in total iron-binding capacity. All the other listed\nbiomarkers, including ferritin and hepcidin levels, reticulocyte count, and transferrin saturation, are\ndecreased in the setting of iron deficiency anemia. Other laboratory findings with iron deficiency anemia\ninclude a low mean corpuscular volume, a low mean corpuscular hemoglobin, a high red cell distribution\nwidth on a CBC, and a low serum iron level.\nRef: Short MW, Domagalski JE. Iron deficiency anemia: evaluation and management. Am Fam Physician. 2013;87(2):98-104.\n2) Camaschella C. Iron-deficiency anemia. N Engl J Med. 2015;372(19):1832-1843. 3) Adamson JW. Iron deficiency and\nother hypoproliferative anemias. In: Loscalzo J, Fauci A, Kasper D, et al, eds. Harrison’s Principles of Internal Medicine.\n21st ed. McGraw Hill; 2022:747-754.\n 8"
+  },
+  {
+    "id": 22,
+    "question": "A 70-year-old male presents with his wife because they are concerned that he may be developing\ndementia. Among other symptoms, he has a resting tremor and describes detailed hallucinations\nthat are colorful, vivid, and include animals.\nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Alzheimer disease",
+      "B) Dementia with Lewy bodies",
+      "C) Frontotemporal dementia",
+      "D) Normal pressure hydrocephalus",
+      "E) Vascular dementia"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Core clinical features of dementia with Lewy bodies (DLB) include:\n• delirium-like fluctuations in cognition with pronounced variations in attention and alertness\n• hallucinations\n• spontaneous parkinsonism features such as bradykinesia, resting tremor, or rigidity\n• REM sleep behavior disorder (recurrent dream enactment behavior that includes movements\nmimicking dream content and absence of normal REM sleep atonia)\nVivid, colorful hallucinations occur in about 80% of patients with DLB. They can be three-dimensional\nand tend to include people, children, or animals. Patients are generally able to report these hallucinations\nto physicians. While hallucinations can occur in other types of dementia, they are a clinical signpost to the\ndiagnosis of DLB.\nRef: Neef D, Walling AD. Dementia with Lewy bodies: an emerging disease. Am Fam Physician. 2006;73(7):1223-1229. 2)\nMcKeith IG, Boeve BF, Dickson DW, et al. Diagnosis and management of dementia with Lewy bodies: fourth consensus\nreport of the DLB Consortium. Neurology. 2017;89(1):88-100."
+  },
+  {
+    "id": 23,
+    "question": "Newborn screening for critical congenital heart disease with pulse oximetry is recommended for",
+    "options": [
+      "A) all infants within the first 6 hours of life",
+      "B) all infants before 24 hours of life",
+      "C) all infants 24 hours or more after birth",
+      "D) only infants with clinical signs of hypoxemia",
+      "E) only infants with a heart murmur\n8"
+    ],
+    "correctAnswer": 2,
+    "rationale": "All infants, regardless of whether heart murmurs are present, should be screened for critical congenital\nheart disease using pulse oximetry in the right upper extremity and either of the lower extremities. The\nideal time frame to conduct pulse oximetry is 24 hours or more after birth. False-positive results are more\nlikely when testing is performed within the first 24 hours of life. All infants should be screened, not only\nthose with clinical signs of hypoxemia.\nRef: Ford B, Lara S, Park J. Heart murmurs in children: evaluation and management. Am Fam Physician. 2022;105(3):250-261."
+  },
+  {
+    "id": 24,
+    "question": "A 64-year-old female presents to your office with a 1-week history of lesions on her legs (shown\nbelow). Her past medical history includes GERD, hypertension, and obesity. Her current\nmedications include lisinopril (Zestril) and pantoprazole (Protonix). There is tenderness over the\nlesions but no itching or discharge. She feels well currently but recently completed a 3-day\ncourse of sulfamethoxazole/trimethoprim (Bactrim) for treatment of a urinary tract infection. The\nlesions started to appear about 3–4 days after finishing her course of antibiotics. She is\nnormotensive and afebrile. A physical examination is otherwise unremarkable.\nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Erythema nodosum",
+      "B) Necrobiosis lipoidica",
+      "C) Purpura fulminans",
+      "D) Pyoderma gangrenosum",
+      "E) Superficial thrombophlebitis"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Tender, symmetric erythematous nodules on the lower extremities are consistent with erythema nodosum\n(EN), the most common form of panniculitis. EN is a result of a hypersensitivity reaction to an antigen.\nThe nodules are usually of acute onset, 1–6 cm in diameter, and occur symmetrically on the pretibial areas\nbut can also appear on the thighs, ankles, and forearms. They generally resolve without ulceration or\nscarring within 1–6 weeks. While the etiology is usually unknown, they can be due to an infection (often\nstreptococcal), systemic disease (such as Behçet syndrome), inflammatory bowel disease, sarcoidosis, or\nmedications (sulfonamides, penicillins, and oral contraceptives are most common). Depending on the\nclinical picture and presence of systemic disease, the workup can include biopsy and laboratory testing.\n 9\n\nNecrobiosis lipoidica is strongly associated with diabetes mellitus, and occurs as reddish-brown plaques\non the anterior legs. Purpura fulminans is associated with severe disseminated intravascular coagulation\nand is characterized by large ecchymoses that evolve into bullae, then black necrotic lesions. Patients are\nseverely ill with associated hypotension. Pyoderma gangrenosum is exquisitely tender with pain out of\nproportion to appearance. It appears as a rapidly developing large ulceration arising from an initial pustule\nor papule. Superficial thrombophlebitis is characterized by tender isolated venous nodules that are rarely\nnumerous and symmetric.\nRef: Kumetz EA, Logemann NF, Rivard SC. Painful lower extremity ulcerations with hyperpigmentation. Am Fam Physician.\n2020;101(3):177-178. 2) Pérez-Garza DM, Chavez-Alvarez S, Ocampo-Candiani J, Gomez-Flores M. Erythema nodosum:\na practical approach and diagnostic algorithm. Am J Clin Dermatol. 2021;22(3):367-378.",
+    "image": "quiz_images_2023/2023_mc_page_011.png"
+  },
+  {
+    "id": 25,
+    "question": "You are playing in a community league soccer tournament and are asked to evaluate a\n30-year-old female. She was in her usual state of health when she suddenly began having\ndifficulty breathing while playing soccer. She tells you that she has had similar episodes in the\npast. Treatment with an albuterol (Proventil, Ventolin) inhaler does not improve her symptoms.\nOn examination you note dyspnea with audible inspiratory wheezing but no increased work of\nbreathing, and she has an oxygen saturation of 98%.\nWhich one of the following is the most likely diagnosis?",
+    "options": [
+      "A) Anaphylaxis",
+      "B) Exercise-induced asthma",
+      "C) Foreign body aspiration",
+      "D) Laryngeal edema",
+      "E) Vocal cord dysfunction"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Vocal cord dysfunction occurs when the vocal cords close when they should be open, particularly during\ninspiration. It should be suspected in patients who develop sudden, severe dyspnea that presents with\ninspiratory stridor or wheezing and is not associated with hypoxia, tachypnea, or increased work of\nbreathing. It is most common in women ages 30–40. Anaphylaxis and foreign body aspiration would be\nunlikely without an antecedent trigger. Exercise-induced asthma usually presents with expiratory wheezing\nand responds to the use of an albuterol inhaler. Laryngeal edema is usually preceded by signs of illness.\nRef: Malaty J, Wu V. Vocal cord dysfunction: rapid evidence review. Am Fam Physician. 2021;104(5):471-475."
+  },
+  {
+    "id": 26,
+    "question": "A 60-year-old male presents with left lower quadrant abdominal pain. His medical and surgical\nhistories are remarkable only for a history of hypertension controlled with hydrochlorothiazide\nand lisinopril (Zestril), and a screening colonoscopy 5 years ago that showed diverticulosis\nwithout polyps. He is afebrile, and a physical examination is notable only for mild abdominal\ntenderness in the left lower quadrant without peritoneal signs. A urinalysis is normal. You\ndiagnose mild diverticulitis.\nWhich one of the following would be indicated at this time?",
+    "options": [
+      "A) Rest and clear liquids",
+      "B) Avoidance of seeds, nuts, and popcorn",
+      "C) Abdominal CT",
+      "D) Referral for colonoscopy",
+      "E) Hospital admission for intravenous fluids and intravenous antibiotics\n9"
+    ],
+    "correctAnswer": 0,
+    "rationale": "In patients with mild diverticulitis, outpatient management with rest and oral clear liquids is preferred.\nAvoidance of seeds, nuts, and popcorn does not reduce recurrence rates. CT of the abdomen may be\nindicated if the diagnosis is uncertain or if complications are suspected. Colonoscopy is contraindicated\nacutely and is only necessary for follow-up when age-appropriate cancer screening is indicated, or in cases\nof complicated disease. Antibiotics may not be necessary in all cases, and hospital admission is\nunnecessary for mild cases.\nRef: Young-Fadok TM. Diverticulitis. N Engl J Med. 2018;379(17):1635-1642. 2) Qaseem A, Etxeandia-Ikobaltzeta I, Lin JS,\nFitterman N, Shamliyan T, Wilt TJ. Diagnosis and management of acute left-sided colonic diverticulitis: a clinical guideline\nfrom the American College of Physicians. Ann Intern Med. 2022;175(3):399-415.\n 10"
+  },
+  {
+    "id": 27,
+    "question": "A 68-year-old female presents for evaluation of low back pain. Which one of the following signs\nor symptoms would be most consistent with a diagnosis of spinal stenosis syndrome?",
+    "options": [
+      "A) Pain improvement when moving from sitting to standing",
+      "B) Pain improvement with lumbar extension",
+      "C) Pain worsened by bending forward at the waist",
+      "D) Poor balance",
+      "E) Urinary incontinence"
+    ],
+    "correctAnswer": 3,
+    "rationale": "A diagnosis of lumbar spinal stenosis is characterized by the narrowing of a neural foramen or the spinal\ncanal, which causes impingement of the nerve roots. It is most often caused by disc protrusion/herniation\nor degenerative changes. Degenerative changes cause ligamentous hypertrophy and development of\nosteophytes that cause symptoms by impinging on spinal roots. Compression of the posterior columns of\nthe spinal canal can impact the awareness of position sense (proprioception). A report of balance problems\nby patients with low back pain is 70% sensitive for spinal stenosis syndrome, and the patient may exhibit\na positive Romberg test and a wide-based gait. Spinal stenosis pain is increased by movements of lumbar\nextension such as standing upright and improved by forward flexion such as bending over a shopping cart\nor while sitting. Severe impingement as in cauda equina syndrome causes urinary retention and not\nincontinence.\nRef: Katz JN, Zimmerman ZE, Mass H, Makhni MC. Diagnosis and management of lumbar spinal stenosis: a review. JAMA.\n2022;327(17):1688-1699."
+  },
+  {
+    "id": 28,
+    "question": "The most common electrolyte abnormality in a patient with primary hyperaldosteronism is",
+    "options": [
+      "A) hypocalcemia",
+      "B) hypokalemia",
+      "C) hyponatremia",
+      "D) hyperkalemia",
+      "E) hypernatremia"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Primary hyperaldosteronism was previously thought to be rare, but it is now considered one of the more\ncommon causes of secondary hypertension. Hypokalemia is the most common electrolyte abnormality in\npatients with hyperaldosteronism. Excess aldosterone secretion independent of the renin-angiotensin system\ncauses renal potassium wasting, although about half of patients with hyperaldosteronism have normal\npotassium levels. Hypocalcemia is commonly associated with inadequate levels of parathyroid hormone.\nHyponatremia and hyperkalemia are associated with primary hypoaldosteronism. Hypernatremia is not a\ncommon finding in primary hyperaldosteronism.\nRef: Charles L, Triscott J, Dobbs B. Secondary hypertension: discovering the underlying cause. Am Fam Physician.\n2017;96(7):453-461. 2) Byrd JB, Turcu AF, Auchus RJ. Primary aldosteronism: practical approach to diagnosis and\nmanagement. Circulation. 2018;138(8):823-835."
+  },
+  {
+    "id": 29,
+    "question": "A 71-year-old male who resides at sea level travels to Colorado for a vacation. He spends the\nfirst night in a resort at 2700 m (8858 ft) above sea level. He notes a headache and sleeps\npoorly. The next morning he is somewhat nauseated and lightheaded, but feels well enough to\nproceed with his plans and ascends to his campsite at 4000 m (13,123 ft). During the first\nevening at the campsite, friends note that he is confused and having difficulty with his balance.\nWhich one of the following diagnoses best explains his symptoms at the campsite?",
+    "options": [
+      "A) Acute mountain sickness",
+      "B) High-altitude cerebral edema",
+      "C) High-altitude headache",
+      "D) High altitude–induced central sleep apnea",
+      "E) High-altitude pulmonary edema"
+    ],
+    "correctAnswer": 1,
+    "rationale": "This patient likely had a high-altitude headache on arrival, central sleep apnea during his first night in the\nhotel, and acute mountain sickness by the next morning. None of these conditions are life-threatening, and\nproper acclimatization would have been helpful. The addition of ataxia and confusion to his symptom list\npoints to high-altitude cerebral edema, which can progress to coma and death. Immediate descent is\nindicated. Symptoms of high-altitude pulmonary edema include cough with pinkish sputum, respiratory\ndistress, and cyanosis.\nRef: Luks AM, Hackett PH. Medical conditions and high-altitude travel. N Engl J Med. 2022;386(4):364-373.\n 11"
+  },
+  {
+    "id": 30,
+    "question": "A 47-year-old female sees you for routine follow-up. Her past medical history is significant for\nhypertension, hyperlipidemia, depression, and osteoarthritis. She tells you that she has noticed\nher ankles swelling over the past few months. In addition to a physical examination and other\nindicated evaluations, you also review her medications, which include the following:\nAcetaminophen\nAmlodipine (Norvasc)\nAtorvastatin (Lipitor)\nEscitalopram (Lexapro)\nLisinopril (Zestril)\nWhich one of her medications is most likely to cause edema?",
+    "options": [
+      "A) Acetaminophen",
+      "B) Amlodipine",
+      "C) Atorvastatin",
+      "D) Escitalopram",
+      "E) Lisinopril\n11"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Edema is a common clinical condition in the primary care setting and may indicate numerous pathologies.\nMedications, including many antihypertensives, anti-inflammatory medications, hormones, gabapentinoids,\nand chemotherapy, can be a contributing factor and should be reviewed in the evaluation and management\nof edema. Of the agents in this patient’s medication regimen, amlodipine is the most likely to cause or\ncontribute to her edema. Acetaminophen, atorvastatin, escitalopram, and lisinopril are not likely the cause\nof her edema.\nRef: Patel H, Skok C, DeMarco A. Peripheral edema: evaluation and management in primary care. Am Fam Physician.\n2022;106(5):557-564."
+  }
+];
+
+        function ITEQuizApp() {
+          const [currentQuestion, setCurrentQuestion] = useState(0);
+          const [selectedAnswer, setSelectedAnswer] = useState(null);
+          const [showRationale, setShowRationale] = useState(false);
+          const [score, setScore] = useState(0);
+          const [answeredQuestions, setAnsweredQuestions] = useState([]);
+          const [quizComplete, setQuizComplete] = useState(false);
+
+          const question = questionsData[currentQuestion];
+
+          const handleAnswerSelect = (index) => {
+            if (!showRationale) {
+              setSelectedAnswer(index);
+            }
+          };
+
+          const handleSubmit = () => {
+            if (selectedAnswer !== null && !showRationale) {
+              setShowRationale(true);
+              const isCorrect = selectedAnswer === question.correctAnswer;
+              
+              if (isCorrect) {
+                setScore(score + 1);
+              }
+              
+              setAnsweredQuestions([...answeredQuestions, {
+                questionId: question.id,
+                correct: isCorrect
+              }]);
+            }
+          };
+
+          const handleNext = () => {
+            if (currentQuestion < questionsData.length - 1) {
+              setCurrentQuestion(currentQuestion + 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            } else {
+              setQuizComplete(true);
+            }
+          };
+
+          const handlePrevious = () => {
+            if (currentQuestion > 0) {
+              setCurrentQuestion(currentQuestion - 1);
+              setSelectedAnswer(null);
+              setShowRationale(false);
+            }
+          };
+
+          const handleRestart = () => {
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowRationale(false);
+            setScore(0);
+            setAnsweredQuestions([]);
+            setQuizComplete(false);
+          };
+
+          const getOptionClass = (index) => {
+            let baseClass = "p-4 mb-3 rounded-lg border-2 cursor-pointer transition-all ";
+            
+            if (!showRationale) {
+              if (selectedAnswer === index) {
+                return baseClass + "border-blue-500 bg-blue-50";
+              }
+              return baseClass + "border-gray-300 hover:border-blue-300 hover:bg-gray-50";
+            } else {
+              if (index === question.correctAnswer) {
+                return baseClass + "border-green-500 bg-green-50";
+              }
+              if (selectedAnswer === index && index !== question.correctAnswer) {
+                return baseClass + "border-red-500 bg-red-50";
+              }
+              return baseClass + "border-gray-300 bg-gray-50";
+            }
+          };
+
+          if (quizComplete) {
+            const percentage = Math.round((score / questionsData.length) * 100);
+            
+            return (
+              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div className="flex justify-center mb-4"><Trophy /></div>
+                    <h1 className="text-3xl font-bold mb-4 text-gray-800">Quiz Complete!</h1>
+                    <div className="mb-6">
+                      <p className="text-6xl font-bold text-indigo-600 mb-2">{percentage}%</p>
+                      <p className="text-xl text-gray-600">
+                        You scored {score} out of {questionsData.length}
+                      </p>
+                    </div>
+                    
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                      <h3 className="font-semibold mb-3 text-gray-700">Results Summary:</h3>
+                      <div className="space-y-2">
+                        {answeredQuestions.map((answer, idx) => (
+                          <div key={idx} className="flex items-center justify-between">
+                            <span className="text-gray-600">Question {answer.questionId}</span>
+                            <div className="flex items-center">
+                              {answer.correct ? <CheckCircle /> : <XCircle />}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleRestart}
+                      className="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
+                    >
+                      <RotateCcw />
+                      Start Over
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <BookOpen />
+                      2023 ITE Quiz (Questions 21-30)
+                    </h1>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-600">Score</p>
+                      <p className="text-2xl font-bold text-indigo-600">{score}/{answeredQuestions.length}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div 
+                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${((currentQuestion + 1) / questionsData.length) * 100}%` }}
+                      />
+                    </div>
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                      {currentQuestion + 1} / {questionsData.length}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 mb-2">Question {question.id}</p>
+                    <p className="text-lg text-gray-800 leading-relaxed">{question.question}</p>
+                    {question.image && (
+                      <div className="mt-4">
+                        <img src={question.image} alt={`Question ${question.id} figure`} className="max-w-full rounded-lg border" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3 mb-6">
+                    {question.options.map((option, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleAnswerSelect(index)}
+                        className={getOptionClass(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-gray-700 flex-1">{option}</span>
+                          {showRationale && index === question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><CheckCircle /></div>
+                          )}
+                          {showRationale && selectedAnswer === index && index !== question.correctAnswer && (
+                            <div className="flex-shrink-0 mt-1"><XCircle /></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {showRationale && (
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                      <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+                      <p className="text-blue-800 leading-relaxed">{question.rationale}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handlePrevious}
+                      disabled={currentQuestion === 0}
+                      className="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                    >
+                      <ChevronLeft />
+                      Previous
+                    </button>
+                    
+                    {!showRationale ? (
+                      <button
+                        onClick={handleSubmit}
+                        disabled={selectedAnswer === null}
+                        className="flex-1 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Submit Answer
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleNext}
+                        className="flex-1 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                      >
+                        {currentQuestion < questionsData.length - 1 ? (
+                          <>
+                            Next Question
+                            <ChevronRight />
+                          </>
+                        ) : (
+                          <>
+                            Finish Quiz
+                            <CheckCircle />
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ITEQuizApp />);
+    </script>
+</body>
+</html>
