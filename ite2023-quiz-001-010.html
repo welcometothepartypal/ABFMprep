@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2023 ITE Quiz - Questions 1-10</title>
+    <title>ITE 2023 Quiz - Questions 1-10</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -19,7 +19,7 @@
         function saveQuizResult(correctCount, totalCount, missedQuestionsArray) {
           try {
             localStorage.setItem(
-              'ite_quiz_result_2023_1',
+              'ite_quiz_result_2025_1',
               JSON.stringify({
                 correct: correctCount,        // number of correct answers, e.g. 7
                 total:   totalCount,          // total questions, always 10
@@ -39,296 +39,135 @@
         const Trophy = () => <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>;
 
         const questionsData = [
-          {
-                    "id": 1,
-                    "question": "A 45-year-old female presents to the emergency department with a 1-week history of facial
-swelling and progressive dyspnea with exertion. She was diagnosed 1 week ago with
-non-Hodgkin lymphoma but her medical history is otherwise unremarkable. A chest radiograph
-is shown below.
-After hospital admission, which one of the following would be the most appropriate urgent next
-step in the management of this condition?",
-                    "choices": [
-                              "Intravenous antibiotics",
-                              "Echocardiography",
-                              "Plasmapheresis",
-                              "Bronchoscopy",
-                              "Radiation"
-                    ],
-                    "answer": "E",
-                    "rationale": "Because of the prevalence of cancer in the United States, it is important for family physicians to recognize
-oncologic emergencies. This patient presents with signs and symptoms related to superior vena cava
-syndrome, which is caused by compression of the superior vena cava. This is most often caused by lung
-cancer or lymphoma, but it can also be related to indwelling catheters, lymph nodes, or metastatic tumors.
-After ensuring that the patient is hospitalized and stable, the initial treatment options include intravenous
-corticosteroids, chemotherapy, radiation, and occasionally intravascular stenting.
-This condition is not the result of an infection, so antibiotics would not be appropriate. Hyperviscosity
-syndrome is another oncologic emergency associated with leukemia, multiple myeloma, and Waldenström
-macroglobulinemia. It is treated with chemotherapy and plasmapheresis. Echocardiography and
-bronchoscopy are not indicated in the initial management of superior vena cava syndrome.",
-                    "image": "quiz_images_2023/2023_mc_page_003.png"
-          },
-          {
-                    "id": 2,
-                    "question": "A 22-year-old male presents for follow-up of moderate persistent asthma. After discussing his
-treatment options, you decide to use a single maintenance and reliever therapy (SMART)
-approach.
-Which one of the following daily inhaled therapies is appropriate to prescribe in this setting?",
-                    "choices": [
-                              "Budesonide (Pulmicort)",
-                              "Budesonide/formoterol (Symbicort)",
-                              "Fluticasone/salmeterol (Advair Diskus)",
-                              "Fluticasone/vilanterol (Breo Ellipta)",
-                              "Tiotropium/olodaterol (Stiolto Respimat)"
-                    ],
-                    "answer": "B",
-                    "rationale": "In the single maintenance and reliever therapy (SMART) approach for asthma control, combination therapy
-with an inhaled corticosteroid and a long-acting bronchodilator is used as both controller and rescue
-medication. SMART is recommended as the preferred therapeutic approach in steps 3 and 4 in the 2020
-National Asthma Education and Prevention Program guidelines. Formoterol is the only medication
-available in the United States recommended for use in SMART therapy due to its rapid onset of action.
-Budesonide monotherapy, fluticasone/salmeterol, fluticasone/vilanterol, and tiotropium/olodaterol are not
-appropriate options for SMART in asthma control.",
-                    "image": null
-          },
-          {
-                    "id": 3,
-                    "question": "Which one of the following is an indication for long-term, rather than short-term, proton pump
-inhibitor therapy?",
-                    "choices": [
-                              "The eradication of Helicobacter pylori",
-                              "Gastroprotection in users of high-dose NSAIDs at high risk for gastrointestinal bleeding",
-                              "The prevention of rebleeding from a Mallory-Weiss tear",
-                              "The prevention of ulcers after band ligation of esophageal varices",
-                              "The treatment of an NSAID-related gastric ulcer"
-                    ],
-                    "answer": "B",
-                    "rationale": "Proton pump inhibitors (PPIs) are some of the most commonly used prescription or over-the-counter
-medications. However, many patients do not have a clear indication for their use, leading to situations in
-which the risks may outweigh the benefits. In 2022 the American Gastroenterological Association
-published 10 best practice statements to assist clinicians in addressing this issue. Key recommendations
-include regular review and documentation of the indication for any ongoing PPI use, and to consider
-discontinuing PPIs for any patient without a clear indication. Strategies for PPI discontinuation include
-tapering or abrupt discontinuation. Rebound acid hypersecretion can lead to a temporary increase in
-symptoms in either approach. If deprescribing is attempted but not tolerated, patients may reasonably be
-continued on the lowest effective dose. Possible risks, mostly reported in retrospective rather than
-prospective studies, include an increased incidence of chronic kidney disease, fractures, dementia, and
-respiratory infections, including COVID-19.
-1
-
-While many patients remain on long-term PPI therapy without a clear indication, in some situations the
-benefits of PPIs do clearly outweigh the risks. Such indications include Barrett esophagus, severe erosive
-esophagitis, eosinophilic esophagitis, and high risk for upper gastrointestinal (GI) bleeding. Risk factors
-for GI bleeding include prior ulcer, age >65, high-dose NSAID therapy, or concurrent use of aspirin,
-corticosteroids, or anticoagulants. Such patients should be advised to use PPIs indefinitely. PPIs are
-recommended for short-term use for eradication of Helicobacter pylori and treatment of NSAID-induced
-gastric ulcers. They may also be considered as adjunctive short-term therapy in Mallory-Weiss tears and
-after sclerotherapy or band ligation treatment of esophageal varices. None of these are indications for
-long-term use in the absence of other indications.",
-                    "image": null
-          },
-          {
-                    "id": 4,
-                    "question": "An 85-year-old male presents for an annual Medicare examination. His wife tells you that he has
-been repeating himself in conversations, buying the same item multiple times, and taking longer
-to complete routine tasks such as balancing the checkbook. He recalls 1 out of 3 items on the
-Mini-Cognitive Assessment Instrument (Mini-Cog) and is unable to draw a clock. A depression
-screening is negative.
-Which one of the following is the greatest risk factor for this patient’s condition?",
-                    "choices": [
-                              "Advanced age",
-                              "Atrial fibrillation",
-                              "Diabetes mellitus",
-                              "A history of head trauma",
-                              "Smoking
-1
-
-Item #1
-2"
-                    ],
-                    "answer": "A",
-                    "rationale": "Dementia is a significant condition affecting 5 million adults and that number is likely to expand in the
-future due to the increasing number of individuals over age 65. The overall prevalence of dementia is
-around 5%, but it is 37% in those over age 90. Sixty percent to 80% of dementia is due to Alzheimer
-disease. The greatest risk factor for dementia is older age. Strong risk factors include diabetes mellitus,
-midlife obesity, a family history of dementia, a personal history of cardiovascular disease, cerebrovascular
-disease, use of anticholinergic medications, apolipoprotein E4 genotype, and a low education level. Other
-potential risk factors that lack strong evidence include atrial fibrillation, smoking, head trauma, substance
-abuse such as alcohol use disorder, and medications such as benzodiazepines and proton pump inhibitors.",
-                    "image": null
-          },
-          {
-                    "id": 5,
-                    "question": "Which one of the following would be the most appropriate initial pharmacotherapy for a
-temporomandibular disorder in an otherwise healthy 54-year-old male?",
-                    "choices": [
-                              "Amitriptyline, 25 mg at bedtime",
-                              "Gabapentin (Neurontin), 300 mg daily",
-                              "Naproxen, 500 mg twice daily",
-                              "Tramadol, 50 mg every 6 hours",
-                              "Corticosteroid injection into the temporomandibular joint"
-                    ],
-                    "answer": "C",
-                    "rationale": "The initial first-line pharmacologic therapy for temporomandibular disorders is naproxen. Cyclobenzaprine
-may also be added if there is evidence of muscle spasm (A recommendation). If this is unsuccessful, other
-options include a trial of amitriptyline or gabapentin. Opioid therapy is not appropriate first-line treatment
-for temporomandibular disorders. Corticosteroid injections should be avoided due to potential cartilage
-damage (B recommendation).",
-                    "image": null
-          },
-          {
-                    "id": 6,
-                    "question": "A 33-year-old female presents to your office concerned about feeling fatigued for the past few
-months. She says that she feels cold often, has intermittent joint discomfort, and has gained 5
-lb. She has not experienced any pain or problems swallowing. She gave birth to her youngest
-child almost 3 years ago, and she recently started an oral contraceptive. She has not had any
-recent illnesses. Her family history is significant for rheumatoid arthritis.
-A physical examination reveals a mild goiter but is otherwise unremarkable. Her vital signs are
-stable. A CBC and comprehensive metabolic panel are normal. A TSH level is 6.48 U/mL (N
-0.4–4.5) and a thyroid peroxidase antibody level is 378 IU/mL (N <34). A free T level is
-4
-normal.
-Which one of the following is the most likely diagnosis for this patient?",
-                    "choices": [
-                              "Drug-induced thyroiditis",
-                              "Hashimoto thyroiditis",
-                              "Postpartum thyroiditis",
-                              "Subacute thyroiditis"
-                    ],
-                    "answer": "B",
-                    "rationale": "Thyroiditis, a general term for inflammation of the thyroid gland, is associated with thyroid gland
-dysfunction. It is classified based on clinical symptoms: painless or painful, acute or subacute, and
-underlying etiology (medication-induced, infection, radiation-induced, or autoimmune). The most common
-forms of thyroiditis include Hashimoto, subacute, and postpartum. Thyroiditis often results in a triphasic
-disease pattern of thyroid dysfunction: hyperthyroidism due to the release of preformed thyroid hormone
-from damaged thyroid cells followed by hypothyroidism when the thyroid stores are depleted. Eventually
-normal thyroid function is restored, or the patient develops permanent hypothyroidism. This patient
-presents with symptoms commonly seen in thyroid disease. Further testing reveals elevated TSH and
-thyroid peroxidase (TPO) levels. Elevated TPO levels are found in 95% of patients with Hashimoto
-thyroiditis. In addition, this patient’s family history includes rheumatoid arthritis, another autoimmune
-disease, making Hashimoto thyroiditis the most likely diagnosis. Treatment is lifelong thyroid hormone
-therapy.
-Several medications are linked to thyroiditis, including lithium, amiodarone, interferon-alfa, interleukin-2,
-immune checkpoint inhibitors, and tyrosine kinase inhibitors. However, there is no proven link between
-oral contraceptives and Hashimoto thyroiditis. Postpartum thyroiditis occurs within 1 year of delivery,
-miscarriage, or medical abortion, not 2–3 years. Subacute thyroiditis is self-limited and often occurs after
-upper respiratory infections, causing thyroid pain and dysphagia due to inflammatory destruction of thyroid
-follicles.",
-                    "image": null
-          },
-          {
-                    "id": 7,
-                    "question": "A first-time mother brings her 12-month-old to your office for a well child check. She and the
-child’s father are both your patients as well. Upon routine screening for anemia, you discover
-the infant has microcytic anemia with elevated red cell distribution width. You ask the parent
-about the child’s diet. She looks down at the floor, exhibiting poor eye contact and a flat affect,
-and responds that she does not shop or cook often. She says the child is happy when eating just
-applesauce and milk. The mother reports that she has been unmotivated and crying frequently.
-In addition to checking the child’s lead level and starting iron supplementation, which one of the
-following would be the most important next step to help this dyad?",
-                    "choices": [
-                              "Providing reassurance and validation for the mother",
-                              "Educating the mother about nutrition and the importance of iron-rich foods for the child",
-                              "Notifying the child’s father",
-                              "Evaluating and treating the mother for postpartum depression",
-                              "Referring the mother to a psychiatrist
-3"
-                    ],
-                    "answer": "D",
-                    "rationale": "Postpartum depression is common and patients who have given birth should be screened for a minimum
-of 1 year. A mother who knows what to feed an infant may have trouble executing it because of severe
-postpartum depression, leading to poor infant feeding practices. In this case, the provider will be more
-likely to successfully treat the child’s anemia by treating the mother’s postpartum depression.
-While mothers with depression often need encouragement and support, false reassurance is paternalistic
-and potentially harmful. Education of the mother is sometimes useful, but studies have demonstrated that
-the more likely barrier to implementing her knowledge is not a need for education on infant nutrition, but
-rather severe depression or other psychosocial barriers. It is ideal to involve all caretakers in efforts to
-support a child’s health, but a number of steps need to be taken prior to calling the father, including
-screening for domestic violence, checking on HIPAA consents, and asking about custody. Referring the
-mother to a psychiatrist may ultimately be helpful but puts unnecessary barriers in place for the testing and
-treatment of postpartum depression.",
-                    "image": null
-          },
-          {
-                    "id": 8,
-                    "question": "A 52-year-old male presents to your office for a routine annual health maintenance examination.
-He has a past medical history of hypertension and well-controlled type 2 diabetes with a
-hemoglobin A of 6.6%. He is also a chronic tobacco smoker. He requests screening for
-1c
-testicular cancer because his close friend recently died from the disease. Other than colon cancer
-in his adoptive father, there is no known family history of cancer.
-Which one of the following is indicated for testicular cancer screening for this patient?",
-                    "choices": [
-                              "No screening",
-                              "An -fetoprotein level",
-                              "Scrotal ultrasonography now",
-                              "Scrotal ultrasonography at age 55",
-                              "CT of the abdomen and pelvis at age 55"
-                    ],
-                    "answer": "A",
-                    "rationale": "Although testicular cancer is the most common solid cancer in men ages 15–34, with effective treatment
-and an overall survival rate of 97%, the U.S. Preventive Services Task Force recommends against
-screening for testicular cancer in asymptomatic adolescent or adult males (D recommendation).
-A detailed history and physical examination should be obtained in symptomatic patients, followed by
-scrotal ultrasonography if there are positive findings on history and physical examination. Tumor markers
-and CT of the abdomen and pelvis are required for staging, treatment recommendations, and surveillance,
-but not for screening purposes.",
-                    "image": null
-          },
-          {
-                    "id": 9,
-                    "question": "An 82-year-old female in your palliative care service who has stage 4 breast cancer is
-experiencing frequent episodes of delirium. Her pain is well controlled on long-acting oral opioid
-therapy. Additionally, no other reversible causes of delirium are noted. Her delirium is not
-responding to conservative measures, and her family asks if there are any medications that can
-effectively manage her symptoms.
-Which one of the following should you recommend?",
-                    "choices": [
-                              "Alprazolam (Xanax)",
-                              "Diazepam (Valium)",
-                              "Melatonin",
-                              "Risperidone (Risperdal)"
-                    ],
-                    "answer": "D",
-                    "rationale": "The first step in managing delirium in end-of-life care is to assess for any reversible or treatable causes,
-including uncontrolled pain, constipation, urinary retention, infections (e.g., urinary tract infections), and
-medication side effects. Antipsychotic medications, such as haloperidol and risperidone, are recommended
-if conservative measures fail to control the symptoms of delirium. Benzodiazepines should be used with
-caution as they can worsen delirium, especially in older patients. Melatonin is not indicated in the
-management of delirium.",
-                    "image": null
-          },
-          {
-                    "id": 10,
-                    "question": "A Black female presents with multiple insect bites on her arms and legs. This patient is at risk
-for developing which one of the following conditions?",
-                    "choices": [
-                              "Acanthosis nigricans",
-                              "Acne keloidalis nuchae",
-                              "Dermatosis papulosa nigra",
-                              "Melasma",
-                              "Postinflammatory hyperpigmentation
-4"
-                    ],
-                    "answer": "E",
-                    "rationale": "Patients with dark skin are at greater risk for postinflammatory hyperpigmentation, a reactive
-hypermelanosis. These are irregular hyperpigmented macules or patches that can occur after endogenous
-inflammation (e.g., acne vulgaris, pseudofolliculitis barbae, atopic dermatitis, lichen planus, psoriasis,
-contact dermatitis) and external injuries (e.g., insect bites, chemical peels, cryotherapy, laser surgery).
-This condition can occur at any age and is particularly noticeable in Fitzpatrick skin phototypes III, IV,
-V, and VI. Fitzpatrick skin phototype is used to classify the skin color spectrum and is based on an
-individual’s propensity for sunburn (photodermatitis). It is not a surrogate marker for race or ethnicity.
-Broad-spectrum, water-based sunscreen with SPF 30 should be used to prevent postinflammatory
-hyperpigmentation (SOR C). Sunscreen that blocks visible light such as iron oxide is also useful.
-Acanthosis nigricans, acne keloidalis nuchae, dermatosis papulosa nigra, and melasma are conditions that
-are also more common in skin of color. However, they are not related to external injuries such as insect
-bites. Acanthosis nigricans are usually on the posterior neck, axillae, and groin. These are velvety,
-irregularly defined, hyperpigmented patches. Acne keloidalis nuchae occur in the nuchal and occipital
-scalp. These are keloid-like papules, plaques, and cicatricial alopecia. Dermatosis papulosa nigra is usually
-on the face and neck. They are hyperpigmented, filiform, or sessile papules. Melasma are gray-brown
-patches that usually occur on the face.
-4",
-                    "image": null
-          }
+  {
+    "id": 1,
+    "question": "A 45-year-old female presents to the emergency department with a 1-week history of facial\nswelling and progressive dyspnea with exertion. She was diagnosed 1 week ago with\nnon-Hodgkin lymphoma but her medical history is otherwise unremarkable. A chest radiograph\nis shown below.\nAfter hospital admission, which one of the following would be the most appropriate urgent next\nstep in the management of this condition?",
+    "options": [
+      "A) Intravenous antibiotics",
+      "B) Echocardiography",
+      "C) Plasmapheresis",
+      "D) Bronchoscopy",
+      "E) Radiation"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Because of the prevalence of cancer in the United States, it is important for family physicians to recognize\noncologic emergencies. This patient presents with signs and symptoms related to superior vena cava\nsyndrome, which is caused by compression of the superior vena cava. This is most often caused by lung\ncancer or lymphoma, but it can also be related to indwelling catheters, lymph nodes, or metastatic tumors.\nAfter ensuring that the patient is hospitalized and stable, the initial treatment options include intravenous\ncorticosteroids, chemotherapy, radiation, and occasionally intravascular stenting.\nThis condition is not the result of an infection, so antibiotics would not be appropriate. Hyperviscosity\nsyndrome is another oncologic emergency associated with leukemia, multiple myeloma, and Waldenström\nmacroglobulinemia. It is treated with chemotherapy and plasmapheresis. Echocardiography and\nbronchoscopy are not indicated in the initial management of superior vena cava syndrome.",
+    "image": "quiz_images_2023/2023_mc_page_003.png"
+  },
+  {
+    "id": 2,
+    "question": "A 22-year-old male presents for follow-up of moderate persistent asthma. After discussing his\ntreatment options, you decide to use a single maintenance and reliever therapy (SMART)\napproach.\nWhich one of the following daily inhaled therapies is appropriate to prescribe in this setting?",
+    "options": [
+      "A) Budesonide (Pulmicort)",
+      "B) Budesonide/formoterol (Symbicort)",
+      "C) Fluticasone/salmeterol (Advair Diskus)",
+      "D) Fluticasone/vilanterol (Breo Ellipta)",
+      "E) Tiotropium/olodaterol (Stiolto Respimat)"
+    ],
+    "correctAnswer": 1,
+    "rationale": "In the single maintenance and reliever therapy (SMART) approach for asthma control, combination therapy\nwith an inhaled corticosteroid and a long-acting bronchodilator is used as both controller and rescue\nmedication. SMART is recommended as the preferred therapeutic approach in steps 3 and 4 in the 2020\nNational Asthma Education and Prevention Program guidelines. Formoterol is the only medication\navailable in the United States recommended for use in SMART therapy due to its rapid onset of action.\nBudesonide monotherapy, fluticasone/salmeterol, fluticasone/vilanterol, and tiotropium/olodaterol are not\nappropriate options for SMART in asthma control."
+  },
+  {
+    "id": 3,
+    "question": "Which one of the following is an indication for long-term, rather than short-term, proton pump\ninhibitor therapy?",
+    "options": [
+      "A) The eradication of Helicobacter pylori",
+      "B) Gastroprotection in users of high-dose NSAIDs at high risk for gastrointestinal bleeding",
+      "C) The prevention of rebleeding from a Mallory-Weiss tear",
+      "D) The prevention of ulcers after band ligation of esophageal varices",
+      "E) The treatment of an NSAID-related gastric ulcer"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Proton pump inhibitors (PPIs) are some of the most commonly used prescription or over-the-counter\nmedications. However, many patients do not have a clear indication for their use, leading to situations in\nwhich the risks may outweigh the benefits. In 2022 the American Gastroenterological Association\npublished 10 best practice statements to assist clinicians in addressing this issue. Key recommendations\ninclude regular review and documentation of the indication for any ongoing PPI use, and to consider\ndiscontinuing PPIs for any patient without a clear indication. Strategies for PPI discontinuation include\ntapering or abrupt discontinuation. Rebound acid hypersecretion can lead to a temporary increase in\nsymptoms in either approach. If deprescribing is attempted but not tolerated, patients may reasonably be\ncontinued on the lowest effective dose. Possible risks, mostly reported in retrospective rather than\nprospective studies, include an increased incidence of chronic kidney disease, fractures, dementia, and\nrespiratory infections, including COVID-19.\n 1\n\nWhile many patients remain on long-term PPI therapy without a clear indication, in some situations the\nbenefits of PPIs do clearly outweigh the risks. Such indications include Barrett esophagus, severe erosive\nesophagitis, eosinophilic esophagitis, and high risk for upper gastrointestinal (GI) bleeding. Risk factors\nfor GI bleeding include prior ulcer, age >65, high-dose NSAID therapy, or concurrent use of aspirin,\ncorticosteroids, or anticoagulants. Such patients should be advised to use PPIs indefinitely. PPIs are\nrecommended for short-term use for eradication of Helicobacter pylori and treatment of NSAID-induced\ngastric ulcers. They may also be considered as adjunctive short-term therapy in Mallory-Weiss tears and\nafter sclerotherapy or band ligation treatment of esophageal varices. None of these are indications for\nlong-term use in the absence of other indications."
+  },
+  {
+    "id": 4,
+    "question": "An 85-year-old male presents for an annual Medicare examination. His wife tells you that he has\nbeen repeating himself in conversations, buying the same item multiple times, and taking longer\nto complete routine tasks such as balancing the checkbook. He recalls 1 out of 3 items on the\nMini-Cognitive Assessment Instrument (Mini-Cog) and is unable to draw a clock. A depression\nscreening is negative.\nWhich one of the following is the greatest risk factor for this patient’s condition?",
+    "options": [
+      "A) Advanced age",
+      "B) Atrial fibrillation",
+      "C) Diabetes mellitus",
+      "D) A history of head trauma",
+      "E) Smoking\n1"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Dementia is a significant condition affecting 5 million adults and that number is likely to expand in the\nfuture due to the increasing number of individuals over age 65. The overall prevalence of dementia is\naround 5%, but it is 37% in those over age 90. Sixty percent to 80% of dementia is due to Alzheimer\ndisease. The greatest risk factor for dementia is older age. Strong risk factors include diabetes mellitus,\nmidlife obesity, a family history of dementia, a personal history of cardiovascular disease, cerebrovascular\ndisease, use of anticholinergic medications, apolipoprotein E4 genotype, and a low education level. Other\npotential risk factors that lack strong evidence include atrial fibrillation, smoking, head trauma, substance\nabuse such as alcohol use disorder, and medications such as benzodiazepines and proton pump inhibitors."
+  },
+  {
+    "id": 5,
+    "question": "Which one of the following would be the most appropriate initial pharmacotherapy for a\ntemporomandibular disorder in an otherwise healthy 54-year-old male?",
+    "options": [
+      "A) Amitriptyline, 25 mg at bedtime",
+      "B) Gabapentin (Neurontin), 300 mg daily",
+      "C) Naproxen, 500 mg twice daily",
+      "D) Tramadol, 50 mg every 6 hours",
+      "E) Corticosteroid injection into the temporomandibular joint"
+    ],
+    "correctAnswer": 2,
+    "rationale": "The initial first-line pharmacologic therapy for temporomandibular disorders is naproxen. Cyclobenzaprine\nmay also be added if there is evidence of muscle spasm (A recommendation). If this is unsuccessful, other\noptions include a trial of amitriptyline or gabapentin. Opioid therapy is not appropriate first-line treatment\nfor temporomandibular disorders. Corticosteroid injections should be avoided due to potential cartilage\ndamage (B recommendation)."
+  },
+  {
+    "id": 6,
+    "question": "A 33-year-old female presents to your office concerned about feeling fatigued for the past few\nmonths. She says that she feels cold often, has intermittent joint discomfort, and has gained 5\nlb. She has not experienced any pain or problems swallowing. She gave birth to her youngest\nchild almost 3 years ago, and she recently started an oral contraceptive. She has not had any\nrecent illnesses. Her family history is significant for rheumatoid arthritis.\nA physical examination reveals a mild goiter but is otherwise unremarkable. Her vital signs are\nstable. A CBC and comprehensive metabolic panel are normal. A TSH level is 6.48 U/mL (N\n0.4–4.5) and a thyroid peroxidase antibody level is 378 IU/mL (N <34). A free T4 level is\nnormal.\nWhich one of the following is the most likely diagnosis for this patient?",
+    "options": [
+      "A) Drug-induced thyroiditis",
+      "B) Hashimoto thyroiditis",
+      "C) Postpartum thyroiditis",
+      "D) Subacute thyroiditis"
+    ],
+    "correctAnswer": 1,
+    "rationale": "Thyroiditis, a general term for inflammation of the thyroid gland, is associated with thyroid gland\ndysfunction. It is classified based on clinical symptoms: painless or painful, acute or subacute, and\nunderlying etiology (medication-induced, infection, radiation-induced, or autoimmune). The most common\nforms of thyroiditis include Hashimoto, subacute, and postpartum. Thyroiditis often results in a triphasic\ndisease pattern of thyroid dysfunction: hyperthyroidism due to the release of preformed thyroid hormone\nfrom damaged thyroid cells followed by hypothyroidism when the thyroid stores are depleted. Eventually\nnormal thyroid function is restored, or the patient develops permanent hypothyroidism. This patient\npresents with symptoms commonly seen in thyroid disease. Further testing reveals elevated TSH and\nthyroid peroxidase (TPO) levels. Elevated TPO levels are found in 95% of patients with Hashimoto\nthyroiditis. In addition, this patient’s family history includes rheumatoid arthritis, another autoimmune\ndisease, making Hashimoto thyroiditis the most likely diagnosis. Treatment is lifelong thyroid hormone\ntherapy.\nSeveral medications are linked to thyroiditis, including lithium, amiodarone, interferon-alfa, interleukin-2,\nimmune checkpoint inhibitors, and tyrosine kinase inhibitors. However, there is no proven link between\noral contraceptives and Hashimoto thyroiditis. Postpartum thyroiditis occurs within 1 year of delivery,\nmiscarriage, or medical abortion, not 2–3 years. Subacute thyroiditis is self-limited and often occurs after\nupper respiratory infections, causing thyroid pain and dysphagia due to inflammatory destruction of thyroid\nfollicles."
+  },
+  {
+    "id": 7,
+    "question": "A first-time mother brings her 12-month-old to your office for a well child check. She and the\nchild’s father are both your patients as well. Upon routine screening for anemia, you discover\nthe infant has microcytic anemia with elevated red cell distribution width. You ask the parent\nabout the child’s diet. She looks down at the floor, exhibiting poor eye contact and a flat affect,\nand responds that she does not shop or cook often. She says the child is happy when eating just\napplesauce and milk. The mother reports that she has been unmotivated and crying frequently.\nIn addition to checking the child’s lead level and starting iron supplementation, which one of the\nfollowing would be the most important next step to help this dyad?",
+    "options": [
+      "A) Providing reassurance and validation for the mother",
+      "B) Educating the mother about nutrition and the importance of iron-rich foods for the child",
+      "C) Notifying the child’s father",
+      "D) Evaluating and treating the mother for postpartum depression",
+      "E) Referring the mother to a psychiatrist\n3"
+    ],
+    "correctAnswer": 3,
+    "rationale": "Postpartum depression is common and patients who have given birth should be screened for a minimum\nof 1 year. A mother who knows what to feed an infant may have trouble executing it because of severe\npostpartum depression, leading to poor infant feeding practices. In this case, the provider will be more\nlikely to successfully treat the child’s anemia by treating the mother’s postpartum depression.\nWhile mothers with depression often need encouragement and support, false reassurance is paternalistic\nand potentially harmful. Education of the mother is sometimes useful, but studies have demonstrated that\nthe more likely barrier to implementing her knowledge is not a need for education on infant nutrition, but\nrather severe depression or other psychosocial barriers. It is ideal to involve all caretakers in efforts to\nsupport a child’s health, but a number of steps need to be taken prior to calling the father, including\nscreening for domestic violence, checking on HIPAA consents, and asking about custody. Referring the\nmother to a psychiatrist may ultimately be helpful but puts unnecessary barriers in place for the testing and\ntreatment of postpartum depression."
+  },
+  {
+    "id": 8,
+    "question": "A 52-year-old male presents to your office for a routine annual health maintenance examination.\nHe has a past medical history of hypertension and well-controlled type 2 diabetes with a\nhemoglobin A1c of 6.6%. He is also a chronic tobacco smoker. He requests screening for\ntesticular cancer because his close friend recently died from the disease. Other than colon cancer\nin his adoptive father, there is no known family history of cancer.\nWhich one of the following is indicated for testicular cancer screening for this patient?",
+    "options": [
+      "A) No screening",
+      "B) An -fetoprotein level",
+      "C) Scrotal ultrasonography now",
+      "D) Scrotal ultrasonography at age 55",
+      "E) CT of the abdomen and pelvis at age 55"
+    ],
+    "correctAnswer": 0,
+    "rationale": "Although testicular cancer is the most common solid cancer in men ages 15–34, with effective treatment\nand an overall survival rate of 97%, the U.S. Preventive Services Task Force recommends against\nscreening for testicular cancer in asymptomatic adolescent or adult males (D recommendation).\nA detailed history and physical examination should be obtained in symptomatic patients, followed by\nscrotal ultrasonography if there are positive findings on history and physical examination. Tumor markers\nand CT of the abdomen and pelvis are required for staging, treatment recommendations, and surveillance,\nbut not for screening purposes."
+  },
+  {
+    "id": 9,
+    "question": "An 82-year-old female in your palliative care service who has stage 4 breast cancer is\nexperiencing frequent episodes of delirium. Her pain is well controlled on long-acting oral opioid\ntherapy. Additionally, no other reversible causes of delirium are noted. Her delirium is not\nresponding to conservative measures, and her family asks if there are any medications that can\neffectively manage her symptoms.\nWhich one of the following should you recommend?",
+    "options": [
+      "A) Alprazolam (Xanax)",
+      "B) Diazepam (Valium)",
+      "C) Melatonin",
+      "D) Risperidone (Risperdal)"
+    ],
+    "correctAnswer": 3,
+    "rationale": "The first step in managing delirium in end-of-life care is to assess for any reversible or treatable causes,\nincluding uncontrolled pain, constipation, urinary retention, infections (e.g., urinary tract infections), and\nmedication side effects. Antipsychotic medications, such as haloperidol and risperidone, are recommended\nif conservative measures fail to control the symptoms of delirium. Benzodiazepines should be used with\ncaution as they can worsen delirium, especially in older patients. Melatonin is not indicated in the\nmanagement of delirium."
+  },
+  {
+    "id": 10,
+    "question": "A Black female presents with multiple insect bites on her arms and legs. This patient is at risk\nfor developing which one of the following conditions?",
+    "options": [
+      "A) Acanthosis nigricans",
+      "B) Acne keloidalis nuchae",
+      "C) Dermatosis papulosa nigra",
+      "D) Melasma",
+      "E) Postinflammatory hyperpigmentation\n4"
+    ],
+    "correctAnswer": 4,
+    "rationale": "Patients with dark skin are at greater risk for postinflammatory hyperpigmentation, a reactive\nhypermelanosis. These are irregular hyperpigmented macules or patches that can occur after endogenous\ninflammation (e.g., acne vulgaris, pseudofolliculitis barbae, atopic dermatitis, lichen planus, psoriasis,\ncontact dermatitis) and external injuries (e.g., insect bites, chemical peels, cryotherapy, laser surgery).\nThis condition can occur at any age and is particularly noticeable in Fitzpatrick skin phototypes III, IV,\nV, and VI. Fitzpatrick skin phototype is used to classify the skin color spectrum and is based on an\nindividual’s propensity for sunburn (photodermatitis). It is not a surrogate marker for race or ethnicity.\nBroad-spectrum, water-based sunscreen with SPF 30 should be used to prevent postinflammatory\nhyperpigmentation (SOR C). Sunscreen that blocks visible light such as iron oxide is also useful.\nAcanthosis nigricans, acne keloidalis nuchae, dermatosis papulosa nigra, and melasma are conditions that\nare also more common in skin of color. However, they are not related to external injuries such as insect\nbites. Acanthosis nigricans are usually on the posterior neck, axillae, and groin. These are velvety,\nirregularly defined, hyperpigmented patches. Acne keloidalis nuchae occur in the nuchal and occipital\nscalp. These are keloid-like papules, plaques, and cicatricial alopecia. Dermatosis papulosa nigra is usually\non the face and neck. They are hyperpigmented, filiform, or sessile papules. Melasma are gray-brown\npatches that usually occur on the face.\n 4"
+  }
 ];
 
         function ITEQuizApp() {
@@ -459,7 +298,7 @@ patches that usually occur on the face.
                   <div className="flex items-center justify-between mb-4">
                     <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
                       <BookOpen />
-                      2025 ITE Quiz (Questions 1-10)
+                      ITE 2023 Quiz (Questions 1-10)
                     </h1>
                     <div className="text-right">
                       <p className="text-sm text-gray-600">Score</p>
