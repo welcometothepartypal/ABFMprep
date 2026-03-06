@@ -424,124 +424,6 @@
             color: #fca5a5;
         }
 
-        .tab-btn {
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            color: var(--muted);
-            padding: 7px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.82em;
-            font-weight: 600;
-            transition: all 0.15s;
-        }
-        .tab-btn:hover { background: var(--border); color: var(--text); }
-        .tab-btn.active {
-            background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
-            color: white;
-            border-color: transparent;
-        }
-
-        .score-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-            gap: 9px;
-        }
-
-        .score-card {
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 13px 12px;
-            text-align: center;
-            transition: border-color 0.15s;
-        }
-        .score-card:hover { border-color: var(--purple-1); }
-
-        .score-card-label {
-            font-size: 0.78em;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 2px;
-        }
-
-        .score-card-range {
-            font-size: 0.7em;
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        .score-input-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .score-input {
-            width: 46px;
-            height: 34px;
-            border: 1.5px solid var(--border);
-            border-radius: 7px;
-            text-align: center;
-            font-family: inherit;
-            font-size: 1em;
-            font-weight: 700;
-            color: var(--purple-1);
-            background: white;
-            outline: none;
-            transition: border-color 0.15s;
-            -moz-appearance: textfield;
-        }
-        .score-input::-webkit-outer-spin-button,
-        .score-input::-webkit-inner-spin-button { -webkit-appearance: none; }
-        .score-input:focus { border-color: var(--purple-1); }
-
-        .score-denom {
-            font-size: 0.78em;
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        .score-big {
-            font-size: 1.6em;
-            font-weight: 700;
-            color: var(--purple-1);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .score-not-taken {
-            font-size: 0.75em;
-            color: var(--muted);
-            line-height: 1.5;
-            margin: 8px 0 4px;
-        }
-
-        .missed-list {
-            font-size: 0.67em;
-            color: #dc2626;
-            margin-top: 6px;
-            line-height: 1.5;
-            word-break: break-word;
-        }
-
-        .score-pct-pill {
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 0.7em;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 100px;
-            background: var(--border);
-            color: var(--muted);
-            transition: background 0.2s, color 0.2s;
-        }
-        .score-pct-pill.good  { background: #d1fae5; color: #065f46; }
-        .score-pct-pill.ok    { background: #fef3c7; color: #92400e; }
-        .score-pct-pill.low   { background: #fee2e2; color: #991b1b; }
-
         /* ── Responsive ── */
         @media (max-width: 768px) {
             header h1 { font-size: 2.1em; }
@@ -588,28 +470,14 @@
     </div>
 
     <div class="progress-overview">
-        <div class="progress-label">Your Progress &nbsp;<span id="prog-count">0 / 60</span> <span class=\"muted\">(60 question sets)</span></div>
+        <div class="progress-label">Quiz Sets Completed &nbsp;<span id="prog-count">0 / 60</span></div>
         <div class="progress-track">
             <div class="progress-fill" id="prog-fill"></div>
         </div>
         <div class="progress-pct" id="prog-pct">0%</div>
+        <div style="font-size:0.72em;color:var(--muted);white-space:nowrap;">of 60 sets</div>
     </div>
 
-    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
-                <button class="tab-btn active" onclick="showScoreTab(2025,this)">ITE 2025</button>
-                <button class="tab-btn" onclick="showScoreTab(2024,this)">ITE 2024</button>
-                <button class="tab-btn" onclick="showScoreTab(2023,this)">ITE 2023</button>
-            </div>
-
-            <div id="score-grid-2025" class="score-tab score-grid"></div>
-            <div id="score-grid-2024" class="score-tab score-grid" style="display:none;"></div>
-            <div id="score-grid-2023" class="score-tab score-grid" style="display:none;"></div>
-
-            <div style="margin-top:16px;text-align:right;">
-                <button onclick="clearScores()" style="background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:7px;cursor:pointer;font-family:inherit;font-size:0.78em;font-weight:500;" onmouseover="this.style.background='#fee2e2';this.style.color='#dc2626'" onmouseout="this.style.background='none';this.style.color='var(--muted)'">Clear All Scores</button>
-            </div>
-        </div>
-    </details>
 
 
     <!-- ITE 2025 -->
@@ -840,7 +708,6 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         loadProgress();
-        buildScoreGrids();
         document.querySelectorAll('.quiz-card').forEach(function(card) {
             card.addEventListener('click', function() {
                 var id = this.getAttribute('data-id');
@@ -865,89 +732,7 @@
         }
     }
 
-       Quiz pages save results with:
-           JSON.stringify({ correct: 7, total: 10, missed: [2,5,9] }));
-    ───────────────────────────────────────────────────────────── */
 
-    function getQuizResult(year, i) {
-        try {
-            if (!raw) return null;
-            var d = JSON.parse(raw);
-            return (typeof d.correct === 'number' && typeof d.total === 'number') ? d : null;
-        } catch(e) { return null; }
-    }
-
-    function buildScoreGrids() {
-        YEARS.forEach(function(year) {
-            var container = document.getElementById('score-grid-' + year);
-            if (!container) return;
-            container.innerHTML = '';
-            for (var i = 1; i <= 20; i++) {
-                var start  = (i - 1) * 10 + 1;
-                var end    = i * 10;
-                var result = getQuizResult(year, i);
-                var card   = document.createElement('div');
-                card.className = 'score-card';
-                if (result) {
-                    var pct       = Math.round((result.correct / result.total) * 100);
-                    var pillClass = pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'low';
-                    var missed    = Array.isArray(result.missed) ? result.missed : [];
-                    var missedHTML = missed.length
-                        ? '<div class="missed-list">Missed: Q' + missed.join(', Q') + '</div>'
-                        : '<div class="missed-list" style="color:var(--green);font-weight:600;">Perfect ⭐</div>';
-                    card.innerHTML =
-                        '<div class="score-card-label">Quiz ' + i + '</div>' +
-                        '<div class="score-card-range">Q ' + start + '–' + end + '</div>' +
-                        '<div class="score-big">' + result.correct + '<span class="score-denom">/' + result.total + '</span></div>' +
-                        '<div class="score-pct-pill ' + pillClass + '">' + pct + '%</div>' +
-                        missedHTML;
-                } else {
-                    card.style.opacity = '0.5';
-                    card.innerHTML =
-                        '<div class="score-card-label">Quiz ' + i + '</div>' +
-                        '<div class="score-card-range">Q ' + start + '–' + end + '</div>' +
-                        '<div class="score-not-taken">Not yet<br>taken</div>';
-                }
-                container.appendChild(card);
-            }
-        });
-        recalcTotal();
-    }
-
-    function recalcTotal() {
-        var correct = 0, possible = 0, missed = 0;
-        YEARS.forEach(function(year) {
-            for (var i = 1; i <= 20; i++) {
-                var r = getQuizResult(year, i);
-                if (r) {
-                    correct  += r.correct;
-                    possible += r.total;
-                    missed   += Array.isArray(r.missed) ? r.missed.length : (r.total - r.correct);
-                }
-            }
-        });
-        var pct = possible > 0 ? Math.round((correct / possible) * 100) : null;
-        document.getElementById('total-correct').textContent  = correct;
-        document.getElementById('total-possible').textContent = possible;
-        document.getElementById('total-missed').textContent   = missed;
-        document.getElementById('total-pct-display').textContent = pct !== null ? pct + '%' : '—';
-        document.getElementById('score-bar').style.width      = (pct || 0) + '%';
-    }
-
-    function showScoreTab(year, btn) {
-        document.querySelectorAll('.score-tab').forEach(function(t) { t.style.display = 'none'; });
-        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-        document.getElementById('score-grid-' + year).style.display = 'grid';
-        btn.classList.add('active');
-    }
-
-    function clearScores() {
-        if (!confirm('Clear all saved scores? This cannot be undone.')) return;
-        YEARS.forEach(function(year) {
-            for (var i = 1; i <= 20; i++) {
-            }
-        });
-        buildScoreGrids();
-    }</script>
+</script>
 </body>
 </html>
